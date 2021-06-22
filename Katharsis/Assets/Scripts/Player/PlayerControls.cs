@@ -7,7 +7,7 @@ public class PlayerControls : MonoBehaviour
     public Controls controls;
     Vector2 inputs;
     float rotation;
-    public float baseSpeed = 4, rotateSpeed = 0.5f;
+    public float baseSpeed = 10, rotateSpeed = 0.5f;
 
     CharacterController controller;
     // Start is called before the first frame update
