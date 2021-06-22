@@ -8,6 +8,7 @@ public class PlayerControls : MonoBehaviour
     Vector2 inputs;
     float rotation;
     public float baseSpeed = 4, rotateSpeed = 0.5f;
+
     CharacterController controller;
     // Start is called before the first frame update
     void Start()
