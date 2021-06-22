@@ -5,31 +5,67 @@ using UnityEngine;
 public class PlayerControls : MonoBehaviour
 {
     public Controls controls;
+    //controladores de inputs
     Vector2 inputs;
     float rotation;
-    public float baseSpeed = 10, rotateSpeed = 0.5f;
-
+    //velocidades
+    float baseSpeed = 10, rotateSpeed = 1f;
+    float gravity = -15, velocityY = 0, terminalVelocity = -25f;
+    Vector3 velocity;
+    //jumpng
+    bool jumping, jump;
+    float jumpSpeed, jumpHeigth = 3;
+    Vector3 jumpDirection;
+    //referencia a componente
     CharacterController controller;
-    // Start is called before the first frame update
+
+    
     void Start()
     {
         controller = GetComponent<CharacterController>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         getInputs();
         Locomotion();
     }
-
+    void Jump()
+    {
+        if (!jumping)
+            jumping = true;
+        jumpDirection = (transform.forward * inputs.y).normalized;
+        jumpSpeed = baseSpeed;
+        velocityY = Mathf.Sqrt(-gravity * jumpHeigth);
+    }
     void Locomotion()
     {
         Vector2 inputNormalized = inputs;
+
+        //rotation
         Vector3 CharRotation = transform.eulerAngles + new Vector3(0, rotation * rotateSpeed, 0);
-        Vector3 velocity = transform.forward * inputNormalized.y * baseSpeed * Time.deltaTime;
         transform.eulerAngles = CharRotation;
-        controller.Move(velocity);
+        //Jump
+        if (jump && controller.isGrounded)
+            Jump();
+
+        if (!controller.isGrounded && velocityY > terminalVelocity)
+            velocityY += gravity * Time.deltaTime;
+
+        //aplicar inputs
+        if (!jumping)
+            velocity = (transform.forward * inputNormalized.y + Vector3.up * velocityY) * baseSpeed;
+        else
+            velocity = jumpSpeed * jumpDirection + Vector3.up * velocityY;
+        //moviendo controlador
+        controller.Move(velocity * Time.deltaTime);
+
+        if (controller.isGrounded)
+        {
+            velocityY = 0;
+            if (jumping)
+                jumping = false;
+        }
     }
     void getInputs()
     {
@@ -51,8 +87,7 @@ public class PlayerControls : MonoBehaviour
         if (Input.GetKey(controls.rotateright))
             rotation = 1;
 
-        if (Input.GetKey(controls.rotateleft))
-        {
+        if (Input.GetKey(controls.rotateleft)){
             if (Input.GetKey(controls.rotateright))
                 rotation = 0;
             else
@@ -61,6 +96,9 @@ public class PlayerControls : MonoBehaviour
 
         if (!Input.GetKey(controls.rotateright) && !Input.GetKey(controls.rotateleft))
             rotation = 0;
+
+        //Jumping
+        jump = Input.GetKey(controls.jump);
     }
 
     

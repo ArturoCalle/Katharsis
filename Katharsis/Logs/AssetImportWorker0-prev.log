@@ -15,11 +15,11 @@ C:/tuto/universidad/Tesis/Katharsis/Katharsis
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-60946
+54754
 Successfully changed project path to: C:/tuto/universidad/Tesis/Katharsis/Katharsis
 C:/tuto/universidad/Tesis/Katharsis/Katharsis
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 55.69 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 59.41 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2020.3.11f1 (99c7afb366b3)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2020.3.11f1/Editor/Data/Resources/UnitySubsystems
@@ -35,202 +35,237 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2020.3.11f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2020.3.11f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2020.3.11f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56752
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56608
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.11f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.004645 seconds.
+Registered in 0.004034 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 55.61 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 56.75 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  2.263 seconds
+- Completed reload, in  2.627 seconds
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.007961 seconds.
+Registered in 0.008253 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.51 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 0.55 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.840 seconds
+- Completed reload, in  1.954 seconds
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
 Launched and connected shader compiler UnityShaderCompiler.exe after 0.07 seconds
-Refreshing native plugins compatible for Editor in 0.48 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 0.50 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 1388 Unused Serialized files (Serialized files now loaded: 0)
 System memory in use before: 65.4 MB.
 System memory in use after: 65.4 MB.
 
 Unloading 19 unused Assets to reduce memory usage. Loaded Objects now: 1823.
-Total: 2.758200 ms (FindLiveObjects: 0.286500 ms CreateObjectMapping: 0.085500 ms MarkObjects: 2.254400 ms  DeleteObjects: 0.130300 ms)
+Total: 5.378100 ms (FindLiveObjects: 0.316100 ms CreateObjectMapping: 0.082400 ms MarkObjects: 4.759900 ms  DeleteObjects: 0.217500 ms)
 
 ========================================================================
 Received Import Request.
-  path: Assets/Scripts
-  artifactKey: Guid(0b4a4647011f81740afe3ffcfaf7c243) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts using Guid(0b4a4647011f81740afe3ffcfaf7c243) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'af22bd58ddcd71da94f4ef7088544db0') in 0.024994 seconds
-  Import took 0.029043 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000319 seconds.
-  path: Assets/Scripts/Player
-  artifactKey: Guid(5d3d64dc34c3e024bb9100cef8a482d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/Player using Guid(5d3d64dc34c3e024bb9100cef8a482d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1b942a5e3ad96ff6bfebd81dd133ce6b') in 0.008518 seconds
-  Import took 0.012453 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000243 seconds.
   path: Assets/Scripts/Player/PlayerControls.cs
   artifactKey: Guid(303cdedd136eb20429fe7d5bc1f0f728) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/Player/PlayerControls.cs using Guid(303cdedd136eb20429fe7d5bc1f0f728) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '50ad40ee58bdd71bed368c7ab9ce5102') in 0.050680 seconds
-  Import took 0.054617 seconds .
+Start importing Assets/Scripts/Player/PlayerControls.cs using Guid(303cdedd136eb20429fe7d5bc1f0f728) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '89281699360fc839c0ae061ad8d45494') in 0.062587 seconds
+  Import took 0.068297 seconds .
 
 ========================================================================
 Received Prepare
-Refreshing native plugins compatible for Editor in 5.79 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 6.42 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 12 Unused Serialized files (Serialized files now loaded: 0)
 System memory in use before: 38.0 MB.
 System memory in use after: 38.1 MB.
 
 Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 1823.
-Total: 3.100700 ms (FindLiveObjects: 0.294500 ms CreateObjectMapping: 0.078500 ms MarkObjects: 2.614200 ms  DeleteObjects: 0.112200 ms)
+Total: 3.019300 ms (FindLiveObjects: 0.321000 ms CreateObjectMapping: 0.080500 ms MarkObjects: 2.541300 ms  DeleteObjects: 0.075100 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 32.794230 seconds.
+  path: Assets/Scripts/Player/PlayerControls.cs
+  artifactKey: Guid(303cdedd136eb20429fe7d5bc1f0f728) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Player/PlayerControls.cs using Guid(303cdedd136eb20429fe7d5bc1f0f728) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2dacd1b31aefac292aee8061a537791c') in 0.004731 seconds
+  Import took 0.008203 seconds .
 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.007758 seconds.
+Registered in 0.006699 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.51 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 0.49 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.770 seconds
+- Completed reload, in  1.742 seconds
 Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.55 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 0.51 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 1383 Unused Serialized files (Serialized files now loaded: 0)
 System memory in use before: 65.3 MB.
 System memory in use after: 65.4 MB.
 
 Unloading 14 unused Assets to reduce memory usage. Loaded Objects now: 1826.
-Total: 2.762700 ms (FindLiveObjects: 0.258100 ms CreateObjectMapping: 0.086900 ms MarkObjects: 2.286800 ms  DeleteObjects: 0.129200 ms)
-
-========================================================================
-Received Import Request.
-  Time since last request: 5205.362038 seconds.
-  path: Assets/Modelos/Caneca.fbx
-  artifactKey: Guid(0d62a37cbe3839c4da633d9b5c4997c4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Modelos/Caneca.fbx using Guid(0d62a37cbe3839c4da633d9b5c4997c4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dca29cd9a7b49e701dbf90848b5c2de8') in 0.235296 seconds
-  Import took 0.240036 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000309 seconds.
-  path: Assets/Modelos/Cocina_Meson_Cajon.fbx
-  artifactKey: Guid(02e87f11db5a40d4fa11319d8bf9e3c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Modelos/Cocina_Meson_Cajon.fbx using Guid(02e87f11db5a40d4fa11319d8bf9e3c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'db9ce71d70a0001d56307c073974be46') in 0.065653 seconds
-  Import took 0.068811 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000239 seconds.
-  path: Assets/Modelos/Cocina_Meson_Abierto.fbx
-  artifactKey: Guid(6e5865a8c0b6bfb4b99d3d602a55ea23) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Modelos/Cocina_Meson_Abierto.fbx using Guid(6e5865a8c0b6bfb4b99d3d602a55ea23) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd83af992cb6a92012d9244accb18a13e') in 0.129282 seconds
-  Import took 0.133511 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000328 seconds.
-  path: Assets/Modelos/Cocina_Meson_Sin_Puerta.fbx
-  artifactKey: Guid(9c530fdd7a04b2d4b837d2a0adb607ae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Modelos/Cocina_Meson_Sin_Puerta.fbx using Guid(9c530fdd7a04b2d4b837d2a0adb607ae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e5ffdb91bab96400ebc490b75a8a0a15') in 0.107754 seconds
-  Import took 0.112231 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 684.671466 seconds.
-  path: Assets/Cocina/Prefabs/Cocina_Meson_Sin_Puerta.prefab
-  artifactKey: Guid(d4c05e33fe3983c4994a28f59a76a2f0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Cocina/Prefabs/Cocina_Meson_Sin_Puerta.prefab using Guid(d4c05e33fe3983c4994a28f59a76a2f0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bd163c7529f3eb58b9dc99ececd055af') in 0.028740 seconds
-  Import took 0.034522 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 181.151257 seconds.
-  path: Assets/Cocina/Prefabs/Cocina_Meson_Cajon.prefab
-  artifactKey: Guid(f52e245ed4cb68b4aac0cc9b784af26d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Cocina/Prefabs/Cocina_Meson_Cajon.prefab using Guid(f52e245ed4cb68b4aac0cc9b784af26d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9532286c5377da3d6facb88e281c69d0') in 0.029571 seconds
-  Import took 0.034919 seconds .
+Total: 2.631800 ms (FindLiveObjects: 0.301700 ms CreateObjectMapping: 0.078600 ms MarkObjects: 2.164100 ms  DeleteObjects: 0.086100 ms)
 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.008431 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.52 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.610 seconds
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.50 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1383 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 68.9 MB.
-System memory in use after: 69.0 MB.
-
-Unloading 15 unused Assets to reduce memory usage. Loaded Objects now: 1872.
-Total: 2.835600 ms (FindLiveObjects: 0.253500 ms CreateObjectMapping: 0.076700 ms MarkObjects: 2.422500 ms  DeleteObjects: 0.081500 ms)
-
-========================================================================
-Received Import Request.
-  Time since last request: 152.345748 seconds.
-  path: Assets/Cocina/Prefabs/Cocina_Meson_Cajon Variant.prefab
-  artifactKey: Guid(bc6de8a5adb19aa40b7692bf1a28da90) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Cocina/Prefabs/Cocina_Meson_Cajon Variant.prefab using Guid(bc6de8a5adb19aa40b7692bf1a28da90) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2dac7d4736fefaa852fbefe66cce7fa4') in 0.090327 seconds
-  Import took 0.094427 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 11.871376 seconds.
-  path: Assets/Cocina/Prefabs/Cocina_Meson_Cajon.prefab
-  artifactKey: Guid(f52e245ed4cb68b4aac0cc9b784af26d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Cocina/Prefabs/Cocina_Meson_Cajon.prefab using Guid(f52e245ed4cb68b4aac0cc9b784af26d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '41becbd2659b650b5c70d57b4356e272') in 0.015293 seconds
-  Import took 0.019341 seconds .
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.006743 seconds.
+Registered in 0.007988 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
 Refreshing native plugins compatible for Editor in 0.53 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.609 seconds
+- Completed reload, in  1.753 seconds
 Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.51 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 0.82 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 1383 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 68.9 MB.
-System memory in use after: 69.0 MB.
+System memory in use before: 65.4 MB.
+System memory in use after: 65.5 MB.
 
-Unloading 14 unused Assets to reduce memory usage. Loaded Objects now: 1876.
-Total: 2.861300 ms (FindLiveObjects: 0.253300 ms CreateObjectMapping: 0.075600 ms MarkObjects: 2.455700 ms  DeleteObjects: 0.075400 ms)
+Unloading 14 unused Assets to reduce memory usage. Loaded Objects now: 1829.
+Total: 2.584600 ms (FindLiveObjects: 0.257700 ms CreateObjectMapping: 0.075900 ms MarkObjects: 2.171200 ms  DeleteObjects: 0.078300 ms)
 
 ========================================================================
 Received Import Request.
-  Time since last request: 306.560377 seconds.
-  path: Assets/Cocina/Prefabs/Cocina_Meson_Sin_Puerta.prefab
-  artifactKey: Guid(d4c05e33fe3983c4994a28f59a76a2f0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Cocina/Prefabs/Cocina_Meson_Sin_Puerta.prefab using Guid(d4c05e33fe3983c4994a28f59a76a2f0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9aecad9d032bf80f9ef9a5902329a6fd') in 0.089759 seconds
-  Import took 0.094506 seconds .
+  Time since last request: 225.679020 seconds.
+  path: Assets/Cocina/Prefabs/Cocina_Meson_Abierto.prefab
+  artifactKey: Guid(e3467698bd6700649a4eed2eb8df6c2f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cocina/Prefabs/Cocina_Meson_Abierto.prefab using Guid(e3467698bd6700649a4eed2eb8df6c2f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3789225e7bdb5d3b6b22d3e51a13114f') in 0.148793 seconds
+  Import took 0.152415 seconds .
 
-AssetImportWorkerClient::OnTransportError - code=2 error=End of file
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.150547 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.60 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.974 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.56 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1383 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 68.5 MB.
+System memory in use after: 68.6 MB.
+
+Unloading 14 unused Assets to reduce memory usage. Loaded Objects now: 1839.
+Total: 3.253300 ms (FindLiveObjects: 0.407800 ms CreateObjectMapping: 0.194000 ms MarkObjects: 2.534500 ms  DeleteObjects: 0.115400 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.007404 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.50 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.725 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.50 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1383 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 68.5 MB.
+System memory in use after: 68.6 MB.
+
+Unloading 14 unused Assets to reduce memory usage. Loaded Objects now: 1842.
+Total: 4.027000 ms (FindLiveObjects: 0.273700 ms CreateObjectMapping: 0.076600 ms MarkObjects: 3.570900 ms  DeleteObjects: 0.104200 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 2003.488830 seconds.
+  path: Assets/Modelos/Materiales/Paredes.mat
+  artifactKey: Guid(c0b53c19525001344a20866efde794c3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modelos/Materiales/Paredes.mat using Guid(c0b53c19525001344a20866efde794c3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0703ee8df8b75ff88bfc7f12465399b9') in 0.127992 seconds
+  Import took 0.132276 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.140770 seconds.
+  path: Assets/Modelos/Materiales/Paredes.mat
+  artifactKey: Guid(c0b53c19525001344a20866efde794c3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modelos/Materiales/Paredes.mat using Guid(c0b53c19525001344a20866efde794c3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0703ee8df8b75ff88bfc7f12465399b9') in 0.013661 seconds
+  Import took 0.017789 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 675.660413 seconds.
+  path: Assets/Cocina/Prefabs/Structure_Kitchen_Cabinet_Wall_Corner.prefab
+  artifactKey: Guid(ee55837b32187f24eb913801d8d3341f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cocina/Prefabs/Structure_Kitchen_Cabinet_Wall_Corner.prefab using Guid(ee55837b32187f24eb913801d8d3341f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '153d039cf50f15a50a6d0613e96c9ed9') in 0.070235 seconds
+  Import took 0.075053 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.008820 seconds.
+  path: Assets/Cocina/Prefabs/Structure_Kitchen_Cabinet_Wall_Corner.prefab
+  artifactKey: Guid(ee55837b32187f24eb913801d8d3341f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cocina/Prefabs/Structure_Kitchen_Cabinet_Wall_Corner.prefab using Guid(ee55837b32187f24eb913801d8d3341f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '153d039cf50f15a50a6d0613e96c9ed9') in 0.019124 seconds
+  Import took 0.023485 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 412.005545 seconds.
+  path: Assets/Modelos/Materiales/Metal Dañado.mat
+  artifactKey: Guid(e1657d20d2c8d5c4b91418ad2a0b5361) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modelos/Materiales/Metal Dañado.mat using Guid(e1657d20d2c8d5c4b91418ad2a0b5361) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '35eb53d6a46469be18bcacef44a61f26') in 0.056392 seconds
+  Import took 0.061899 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000264 seconds.
+  path: Assets/Modelos/Materiales/Paredes.mat
+  artifactKey: Guid(c0b53c19525001344a20866efde794c3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modelos/Materiales/Paredes.mat using Guid(c0b53c19525001344a20866efde794c3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '09dfd83ad5ba82eaacc3f7de2ddffb79') in 0.019782 seconds
+  Import took 0.023198 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000307 seconds.
+  path: Assets/Modelos/Materiales/Piso Cocina.mat
+  artifactKey: Guid(c175734805ba7934db55f363eb7e27c5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modelos/Materiales/Piso Cocina.mat using Guid(c175734805ba7934db55f363eb7e27c5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f57b2a9fb609efc2ddbdb1ebd2fbc1f4') in 0.050940 seconds
+  Import took 0.054853 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000300 seconds.
+  path: Assets/Modelos/Materiales/Tabla Madera.mat
+  artifactKey: Guid(3f9ededbbde32ee419b28e7c096f5fd4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modelos/Materiales/Tabla Madera.mat using Guid(3f9ededbbde32ee419b28e7c096f5fd4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5f822f1a545fc1fd4f99fe266781e8bc') in 0.023159 seconds
+  Import took 0.028044 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 2484.355716 seconds.
+  path: Assets/Cocina/Prefabs/Structure_Kitchen_Cabinet_Wall_Full.prefab
+  artifactKey: Guid(2488461165428164c9f3237fe0df0953) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cocina/Prefabs/Structure_Kitchen_Cabinet_Wall_Full.prefab using Guid(2488461165428164c9f3237fe0df0953) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '50c89582632618bde5c4910459297712') in 0.056012 seconds
+  Import took 0.065917 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 530.073037 seconds.
+  path: Assets/Modelos/Materiales/Vidrio.mat
+  artifactKey: Guid(dbeb1d371a8135448b0979aed4a55990) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modelos/Materiales/Vidrio.mat using Guid(dbeb1d371a8135448b0979aed4a55990) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ae02898d8144ae3c12c1e27abfb9d81d') in 0.030047 seconds
+  Import took 0.035261 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 340.429585 seconds.
+  path: Assets/Modelos/Materiales/Vidrio.mat
+  artifactKey: Guid(dbeb1d371a8135448b0979aed4a55990) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modelos/Materiales/Vidrio.mat using Guid(dbeb1d371a8135448b0979aed4a55990) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '698a155632691a71ec7a14b6093ccd7a') in 0.051241 seconds
+  Import took 0.057674 seconds .
+
