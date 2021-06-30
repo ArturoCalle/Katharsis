@@ -15,11 +15,11 @@ C:/tuto/universidad/Tesis/Katharsis/Katharsis
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-64818
+52236
 Successfully changed project path to: C:/tuto/universidad/Tesis/Katharsis/Katharsis
 C:/tuto/universidad/Tesis/Katharsis/Katharsis
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 55.77 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 54.05 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2020.3.11f1 (99c7afb366b3)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2020.3.11f1/Editor/Data/Resources/UnitySubsystems
@@ -35,135 +35,127 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2020.3.11f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2020.3.11f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2020.3.11f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56144
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56884
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.11f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.003916 seconds.
+Registered in 0.003634 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 56.91 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 52.11 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.950 seconds
+- Completed reload, in  1.905 seconds
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.007369 seconds.
+Registered in 0.007108 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.52 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 0.54 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.775 seconds
+- Completed reload, in  1.896 seconds
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
 Launched and connected shader compiler UnityShaderCompiler.exe after 0.07 seconds
-Refreshing native plugins compatible for Editor in 0.49 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 0.53 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 1563 Unused Serialized files (Serialized files now loaded: 0)
 System memory in use before: 72.6 MB.
 System memory in use after: 72.6 MB.
 
 Unloading 19 unused Assets to reduce memory usage. Loaded Objects now: 2001.
-Total: 2.733100 ms (FindLiveObjects: 0.309000 ms CreateObjectMapping: 0.099400 ms MarkObjects: 2.199000 ms  DeleteObjects: 0.124200 ms)
+Total: 2.711700 ms (FindLiveObjects: 0.286800 ms CreateObjectMapping: 0.087100 ms MarkObjects: 2.214000 ms  DeleteObjects: 0.122400 ms)
 
 ========================================================================
 Received Import Request.
-  path: Assets/Modelos/Cocina/Nevera.fbx
-  artifactKey: Guid(e922ebad3c62efa4aa43a3dd38af085b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Modelos/Cocina/Nevera.fbx using Guid(e922ebad3c62efa4aa43a3dd38af085b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5efa6cf7756f25fcb6cf6adde7a97eaf') in 0.357283 seconds
-  Import took 0.362337 seconds .
+  path: Assets/Modelos/Cocina/Prop_Dining_Room_Chair.obj
+  artifactKey: Guid(e9de29365ae916c4a8888e105f05de07) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modelos/Cocina/Prop_Dining_Room_Chair.obj using Guid(e9de29365ae916c4a8888e105f05de07) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6e986912739f83475c2e39339a7228a4') in 0.291229 seconds
+  Import took 0.296842 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 110.218921 seconds.
-  path: Assets/Modelos/Materiales/Metal 2.mat
-  artifactKey: Guid(32cb7103aec58ec49aeb23f8d96244a8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Modelos/Materiales/Metal 2.mat using Guid(32cb7103aec58ec49aeb23f8d96244a8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd40eff7ad8c5cf842b56feac22156a06') in 0.027037 seconds
-  Import took 0.032549 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 383.670118 seconds.
-  path: Assets/Cocina/Prefabs/Nevera.prefab
-  artifactKey: Guid(863923836e4262a4186df208a16865a0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Cocina/Prefabs/Nevera.prefab using Guid(863923836e4262a4186df208a16865a0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0d6ce8255e85dc56e1537be0eed651c8') in 0.035481 seconds
-  Import took 0.041345 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 3024.904928 seconds.
-  path: Assets/Modelos/Cocina/Bolsa_Basura.fbx
-  artifactKey: Guid(27a1fd8fec7402a44b7479623c5fe306) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Modelos/Cocina/Bolsa_Basura.fbx using Guid(27a1fd8fec7402a44b7479623c5fe306) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1776435ec088b41c3fe6efde1ee062a4') in 0.051265 seconds
-  Import took 0.060331 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 88.401129 seconds.
-  path: Assets/Modelos/Materiales/New Material.mat
-  artifactKey: Guid(1bb2fb566cb1c30428c1fe553aed7499) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Modelos/Materiales/New Material.mat using Guid(1bb2fb566cb1c30428c1fe553aed7499) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '51b85d87a94aacbbad288894349f1363') in 0.020550 seconds
-  Import took 0.024517 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 16.662874 seconds.
+  Time since last request: 35.409461 seconds.
   path: Assets/Modelos/Materiales/Bolsa Negra.mat
   artifactKey: Guid(1bb2fb566cb1c30428c1fe553aed7499) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Modelos/Materiales/Bolsa Negra.mat using Guid(1bb2fb566cb1c30428c1fe553aed7499) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8fd5742acdd43086dd8d64a21e916b7a') in 0.021365 seconds
-  Import took 0.026730 seconds .
+Start importing Assets/Modelos/Materiales/Bolsa Negra.mat using Guid(1bb2fb566cb1c30428c1fe553aed7499) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fb53e703b09effda48740253665dab2e') in 0.040848 seconds
+  Import took 0.046025 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 119.858346 seconds.
-  path: Assets/Modelos/Cocina/Bolsa_Basura 1.fbx
-  artifactKey: Guid(30495dbec8175f84ca781c6368bac360) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Modelos/Cocina/Bolsa_Basura 1.fbx using Guid(30495dbec8175f84ca781c6368bac360) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '641dc117f91312a7ffbf8e61e518d18f') in 0.032689 seconds
-  Import took 0.037371 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.002977 seconds.
-  path: Assets/Modelos/Cocina/Bolsa_Basura 1.fbx
-  artifactKey: Guid(30495dbec8175f84ca781c6368bac360) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Modelos/Cocina/Bolsa_Basura 1.fbx using Guid(30495dbec8175f84ca781c6368bac360) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '641dc117f91312a7ffbf8e61e518d18f') in 0.023097 seconds
-  Import took 0.027907 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 103.130717 seconds.
-  path: Assets/Cocina/Prefabs/Bolsa_Basura 1.prefab
-  artifactKey: Guid(9f51d07394f6b5d439163271dd4fd976) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Cocina/Prefabs/Bolsa_Basura 1.prefab using Guid(9f51d07394f6b5d439163271dd4fd976) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6833f1d2464e644e5ee1bbcc42db1a88') in 0.017451 seconds
-  Import took 0.022652 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.033571 seconds.
-  path: Assets/Cocina/Prefabs/Bolsa_Basura 1.prefab
-  artifactKey: Guid(9f51d07394f6b5d439163271dd4fd976) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Cocina/Prefabs/Bolsa_Basura 1.prefab using Guid(9f51d07394f6b5d439163271dd4fd976) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6833f1d2464e644e5ee1bbcc42db1a88') in 0.014534 seconds
-  Import took 0.018901 seconds .
+  Time since last request: 0.000247 seconds.
+  path: Assets/Modelos/Materiales/Metal 2.mat
+  artifactKey: Guid(32cb7103aec58ec49aeb23f8d96244a8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modelos/Materiales/Metal 2.mat using Guid(32cb7103aec58ec49aeb23f8d96244a8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ba8f2bf4df6b460cf6243a44bcef31f6') in 0.016827 seconds
+  Import took 0.021473 seconds .
 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.007352 seconds.
+Registered in 0.009949 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.94 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.912 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.60 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1554 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 75.5 MB.
+System memory in use after: 75.6 MB.
+
+Unloading 14 unused Assets to reduce memory usage. Loaded Objects now: 2047.
+Total: 2.990500 ms (FindLiveObjects: 0.388100 ms CreateObjectMapping: 0.098900 ms MarkObjects: 2.406400 ms  DeleteObjects: 0.095300 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.008765 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
 Refreshing native plugins compatible for Editor in 0.55 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.695 seconds
+- Completed reload, in  1.732 seconds
 Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.56 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 0.58 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 1554 Unused Serialized files (Serialized files now loaded: 0)
 System memory in use before: 75.6 MB.
 System memory in use after: 75.7 MB.
 
-Unloading 15 unused Assets to reduce memory usage. Loaded Objects now: 2047.
-Total: 2.662600 ms (FindLiveObjects: 0.310900 ms CreateObjectMapping: 0.084200 ms MarkObjects: 2.176900 ms  DeleteObjects: 0.088900 ms)
+Unloading 14 unused Assets to reduce memory usage. Loaded Objects now: 2050.
+Total: 2.688200 ms (FindLiveObjects: 0.283000 ms CreateObjectMapping: 0.106400 ms MarkObjects: 2.215800 ms  DeleteObjects: 0.081900 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 610.376117 seconds.
+  path: Assets/Cocina/Prop_Dining_Room_Chair.prefab
+  artifactKey: Guid(4df663f5a4466b44aac4ad7d7c46b99b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cocina/Prop_Dining_Room_Chair.prefab using Guid(4df663f5a4466b44aac4ad7d7c46b99b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '548236d54bbab6cb2ea365fd961de349') in 0.106316 seconds
+  Import took 0.111199 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.007201 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.65 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.809 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.61 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1554 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 75.6 MB.
+System memory in use after: 75.7 MB.
+
+Unloading 14 unused Assets to reduce memory usage. Loaded Objects now: 2054.
+Total: 3.049200 ms (FindLiveObjects: 0.377900 ms CreateObjectMapping: 0.095600 ms MarkObjects: 2.427300 ms  DeleteObjects: 0.146600 ms)
 
 AssetImportWorkerClient::OnTransportError - code=2 error=End of file
