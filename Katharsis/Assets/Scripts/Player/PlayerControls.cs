@@ -10,7 +10,7 @@ public class PlayerControls : MonoBehaviour
     float rotation;
     //velocidades
     float baseSpeed = 10, rotateSpeed = 1f;
-    float gravity = -15, velocityY = 0, terminalVelocity = -25f;
+    float gravity = -30, velocityY = 0, terminalVelocity = -25f;
     Vector3 velocity;
     //jumpng
     bool jumping, jump;
@@ -98,7 +98,10 @@ public class PlayerControls : MonoBehaviour
             rotation = 0;
 
         //Jumping
-        jump = Input.GetKey(controls.jump);
+        if( Input.GetKey(controls.jump))
+        {
+            Jump();
+        }
     }
 
     
