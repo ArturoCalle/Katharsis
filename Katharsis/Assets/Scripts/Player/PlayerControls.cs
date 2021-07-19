@@ -13,7 +13,7 @@ public class PlayerControls : MonoBehaviour
     float gravity = -30, velocityY = 0, terminalVelocity = -25f;
     Vector3 velocity;
     //jumpng
-    bool jumping, jump;
+    bool jumping, jump; // jump controla el input y jumping controla la accion
     float jumpSpeed, jumpHeigth = 3;
     Vector3 jumpDirection;
     //referencia a componente
@@ -33,7 +33,9 @@ public class PlayerControls : MonoBehaviour
     void Jump()
     {
         if (!jumping)
+        {
             jumping = true;
+        }
         jumpDirection = (transform.forward * inputs.y).normalized;
         jumpSpeed = baseSpeed;
         velocityY = Mathf.Sqrt(-gravity * jumpHeigth);
@@ -98,10 +100,7 @@ public class PlayerControls : MonoBehaviour
             rotation = 0;
 
         //Jumping
-        if( Input.GetKey(controls.jump))
-        {
-            Jump();
-        }
+        jump = Input.GetKey(controls.jump);
     }
 
     
