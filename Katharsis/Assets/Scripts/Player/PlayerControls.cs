@@ -18,17 +18,25 @@ public class PlayerControls : MonoBehaviour
     Vector3 jumpDirection;
     //referencia a componente
     CharacterController controller;
+    public static PlayerControls instance;
 
     
     void Start()
     {
         controller = GetComponent<CharacterController>();
+        instance = this;
     }
 
     void Update()
     {
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
         getInputs();
         Locomotion();
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            PauseUnpause();
+        }
     }
     void Jump()
     {
@@ -101,6 +109,25 @@ public class PlayerControls : MonoBehaviour
         if( Input.GetKey(controls.jump))
         {
             Jump();
+        }
+    }
+    public void PauseUnpause()
+    {
+        if(UIManager.instance.pauseScreen.activeInHierarchy)
+        {
+            UIManager.instance.pauseScreen.SetActive(false);
+            Time.timeScale = 1f;
+
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;
+        }
+        else
+        {
+            UIManager.instance.pauseScreen.SetActive(true);
+            Time.timeScale = 0f;
+
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
         }
     }
 
