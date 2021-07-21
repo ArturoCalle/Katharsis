@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerControls : MonoBehaviour
 {
     public Controls controls;
+    public GameObject escalar;
     //controladores de inputs
     Vector2 inputs;
     float rotation;
@@ -18,6 +19,7 @@ public class PlayerControls : MonoBehaviour
     Vector3 jumpDirection;
     //referencia a componente
     CharacterController controller;
+
 
     
     void Start()
@@ -75,7 +77,8 @@ public class PlayerControls : MonoBehaviour
         if (Input.GetKey(controls.forwards))
             inputs.y = 1;
 
-        if (Input.GetKey(controls.backwards)){
+        if (Input.GetKey(controls.backwards))
+        {
             if (Input.GetKey(controls.forwards))
                 inputs.y = 0;
             else
@@ -89,7 +92,8 @@ public class PlayerControls : MonoBehaviour
         if (Input.GetKey(controls.rotateright))
             rotation = 1;
 
-        if (Input.GetKey(controls.rotateleft)){
+        if (Input.GetKey(controls.rotateleft))
+        {
             if (Input.GetKey(controls.rotateright))
                 rotation = 0;
             else
@@ -99,6 +103,16 @@ public class PlayerControls : MonoBehaviour
         if (!Input.GetKey(controls.rotateright) && !Input.GetKey(controls.rotateleft))
             rotation = 0;
 
+        //verifica el estado de los colisionadores de escaladao adelante y atras que en combinacion con la tecla click izquierdo permiten activar el escalado de objetos
+        if(Input.GetMouseButton(0))
+        {
+            //recupera el script del gameObject escalar para validar el estado de la colision
+            if(escalar.GetComponent<Escalar>().isActive() )
+            {
+                Debug.Log("se puede escalar");
+            }
+            
+        }
         //Jumping
         jump = Input.GetKey(controls.jump);
     }

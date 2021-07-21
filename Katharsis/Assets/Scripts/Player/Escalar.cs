@@ -1,0 +1,35 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Escalar : MonoBehaviour
+{
+    bool colision;
+
+    private void OnTriggerEnter(Collider col)
+    {
+       
+    }
+    //si  la colision de un objeto es una esquina se puede escalar
+    private void OnTriggerStay(Collider col)
+    {
+        if(col.gameObject.name != "Jugador")
+        {
+            if (col.gameObject.tag == "Esquina")
+            {
+                colision = true;
+            }
+        }
+    }
+    private void OnTriggerExit(Collider col)
+    {
+        colision = false;
+    }
+    
+    public bool isActive()
+    {
+        return colision;
+    }
+    
+   
+}
