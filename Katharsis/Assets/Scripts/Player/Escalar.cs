@@ -15,7 +15,7 @@ public class Escalar : MonoBehaviour
     {
         if(col.gameObject.name != "Jugador")
         {
-            if (col.gameObject.tag == "Esquina")
+            if (col.gameObject.tag == "Escalable")
             {
                 colision = true;
             }
