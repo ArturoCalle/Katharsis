@@ -6,17 +6,22 @@ public class PlayerControls : MonoBehaviour
 {
     public Controls controls;
     public GameObject escalar;
+
     //controladores de inputs
-    Vector2 inputs;
+    Vector3 inputs;
     float rotation;
+    bool escalando;
+
     //velocidades
     float baseSpeed = 10, rotateSpeed = 1f;
     float gravity = -30, velocityY = 0, terminalVelocity = -25f;
     Vector3 velocity;
+
     //jumpng
     bool jumping, jump; // jump controla el input y jumping controla la accion
     float jumpSpeed, jumpHeigth = 3;
     Vector3 jumpDirection;
+
     //referencia a componente
     CharacterController controller;
 
@@ -38,29 +43,41 @@ public class PlayerControls : MonoBehaviour
         {
             jumping = true;
         }
-        jumpDirection = (transform.forward * inputs.y).normalized;
+        jumpDirection = (transform.forward * inputs.z).normalized;
         jumpSpeed = baseSpeed;
         velocityY = Mathf.Sqrt(-gravity * jumpHeigth);
     }
     void Locomotion()
     {
-        Vector2 inputNormalized = inputs;
+        Vector3 inputNormalized = inputs;
 
         //rotation
         Vector3 CharRotation = transform.eulerAngles + new Vector3(0, rotation * rotateSpeed, 0);
         transform.eulerAngles = CharRotation;
         //Jump
         if (jump && controller.isGrounded)
+        {
             Jump();
+        }
 
-        if (!controller.isGrounded && velocityY > terminalVelocity)
+        if (!controller.isGrounded && velocityY > terminalVelocity && !escalando)
+        {
             velocityY += gravity * Time.deltaTime;
+        }
 
         //aplicar inputs
         if (!jumping)
-            velocity = (transform.forward * inputNormalized.y + Vector3.up * velocityY) * baseSpeed;
+        {
+            velocity = (transform.forward * inputNormalized.z + Vector3.up * velocityY) * baseSpeed;
+        }
         else
+        {
             velocity = jumpSpeed * jumpDirection + Vector3.up * velocityY;
+        }
+         if(escalando)
+        {
+            velocity = (transform.up * inputNormalized.y) * baseSpeed;       
+        }
         //moviendo controlador
         controller.Move(velocity * Time.deltaTime);
 
@@ -75,18 +92,28 @@ public class PlayerControls : MonoBehaviour
     {
         //Controles hacia adelante, hacia atras, cancelar movimiento y sin movimiento en y
         if (Input.GetKey(controls.forwards))
-            inputs.y = 1;
+        {
+            checkMouse();
+            if(escalando)
+            {
+                inputs.y = 1;
+            }
+            else
+            {
+                inputs.z = 1;
+            }
+        }
 
         if (Input.GetKey(controls.backwards))
         {
             if (Input.GetKey(controls.forwards))
-                inputs.y = 0;
+                inputs.z = 0;
             else
-                inputs.y = -1;
+                inputs.z = -1;
         }
 
         if (!Input.GetKey(controls.forwards) && !Input.GetKey(controls.backwards))
-            inputs.y = 0;
+            inputs.z = 0;
 
         //Controles rotacion derecha, izquierda, cancelar movimiento y sin movimiento en x
         if (Input.GetKey(controls.rotateright))
@@ -104,17 +131,31 @@ public class PlayerControls : MonoBehaviour
             rotation = 0;
 
         //verifica el estado de los colisionadores de escaladao adelante y atras que en combinacion con la tecla click izquierdo permiten activar el escalado de objetos
-        if(Input.GetMouseButton(0))
+        
+        //Al soltar el boton de agarre vuelve a aplicar gravedad al jugador para que vuelva a caer
+        if(Input.GetMouseButtonUp(0))
         {
-            //recupera el script del gameObject escalar para validar el estado de la colision
-            if(escalar.GetComponent<Escalar>().isActive() )
-            {
-                Debug.Log("se puede escalar");
-            }
-            
+            escalando = false;
         }
         //Jumping
         jump = Input.GetKey(controls.jump);
+    }
+
+    void checkMouse()
+    {
+        if (Input.GetMouseButton(0))
+        {
+            //recupera el script del gameObject escalar para validar el estado de la colision
+            if (escalar.GetComponent<Escalar>().isActive())
+            {
+                escalando = true;
+            }
+            else
+            {
+                escalando = false;
+            }
+
+        }
     }
 
     
