@@ -125,14 +125,14 @@ public class PlayerControls : MonoBehaviour
 
         //Controles rotacion derecha, izquierda, cancelar movimiento y sin movimiento en x
         if (Input.GetKey(controls.rotateright))
-            rotation = 1;
+            rotation = 1*Time.timeScale;
 
         if (Input.GetKey(controls.rotateleft))
         {
             if (Input.GetKey(controls.rotateright))
-                rotation = 0;
+                rotation = 0 * Time.timeScale;
             else
-                rotation = -1;
+                rotation = -1 * Time.timeScale;
         }
 
         if (!Input.GetKey(controls.rotateright) && !Input.GetKey(controls.rotateleft))
