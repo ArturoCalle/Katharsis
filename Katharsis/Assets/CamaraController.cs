@@ -8,7 +8,7 @@ public class CamaraController : MonoBehaviour
     public float altura = 1.75f;
     float MaxInclinacion = 90;
     [Range(0, 4)]
-    public float velocidad = 2;
+    public float velocidad = 5;
     float xrot, yrot = 15, distancia = 6;
     bool cameraRotate = false;
     PlayerControls player;
@@ -38,6 +38,7 @@ public class CamaraController : MonoBehaviour
             cameraRotate = true;
             xrot += Input.GetAxis("Mouse X") * velocidad;
             yrot -= Input.GetAxis("Mouse Y") * velocidad;
+            yrot = Mathf.Clamp(yrot, -MaxInclinacion, MaxInclinacion);
         }
 
     }
