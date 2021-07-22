@@ -10,7 +10,7 @@ public class CamaraController : MonoBehaviour
     [Range(0, 4)]
     public float velocidad = 2;
     float xrot, yrot = 15, distancia = 6;
-
+    bool cameraRotate = false;
     PlayerControls player;
     public Transform inclinacion;
     Camera mainCam;
@@ -29,6 +29,16 @@ public class CamaraController : MonoBehaviour
     }
     void Update()
     {
+        if (!Input.GetKey(clickDerecho))
+        {
+            cameraRotate = false;
+        }
+        else
+        {
+            cameraRotate = true;
+            xrot += Input.GetAxis("Mouse X") * velocidad;
+            yrot -= Input.GetAxis("Mouse Y") * velocidad;
+        }
 
     }
 
@@ -39,7 +49,10 @@ public class CamaraController : MonoBehaviour
 
     void cameraTransforms()
     {
-        xrot = player.transform.eulerAngles.y;
+        if (!cameraRotate)
+        {
+            xrot = player.transform.eulerAngles.y;
+        }
 
         transform.position = player.transform.position + Vector3.up * altura;
         transform.eulerAngles = new Vector3(transform.eulerAngles.x, xrot, transform.eulerAngles.z);
