@@ -13,12 +13,17 @@ public class Escalar : MonoBehaviour
     //si  la colision de un objeto es una esquina se puede escalar
     private void OnTriggerStay(Collider col)
     {
+        if (col.gameObject.tag == "Escalable")
+        {
+            colision = true;
+        }
         if(col.gameObject.name != "Jugador")
         {
-            if (col.gameObject.tag == "Escalable")
-            {
-                colision = true;
-            }
+           
+        }
+        else
+        {
+            colision = false;
         }
     }
     private void OnTriggerExit(Collider col)
