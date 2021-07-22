@@ -10,10 +10,55 @@ public class menuPausa : MonoBehaviour
     public GameObject botonVolverMenuPrincipal;
 
     List<Boton> botones;
-    int seleccion = 1;
+    int seleccion = 0;
 
     // Start is called before the first frame update
     void Start()
+    {
+       
+
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        reiniciarBotones();
+        mostrarSeleccion();
+    }
+    void mostrarSeleccion()
+    {
+        for(int i =0; i<botones.Count;i++)
+        {
+            Boton actual = botones[i].getBoton();
+            if(i == seleccion)
+            {
+                actual.setActive(true);
+            }
+            else
+            {
+                actual.setActive(false);
+            }
+        }
+        
+        
+    }
+    //aumenta o decrece la selecion del menu recibe 1 o -1
+    public void cambiarSeleccion(int s)
+    {
+        if(seleccion + s <=-1)
+        {
+            seleccion = botones.Count-1;
+        }
+        else if(seleccion + s >= botones.Count )
+        {
+            seleccion = 0;
+        }
+        else
+        {
+            seleccion = seleccion + s;
+        }
+    }
+    void reiniciarBotones()
     {
         botones = new List<Boton>();
         Boton reanudar = botonReanudar.GetComponent<Boton>();
@@ -28,34 +73,5 @@ public class menuPausa : MonoBehaviour
         botones.Add(reanudar);
         botones.Add(opciones);
         botones.Add(volver);
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        mostrarSeleccion();
-    }
-    void mostrarSeleccion()
-    {
-        Boton actual = botones[seleccion].getBoton();
-        actual.setActive(true);
-        
-    }
-    //aumenta o decrece la selecion del menu recibe 1 o -1
-    void cambiarSeleccion(int s)
-    {
-        if(seleccion + s ==-1)
-        {
-            seleccion = botones.Count;
-        }
-        else if(seleccion + s >botones.Count )
-        {
-            seleccion = 0;
-        }
-        else
-        {
-            seleccion = seleccion + s;
-        }
     }
 }

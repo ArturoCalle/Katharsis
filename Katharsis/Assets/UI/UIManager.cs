@@ -11,19 +11,20 @@ public class UIManager : MonoBehaviour
     public float fadeSpeed;
     public bool fadeToBlack, fadeFromBlack;
     public GameObject pauseScreen;
-    public Button BotonReanudar;
 
     // Start is called before the first frame update
     void Start()
     {
         instance = this;
-        BotonReanudar.enabled = true;
-        BotonReanudar.onClick.AddListener(clickeando);
     }
 
     // Update is called once per frame
     void Update()
     {
+        if(instance.pauseScreen.activeInHierarchy)
+        {
+            getInputs();
+        }
         /*
         if (fadeToBlack)
         {
@@ -44,13 +45,22 @@ public class UIManager : MonoBehaviour
             }
         }
         */
-        
+
+    }
+    void getInputs()
+    {
+        if(Input.GetKeyDown(KeyCode.W))
+        {
+            pauseScreen.GetComponent<menuPausa>().cambiarSeleccion(-1);
+        }
+        if (Input.GetKeyDown(KeyCode.S))
+        {
+            pauseScreen.GetComponent<menuPausa>().cambiarSeleccion(1);
+        }
     }
     public void Reanudar()
     {
         PlayerControls.instance.PauseUnpause();
-        Debug.Log(Cursor.visible);
-        Debug.Log("Entra a función reanudar");
     }
     public void AbrirOpciones()
     {
@@ -64,9 +74,6 @@ public class UIManager : MonoBehaviour
     {
 
     }
-    public void clickeando()
-    {
-        Debug.Log("Se está clickeando");
-    }
+    
     
 }
