@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class CamaraController : MonoBehaviour
 {
-    KeyCode clickDerecho = KeyCode.Mouse1;
     public float altura = 1.75f;
     float MaxInclinacion = 90;
     [Range(0, 4)]
@@ -29,18 +28,9 @@ public class CamaraController : MonoBehaviour
     }
     void Update()
     {
-        if (!Input.GetKey(clickDerecho))
-        {
-            cameraRotate = false;
-        }
-        else
-        {
-            cameraRotate = true;
             xrot += Input.GetAxis("Mouse X") * velocidad;
             yrot -= Input.GetAxis("Mouse Y") * velocidad;
             yrot = Mathf.Clamp(yrot, -MaxInclinacion, MaxInclinacion);
-        }
-
     }
 
     void LateUpdate()
@@ -50,10 +40,8 @@ public class CamaraController : MonoBehaviour
 
     void cameraTransforms()
     {
-        if (!cameraRotate)
-        {
-            xrot = player.transform.eulerAngles.y;
-        }
+        
+        //xrot = player.transform.eulerAngles.y;
 
         transform.position = player.transform.position + Vector3.up * altura;
         transform.eulerAngles = new Vector3(transform.eulerAngles.x, xrot, transform.eulerAngles.z);

@@ -24,8 +24,6 @@ public class PlayerControls : MonoBehaviour
 
     //referencia a componente
     CharacterController controller;
-
-
     
     void Start()
     {
