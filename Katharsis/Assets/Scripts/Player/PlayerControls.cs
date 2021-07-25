@@ -13,7 +13,7 @@ public class PlayerControls : MonoBehaviour
     bool escalando;
 
     //velocidades
-    float baseSpeed = 10, rotateSpeed = 1f;
+    float baseSpeed = 10, rotateSpeed = 2f;
     float gravity = -30, velocityY = 0, terminalVelocity = -25f;
     Vector3 velocity;
 
@@ -26,8 +26,6 @@ public class PlayerControls : MonoBehaviour
     CharacterController controller;
     public static PlayerControls instance;
 
-
-    
     void Start()
     {
         controller = GetComponent<CharacterController>();
