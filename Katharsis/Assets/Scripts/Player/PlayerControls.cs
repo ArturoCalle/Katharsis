@@ -93,6 +93,7 @@ public class PlayerControls : MonoBehaviour
             if (jumping)
                 jumping = false;
         }
+        AnimatorController.instance.move(inputs, jump);
     }
     void getInputs()
     {
