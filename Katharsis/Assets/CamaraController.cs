@@ -47,7 +47,7 @@ public class CamaraController : MonoBehaviour
         transform.eulerAngles = new Vector3(transform.eulerAngles.x, xrot, transform.eulerAngles.z);
         inclinacion.eulerAngles = new Vector3(yrot, inclinacion.eulerAngles.y, inclinacion.eulerAngles.z);
 
-        mainCam.transform.position = transform.position + inclinacion.forward * -distancia;
+        mainCam.transform.position = transform.position + inclinacion.forward * -distancia * Time.timeScale;
 
     }
 }

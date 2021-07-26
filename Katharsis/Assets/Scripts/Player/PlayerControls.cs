@@ -9,11 +9,10 @@ public class PlayerControls : MonoBehaviour
 
     //controladores de inputs
     Vector3 inputs;
-    float rotation;
     bool escalando;
 
     //velocidades
-    float baseSpeed = 10, rotateSpeed = 2f;
+    float baseSpeed = 10, rotateSpeed = 0.1f, turnSmooth;
     float gravity = -30, velocityY = 0, terminalVelocity = -25f;
     Vector3 velocity;
 
@@ -49,17 +48,17 @@ public class PlayerControls : MonoBehaviour
         {
             jumping = true;
         }
-        jumpDirection = (transform.forward * inputs.z).normalized;
+        jumpDirection = inputs.normalized;
         jumpSpeed = baseSpeed;
         velocityY = Mathf.Sqrt(-gravity * jumpHeigth);
     }
     void Locomotion()
     {
-        Vector3 inputNormalized = inputs;
+        Vector3 inputNormalized = inputs.normalized; //llamese direccion
+        float targetAngle = Mathf.Atan2(inputNormalized.x, inputNormalized.z) * Mathf.Rad2Deg; //el angulo entre los inputs, 45 grados por ejemplo si se presiona w y d
+        float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmooth, rotateSpeed); //funcion para suavisar el angulo, necesita una velocidad y una variable (turnSmooth) que necesita la funcion
+        transform.rotation = Quaternion.Euler(0f, angle, 0f);
 
-        //rotation
-        Vector3 CharRotation = transform.eulerAngles + new Vector3(0, rotation * rotateSpeed, 0);
-        transform.eulerAngles = CharRotation;
         //Jump
         if (jump && controller.isGrounded)
         {
@@ -74,7 +73,7 @@ public class PlayerControls : MonoBehaviour
         //aplicar inputs
         if (!jumping)
         {
-            velocity = (transform.forward * inputNormalized.z + Vector3.up * velocityY) * baseSpeed;
+            velocity = (inputNormalized +  Vector3.up * velocityY) * baseSpeed;
         }
         else
         {
@@ -84,8 +83,9 @@ public class PlayerControls : MonoBehaviour
         {
             velocity = (transform.up * inputNormalized.y) * baseSpeed;       
         }
+
         //moviendo controlador
-        controller.Move(velocity * Time.deltaTime);
+        controller.Move(velocity * Time.deltaTime * Time.timeScale);
 
         if (controller.isGrounded)
         {
@@ -123,19 +123,19 @@ public class PlayerControls : MonoBehaviour
             inputs.z = 0;
 
         //Controles rotacion derecha, izquierda, cancelar movimiento y sin movimiento en x
-        if (Input.GetKey(controls.rotateright))
-            rotation = 1*Time.timeScale;
+        if (Input.GetKey(controls.right))
+            inputs.x = 1;
 
-        if (Input.GetKey(controls.rotateleft))
+        if (Input.GetKey(controls.left))
         {
-            if (Input.GetKey(controls.rotateright))
-                rotation = 0 * Time.timeScale;
+            if (Input.GetKey(controls.right))
+                inputs.x = 0;
             else
-                rotation = -1 * Time.timeScale;
+                inputs.x = -1;
         }
 
-        if (!Input.GetKey(controls.rotateright) && !Input.GetKey(controls.rotateleft))
-            rotation = 0;
+        if (!Input.GetKey(controls.right) && !Input.GetKey(controls.left))
+            inputs.x = 0;
 
         //verifica el estado de los colisionadores de escaladao adelante y atras que en combinacion con la tecla click izquierdo permiten activar el escalado de objetos
         

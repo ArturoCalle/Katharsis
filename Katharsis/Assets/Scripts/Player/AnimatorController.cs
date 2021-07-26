@@ -23,7 +23,15 @@ public class AnimatorController : MonoBehaviour
 
     public void move(Vector3 inputs, bool jump)
     {
-        animator.SetFloat("walk", inputs.z);
+        if (inputs != new Vector3(0,0,0))
+        {
+            animator.SetFloat("walk", 1);
+        }
+        else
+        {
+            animator.SetFloat("walk", 0);
+        }
+
         if (jump)
         {
             animator.Play("Jump");
