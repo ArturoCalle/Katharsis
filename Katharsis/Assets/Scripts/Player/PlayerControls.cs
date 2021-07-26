@@ -169,6 +169,7 @@ public class PlayerControls : MonoBehaviour
         if(UIManager.instance.pauseScreen.activeInHierarchy)
         {
             UIManager.instance.pauseScreen.SetActive(false);
+            UIManager.instance.panelLateral.SetActive(false);
             Time.timeScale = 1f;
 
             Cursor.visible = false;
@@ -177,6 +178,7 @@ public class PlayerControls : MonoBehaviour
         else
         {
             UIManager.instance.pauseScreen.SetActive(true);
+            UIManager.instance.panelLateral.SetActive(true);
             Time.timeScale = 0f;
 
             Cursor.visible = true;

@@ -6,11 +6,13 @@ using UnityEngine.UI;
 public class menuPausa : MonoBehaviour
 {
     public GameObject botonReanudar;
+    public GameObject botonNotas;
     public GameObject botonOpciones;
     public GameObject botonVolverMenuPrincipal;
 
     List<Boton> botones;
     int seleccion = 0;
+    bool locked = false;
 
     // Start is called before the first frame update
     void Start()
@@ -62,16 +64,31 @@ public class menuPausa : MonoBehaviour
     {
         botones = new List<Boton>();
         Boton reanudar = botonReanudar.GetComponent<Boton>();
+        Boton notas = botonNotas.GetComponent<Boton>();
         Boton opciones = botonOpciones.GetComponent<Boton>();
         Boton volver = botonVolverMenuPrincipal.GetComponent<Boton>();
         //inicializa los textos
         reanudar.actualizarTexto("Reanudar Partida");
+        notas.actualizarTexto("Notas");
         opciones.actualizarTexto("Opciones");
         volver.actualizarTexto("Volver al Menú Principal");
         //guarda los botones en la lista de botone
 
         botones.Add(reanudar);
+        botones.Add(notas);
         botones.Add(opciones);
         botones.Add(volver);
+    }
+    public int getSeleccion()
+    {
+        return seleccion;
+    }
+    public bool isLocked()
+    {
+        return locked;
+    }
+    public void setLock(bool value)
+    {
+        locked = value;
     }
 }
