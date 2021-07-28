@@ -9,7 +9,6 @@ public class CamaraController : MonoBehaviour
     [Range(0, 4)]
     public float velocidad = 5;
     float xrot, yrot = 15, distancia = 6;
-    bool cameraRotate = false;
     PlayerControls player;
     public Transform inclinacion;
     Camera mainCam;

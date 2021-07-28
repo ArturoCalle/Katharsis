@@ -14,13 +14,15 @@ public class PlayerControls : MonoBehaviour
 
     //velocidades
     float baseSpeed = 10, rotateSpeed = 2f;
-    float gravity = -30, velocityY = 0, terminalVelocity = -25f;
+    float gravity = -30, terminalVelocity = -25f;
+    public float velocityY = 0;
     Vector3 velocity;
 
     //jumpng
     bool jumping, jump; // jump controla el input y jumping controla la accion
     float jumpSpeed, jumpHeigth = 3;
     Vector3 jumpDirection;
+    bool falling;
 
     //referencia a componente
     CharacterController controller;
@@ -52,6 +54,7 @@ public class PlayerControls : MonoBehaviour
         jumpDirection = (transform.forward * inputs.z).normalized;
         jumpSpeed = baseSpeed;
         velocityY = Mathf.Sqrt(-gravity * jumpHeigth);
+        
     }
     void Locomotion()
     {
@@ -93,7 +96,7 @@ public class PlayerControls : MonoBehaviour
             if (jumping)
                 jumping = false;
         }
-        AnimatorController.instance.move(inputs, jump);
+        AnimatorController.instance.move(inputs, velocityY, controller.isGrounded, jump);
     }
     void getInputs()
     {
