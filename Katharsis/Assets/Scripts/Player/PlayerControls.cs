@@ -13,9 +13,8 @@ public class PlayerControls : MonoBehaviour
     bool escalando;
 
     //velocidades
-    float baseSpeed = 10, rotateSpeed = 2f;
-    float gravity = -30, terminalVelocity = -25f;
-    public float velocityY = 0;
+    float baseSpeed = 10, rotateSpeed = 0.1f, turnSmooth;
+    float gravity = -30, velocityY = 0, terminalVelocity = -25f;
     Vector3 velocity;
 
     //jumpng
@@ -28,6 +27,8 @@ public class PlayerControls : MonoBehaviour
     CharacterController controller;
     public static PlayerControls instance;
 
+
+    
     void Start()
     {
         controller = GetComponent<CharacterController>();
@@ -54,7 +55,6 @@ public class PlayerControls : MonoBehaviour
         jumpDirection = (transform.forward * inputs.z).normalized;
         jumpSpeed = baseSpeed;
         velocityY = Mathf.Sqrt(-gravity * jumpHeigth);
-        
     }
     void Locomotion()
     {
@@ -126,18 +126,18 @@ public class PlayerControls : MonoBehaviour
             inputs.z = 0;
 
         //Controles rotacion derecha, izquierda, cancelar movimiento y sin movimiento en x
-        if (Input.GetKey(controls.rotateright))
+        if (Input.GetKey(controls.right))
             rotation = 1*Time.timeScale;
 
-        if (Input.GetKey(controls.rotateleft))
+        if (Input.GetKey(controls.left))
         {
-            if (Input.GetKey(controls.rotateright))
+            if (Input.GetKey(controls.right))
                 rotation = 0 * Time.timeScale;
             else
                 rotation = -1 * Time.timeScale;
         }
 
-        if (!Input.GetKey(controls.rotateright) && !Input.GetKey(controls.rotateleft))
+        if (!Input.GetKey(controls.right) && !Input.GetKey(controls.left))
             rotation = 0;
 
         //verifica el estado de los colisionadores de escaladao adelante y atras que en combinacion con la tecla click izquierdo permiten activar el escalado de objetos
