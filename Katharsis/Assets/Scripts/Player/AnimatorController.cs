@@ -21,14 +21,18 @@ public class AnimatorController : MonoBehaviour
         
     }
 
-    public void move(Vector3 inputs, bool jump)
+    public void move(Vector3 inputs, float velocityY, bool isGrounded, bool jump)
     {
-        animator.SetFloat("walk", inputs.z);
-        if (jump)
+        if(inputs != new Vector3(0, 0, 0))
         {
-            animator.Play("Jump");
-            animator.SetBool("jump", false);
+            animator.SetFloat("walk", 1);
         }
-        
+        else
+        {
+            animator.SetFloat("walk", 0);
+        }
+        animator.SetFloat("yVelocity", velocityY);
+        animator.SetBool("isGrounded", isGrounded);
+        animator.SetBool("jump", jump);
     }
 }
