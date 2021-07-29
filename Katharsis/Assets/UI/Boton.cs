@@ -16,7 +16,7 @@ public class Boton : MonoBehaviour
     {
         instance = this;
         prendido = false;
-        textoEnDisplay = " ";
+        //textoEnDisplay = " ";
     }
 
     // Update is called once per frame

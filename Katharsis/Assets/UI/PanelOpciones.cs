@@ -5,39 +5,48 @@ using UnityEngine.UI;
 
 public class PanelOpciones : MonoBehaviour
 {
-    public List<Boton> botones = new List<Boton>();
+    public GameObject botonVideo;
+    public GameObject botonAudio;
+    public GameObject botonControles;
+    public GameObject botonAtras;
+
+    List<Boton> botones = new List<Boton>();
     public Text titulo;
 
     int seleccion;
-    int maxSelection;
     bool locked;
     private void Start()
     {
+        reiniciarBotones();
         seleccion = 0;
         locked = true;
-        Reset();
         
     }
     private void Update()
     {
         mostrarSeleccion();
     }
-    public void Reset()
+    public void reiniciarBotones()
     {
+        cambiarTitulo("Opciones ");
+        botones = new List<Boton>();
+        Boton video = botonVideo.GetComponent<Boton>();
+        Boton audio = botonAudio.GetComponent<Boton>();
+        Boton controles = botonControles.GetComponent<Boton>();
+        Boton volver = botonAtras.GetComponent<Boton>();
+        //inicializa los textos
+        video.actualizarTexto("Video");
+        audio.actualizarTexto("Audio");
+        controles.actualizarTexto("Controles");
+        volver.actualizarTexto("Atras");
+        //guarda los botones en la lista de botones
 
-        cambiarTitulo(" ");
-        maxSelection = 0;
-        for(int i =0; i< botones.Count;i++)
-        {
-            botones[i].actualizarTexto(" ");
-        }
+        botones.Add(video);
+        botones.Add(audio);
+        botones.Add(controles);
+        botones.Add(volver);
     }
-    public void agregarBoton(string texto)
-    {
-        maxSelection++;
-        botones[maxSelection - 1].actualizarTexto(texto);
-    }
-    public void cambiarTitulo(string nuevoTitulo)
+    void cambiarTitulo(string nuevoTitulo)
     {
         titulo.text = nuevoTitulo;
     }
@@ -70,8 +79,6 @@ public class PanelOpciones : MonoBehaviour
                 actual.setActive(false);
             }
         }
-
-
     }
     public bool isLocked()
     {
@@ -81,5 +88,31 @@ public class PanelOpciones : MonoBehaviour
     {
         locked = value;
     }
-
+    public void seleccionar(menuPausa mp)
+    {
+        switch(seleccion)
+        {
+            case 0:
+                setLock(true);
+                mp.setLock(false);
+                //TO DO video 
+                break;
+            case 1:
+                setLock(true);
+                mp.setLock(false);
+                //TO DO audio 
+                break;
+            case 2:
+                setLock(true);
+                mp.setLock(false);
+                //TO DO controles 
+                break;
+            case 3:
+                //TO DO atras 
+                setLock(true);
+                mp.setLock(false);
+                UIManager.instance.hidePanel("opciones");
+                break;
+        }
+    }
 }

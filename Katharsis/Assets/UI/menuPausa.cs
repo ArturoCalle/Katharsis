@@ -9,15 +9,17 @@ public class menuPausa : MonoBehaviour
     public GameObject botonNotas;
     public GameObject botonOpciones;
     public GameObject botonVolverMenuPrincipal;
+   
 
     List<Boton> botones;
     int seleccion = 0;
     bool locked = false;
+    GameObject panelOpciones;
 
     // Start is called before the first frame update
     void Start()
     {
-       
+        panelOpciones = UIManager.instance.panelOpciones;
 
     }
 
@@ -96,14 +98,20 @@ public class menuPausa : MonoBehaviour
         switch (seleccion)
         {
             case 0:
-                UIManager.instance.Reanudar();
+                Debug.Log("reanudar partida");
+                PlayerControls.instance.PauseUnpause();
                 break;
             case 1:
                 Debug.Log("ver notas");
                 break;
             case 2:
                 Debug.Log("ver opciones");
-                UIManager.instance.Opciones();
+                PanelOpciones po = panelOpciones.GetComponent<PanelOpciones>();
+                panelOpciones.SetActive(true);
+                po.reiniciarBotones();
+                setLock(true);
+                panelOpciones.SetActive(true);
+                po.setLock(false);
 
                 break;
             case 3:

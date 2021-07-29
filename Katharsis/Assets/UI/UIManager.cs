@@ -11,19 +11,21 @@ public class UIManager : MonoBehaviour
     public float fadeSpeed;
     public bool fadeToBlack, fadeFromBlack;
     public GameObject pauseScreen;
-    public GameObject panelLateral;
+    public GameObject panelOpciones;
 
     // Start is called before the first frame update
     void Start()
     {
         instance = this;
-        panelLateral.GetComponent<PanelOpciones>().Reset();
+        panelOpciones.GetComponent<PanelOpciones>().reiniciarBotones();
+        panelOpciones.SetActive(false);
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(instance.pauseScreen.activeInHierarchy)
+        if (instance.pauseScreen.activeInHierarchy)
         {
             getInputs();
         }
@@ -52,7 +54,7 @@ public class UIManager : MonoBehaviour
     void getInputs()
     {
         menuPausa mp = pauseScreen.GetComponent<menuPausa>();
-        PanelOpciones pl = panelLateral.GetComponent<PanelOpciones>();
+        PanelOpciones po = panelOpciones.GetComponent<PanelOpciones>();
 
         if (Input.GetKeyDown(KeyCode.W))
         {
@@ -60,9 +62,9 @@ public class UIManager : MonoBehaviour
             {
                 mp.cambiarSeleccion(-1);
             }
-            else if(!pl.isLocked())
+            else if (!po.isLocked())
             {
-                pl.cambiarSeleccion(-1);
+                po.cambiarSeleccion(-1);
             }
         }
         if (Input.GetKeyDown(KeyCode.S))
@@ -71,58 +73,55 @@ public class UIManager : MonoBehaviour
             {
                 mp.cambiarSeleccion(1);
             }
-            else if (!pl.isLocked())
+            else if (!po.isLocked())
             {
-                pl.cambiarSeleccion(1);
+                po.cambiarSeleccion(1);
             }
         }
-        if(Input.GetKeyDown(KeyCode.Z))
+        if (Input.GetKeyDown(KeyCode.Z))
         {
 
-            if(!mp.isLocked())
+            if (!mp.isLocked())
             {
                 mp.setLock(true);
                 mp.seleccionar();
             }
+            else if(!po.isLocked())
+            {
+                po.setLock(true);
+                po.seleccionar(mp);
+            }
         }
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if(!mp.isLocked())
-            {
-                Reanudar();
-            }
-            else
-            {
-                Atras(pl);
-            }
+            
         }
     }
     public void Reanudar()
     {
-        panelLateral.GetComponent<PanelOpciones>().Reset();
+        desactivarPaneles();
         PlayerControls.instance.PauseUnpause();
     }
-    public void Opciones()
+    public void hidePanel(string name)
     {
-
-        PanelOpciones pl = panelLateral.GetComponent<PanelOpciones>();
-        pl.setLock(false);
-        pl.Reset();
-        pl.cambiarTitulo("Opciones");
-        pl.agregarBoton("Video");
-        pl.agregarBoton("Audio");
-        pl.agregarBoton("Controles");
-        pl.agregarBoton("Atras");
+        switch(name)
+        {
+            case "opciones":
+                panelOpciones.SetActive(false);
+                break;
+        }
     }
-    void VolverAlMenu()
+    public void desactivarPaneles()
     {
-
-    }
-    void Atras(PanelOpciones pl)
-    {
-        pl.Reset();
-        pl.setLock(true);
+        panelOpciones.SetActive(false);
         pauseScreen.GetComponent<menuPausa>().setLock(false);
+        pauseScreen.SetActive(false);
+    }
+
+    public void pausar()
+    {
+        panelOpciones.GetComponent<PanelOpciones>().reiniciarBotones();
+        pauseScreen.SetActive(true);
     }
     
     
