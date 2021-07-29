@@ -91,4 +91,29 @@ public class menuPausa : MonoBehaviour
     {
         locked = value;
     }
+    public void seleccionar()
+    {
+        switch (seleccion)
+        {
+            case 0:
+                UIManager.instance.Reanudar();
+                break;
+            case 1:
+                Debug.Log("ver notas");
+                break;
+            case 2:
+                Debug.Log("ver opciones");
+                UIManager.instance.Opciones();
+
+                break;
+            case 3:
+                Debug.Log("volver al menú principal");
+                SceneController.instance.cambiarEscena("Pantalla Principal");
+                UIManager.instance.Reanudar();
+
+                break;
+            default:
+                break;
+        }
+    }
 }

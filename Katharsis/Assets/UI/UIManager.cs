@@ -17,7 +17,7 @@ public class UIManager : MonoBehaviour
     void Start()
     {
         instance = this;
-        panelLateral.GetComponent<Panel>().Reset();
+        panelLateral.GetComponent<PanelOpciones>().Reset();
     }
 
     // Update is called once per frame
@@ -52,13 +52,17 @@ public class UIManager : MonoBehaviour
     void getInputs()
     {
         menuPausa mp = pauseScreen.GetComponent<menuPausa>();
-        Panel pl = panelLateral.GetComponent<Panel>();
+        PanelOpciones pl = panelLateral.GetComponent<PanelOpciones>();
 
         if (Input.GetKeyDown(KeyCode.W))
         {
             if (!mp.isLocked())
             {
                 mp.cambiarSeleccion(-1);
+            }
+            else if(!pl.isLocked())
+            {
+                pl.cambiarSeleccion(-1);
             }
         }
         if (Input.GetKeyDown(KeyCode.S))
@@ -67,33 +71,18 @@ public class UIManager : MonoBehaviour
             {
                 mp.cambiarSeleccion(1);
             }
+            else if (!pl.isLocked())
+            {
+                pl.cambiarSeleccion(1);
+            }
         }
         if(Input.GetKeyDown(KeyCode.Z))
         {
 
             if(!mp.isLocked())
             {
-                int seleccion = mp.getSeleccion();
                 mp.setLock(true);
-                switch(seleccion)
-                {
-                    case 0:
-                        Reanudar();
-                        break;
-                    case 1:
-                        Debug.Log("ver notas");
-                        break;
-                    case 2:
-                        Debug.Log("ver opciones");
-                        Opciones(pl);
-
-                        break;
-                    case 3:
-                        Debug.Log("volver al menú principal");
-                        break;
-                    default:
-                        break;
-                }
+                mp.seleccionar();
             }
         }
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -108,13 +97,16 @@ public class UIManager : MonoBehaviour
             }
         }
     }
-    void Reanudar()
+    public void Reanudar()
     {
-        panelLateral.GetComponent<Panel>().Reset();
+        panelLateral.GetComponent<PanelOpciones>().Reset();
         PlayerControls.instance.PauseUnpause();
     }
-    void Opciones(Panel pl)
+    public void Opciones()
     {
+
+        PanelOpciones pl = panelLateral.GetComponent<PanelOpciones>();
+        pl.setLock(false);
         pl.Reset();
         pl.cambiarTitulo("Opciones");
         pl.agregarBoton("Video");
@@ -126,9 +118,10 @@ public class UIManager : MonoBehaviour
     {
 
     }
-    void Atras(Panel pl)
+    void Atras(PanelOpciones pl)
     {
         pl.Reset();
+        pl.setLock(true);
         pauseScreen.GetComponent<menuPausa>().setLock(false);
     }
     
