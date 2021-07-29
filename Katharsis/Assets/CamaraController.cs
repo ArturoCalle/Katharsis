@@ -9,7 +9,6 @@ public class CamaraController : MonoBehaviour
     [Range(0, 4)]
     public float velocidad = 5;
     float xrot, yrot = 15, distancia = 6;
-    bool cameraRotate = false;
     PlayerControls player;
     public Transform inclinacion;
     Camera mainCam;
@@ -47,7 +46,7 @@ public class CamaraController : MonoBehaviour
         transform.eulerAngles = new Vector3(transform.eulerAngles.x, xrot, transform.eulerAngles.z);
         inclinacion.eulerAngles = new Vector3(yrot, inclinacion.eulerAngles.y, inclinacion.eulerAngles.z);
 
-        mainCam.transform.position = transform.position + inclinacion.forward * -distancia;
+        mainCam.transform.position = transform.position + inclinacion.forward * -distancia * Time.timeScale;
 
     }
 }

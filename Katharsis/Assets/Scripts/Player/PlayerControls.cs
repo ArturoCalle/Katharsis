@@ -6,26 +6,29 @@ public class PlayerControls : MonoBehaviour
 {
     public Controls controls;
     public GameObject escalar;
-
+    public GameObject groundCheck;
+    public Transform cam;
+    public bool isGrounded;
     //controladores de inputs
     Vector3 inputs;
-    float rotation;
     bool escalando;
 
     //velocidades
-    float baseSpeed = 10, rotateSpeed = 2f;
-    float gravity = -30, velocityY = 0, terminalVelocity = -25f;
+    float baseSpeed = 10f, rotateSpeed = 0.1f, turnSmooth;
+    float gravity = -9.81f, terminalVelocity = -25f;
     Vector3 velocity;
 
     //jumpng
     bool jumping, jump; // jump controla el input y jumping controla la accion
-    float jumpSpeed, jumpHeigth = 3;
-    Vector3 jumpDirection;
+    float jumpHeigth = 3f;
+
+    //Direccion
+    Vector3 direction;
 
     //referencia a componente
     CharacterController controller;
     public static PlayerControls instance;
-
+    
     void Start()
     {
         controller = GetComponent<CharacterController>();
@@ -43,57 +46,46 @@ public class PlayerControls : MonoBehaviour
             PauseUnpause();
         }
     }
-    void Jump()
-    {
-        if (!jumping)
-        {
-            jumping = true;
-        }
-        jumpDirection = (transform.forward * inputs.z).normalized;
-        jumpSpeed = baseSpeed;
-        velocityY = Mathf.Sqrt(-gravity * jumpHeigth);
-    }
+
     void Locomotion()
     {
-        Vector3 inputNormalized = inputs;
-
-        //rotation
-        Vector3 CharRotation = transform.eulerAngles + new Vector3(0, rotation * rotateSpeed, 0);
-        transform.eulerAngles = CharRotation;
-        //Jump
-        if (jump && controller.isGrounded)
+        direction = inputs.normalized;
+        isGrounded = groundCheck.GetComponent<GroundCheck>().isGrounded();
+        
+        //moviendo controlador en eje x, z
+        if (direction.magnitude > 0.1)
         {
-            Jump();
-        }
+            float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + cam.eulerAngles.y;
+            float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmooth, rotateSpeed);
+            transform.rotation = Quaternion.Euler(0f, angle, 0f);
 
-        if (!controller.isGrounded && velocityY > terminalVelocity && !escalando)
-        {
-            velocityY += gravity * Time.deltaTime;
+            Vector3 movDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
+            controller.Move(movDir.normalized * baseSpeed * Time.deltaTime * Time.timeScale);
         }
 
-        //aplicar inputs
-        if (!jumping)
+        
+        //fall
+        if (!controller.isGrounded && velocity.y > terminalVelocity && !escalando)
         {
-            velocity = (transform.forward * inputNormalized.z + Vector3.up * velocityY) * baseSpeed;
+            velocity.y += gravity * Time.deltaTime;
         }
-        else
-        {
-            velocity = jumpSpeed * jumpDirection + Vector3.up * velocityY;
-        }
-         if(escalando)
-        {
-            velocity = (transform.up * inputNormalized.y) * baseSpeed;       
-        }
-        //moviendo controlador
-        controller.Move(velocity * Time.deltaTime);
 
-        if (controller.isGrounded)
+        if (isGrounded)
         {
-            velocityY = 0;
+            velocity.y = 0;
             if (jumping)
+            {
                 jumping = false;
+            }
         }
-        AnimatorController.instance.move(inputs, jump);
+        //Jump
+        if (jump && isGrounded)
+        {
+            velocity.y = Mathf.Sqrt(-gravity * jumpHeigth);
+            jumping = true;
+        }
+        controller.Move(velocity * Time.deltaTime * Time.timeScale);
+        AnimatorController.instance.move(inputs, velocity.y, isGrounded, jumping);
     }
     void getInputs()
     {
@@ -123,19 +115,19 @@ public class PlayerControls : MonoBehaviour
             inputs.z = 0;
 
         //Controles rotacion derecha, izquierda, cancelar movimiento y sin movimiento en x
-        if (Input.GetKey(controls.rotateright))
-            rotation = 1*Time.timeScale;
+        if (Input.GetKey(controls.right))
+            inputs.x = 1;
 
-        if (Input.GetKey(controls.rotateleft))
+        if (Input.GetKey(controls.left))
         {
-            if (Input.GetKey(controls.rotateright))
-                rotation = 0 * Time.timeScale;
+            if (Input.GetKey(controls.right))
+                inputs.x = 0;
             else
-                rotation = -1 * Time.timeScale;
+                inputs.x = -1;
         }
 
-        if (!Input.GetKey(controls.rotateright) && !Input.GetKey(controls.rotateleft))
-            rotation = 0;
+        if (!Input.GetKey(controls.right) && !Input.GetKey(controls.left))
+            inputs.x = 0;
 
         //verifica el estado de los colisionadores de escaladao adelante y atras que en combinacion con la tecla click izquierdo permiten activar el escalado de objetos
         
@@ -147,7 +139,6 @@ public class PlayerControls : MonoBehaviour
         //Jumping
         jump = Input.GetKey(controls.jump);
     }
-
     void checkMouse()
     {
         if (Input.GetMouseButton(0))
