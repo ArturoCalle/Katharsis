@@ -16,12 +16,11 @@ public class PlayerControls : MonoBehaviour
     //velocidades
     float baseSpeed = 10f, rotateSpeed = 0.1f, turnSmooth;
     float gravity = -9.81f, terminalVelocity = -25f;
-    Vector3 movDir;
     Vector3 velocity;
 
     //jumpng
     bool jumping, jump; // jump controla el input y jumping controla la accion
-    float jumpHeigth = 5;
+    float jumpHeigth = 3f;
 
     //Direccion
     Vector3 direction;
@@ -29,13 +28,10 @@ public class PlayerControls : MonoBehaviour
     //referencia a componente
     CharacterController controller;
     public static PlayerControls instance;
-
-
     
     void Start()
     {
         controller = GetComponent<CharacterController>();
-        
         instance = this;
     }
 
@@ -50,14 +46,7 @@ public class PlayerControls : MonoBehaviour
             PauseUnpause();
         }
     }
-    void Jump()
-    {
-        if (!jumping)
-        {
-            jumping = true;
-        }
-        velocity.y = Mathf.Sqrt(-2f * gravity * jumpHeigth);
-    }
+
     void Locomotion()
     {
         direction = inputs.normalized;
@@ -74,40 +63,29 @@ public class PlayerControls : MonoBehaviour
             controller.Move(movDir.normalized * baseSpeed * Time.deltaTime * Time.timeScale);
         }
 
-        //Jump
-        if (jump && isGrounded)
-        {
-            Jump();
-        }
+        
         //fall
         if (!controller.isGrounded && velocity.y > terminalVelocity && !escalando)
         {
             velocity.y += gravity * Time.deltaTime;
         }
 
-        //apply inputs
-        if (!jumping)
-        {
-            velocity = (movDir + Vector3.up * velocity.y) * baseSpeed;
-        }
-        else
-        {
-            velocity = baseSpeed * movDir + Vector3.up * velocity.y;
-        }
-         if(escalando)
-        {
-            velocity = (Vector3.up * direction.y) * baseSpeed;       
-        }
-
-
         if (isGrounded)
         {
             velocity.y = 0;
             if (jumping)
+            {
                 jumping = false;
+            }
+        }
+        //Jump
+        if (jump && isGrounded)
+        {
+            velocity.y = Mathf.Sqrt(-gravity * jumpHeigth);
+            jumping = true;
         }
         controller.Move(velocity * Time.deltaTime * Time.timeScale);
-        AnimatorController.instance.move(inputs, velocity.y, isGrounded, jump);
+        AnimatorController.instance.move(inputs, velocity.y, isGrounded, jumping);
     }
     void getInputs()
     {
