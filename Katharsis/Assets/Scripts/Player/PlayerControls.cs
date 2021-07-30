@@ -52,17 +52,17 @@ public class PlayerControls : MonoBehaviour
         direction = inputs.normalized;
         isGrounded = groundCheck.GetComponent<GroundCheck>().isGrounded();
         
-        //moviendo controlador en eje x, z
         if (direction.magnitude > 0.1)
         {
+            //target angle is the angle it will move towards with the keyboard inputs and mouse
+            //angle smooth the rotation of the character
             float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + cam.eulerAngles.y;
             float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmooth, rotateSpeed);
             transform.rotation = Quaternion.Euler(0f, angle, 0f);
-
+            //x, z movemnt
             Vector3 movDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
             controller.Move(movDir.normalized * baseSpeed * Time.deltaTime * Time.timeScale);
         }
-
         
         //fall
         if (!controller.isGrounded && velocity.y > terminalVelocity && !escalando)
@@ -84,7 +84,9 @@ public class PlayerControls : MonoBehaviour
             velocity.y = Mathf.Sqrt(-gravity * jumpHeigth);
             jumping = true;
         }
+        //apply gravity and jump motion to controller
         controller.Move(velocity * Time.deltaTime * Time.timeScale);
+        //change animator parameters in animator controller instance
         AnimatorController.instance.move(inputs, velocity.y, isGrounded, jumping);
     }
     void getInputs()
