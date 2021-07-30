@@ -116,8 +116,8 @@ public class menuPausa : MonoBehaviour
                 break;
             case 3:
                 Debug.Log("volver al menú principal");
+                PlayerControls.instance.PauseUnpause();
                 SceneController.instance.cambiarEscena("Pantalla Principal");
-                UIManager.instance.Reanudar();
 
                 break;
             default:
