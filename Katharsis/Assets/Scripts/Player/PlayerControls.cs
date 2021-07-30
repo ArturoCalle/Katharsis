@@ -61,6 +61,10 @@ public class PlayerControls : MonoBehaviour
             transform.rotation = Quaternion.Euler(0f, angle, 0f);
             //x, z movemnt
             Vector3 movDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
+            if (escalando)
+            {
+                movDir = Vector3.up;
+            }
             controller.Move(movDir.normalized * baseSpeed * Time.deltaTime * Time.timeScale);
         }
         
