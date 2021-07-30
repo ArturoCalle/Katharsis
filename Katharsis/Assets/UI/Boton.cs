@@ -16,7 +16,7 @@ public class Boton : MonoBehaviour
     {
         instance = this;
         prendido = false;
-        textoEnDisplay = "texto";
+        //textoEnDisplay = " ";
     }
 
     // Update is called once per frame
@@ -36,5 +36,9 @@ public class Boton : MonoBehaviour
     public void setActive(bool on_off)
     {
         prendido = on_off;
+    }
+    public string getTexto()
+    {
+        return textoEnDisplay;
     }
 }

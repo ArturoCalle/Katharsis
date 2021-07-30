@@ -41,10 +41,7 @@ public class PlayerControls : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         getInputs();
         Locomotion();
-        if(Input.GetKeyDown(KeyCode.Escape))
-        {
-            PauseUnpause();
-        }
+        
     }
 
     void Locomotion()
@@ -95,6 +92,10 @@ public class PlayerControls : MonoBehaviour
     }
     void getInputs()
     {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            PauseUnpause();
+        }
         //Controles hacia adelante, hacia atras, cancelar movimiento y sin movimiento en y
         if (Input.GetKey(controls.forwards))
         {
@@ -165,7 +166,7 @@ public class PlayerControls : MonoBehaviour
     {
         if(UIManager.instance.pauseScreen.activeInHierarchy)
         {
-            UIManager.instance.pauseScreen.SetActive(false);
+            UIManager.instance.desactivarPaneles();
             Time.timeScale = 1f;
 
             Cursor.visible = false;
@@ -173,7 +174,7 @@ public class PlayerControls : MonoBehaviour
         }
         else
         {
-            UIManager.instance.pauseScreen.SetActive(true);
+            UIManager.instance.pausar();
             Time.timeScale = 0f;
 
             Cursor.visible = true;
