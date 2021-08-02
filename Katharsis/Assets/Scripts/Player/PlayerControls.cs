@@ -11,7 +11,7 @@ public class PlayerControls : MonoBehaviour
     public bool isGrounded;
     //controladores de inputs
     Vector3 inputs;
-    bool escalando;
+    bool escalando = false;
 
     //velocidades
     float baseSpeed = 10f, rotateSpeed = 0.1f, turnSmooth;
@@ -39,6 +39,7 @@ public class PlayerControls : MonoBehaviour
     {
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
+        checkMouse();
         getInputs();
         Locomotion();
         
@@ -99,15 +100,7 @@ public class PlayerControls : MonoBehaviour
         //Controles hacia adelante, hacia atras, cancelar movimiento y sin movimiento en y
         if (Input.GetKey(controls.forwards))
         {
-            checkMouse();
-            if(escalando)
-            {
-                inputs.y = 1;
-            }
-            else
-            {
-                inputs.z = 1;
-            }
+            inputs.z = 1;
         }
 
         if (Input.GetKey(controls.backwards))
@@ -138,29 +131,25 @@ public class PlayerControls : MonoBehaviour
 
         //verifica el estado de los colisionadores de escaladao adelante y atras que en combinacion con la tecla click izquierdo permiten activar el escalado de objetos
         
-        //Al soltar el boton de agarre vuelve a aplicar gravedad al jugador para que vuelva a caer
-        if(Input.GetMouseButtonUp(0))
-        {
-            escalando = false;
-        }
         //Jumping
         jump = Input.GetKey(controls.jump);
     }
     void checkMouse()
     {
-        if (Input.GetMouseButton(0))
+        if (Input.GetKey(controls.climb))
         {
             //recupera el script del gameObject escalar para validar el estado de la colision
             if (escalar.GetComponent<Escalar>().isActive())
             {
                 escalando = true;
+                Debug.Log("toy escalando");
             }
-            else
-            {
-                escalando = false;
-            }
-
         }
+        else
+        {
+            escalando = false;
+        }
+        
     }
     public void PauseUnpause()
     {
