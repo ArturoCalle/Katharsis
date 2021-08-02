@@ -111,7 +111,7 @@ public class PanelOpciones : MonoBehaviour
                 //TO DO atras 
                 setLock(true);
                 mp.setLock(false);
-                UIManager.instance.hidePanel("opciones");
+                UIController.instance.hidePanel("opciones");
                 break;
         }
     }

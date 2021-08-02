@@ -4,9 +4,9 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-public class UIManager : MonoBehaviour
+public class UIController : MonoBehaviour
 {
-    public static UIManager instance;
+    public static UIController instance;
     public Image blackScreen;
     public float fadeSpeed;
     public bool fadeToBlack, fadeFromBlack;

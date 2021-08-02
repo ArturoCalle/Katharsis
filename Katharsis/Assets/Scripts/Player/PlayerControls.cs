@@ -164,9 +164,9 @@ public class PlayerControls : MonoBehaviour
     }
     public void PauseUnpause()
     {
-        if(UIManager.instance.pauseScreen.activeInHierarchy)
+        if(UIController.instance.pauseScreen.activeInHierarchy)
         {
-            UIManager.instance.desactivarPaneles();
+            UIController.instance.desactivarPaneles();
             Time.timeScale = 1f;
 
             Cursor.visible = false;
@@ -174,7 +174,7 @@ public class PlayerControls : MonoBehaviour
         }
         else
         {
-            UIManager.instance.pausar();
+            UIController.instance.pausar();
             Time.timeScale = 0f;
 
             Cursor.visible = true;

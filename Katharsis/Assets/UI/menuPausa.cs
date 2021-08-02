@@ -19,7 +19,7 @@ public class menuPausa : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        panelOpciones = UIManager.instance.panelOpciones;
+        panelOpciones = UIController.instance.panelOpciones;
 
     }
 
