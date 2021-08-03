@@ -20,7 +20,7 @@ public class PlayerControls : MonoBehaviour
 
     //jumpng
     bool jumping, jump; // jump controla el input y jumping controla la accion
-    float jumpHeigth = 3f;
+    float jumpHeigth = 5f;
 
     //Direccion
     Vector3 direction;
