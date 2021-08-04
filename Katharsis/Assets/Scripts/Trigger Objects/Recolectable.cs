@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Recolectable : MonoBehaviour
+public class Recolectable : MonoBehaviour 
 {
     public GameObject aviso;
     public GameObject nota;
+    public string escena;
+    public string nombre;
 
     bool recolectado = false;
     bool inCollectRange = false;
@@ -57,6 +59,10 @@ public class Recolectable : MonoBehaviour
 
             }
         }
+    }
+    public bool isCollected()
+    {
+        return recolectado;
     }
     void Start()
     {

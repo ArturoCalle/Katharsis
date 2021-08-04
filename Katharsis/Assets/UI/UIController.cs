@@ -12,6 +12,7 @@ public class UIController : MonoBehaviour
     public bool fadeToBlack, fadeFromBlack;
     public GameObject pauseScreen;
     public GameObject panelOpciones;
+    public GameObject panelNotas;
 
     // Start is called before the first frame update
     void Start()

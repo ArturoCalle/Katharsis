@@ -15,12 +15,13 @@ public class menuPausa : MonoBehaviour
     int seleccion = 0;
     bool locked = false;
     GameObject panelOpciones;
+    GameObject panelNotas;
 
     // Start is called before the first frame update
     void Start()
     {
         panelOpciones = UIController.instance.panelOpciones;
-
+        panelNotas = UIController.instance.panelNotas;
     }
 
     // Update is called once per frame
@@ -103,6 +104,7 @@ public class menuPausa : MonoBehaviour
                 break;
             case 1:
                 Debug.Log("ver notas");
+                panelNotas.SetActive(true);
                 break;
             case 2:
                 Debug.Log("ver opciones");
