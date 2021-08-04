@@ -170,6 +170,17 @@ public class PlayerControls : MonoBehaviour
             Cursor.lockState = CursorLockMode.None;
         }
     }
+    public void freeze(bool congelar)
+    {
+        if(congelar)
+        {
+            Time.timeScale = 0f;
+        }
+        else
+        {
+            Time.timeScale = 1f;
+        }
+    }
 
     
 }
