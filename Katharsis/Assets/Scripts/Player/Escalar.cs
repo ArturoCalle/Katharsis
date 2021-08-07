@@ -17,14 +17,6 @@ public class Escalar : MonoBehaviour
         {
             colision = true;
         }
-        if(col.gameObject.name != "Jugador")
-        {
-           
-        }
-        else
-        {
-            colision = false;
-        }
     }
     private void OnTriggerExit(Collider col)
     {

@@ -12,6 +12,7 @@ public class PlayerControls : MonoBehaviour
     //controladores de inputs
     Vector3 inputs;
     bool escalando = false;
+    bool colision = false;
 
     //velocidades
     float baseSpeed = 10f, rotateSpeed = 0.1f, turnSmooth;
@@ -24,7 +25,6 @@ public class PlayerControls : MonoBehaviour
 
     //Direccion
     Vector3 direction;
-    Vector3 jumpDirection;
 
     //referencia a componente
     CharacterController controller;
@@ -40,6 +40,7 @@ public class PlayerControls : MonoBehaviour
     {
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
+        colision = escalar.GetComponent<Escalar>().isActive();
         checkMouse();
         getInputs();
         Locomotion();
@@ -52,7 +53,7 @@ public class PlayerControls : MonoBehaviour
         isGrounded = groundCheck.GetComponent<GroundCheck>().isGrounded();
         Vector3 movDir = new Vector3();
 
-        if (isGrounded)
+        if (isGrounded || escalando)
         {
             velocity.y = 0;
             if (jumping)
@@ -70,12 +71,9 @@ public class PlayerControls : MonoBehaviour
             transform.rotation = Quaternion.Euler(0f, angle, 0f);
             //x, z movemnt
             movDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
-            if (escalando)
+            if (escalando && inputs.z == 1)
             {
                 movDir = Vector3.up;
-            }else if (jumping)
-            {
-                movDir = jumpDirection;
             }
             controller.Move(movDir.normalized * baseSpeed * Time.deltaTime * Time.timeScale);
         }
@@ -91,12 +89,11 @@ public class PlayerControls : MonoBehaviour
         {
             velocity.y = Mathf.Sqrt(-gravity * jumpHeigth);
             jumping = true;
-            jumpDirection = movDir;
         }
         //apply gravity and jump motion to controller
         controller.Move(velocity * Time.deltaTime * Time.timeScale);
         //change animator parameters in animator controller instance
-        AnimatorController.instance.move(inputs, velocity.y, isGrounded, jumping);
+        AnimatorController.instance.move(inputs, velocity.y, isGrounded, jumping, escalando);
     }
     void getInputs()
     {
@@ -146,10 +143,15 @@ public class PlayerControls : MonoBehaviour
         if (Input.GetKey(controls.climb))
         {
             //recupera el script del gameObject escalar para validar el estado de la colision
-            if (escalar.GetComponent<Escalar>().isActive())
+            if (colision)
             {
                 escalando = true;
                 Debug.Log("toy escalando");
+            }
+            else
+            {
+                escalando = false;
+                Debug.Log("no toy escalando");
             }
         }
         else
