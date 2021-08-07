@@ -33,13 +33,23 @@ public class AnimatorController : MonoBehaviour
     {
         if(inputs != new Vector3(0, 0, 0))
         {
-            animator.SetFloat("walk", 1);
+            animator.SetBool("walk", true);
         }
         else
         {
-            animator.SetFloat("walk", 0);
-            animator.SetFloat("IDLE", idle);
-
+            animator.SetBool("walk", false);
+            if(animator.GetCurrentAnimatorStateInfo(0).IsName("IDLE f"))
+            {
+                if(idle > 6 && idle < 8)
+                {
+                    animator.Play("LookRight f");
+                    idle = 0;
+                }else if(idle > 8 && idle < 10)
+                {
+                    animator.Play("LookLeft f");
+                    idle = 0;
+                }
+            }
         }
         animator.SetFloat("yVelocity", velocityY);
         animator.SetBool("isGrounded", isGrounded);
