@@ -69,6 +69,9 @@ public class AnimatorController : MonoBehaviour
                 if (inputs.z == 1)
                 {
                     animator.speed = 1;
+                }else if(inputs.z == -1)
+                {
+                    animator.speed = -1;
                 }
                 else
                 {

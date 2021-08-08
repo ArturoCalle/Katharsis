@@ -13,9 +13,10 @@ public class PlayerControls : MonoBehaviour
     Vector3 inputs;
     bool escalando = false;
     bool colision = false;
+    bool corner = false;
 
     //velocidades
-    float baseSpeed = 10f, rotateSpeed = 0.1f, turnSmooth;
+    float baseSpeed = 10f, rotateSpeed = 0.1f, turnSmooth, climbSpeed = 5f;
     float gravity = -9.81f, terminalVelocity = -25f;
     Vector3 velocity;
     float deathSpeed;
@@ -41,11 +42,10 @@ public class PlayerControls : MonoBehaviour
     {
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
-        colision = escalar.GetComponent<Escalar>().isActive();
+        checkClimbStatus();
         checkMouse();
         getInputs();
         Locomotion();
-        
     }
 
     void Locomotion()
@@ -69,18 +69,29 @@ public class PlayerControls : MonoBehaviour
 
         if (direction.magnitude > 0.1)
         {
-            //target angle is the angle it will move towards with the keyboard inputs and mouse
-            //angle smooth the rotation of the character
-            float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + cam.eulerAngles.y;
-            float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmooth, rotateSpeed);
-            transform.rotation = Quaternion.Euler(0f, angle, 0f);
-            //x, z movemnt
-            movDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
-            if (escalando && inputs.z == 1)
+            
+            if (escalando)
             {
-                movDir = Vector3.up;
+                if(inputs.z == 1)
+                {
+                    movDir = Vector3.up;
+                }else if (inputs.z == -1)
+                {
+                        movDir = Vector3.down;
+                }
+                controller.Move(movDir.normalized * climbSpeed * Time.deltaTime * Time.timeScale);
             }
-            controller.Move(movDir.normalized * baseSpeed * Time.deltaTime * Time.timeScale);
+            else
+            {
+                //target angle is the angle it will move towards with the keyboard inputs and mouse
+                //angle smooth the rotation of the character
+                float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + cam.eulerAngles.y;
+                float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmooth, rotateSpeed);
+                transform.rotation = Quaternion.Euler(0f, angle, 0f);
+                //x, z movemnt
+                movDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
+                controller.Move(movDir.normalized * baseSpeed * Time.deltaTime * Time.timeScale);
+            }
         }
         
         //fall
@@ -196,5 +207,10 @@ public class PlayerControls : MonoBehaviour
         }
     }
 
+    public void checkClimbStatus()
+    {
+        colision = escalar.GetComponent<Escalar>().isActive();
+        corner = escalar.GetComponent<Escalar>().isCorner();
+    }
     
 }
