@@ -30,7 +30,7 @@ public class AnimatorController : MonoBehaviour
             idle = Random.Range(0f, 10f);
         }
     }
-    public void move(Vector3 inputs, float velocityY, bool isGrounded, bool jump, bool escalando)
+    public void move(Vector3 inputs, float velocityY, bool isGrounded, bool jump, bool escalando, bool corner)
     {
         if (inputs != new Vector3(0, 0, 0))
         {
@@ -63,17 +63,23 @@ public class AnimatorController : MonoBehaviour
 
         if (escalando)
         {
+            if (!corner)
+            {
+                animator.SetBool("corner", true);
+            }
+            else
+            {
+                animator.SetBool("corner", false);
+            }
             animator.SetBool("climb", true);
             if(animator.GetCurrentAnimatorStateInfo(0).IsName("Climb up f"))
             {
-                if (inputs.z == 1)
+                if(inputs.z != 0)
                 {
                     animator.speed = 1;
-                }else if(inputs.z == -1)
-                {
-                    animator.speed = -1;
+                    animator.SetFloat("upOrDown", inputs.z);
                 }
-                else
+                if (inputs.z == 0)
                 {
                     animator.speed = 0;
                 }
@@ -85,6 +91,7 @@ public class AnimatorController : MonoBehaviour
             animator.SetBool("climb", false);
             animator.speed = 1;
         }
+
         
         
         
