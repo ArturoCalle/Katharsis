@@ -18,6 +18,7 @@ public class PlayerControls : MonoBehaviour
     float baseSpeed = 10f, rotateSpeed = 0.1f, turnSmooth;
     float gravity = -9.81f, terminalVelocity = -25f;
     Vector3 velocity;
+    float deathSpeed;
 
     //jumpng
     bool jumping, jump; // jump controla el input y jumping controla la accion
@@ -55,6 +56,10 @@ public class PlayerControls : MonoBehaviour
 
         if (isGrounded || escalando)
         {
+            if(velocity.y > deathSpeed)
+            {
+
+            }
             velocity.y = 0;
             if (jumping)
             {
