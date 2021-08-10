@@ -5,6 +5,7 @@ using UnityEngine;
 public class Escalar : MonoBehaviour
 {
     bool colision;
+    bool corner;
 
     private void OnTriggerEnter(Collider col)
     {
@@ -16,14 +17,9 @@ public class Escalar : MonoBehaviour
         if (col.gameObject.tag == "Escalable")
         {
             colision = true;
-        }
-        if(col.gameObject.name != "Jugador")
+        }else if (col.gameObject.tag == "corner")
         {
-           
-        }
-        else
-        {
-            colision = false;
+            corner = true;
         }
     }
     private void OnTriggerExit(Collider col)
@@ -35,6 +31,10 @@ public class Escalar : MonoBehaviour
     {
         return colision;
     }
-    
-   
+    public bool isCorner()
+    {
+        return corner;
+    }
+
+
 }
