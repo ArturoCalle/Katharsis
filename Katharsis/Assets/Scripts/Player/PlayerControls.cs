@@ -9,6 +9,7 @@ public class PlayerControls : MonoBehaviour
     public GameObject groundCheck;
     public Transform cam;
     public bool isGrounded;
+    private Escalar esc;
     //controladores de inputs
     Vector3 inputs;
     bool escalando = false;
@@ -19,7 +20,6 @@ public class PlayerControls : MonoBehaviour
     float baseSpeed = 10f, rotateSpeed = 0.1f, turnSmooth, climbSpeed = 5f;
     float gravity = -9.81f, terminalVelocity = -25f;
     Vector3 velocity;
-    float deathSpeed;
 
     //jumpng
     bool jumping, jump; // jump controla el input y jumping controla la accion
@@ -36,6 +36,7 @@ public class PlayerControls : MonoBehaviour
     {
         controller = GetComponent<CharacterController>();
         instance = this;
+        esc = escalar.GetComponent<Escalar>();
     }
 
     void Update()
@@ -56,10 +57,6 @@ public class PlayerControls : MonoBehaviour
 
         if (isGrounded || escalando)
         {
-            if(velocity.y > deathSpeed)
-            {
-
-            }
             velocity.y = 0;
             if (jumping)
             {
@@ -109,7 +106,7 @@ public class PlayerControls : MonoBehaviour
         //apply gravity and jump motion to controller
         controller.Move(velocity * Time.deltaTime * Time.timeScale);
         //change animator parameters in animator controller instance
-        AnimatorController.instance.move(inputs, velocity.y, isGrounded, jumping, escalando);
+        AnimatorController.instance.move(inputs, velocity.y, isGrounded, jumping, escalando, corner);
     }
     void getInputs()
     {
@@ -209,8 +206,8 @@ public class PlayerControls : MonoBehaviour
 
     public void checkClimbStatus()
     {
-        colision = escalar.GetComponent<Escalar>().isActive();
-        corner = escalar.GetComponent<Escalar>().isCorner();
+        colision = esc.isActive(); 
+        corner = esc.isCorner();
     }
     
 }
