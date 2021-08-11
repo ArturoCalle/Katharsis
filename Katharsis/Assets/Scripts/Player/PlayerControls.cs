@@ -9,7 +9,10 @@ public class PlayerControls : MonoBehaviour
     public GameObject groundCheck;
     public Transform cam;
     public bool isGrounded;
+    //escalar
     private Escalar esc;
+    private Transform target;
+
     //controladores de inputs
     Vector3 inputs;
     bool escalando = false;
@@ -69,7 +72,7 @@ public class PlayerControls : MonoBehaviour
             
             if (escalando)
             {
-                if(inputs.z == 1)
+                if (inputs.z == 1)
                 {
                     movDir = Vector3.up;
                 }else if (inputs.z == -1)
@@ -159,17 +162,21 @@ public class PlayerControls : MonoBehaviour
             if (colision)
             {
                 escalando = true;
-                Debug.Log("toy escalando");
+                target = esc.getTarget();
+                Vector3 direction = target.position - transform.position;
+                Quaternion temp = Quaternion.LookRotation(direction);
+                Quaternion rotation = Quaternion.Euler(0, temp.eulerAngles.y, 0);
+                transform.rotation = rotation;
             }
             else
             {
                 escalando = false;
-                Debug.Log("no toy escalando");
             }
         }
         else
         {
             escalando = false;
+            corner = false;
         }
         
     }
