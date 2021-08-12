@@ -15,7 +15,7 @@ public class PlayerControls : MonoBehaviour
     //escalar
     bool escalando = false;
     bool colision = false;
-    bool corner = false;
+    public bool corner = false;
     private Escalar esc;
     //velocidades
     float baseSpeed = 10f, rotateSpeed = 0.1f, turnSmooth, climbSpeed = 5f;
@@ -62,15 +62,15 @@ public class PlayerControls : MonoBehaviour
 
         if (direction.magnitude > 0.1)
         {
-            
             if (escalando)
             {
                 if (inputs.z == 1)
                 {
                     movDir = Vector3.up;
-                }else if (inputs.z == -1)
+                }
+                else if (inputs.z == -1)
                 {
-                        movDir = Vector3.down;
+                    movDir = Vector3.down;
                 }
                 controller.Move(movDir.normalized * climbSpeed * Time.deltaTime * Time.timeScale);
             }
@@ -158,10 +158,7 @@ public class PlayerControls : MonoBehaviour
             if (colision)
             {
                 escalando = true;
-                Vector3 direction = esc.getTarget().position - transform.position;
-                Quaternion temp = Quaternion.LookRotation(direction);
-                Quaternion rotation = Quaternion.Euler(0, temp.eulerAngles.y, 0);
-                transform.rotation = rotation;
+                RotateTowardsXZ(esc.getTarget());
             }
             else
             {
@@ -209,5 +206,14 @@ public class PlayerControls : MonoBehaviour
         colision = esc.isActive(); 
         corner = esc.isCorner();
     }
-    
+
+    private void RotateTowardsXZ(Transform target)
+    {
+        Vector3 direction = target.position - transform.position;
+        Quaternion temp = Quaternion.LookRotation(direction);
+        Quaternion rotation = Quaternion.Euler(0, temp.eulerAngles.y, 0);
+        transform.rotation = rotation;
+    }
+
+
 }
