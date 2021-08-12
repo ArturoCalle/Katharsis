@@ -9,28 +9,21 @@ public class PlayerControls : MonoBehaviour
     public GameObject groundCheck;
     public Transform cam;
     public bool isGrounded;
-    //escalar
-    private Escalar esc;
-    private Transform target;
-
     //controladores de inputs
     Vector3 inputs;
+    Vector3 direction;
+    //escalar
     bool escalando = false;
     bool colision = false;
     bool corner = false;
-
+    private Escalar esc;
     //velocidades
     float baseSpeed = 10f, rotateSpeed = 0.1f, turnSmooth, climbSpeed = 5f;
     float gravity = -9.81f, terminalVelocity = -25f;
     Vector3 velocity;
-
     //jumpng
     bool jumping, jump; // jump controla el input y jumping controla la accion
     float jumpHeigth = 5f;
-
-    //Direccion
-    Vector3 direction;
-
     //referencia a componente
     CharacterController controller;
     public static PlayerControls instance;
@@ -93,7 +86,6 @@ public class PlayerControls : MonoBehaviour
                 controller.Move(movDir.normalized * baseSpeed * Time.deltaTime * Time.timeScale);
             }
         }
-        
         //fall
         if (!controller.isGrounded && velocity.y > terminalVelocity && !escalando)
         {
@@ -130,27 +122,32 @@ public class PlayerControls : MonoBehaviour
             else
                 inputs.z = -1;
         }
-
         if (!Input.GetKey(controls.forwards) && !Input.GetKey(controls.backwards))
+        {
             inputs.z = 0;
-
+        }
         //Controles rotacion derecha, izquierda, cancelar movimiento y sin movimiento en x
         if (Input.GetKey(controls.right))
+        {
             inputs.x = 1;
+        }
 
         if (Input.GetKey(controls.left))
         {
             if (Input.GetKey(controls.right))
+            {
                 inputs.x = 0;
+            }
             else
+            {
                 inputs.x = -1;
+            }
         }
 
         if (!Input.GetKey(controls.right) && !Input.GetKey(controls.left))
+        {
             inputs.x = 0;
-
-        //verifica el estado de los colisionadores de escaladao adelante y atras que en combinacion con la tecla click izquierdo permiten activar el escalado de objetos
-        
+        }
         //Jumping
         jump = Input.GetKey(controls.jump);
     }
@@ -158,12 +155,10 @@ public class PlayerControls : MonoBehaviour
     {
         if (Input.GetKey(controls.climb))
         {
-            //recupera el script del gameObject escalar para validar el estado de la colision
             if (colision)
             {
                 escalando = true;
-                target = esc.getTarget();
-                Vector3 direction = target.position - transform.position;
+                Vector3 direction = esc.getTarget().position - transform.position;
                 Quaternion temp = Quaternion.LookRotation(direction);
                 Quaternion rotation = Quaternion.Euler(0, temp.eulerAngles.y, 0);
                 transform.rotation = rotation;
@@ -186,7 +181,6 @@ public class PlayerControls : MonoBehaviour
         {
             UIController.instance.desactivarPaneles();
             Time.timeScale = 1f;
-
             Cursor.visible = false;
             Cursor.lockState = CursorLockMode.Locked;
         }
@@ -194,7 +188,6 @@ public class PlayerControls : MonoBehaviour
         {
             UIController.instance.pausar();
             Time.timeScale = 0f;
-
             Cursor.visible = true;
             Cursor.lockState = CursorLockMode.None;
         }
