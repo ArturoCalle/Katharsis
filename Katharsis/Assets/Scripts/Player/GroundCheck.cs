@@ -13,10 +13,12 @@ public class GroundCheck : MonoBehaviour
     //si  la colision de un objeto es una esquina se puede escalar
     private void OnTriggerStay(Collider col)
     {
-        if (col.gameObject.name != "trompi" && col.gameObject.name != "Jugador")
+        if (col.gameObject.name != "trompi" && col.tag != "Checkpoint" && col.gameObject.name != "Jugador")
         {
+
             grounded = true;
         }
+        
     }
     private void OnTriggerExit(Collider col)
     {

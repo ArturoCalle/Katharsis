@@ -56,9 +56,10 @@ public class PlayerControls : MonoBehaviour
 
         if (isGrounded || escalando)
         {
+            
             if(velocity.y > deathSpeed)
             {
-
+                //Debug.Log(velocity.y);
             }
             velocity.y = 0;
             if (jumping)
