@@ -7,10 +7,6 @@ public class Escalar : MonoBehaviour
     bool colision;
     public Corner corn;
     Transform target;
-    private void OnTriggerEnter(Collider col)
-    {
-       
-    }
     //si  la colision de un objeto es una esquina se puede escalar
     private void OnTriggerStay(Collider col)
     {
@@ -33,7 +29,6 @@ public class Escalar : MonoBehaviour
     {
         return corn.corner;
     }
-
     public Transform getTarget()
     {
         return target;
