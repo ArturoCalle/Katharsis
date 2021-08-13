@@ -9,28 +9,36 @@ public class PlayerControls : MonoBehaviour
     public GameObject groundCheck;
     public Transform cam;
     public bool isGrounded;
+
     //controladores de inputs
-    Vector3 inputs;
-    Vector3 direction;
+    private Vector3 inputs;
+    private Vector3 direction;
+    private Vector3 movDir;
+
     //escalar
-    bool escalando = false;
-    bool colision = false;
-    public bool corner = false;
+    private bool escalando = false;
+    private bool colision = false;
+    private bool corner = false;
     private Escalar esc;
-    bool DoingCorner = false;
+    private bool DoingCorner = false;
+
     //velocidades
-    float baseSpeed = 10f, rotateSpeed = 0.1f, turnSmooth, climbSpeed = 5f;
-    float gravity = -9.81f, terminalVelocity = -25f;
-    Vector3 velocity;
+    private float baseSpeed = 10f, rotateSpeed = 0.1f, turnSmooth, climbSpeed = 5f;
+    private float gravity = -9.81f, terminalVelocity = -25f;
+    private Vector3 velocity;
+
     //jumpng
-    bool jumping, jump; // jump controla el input y jumping controla la accion
-    float jumpHeigth = 5f;
+    private bool jumping, jump; // jump controla el input y jumping controla la accion
+    private float jumpHeigth = 5f;
+
     //referencia a componente
-    CharacterController controller;
+    private CharacterController controller;
     public static PlayerControls instance;
     
     void Start()
     {
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
         controller = GetComponent<CharacterController>();
         instance = this;
         esc = escalar.GetComponent<Escalar>();
@@ -38,21 +46,23 @@ public class PlayerControls : MonoBehaviour
 
     void Update()
     {
-        Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Locked;
         checkClimbStatus();
         checkMouse();
         getInputs();
-        Locomotion();
-        //change animator parameters in animator controller instance
         AnimatorController.instance.move(inputs, velocity.y, isGrounded, jumping, escalando, DoingCorner);
+    }
+
+    private void FixedUpdate()
+    {
+        Locomotion();
     }
 
     void Locomotion()
     {
+
         direction = inputs.normalized;
         isGrounded = groundCheck.GetComponent<GroundCheck>().isGrounded();
-        Vector3 movDir = new Vector3();
+        movDir = new Vector3();
 
         if (isGrounded || escalando)
         {
@@ -75,6 +85,7 @@ public class PlayerControls : MonoBehaviour
                 DoingCorner = false;
             }
         }
+
         if (direction.magnitude > 0.1)
         {
             if (escalando || DoingCorner)
@@ -102,16 +113,10 @@ public class PlayerControls : MonoBehaviour
              }
             else
             {
-                //target angle is the angle it will move towards with the keyboard inputs and mouse
-                //angle smooth the rotation of the character
-                float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + cam.eulerAngles.y;
-                float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmooth, rotateSpeed);
-                transform.rotation = Quaternion.Euler(0f, angle, 0f);
-                //x, z movemnt
-                movDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
-                controller.Move(movDir.normalized * baseSpeed * Time.deltaTime * Time.timeScale);
+                MoveHorizontal();
             }
         }
+
         //fall
         if (!controller.isGrounded && velocity.y > terminalVelocity && !escalando)
         {
@@ -124,10 +129,21 @@ public class PlayerControls : MonoBehaviour
             velocity.y = Mathf.Sqrt(-gravity * jumpHeigth);
             jumping = true;
         }
-        //apply gravity and jump motion to controller
+        //apply Vertical Velocity
         controller.Move(velocity * Time.deltaTime * Time.timeScale);
         
     }
+
+    private void MoveHorizontal()
+    {
+        float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + cam.eulerAngles.y;
+        float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmooth, rotateSpeed);
+        transform.rotation = Quaternion.Euler(0f, angle, 0f);
+
+        movDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
+        controller.Move(movDir.normalized * baseSpeed * Time.deltaTime * Time.timeScale);
+    }
+
     void getInputs()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
