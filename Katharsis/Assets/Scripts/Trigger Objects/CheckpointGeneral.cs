@@ -10,6 +10,7 @@ public class CheckpointGeneral : MonoBehaviour
         foreach (CheckpointSingle checkpointSingle in checkpoints)
         {            
             Debug.Log(checkpointSingle);
+
             checkpointSingle.SetCheckpointsMapa(this);
         }
     }

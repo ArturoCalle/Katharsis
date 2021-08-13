@@ -31,6 +31,10 @@ public class UIController : MonoBehaviour
         {
             getInputs();
         }
+        if(instance.panelMuerte.activeInHierarchy)
+        {
+            getInputs();
+        }
         /*
         if (fadeToBlack)
         {
@@ -57,6 +61,7 @@ public class UIController : MonoBehaviour
     {
         menuPausa mp = pauseScreen.GetComponent<menuPausa>();
         PanelOpciones po = panelOpciones.GetComponent<PanelOpciones>();
+         
 
         if (Input.GetKeyDown(KeyCode.W))
         {
@@ -118,6 +123,7 @@ public class UIController : MonoBehaviour
         panelOpciones.SetActive(false);
         pauseScreen.GetComponent<menuPausa>().setLock(false);
         pauseScreen.SetActive(false);
+        panelMuerte.SetActive(false);
     }
 
     public void pausar()
@@ -130,8 +136,13 @@ public class UIController : MonoBehaviour
         Debug.Log("GameOver");
         PlayerControls.instance.freeze(true);
         panelMuerte.SetActive(true);
+        if (Input.GetKeyDown(KeyCode.Z))
+        {
+            Debug.Log("OPRIMÍ Z");
+            desactivarPaneles();
+        }
 
-        
+
     }
     
     
