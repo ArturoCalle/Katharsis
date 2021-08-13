@@ -196,6 +196,6 @@ public class PlayerControls : MonoBehaviour
             Time.timeScale = 1f;
         }
     }
-
+    
     
 }

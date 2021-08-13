@@ -13,6 +13,7 @@ public class UIController : MonoBehaviour
     public GameObject pauseScreen;
     public GameObject panelOpciones;
     public GameObject panelNotas;
+    public GameObject panelMuerte;
 
     // Start is called before the first frame update
     void Start()
@@ -123,6 +124,14 @@ public class UIController : MonoBehaviour
     {
         panelOpciones.GetComponent<PanelOpciones>().reiniciarBotones();
         pauseScreen.SetActive(true);
+    }
+    public void EndGame()
+    {
+        Debug.Log("GameOver");
+        PlayerControls.instance.freeze(true);
+        panelMuerte.SetActive(true);
+
+        
     }
     
     
