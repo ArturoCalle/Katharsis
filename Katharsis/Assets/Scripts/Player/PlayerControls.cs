@@ -9,25 +9,22 @@ public class PlayerControls : MonoBehaviour
     public GameObject groundCheck;
     public Transform cam;
     public bool isGrounded;
-    private Escalar esc;
     //controladores de inputs
     Vector3 inputs;
+    Vector3 direction;
+    //escalar
     bool escalando = false;
     bool colision = false;
-    bool corner = false;
-
+    public bool corner = false;
+    private Escalar esc;
+    bool DoingCorner = false;
     //velocidades
     float baseSpeed = 10f, rotateSpeed = 0.1f, turnSmooth, climbSpeed = 5f;
     float gravity = -9.81f, terminalVelocity = -25f;
     Vector3 velocity;
-
     //jumpng
     bool jumping, jump; // jump controla el input y jumping controla la accion
     float jumpHeigth = 5f;
-
-    //Direccion
-    Vector3 direction;
-
     //referencia a componente
     CharacterController controller;
     public static PlayerControls instance;
@@ -47,6 +44,8 @@ public class PlayerControls : MonoBehaviour
         checkMouse();
         getInputs();
         Locomotion();
+        //change animator parameters in animator controller instance
+        AnimatorController.instance.move(inputs, velocity.y, isGrounded, jumping, escalando, DoingCorner);
     }
 
     void Locomotion()
@@ -63,21 +62,44 @@ public class PlayerControls : MonoBehaviour
                 jumping = false;
             }
         }
-
+        if (DoingCorner)
+        {
+            direction = Vector3.zero;
+            Vector3 pos = this.gameObject.transform.GetChild(2).transform.GetChild(3).position - transform.position;
+            if (!isGrounded)
+            {
+                controller.Move(pos * Time.deltaTime * Time.timeScale);
+            }
+            else
+            {
+                DoingCorner = false;
+            }
+        }
         if (direction.magnitude > 0.1)
         {
-            
-            if (escalando)
+            if (escalando || DoingCorner)
             {
-                if(inputs.z == 1)
+                if (corner)
                 {
-                    movDir = Vector3.up;
-                }else if (inputs.z == -1)
-                {
+                    if (inputs.z == 1)
+                    {
+                        movDir = Vector3.up;
+                    }
+                    else if (inputs.z == -1)
+                    {
                         movDir = Vector3.down;
+                    }
+                    controller.Move(movDir.normalized * climbSpeed * Time.deltaTime * Time.timeScale);
+
                 }
-                controller.Move(movDir.normalized * climbSpeed * Time.deltaTime * Time.timeScale);
-            }
+                else
+                {
+                    if (!DoingCorner)
+                    {
+                        DoingCorner = true;
+                    }
+                }
+             }
             else
             {
                 //target angle is the angle it will move towards with the keyboard inputs and mouse
@@ -90,7 +112,6 @@ public class PlayerControls : MonoBehaviour
                 controller.Move(movDir.normalized * baseSpeed * Time.deltaTime * Time.timeScale);
             }
         }
-        
         //fall
         if (!controller.isGrounded && velocity.y > terminalVelocity && !escalando)
         {
@@ -98,15 +119,14 @@ public class PlayerControls : MonoBehaviour
         }
 
         //Jump
-        if (jump && isGrounded)
+        if (jump && isGrounded && !escalando)
         {
             velocity.y = Mathf.Sqrt(-gravity * jumpHeigth);
             jumping = true;
         }
         //apply gravity and jump motion to controller
         controller.Move(velocity * Time.deltaTime * Time.timeScale);
-        //change animator parameters in animator controller instance
-        AnimatorController.instance.move(inputs, velocity.y, isGrounded, jumping, escalando, corner);
+        
     }
     void getInputs()
     {
@@ -127,27 +147,32 @@ public class PlayerControls : MonoBehaviour
             else
                 inputs.z = -1;
         }
-
         if (!Input.GetKey(controls.forwards) && !Input.GetKey(controls.backwards))
+        {
             inputs.z = 0;
-
+        }
         //Controles rotacion derecha, izquierda, cancelar movimiento y sin movimiento en x
         if (Input.GetKey(controls.right))
+        {
             inputs.x = 1;
+        }
 
         if (Input.GetKey(controls.left))
         {
             if (Input.GetKey(controls.right))
+            {
                 inputs.x = 0;
+            }
             else
+            {
                 inputs.x = -1;
+            }
         }
 
         if (!Input.GetKey(controls.right) && !Input.GetKey(controls.left))
+        {
             inputs.x = 0;
-
-        //verifica el estado de los colisionadores de escaladao adelante y atras que en combinacion con la tecla click izquierdo permiten activar el escalado de objetos
-        
+        }
         //Jumping
         jump = Input.GetKey(controls.jump);
     }
@@ -155,21 +180,20 @@ public class PlayerControls : MonoBehaviour
     {
         if (Input.GetKey(controls.climb))
         {
-            //recupera el script del gameObject escalar para validar el estado de la colision
             if (colision)
             {
                 escalando = true;
-                Debug.Log("toy escalando");
+                RotateTowardsXZ(esc.getTarget());
             }
             else
             {
                 escalando = false;
-                Debug.Log("no toy escalando");
             }
         }
         else
         {
             escalando = false;
+            corner = false;
         }
         
     }
@@ -179,7 +203,6 @@ public class PlayerControls : MonoBehaviour
         {
             UIController.instance.desactivarPaneles();
             Time.timeScale = 1f;
-
             Cursor.visible = false;
             Cursor.lockState = CursorLockMode.Locked;
         }
@@ -187,7 +210,6 @@ public class PlayerControls : MonoBehaviour
         {
             UIController.instance.pausar();
             Time.timeScale = 0f;
-
             Cursor.visible = true;
             Cursor.lockState = CursorLockMode.None;
         }
@@ -206,8 +228,17 @@ public class PlayerControls : MonoBehaviour
 
     public void checkClimbStatus()
     {
-        colision = esc.isActive(); 
+        colision = esc.isActive();
         corner = esc.isCorner();
     }
-    
+
+    private void RotateTowardsXZ(Transform target)
+    {
+        Vector3 direction = target.position - transform.position;
+        Quaternion temp = Quaternion.LookRotation(direction);
+        Quaternion rotation = Quaternion.Euler(0, temp.eulerAngles.y, 0);
+        transform.rotation = rotation;
+    }
+
+
 }

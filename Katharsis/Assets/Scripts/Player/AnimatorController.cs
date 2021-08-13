@@ -63,8 +63,9 @@ public class AnimatorController : MonoBehaviour
 
         if (escalando)
         {
-            if (!corner)
+            if (corner)
             {
+                animator.speed = 1;
                 animator.SetBool("corner", true);
             }
             else
