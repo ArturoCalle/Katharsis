@@ -43,7 +43,6 @@ public class PlayerControls : MonoBehaviour
         instance = this;
         esc = escalar.GetComponent<Escalar>();
     }
-
     void Update()
     {
         checkClimbStatus();
@@ -51,89 +50,52 @@ public class PlayerControls : MonoBehaviour
         getInputs();
         AnimatorController.instance.move(inputs, velocity.y, isGrounded, jumping, escalando, DoingCorner);
     }
-
     private void FixedUpdate()
     {
         Locomotion();
     }
-
     void Locomotion()
     {
-
         direction = inputs.normalized;
         isGrounded = groundCheck.GetComponent<GroundCheck>().isGrounded();
         movDir = new Vector3();
-
+        //Tocar piso o escalar
         if (isGrounded || escalando)
         {
-            velocity.y = 0;
-            if (jumping)
-            {
-                jumping = false;
-            }
+            StopYvelocity();
         }
+        //Hace el movimiento de corner
         if (DoingCorner)
         {
             direction = Vector3.zero;
-            Vector3 pos = this.gameObject.transform.GetChild(2).transform.GetChild(3).position - transform.position;
-            if (!isGrounded)
-            {
-                controller.Move(pos * Time.deltaTime * Time.timeScale);
-            }
-            else
-            {
-                DoingCorner = false;
-            }
+            DoCorner();
         }
-
+        //Movimiento con inputs
         if (direction.magnitude > 0.1)
         {
             if (escalando || DoingCorner)
             {
-                if (corner)
-                {
-                    if (inputs.z == 1)
-                    {
-                        movDir = Vector3.up;
-                    }
-                    else if (inputs.z == -1)
-                    {
-                        movDir = Vector3.down;
-                    }
-                    controller.Move(movDir.normalized * climbSpeed * Time.deltaTime * Time.timeScale);
-
-                }
-                else
-                {
-                    if (!DoingCorner)
-                    {
-                        DoingCorner = true;
-                    }
-                }
-             }
+                Climb();
+            }
             else
             {
                 MoveHorizontal();
             }
         }
-
-        //fall
+        //Fall
         if (!controller.isGrounded && velocity.y > terminalVelocity && !escalando)
         {
             velocity.y += gravity * Time.deltaTime;
         }
-
         //Jump
         if (jump && isGrounded && !escalando)
         {
             velocity.y = Mathf.Sqrt(-gravity * jumpHeigth);
             jumping = true;
         }
-        //apply Vertical Velocity
+        //Apply Vertical Velocity
         controller.Move(velocity * Time.deltaTime * Time.timeScale);
-        
     }
-
     private void MoveHorizontal()
     {
         float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + cam.eulerAngles.y;
@@ -143,8 +105,51 @@ public class PlayerControls : MonoBehaviour
         movDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
         controller.Move(movDir.normalized * baseSpeed * Time.deltaTime * Time.timeScale);
     }
+    private void Climb()
+    {
+        if (corner)
+        {
+            if (inputs.z == 1)
+            {
+                movDir = Vector3.up;
+            }
+            else if (inputs.z == -1)
+            {
+                movDir = Vector3.down;
+            }
+            controller.Move(movDir.normalized * climbSpeed * Time.deltaTime * Time.timeScale);
 
-    void getInputs()
+        }
+        else
+        {
+            if (!DoingCorner)
+            {
+                DoingCorner = true;
+            }
+        }
+    }
+    private void DoCorner()
+    {
+        direction = Vector3.zero;
+        Vector3 pos = this.gameObject.transform.GetChild(2).transform.GetChild(3).position - transform.position;
+        if (!isGrounded)
+        {
+            controller.Move(pos * Time.deltaTime * Time.timeScale);
+        }
+        else
+        {
+            DoingCorner = false;
+        }
+    }
+    private void StopYvelocity()
+    {
+        velocity.y = 0;
+        if (jumping)
+        {
+            jumping = false;
+        }
+    }
+    private void getInputs()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
@@ -192,7 +197,7 @@ public class PlayerControls : MonoBehaviour
         //Jumping
         jump = Input.GetKey(controls.jump);
     }
-    void checkMouse()
+    private void checkMouse()
     {
         if (Input.GetKey(controls.climb))
         {
@@ -241,13 +246,11 @@ public class PlayerControls : MonoBehaviour
             Time.timeScale = 1f;
         }
     }
-
     public void checkClimbStatus()
     {
         colision = esc.isActive();
         corner = esc.isCorner();
     }
-
     private void RotateTowardsXZ(Transform target)
     {
         Vector3 direction = target.position - transform.position;
@@ -255,6 +258,9 @@ public class PlayerControls : MonoBehaviour
         Quaternion rotation = Quaternion.Euler(0, temp.eulerAngles.y, 0);
         transform.rotation = rotation;
     }
-
-
+    private void SpawnAt(Transform target)
+    {
+        Vector3 pos = target.position - transform.position;
+        controller.transform.position = pos;
+    }
 }
