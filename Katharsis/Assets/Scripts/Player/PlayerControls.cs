@@ -214,7 +214,10 @@ public class PlayerControls : MonoBehaviour
         else
         {
             escalando = false;
-            corner = false;
+            if (DoingCorner)
+            {
+                DoingCorner = false;
+            }
         }
         
     }
