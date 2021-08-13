@@ -13,6 +13,7 @@ public class UIController : MonoBehaviour
     public GameObject pauseScreen;
     public GameObject panelOpciones;
     public GameObject panelNotas;
+    public GameObject panelMuerte;
 
     // Start is called before the first frame update
     void Start()
@@ -27,6 +28,10 @@ public class UIController : MonoBehaviour
     void Update()
     {
         if (instance.pauseScreen.activeInHierarchy)
+        {
+            getInputs();
+        }
+        if(instance.panelMuerte.activeInHierarchy)
         {
             getInputs();
         }
@@ -56,6 +61,7 @@ public class UIController : MonoBehaviour
     {
         menuPausa mp = pauseScreen.GetComponent<menuPausa>();
         PanelOpciones po = panelOpciones.GetComponent<PanelOpciones>();
+         
 
         if (Input.GetKeyDown(KeyCode.W))
         {
@@ -117,12 +123,26 @@ public class UIController : MonoBehaviour
         panelOpciones.SetActive(false);
         pauseScreen.GetComponent<menuPausa>().setLock(false);
         pauseScreen.SetActive(false);
+        panelMuerte.SetActive(false);
     }
 
     public void pausar()
     {
         panelOpciones.GetComponent<PanelOpciones>().reiniciarBotones();
         pauseScreen.SetActive(true);
+    }
+    public void EndGame()
+    {
+        Debug.Log("GameOver");
+        PlayerControls.instance.freeze(true);
+        panelMuerte.SetActive(true);
+        if (Input.GetKeyDown(KeyCode.Z))
+        {
+            Debug.Log("OPRIMÍ Z");
+            desactivarPaneles();
+        }
+
+
     }
     
     
