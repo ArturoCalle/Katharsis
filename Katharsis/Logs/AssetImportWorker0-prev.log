@@ -15,11 +15,11 @@ G:/tuto/universidad/Tesis/Katharsis/Katharsis/Katharsis
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-61080
+56586
 Successfully changed project path to: G:/tuto/universidad/Tesis/Katharsis/Katharsis/Katharsis
 G:/tuto/universidad/Tesis/Katharsis/Katharsis/Katharsis
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 112.97 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 97.72 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2020.3.11f1 (99c7afb366b3)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2020.3.11f1/Editor/Data/Resources/UnitySubsystems
@@ -36,260 +36,440 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2020.3.11f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2020.3.11f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2020.3.11f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56760
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56156
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.11f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.003656 seconds.
+Registered in 0.005675 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 116.11 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 108.59 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  2.153 seconds
+- Completed reload, in  2.052 seconds
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.005920 seconds.
+Registered in 0.007576 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 106.86 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 106.87 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  2.422 seconds
+- Completed reload, in  2.190 seconds
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
 Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.08 seconds
-Refreshing native plugins compatible for Editor in 0.96 ms, found 2 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.06 seconds
+Refreshing native plugins compatible for Editor in 0.89 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3098 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 3101 Unused Serialized files (Serialized files now loaded: 0)
 System memory in use before: 138.2 MB.
 System memory in use after: 138.4 MB.
 
-Unloading 20 unused Assets to reduce memory usage. Loaded Objects now: 3535.
-Total: 3.982400 ms (FindLiveObjects: 0.637300 ms CreateObjectMapping: 0.437300 ms MarkObjects: 2.800600 ms  DeleteObjects: 0.105700 ms)
+Unloading 20 unused Assets to reduce memory usage. Loaded Objects now: 3538.
+Total: 3.935000 ms (FindLiveObjects: 0.661200 ms CreateObjectMapping: 0.194800 ms MarkObjects: 2.975300 ms  DeleteObjects: 0.102700 ms)
 
 ========================================================================
 Received Import Request.
-  path: Assets/Scenes/Cocina.unity
-  artifactKey: Guid(9fc0d4010bbf28b4594072e72b8655ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/Cocina.unity using Guid(9fc0d4010bbf28b4594072e72b8655ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '99cc0bb2d778e912c768dadf9df9fe4c') in 0.029658 seconds
-  Import took 0.077882 seconds .
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.005694 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.90 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.986 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 0.92 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3004 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 129.5 MB.
-System memory in use after: 129.7 MB.
-
-Unloading 15 unused Assets to reduce memory usage. Loaded Objects now: 3538.
-Total: 3.965300 ms (FindLiveObjects: 0.638800 ms CreateObjectMapping: 0.169500 ms MarkObjects: 3.118100 ms  DeleteObjects: 0.037300 ms)
+  path: Assets/Modelos/Sala/Prop_Living_Room_Coffee_Table.obj
+  artifactKey: Guid(39afc379c08181e4cb7ec39e182e6a77) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modelos/Sala/Prop_Living_Room_Coffee_Table.obj using Guid(39afc379c08181e4cb7ec39e182e6a77) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ea9985fdbf818ee36ebc1e1e263d1589') in 0.270966 seconds
+  Import took 0.377335 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 119.905154 seconds.
-  path: Assets/Scripts/Corner.cs
-  artifactKey: Guid(fc5cd8845e8d6fd4199c511dc9d4ab48) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/Corner.cs using Guid(fc5cd8845e8d6fd4199c511dc9d4ab48) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd6de9fc4cb91a483c218dcc5ef323fd4') in 0.075423 seconds
-  Import took 0.132126 seconds .
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.005839 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.95 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  2.001 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 1.09 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3004 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 129.6 MB.
-System memory in use after: 129.8 MB.
-
-Unloading 15 unused Assets to reduce memory usage. Loaded Objects now: 3541.
-Total: 10.562400 ms (FindLiveObjects: 0.972800 ms CreateObjectMapping: 0.369300 ms MarkObjects: 9.145700 ms  DeleteObjects: 0.071800 ms)
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.007910 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.91 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.947 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 0.98 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3004 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 129.6 MB.
-System memory in use after: 129.8 MB.
-
-Unloading 15 unused Assets to reduce memory usage. Loaded Objects now: 3544.
-Total: 3.684600 ms (FindLiveObjects: 0.589700 ms CreateObjectMapping: 0.173600 ms MarkObjects: 2.888900 ms  DeleteObjects: 0.031000 ms)
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.006557 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.90 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  2.027 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 0.99 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3004 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 129.6 MB.
-System memory in use after: 129.8 MB.
-
-Unloading 15 unused Assets to reduce memory usage. Loaded Objects now: 3547.
-Total: 5.423000 ms (FindLiveObjects: 0.671700 ms CreateObjectMapping: 0.170500 ms MarkObjects: 4.534000 ms  DeleteObjects: 0.044800 ms)
+  Time since last request: 0.000652 seconds.
+  path: Assets/Modelos/Sala/Prop_Living_Room_TV.obj
+  artifactKey: Guid(c78ebbc75ff8bdd42a8b4ecbe3fe69b1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modelos/Sala/Prop_Living_Room_TV.obj using Guid(c78ebbc75ff8bdd42a8b4ecbe3fe69b1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e192fd3ac79e94788c9d08dbe4e81572') in 0.042355 seconds
+  Import took 0.139137 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 37.982319 seconds.
-  path: Assets/Scripts/pause.cs
-  artifactKey: Guid(d3ab41edbc2443147a93d9389708dae9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/pause.cs using Guid(d3ab41edbc2443147a93d9389708dae9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ebe6521e3b0d5f8ea1a721e467b18ed6') in 0.018582 seconds
-  Import took 0.059493 seconds .
+  Time since last request: 0.000367 seconds.
+  path: Assets/Modelos/Sala/Prop_Living_Room_Modular_Couch_Center.obj
+  artifactKey: Guid(a6b341079788b6a4a9268ffd37fc6370) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modelos/Sala/Prop_Living_Room_Modular_Couch_Center.obj using Guid(a6b341079788b6a4a9268ffd37fc6370) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '280c112bb7343355ebfd69bb7663e3a0') in 0.067965 seconds
+  Import took 0.122639 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.004468 seconds.
-  path: Assets/Scripts/pause.cs
-  artifactKey: Guid(d3ab41edbc2443147a93d9389708dae9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/pause.cs using Guid(d3ab41edbc2443147a93d9389708dae9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ebe6521e3b0d5f8ea1a721e467b18ed6') in 0.002942 seconds
-  Import took 0.009597 seconds .
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.007979 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.13 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  2.145 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 0.90 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3003 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 129.6 MB.
-System memory in use after: 129.8 MB.
-
-Unloading 16 unused Assets to reduce memory usage. Loaded Objects now: 3549.
-Total: 3.785200 ms (FindLiveObjects: 0.597400 ms CreateObjectMapping: 0.173500 ms MarkObjects: 2.984200 ms  DeleteObjects: 0.028200 ms)
+  Time since last request: 0.000329 seconds.
+  path: Assets/Modelos/Sala/Prop_Living_Room_Modular_Couch_End.obj
+  artifactKey: Guid(dc54213f185562d41a8c95dde60b229f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modelos/Sala/Prop_Living_Room_Modular_Couch_End.obj using Guid(dc54213f185562d41a8c95dde60b229f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2108c2b36bdd0c6f52dd397175a6323a') in 0.159560 seconds
+  Import took 0.224751 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 60.264197 seconds.
+  Time since last request: 0.000353 seconds.
+  path: Assets/Modelos/Sala/Prop_Misc_Lamp.obj
+  artifactKey: Guid(e23601eca8a169c4d8d883ec726b665c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modelos/Sala/Prop_Misc_Lamp.obj using Guid(e23601eca8a169c4d8d883ec726b665c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '32843a05ac6291cf7742d2f3fd6da2fd') in 0.131078 seconds
+  Import took 0.188104 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000311 seconds.
+  path: Assets/Modelos/Sala/Prop_Living_Room_Side_Table.obj
+  artifactKey: Guid(a83139c00133e8f4d9eae50a8343e1c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modelos/Sala/Prop_Living_Room_Side_Table.obj using Guid(a83139c00133e8f4d9eae50a8343e1c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '59eeff2ce96f5442f3b5e69abcf7ba11') in 0.092385 seconds
+  Import took 0.167305 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000353 seconds.
+  path: Assets/Modelos/Sala/Prop_Living_Room_Modular_Couch_Leg_Rest.obj
+  artifactKey: Guid(8b2dbdb4b645c9b419207f7f591a1e0c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modelos/Sala/Prop_Living_Room_Modular_Couch_Leg_Rest.obj using Guid(8b2dbdb4b645c9b419207f7f591a1e0c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9673d5f1a74b29d52fa09287b18bb6e5') in 0.044385 seconds
+  Import took 0.050782 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000292 seconds.
+  path: Assets/Modelos/Sala/Prop_Fireplace_Mid.obj
+  artifactKey: Guid(40a6391eba3d136479c15904ce621963) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modelos/Sala/Prop_Fireplace_Mid.obj using Guid(40a6391eba3d136479c15904ce621963) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '31e41197e531b88eb700070b49dbe747') in 0.032257 seconds
+  Import took 0.079242 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000357 seconds.
+  path: Assets/Modelos/Sala/pared.prefab
+  artifactKey: Guid(808461c2cfc256c44878e08e6de08ffe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modelos/Sala/pared.prefab using Guid(808461c2cfc256c44878e08e6de08ffe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7d8e1de147cc8275b0c6237874a8a57f') in 0.967976 seconds
+  Import took 1.023694 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000317 seconds.
+  path: Assets/Modelos/Sala
+  artifactKey: Guid(9efa99468d381c942a04850ff08c91c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modelos/Sala using Guid(9efa99468d381c942a04850ff08c91c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ef47c2bd5cfe941f3fee4d7ab4e5a1d0') in 0.008276 seconds
+  Import took 0.052753 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000304 seconds.
+  path: Assets/Modelos/Sala/Prop_Living_Room_Modular_Couch_Center_2.obj
+  artifactKey: Guid(8a0000547aea3934abe7dcfaef211a3a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modelos/Sala/Prop_Living_Room_Modular_Couch_Center_2.obj using Guid(8a0000547aea3934abe7dcfaef211a3a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '94a7e269b7e5e63c95b40b9146799a2a') in 0.030578 seconds
+  Import took 0.063600 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000277 seconds.
+  path: Assets/Modelos/Sala/Prop_Fireplace.obj
+  artifactKey: Guid(a02eca93fd261654eb907404384aa9f3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modelos/Sala/Prop_Fireplace.obj using Guid(a02eca93fd261654eb907404384aa9f3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd7a925334e0fa100ce40b5aff23947d0') in 0.134078 seconds
+  Import took 0.155016 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000334 seconds.
+  path: Assets/Modelos/Sala/Prop_Living_Room_Modular_Couch_Corner.obj
+  artifactKey: Guid(1cbcd740fc09cc44398c662d126c4620) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modelos/Sala/Prop_Living_Room_Modular_Couch_Corner.obj using Guid(1cbcd740fc09cc44398c662d126c4620) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c523c2e97e00a8e9e027fb17e0307029') in 0.108059 seconds
+  Import took 0.145134 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000346 seconds.
+  path: Assets/Modelos/Sala/Prop_Living_Room_TV_Stand.obj
+  artifactKey: Guid(820248e88d262a749af425160f35ed3e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modelos/Sala/Prop_Living_Room_TV_Stand.obj using Guid(820248e88d262a749af425160f35ed3e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '406a4fb2aff5166870575e8e060fbb7a') in 0.114884 seconds
+  Import took 0.180799 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 14.438871 seconds.
+  path: Assets/Modelos/Sala/puerta.fbx
+  artifactKey: Guid(c634d1dd488c5a647bfdef1f2ed9de37) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modelos/Sala/puerta.fbx using Guid(c634d1dd488c5a647bfdef1f2ed9de37) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5f7cd6f26ec0e76215492df3ca4731dc') in 0.083555 seconds
+  Import took 0.169035 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 18.549730 seconds.
+  path: Assets/Modelos/Extras/hojas.obj
+  artifactKey: Guid(651d14e3d9ced594a831631dcdb87887) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modelos/Extras/hojas.obj using Guid(651d14e3d9ced594a831631dcdb87887) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '037d64500e64623c5ed2521b41f17baa') in 0.053294 seconds
+  Import took 0.160472 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000292 seconds.
+  path: Assets/Modelos/Extras/OutSidePlant 1.fbx
+  artifactKey: Guid(3e3932be1f24f1e48b7ff3e65cfdf37a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modelos/Extras/OutSidePlant 1.fbx using Guid(3e3932be1f24f1e48b7ff3e65cfdf37a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dd7466d662d25778993fc14e596cee46') in 0.466004 seconds
+  Import took 0.512409 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000344 seconds.
+  path: Assets/Modelos/Extras/OutSidePlant.fbx
+  artifactKey: Guid(44678e0e8b6fb294589dfa0dd4182f9f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modelos/Extras/OutSidePlant.fbx using Guid(44678e0e8b6fb294589dfa0dd4182f9f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5501b2f7777a75d8c38b5fb1ee063478') in 0.626133 seconds
+  Import took 0.637014 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 7.081024 seconds.
+  path: Assets/Modelos/puerta.fbx
+  artifactKey: Guid(9a5a56d98421e8047b6e698f46b444d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modelos/puerta.fbx using Guid(9a5a56d98421e8047b6e698f46b444d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e1f6d08e4e20c2751a335281cfc90cec') in 0.066349 seconds
+  Import took 0.094800 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1212.919575 seconds.
   path: Assets/Prefabs/Jugador.prefab
   artifactKey: Guid(3fc03170ae7196f408187550be1c17db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Jugador.prefab using Guid(3fc03170ae7196f408187550be1c17db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bd13af90af6662ad74a5048abfdf7a37') in 0.383537 seconds
-  Import took 0.410011 seconds .
+Start importing Assets/Prefabs/Jugador.prefab using Guid(3fc03170ae7196f408187550be1c17db) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Asset 'Trompi': Transition 'Corner f -> IDLE f' in state 'Corner f' doesn't have an Exit Time or any condition, transition will be ignored
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.EditorUtility:Internal_InstantiateRemoveAllNonAnimationComponentsSingle (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
+UnityEditor.EditorUtility:InstantiateRemoveAllNonAnimationComponents (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
+UnityEditor.EditorUtility:InstantiateForAnimatorPreview (UnityEngine.Object)
+UnityEditor.GameObjectInspector/PreviewData:UpdateGameObject (UnityEngine.Object)
+UnityEditor.GameObjectInspector/PreviewData:.ctor (UnityEngine.Object)
+UnityEditor.GameObjectInspector:GetPreviewData ()
+UnityEditor.GameObjectInspector:RenderStaticPreview (string,UnityEngine.Object[],int,int)
+UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset (UnityEngine.Object,UnityEngine.Object[],string)
+
+[C:\buildslave\unity\build\Editor/Src/Animation/StateMachine.cpp line 1847]
+
+ -> (artifact id: 'cd741f1e7bc90d846dad15a99e392015') in 0.202149 seconds
+  Import took 0.282673 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 3.678336 seconds.
-  path: Assets/Prefabs/Jugador.prefab
-  artifactKey: Guid(3fc03170ae7196f408187550be1c17db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Jugador.prefab using Guid(3fc03170ae7196f408187550be1c17db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c105391f08f28a97d323f0bed6edd7ac') in 0.109081 seconds
-  Import took 0.153381 seconds .
+  Time since last request: 0.000303 seconds.
+  path: Assets/Prefabs/UI Canvas.prefab
+  artifactKey: Guid(b9f7b4ddca33881499d09b72585581b6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/UI Canvas.prefab using Guid(b9f7b4ddca33881499d09b72585581b6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '03158d381d32e8e95bdc955dff32efd4') in 0.062466 seconds
+  Import took 0.085984 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 33.116625 seconds.
-  path: Assets/Scenes/Sala.unity
-  artifactKey: Guid(3655b9e6f30b13d4e8ccd86522b59afd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/Sala.unity using Guid(3655b9e6f30b13d4e8ccd86522b59afd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9e1da47537a403c0074e50c8342cfa81') in 0.016535 seconds
-  Import took 0.066389 seconds .
+  Time since last request: 7.288723 seconds.
+  path: Assets/Modelos/Materiales/Hoja.mat
+  artifactKey: Guid(da61bc4b66597d147a793efde7271370) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modelos/Materiales/Hoja.mat using Guid(da61bc4b66597d147a793efde7271370) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '725ef111fe8c4d19eba3faa1aa684056') in 0.055339 seconds
+  Import took 0.123359 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.003514 seconds.
+  path: Assets/Modelos/Materiales/Hoja.mat
+  artifactKey: Guid(da61bc4b66597d147a793efde7271370) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modelos/Materiales/Hoja.mat using Guid(da61bc4b66597d147a793efde7271370) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '725ef111fe8c4d19eba3faa1aa684056') in 0.057049 seconds
+  Import took 0.113312 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 42.945375 seconds.
+  path: Assets/Modelos/Materiales/Tabla blanca.mat
+  artifactKey: Guid(18241b605b151e444b7e9b5e4b21a9b5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modelos/Materiales/Tabla blanca.mat using Guid(18241b605b151e444b7e9b5e4b21a9b5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a1c432fcaea46779c83735e2b6e4fb53') in 0.017615 seconds
+  Import took 0.209762 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 6.668794 seconds.
+  path: Assets/UI/Sprites/hojas.png
+  artifactKey: Guid(f0dcea39cb9fcf9409fa8dffa8f824d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/UI/Sprites/hojas.png using Guid(f0dcea39cb9fcf9409fa8dffa8f824d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8413c89d74cdbb71c9e7daa4496a0dbe') in 0.091506 seconds
+  Import took 0.181398 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.006049 seconds.
+  path: Assets/UI/Sprites/hojas.png
+  artifactKey: Guid(f0dcea39cb9fcf9409fa8dffa8f824d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/UI/Sprites/hojas.png using Guid(f0dcea39cb9fcf9409fa8dffa8f824d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8413c89d74cdbb71c9e7daa4496a0dbe') in 0.039807 seconds
+  Import took 0.048651 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 645.616488 seconds.
+  path: Assets/Texturas/wood_plain_205_246_Small - copia.jpg
+  artifactKey: Guid(81062680e44ab7640a7ebb6ebd614faa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Texturas/wood_plain_205_246_Small - copia.jpg using Guid(81062680e44ab7640a7ebb6ebd614faa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c903a816ad9f221b2ac7ef09cca9e287') in 0.032385 seconds
+  Import took 0.097486 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 9.653075 seconds.
+  path: Assets/Texturas/wood_plain_205_246_Small - copia.jpg
+  artifactKey: Guid(81062680e44ab7640a7ebb6ebd614faa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Texturas/wood_plain_205_246_Small - copia.jpg using Guid(81062680e44ab7640a7ebb6ebd614faa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd42824fa572d2b61d6b91cec5d48986a') in 0.020045 seconds
+  Import took 0.094260 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 7.075689 seconds.
+  path: Assets/Texturas/wood_plain_205_246_Small - copia.jpg
+  artifactKey: Guid(81062680e44ab7640a7ebb6ebd614faa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Texturas/wood_plain_205_246_Small - copia.jpg using Guid(81062680e44ab7640a7ebb6ebd614faa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1b9cb1effffc050133dadf3675e5db97') in 0.036703 seconds
+  Import took 0.082981 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1222.827240 seconds.
+  path: Assets/Modelos/Baños
+  artifactKey: Guid(01736a287c244df42b2c6288b4d774e6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modelos/Baños using Guid(01736a287c244df42b2c6288b4d774e6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '246582b2c82c79aa59dee779860f92f4') in 0.009468 seconds
+  Import took 0.111885 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 22.546355 seconds.
+  path: Assets/Modelos/Baños/Prop_Bathroom_Shower.obj
+  artifactKey: Guid(c8964b29f88823b47b149c0f54cbd225) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modelos/Baños/Prop_Bathroom_Shower.obj using Guid(c8964b29f88823b47b149c0f54cbd225) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0b83ddaf03a3d75f984532ef7ed8e56b') in 0.162521 seconds
+  Import took 0.261642 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000321 seconds.
+  path: Assets/Modelos/Baños/Prop_Bathroom_Toilet_Paper_Dispenser.obj
+  artifactKey: Guid(e9fd3f9040b9d0a4bb5741f4b1137891) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modelos/Baños/Prop_Bathroom_Toilet_Paper_Dispenser.obj using Guid(e9fd3f9040b9d0a4bb5741f4b1137891) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '132eb095f3d8a337e0f5b5ed554413d5') in 0.066616 seconds
+  Import took 0.111887 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000301 seconds.
+  path: Assets/Modelos/Baños/Prop_Bathroom_Towel_Rack_Stocked.obj
+  artifactKey: Guid(426b792a0fe3fca46b14cebf69e27df3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modelos/Baños/Prop_Bathroom_Towel_Rack_Stocked.obj using Guid(426b792a0fe3fca46b14cebf69e27df3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '87f352a3576521465bc53fde7a56d520') in 0.076136 seconds
+  Import took 0.143488 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000315 seconds.
+  path: Assets/Modelos/Baños/Prop_Bathroom_Shower_Curtain.obj
+  artifactKey: Guid(aeea8efdeeaf7754eb2aafe0ac932ea1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modelos/Baños/Prop_Bathroom_Shower_Curtain.obj using Guid(aeea8efdeeaf7754eb2aafe0ac932ea1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '09728511463c83c5ca285dba191114b2') in 0.051230 seconds
+  Import took 0.058156 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000470 seconds.
+  path: Assets/Modelos/Baños/Prop_Bathroom_Toilet.obj
+  artifactKey: Guid(b7d51988013f27b4180eb946964c3cb6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modelos/Baños/Prop_Bathroom_Toilet.obj using Guid(b7d51988013f27b4180eb946964c3cb6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4c2b2574ce7b93206d025c607704edff') in 0.070203 seconds
+  Import took 0.110277 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000352 seconds.
+  path: Assets/Modelos/Baños/Prop_Bathroom_Towel_Rack.obj
+  artifactKey: Guid(bf26b1a2498fddd4d9924829a15a544a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modelos/Baños/Prop_Bathroom_Towel_Rack.obj using Guid(bf26b1a2498fddd4d9924829a15a544a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3fd2b570493de33985a52f5a1780e777') in 0.031240 seconds
+  Import took 0.106545 seconds .
 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.005812 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.07 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.993 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 1.02 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3003 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 146.2 MB.
-System memory in use after: 146.5 MB.
-
-Unloading 15 unused Assets to reduce memory usage. Loaded Objects now: 3560.
-Total: 4.959700 ms (FindLiveObjects: 0.714300 ms CreateObjectMapping: 0.222300 ms MarkObjects: 3.988200 ms  DeleteObjects: 0.032800 ms)
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.006517 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.90 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.982 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 1.13 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3003 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 146.2 MB.
-System memory in use after: 146.5 MB.
-
-Unloading 15 unused Assets to reduce memory usage. Loaded Objects now: 3563.
-Total: 5.958500 ms (FindLiveObjects: 0.664700 ms CreateObjectMapping: 0.188700 ms MarkObjects: 5.045000 ms  DeleteObjects: 0.058200 ms)
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.005851 seconds.
+Registered in 0.006371 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
 Refreshing native plugins compatible for Editor in 0.94 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  2.068 seconds
+- Completed reload, in  2.145 seconds
 Platform modules already initialized, skipping
 Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 1.59 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 1.06 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3003 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 146.2 MB.
-System memory in use after: 146.5 MB.
+Unloading 3007 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 147.8 MB.
+System memory in use after: 148.1 MB.
 
-Unloading 15 unused Assets to reduce memory usage. Loaded Objects now: 3566.
-Total: 5.178900 ms (FindLiveObjects: 0.824500 ms CreateObjectMapping: 0.172400 ms MarkObjects: 4.147200 ms  DeleteObjects: 0.031700 ms)
+Unloading 18 unused Assets to reduce memory usage. Loaded Objects now: 3592.
+Total: 4.431000 ms (FindLiveObjects: 0.727000 ms CreateObjectMapping: 0.182700 ms MarkObjects: 3.466200 ms  DeleteObjects: 0.052900 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.006163 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.44 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.907 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 0.94 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3007 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 147.9 MB.
+System memory in use after: 148.1 MB.
+
+Unloading 15 unused Assets to reduce memory usage. Loaded Objects now: 3595.
+Total: 4.131000 ms (FindLiveObjects: 0.753000 ms CreateObjectMapping: 0.361700 ms MarkObjects: 2.986700 ms  DeleteObjects: 0.027900 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.007048 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.90 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.881 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 1.18 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3007 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 147.9 MB.
+System memory in use after: 148.2 MB.
+
+Unloading 15 unused Assets to reduce memory usage. Loaded Objects now: 3598.
+Total: 4.719700 ms (FindLiveObjects: 0.678100 ms CreateObjectMapping: 0.217600 ms MarkObjects: 3.793800 ms  DeleteObjects: 0.028200 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 3213.949050 seconds.
+  path: Assets/Modelos/Extras/Piano.fbx
+  artifactKey: Guid(d1f3d2cd560fa564c915f2a114205dcc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modelos/Extras/Piano.fbx using Guid(d1f3d2cd560fa564c915f2a114205dcc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a26ee30ad82359345e7b7d542539008a') in 0.178590 seconds
+  Import took 0.231952 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 13.064491 seconds.
+  path: Assets/Modelos/Sala/Piano.fbx
+  artifactKey: Guid(e1dc3245033ac4440bb942288d501d7a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modelos/Sala/Piano.fbx using Guid(e1dc3245033ac4440bb942288d501d7a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '676589d2ae21ec8a8b61318ea872cdae') in 0.064226 seconds
+  Import took 0.136747 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 248.286554 seconds.
+  path: Assets/Modelos/Materiales/Tabla blanca.mat
+  artifactKey: Guid(18241b605b151e444b7e9b5e4b21a9b5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modelos/Materiales/Tabla blanca.mat using Guid(18241b605b151e444b7e9b5e4b21a9b5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4e9e98185c916ffcaf5fcac26cbfecf4') in 0.051303 seconds
+  Import took 0.374475 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 13.168257 seconds.
+  path: Assets/Modelos/Materiales/Tabla madera negra.mat
+  artifactKey: Guid(389795ba626486641bf6655a72fb4997) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modelos/Materiales/Tabla madera negra.mat using Guid(389795ba626486641bf6655a72fb4997) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '081112478453818ffaf380f22645d499') in 0.022580 seconds
+  Import took 0.029407 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 237.894997 seconds.
+  path: Assets/Modelos/Materiales/Tabla madera negra.mat
+  artifactKey: Guid(389795ba626486641bf6655a72fb4997) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modelos/Materiales/Tabla madera negra.mat using Guid(389795ba626486641bf6655a72fb4997) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '714ad574fc3832010ba891c965317a8c') in 0.019597 seconds
+  Import took 0.056447 seconds .
 
 AssetImportWorkerClient::OnTransportError - code=2 error=End of file
