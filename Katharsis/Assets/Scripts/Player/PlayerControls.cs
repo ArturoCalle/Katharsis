@@ -9,106 +9,147 @@ public class PlayerControls : MonoBehaviour
     public GameObject groundCheck;
     public Transform cam;
     public bool isGrounded;
-    private Escalar esc;
+
     //controladores de inputs
-    Vector3 inputs;
-    bool escalando = false;
-    bool colision = false;
-    bool corner = false;
+    private Vector3 inputs;
+    private Vector3 direction;
+    private Vector3 movDir;
+
+    //escalar
+    private bool escalando = false;
+    private bool colision = false;
+    private bool corner = false;
+    private Escalar esc;
+    private bool DoingCorner = false;
 
     //velocidades
-    float baseSpeed = 10f, rotateSpeed = 0.1f, turnSmooth, climbSpeed = 5f;
-    float gravity = -9.81f, terminalVelocity = -25f;
-    Vector3 velocity;
+    private float baseSpeed = 10f, rotateSpeed = 0.1f, turnSmooth, climbSpeed = 5f;
+    private float gravity = -9.81f, terminalVelocity = -25f;
+    private Vector3 velocity;
 
     //jumpng
-    bool jumping, jump; // jump controla el input y jumping controla la accion
-    float jumpHeigth = 5f;
-
-    //Direccion
-    Vector3 direction;
+    private bool jumping, jump; // jump controla el input y jumping controla la accion
+    private float jumpHeigth = 5f;
 
     //referencia a componente
-    CharacterController controller;
+    private CharacterController controller;
     public static PlayerControls instance;
     
     void Start()
     {
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
         controller = GetComponent<CharacterController>();
         instance = this;
         esc = escalar.GetComponent<Escalar>();
     }
-
     void Update()
     {
-        Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Locked;
         checkClimbStatus();
         checkMouse();
         getInputs();
+        AnimatorController.instance.move(inputs, velocity.y, isGrounded, jumping, escalando, DoingCorner);
+    }
+    private void FixedUpdate()
+    {
         Locomotion();
     }
-
     void Locomotion()
     {
         direction = inputs.normalized;
         isGrounded = groundCheck.GetComponent<GroundCheck>().isGrounded();
-        Vector3 movDir = new Vector3();
-
+        movDir = new Vector3();
+        //Tocar piso o escalar
         if (isGrounded || escalando)
         {
-            velocity.y = 0;
-            if (jumping)
-            {
-                jumping = false;
-            }
+            StopYvelocity();
         }
-
+        //Hace el movimiento de corner
+        if (DoingCorner)
+        {
+            direction = Vector3.zero;
+            DoCorner();
+        }
+        //Movimiento con inputs
         if (direction.magnitude > 0.1)
         {
-            
-            if (escalando)
+            if (escalando || DoingCorner)
             {
-                if(inputs.z == 1)
-                {
-                    movDir = Vector3.up;
-                }else if (inputs.z == -1)
-                {
-                        movDir = Vector3.down;
-                }
-                controller.Move(movDir.normalized * climbSpeed * Time.deltaTime * Time.timeScale);
+                Climb();
             }
             else
             {
-                //target angle is the angle it will move towards with the keyboard inputs and mouse
-                //angle smooth the rotation of the character
-                float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + cam.eulerAngles.y;
-                float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmooth, rotateSpeed);
-                transform.rotation = Quaternion.Euler(0f, angle, 0f);
-                //x, z movemnt
-                movDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
-                controller.Move(movDir.normalized * baseSpeed * Time.deltaTime * Time.timeScale);
+                MoveHorizontal();
             }
         }
-        
-        //fall
+        //Fall
         if (!controller.isGrounded && velocity.y > terminalVelocity && !escalando)
         {
             velocity.y += gravity * Time.deltaTime;
         }
-
         //Jump
-        if (jump && isGrounded)
+        if (jump && isGrounded && !escalando)
         {
             velocity.y = Mathf.Sqrt(-gravity * jumpHeigth);
             jumping = true;
         }
-        //apply gravity and jump motion to controller
+        //Apply Vertical Velocity
         controller.Move(velocity * Time.deltaTime * Time.timeScale);
-        //change animator parameters in animator controller instance
-        AnimatorController.instance.move(inputs, velocity.y, isGrounded, jumping, escalando, corner);
     }
-    void getInputs()
+    private void MoveHorizontal()
+    {
+        float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + cam.eulerAngles.y;
+        float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmooth, rotateSpeed);
+        transform.rotation = Quaternion.Euler(0f, angle, 0f);
+
+        movDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
+        controller.Move(movDir.normalized * baseSpeed * Time.deltaTime * Time.timeScale);
+    }
+    private void Climb()
+    {
+        if (corner)
+        {
+            if (inputs.z == 1)
+            {
+                movDir = Vector3.up;
+            }
+            else if (inputs.z == -1)
+            {
+                movDir = Vector3.down;
+            }
+            controller.Move(movDir.normalized * climbSpeed * Time.deltaTime * Time.timeScale);
+
+        }
+        else
+        {
+            if (!DoingCorner)
+            {
+                DoingCorner = true;
+            }
+        }
+    }
+    private void DoCorner()
+    {
+        direction = Vector3.zero;
+        Vector3 pos = this.gameObject.transform.GetChild(2).transform.GetChild(3).position - transform.position;
+        if (!isGrounded)
+        {
+            controller.Move(pos * Time.deltaTime * Time.timeScale);
+        }
+        else
+        {
+            DoingCorner = false;
+        }
+    }
+    private void StopYvelocity()
+    {
+        velocity.y = 0;
+        if (jumping)
+        {
+            jumping = false;
+        }
+    }
+    private void getInputs()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
@@ -127,49 +168,56 @@ public class PlayerControls : MonoBehaviour
             else
                 inputs.z = -1;
         }
-
         if (!Input.GetKey(controls.forwards) && !Input.GetKey(controls.backwards))
+        {
             inputs.z = 0;
-
+        }
         //Controles rotacion derecha, izquierda, cancelar movimiento y sin movimiento en x
         if (Input.GetKey(controls.right))
+        {
             inputs.x = 1;
+        }
 
         if (Input.GetKey(controls.left))
         {
             if (Input.GetKey(controls.right))
+            {
                 inputs.x = 0;
+            }
             else
+            {
                 inputs.x = -1;
+            }
         }
 
         if (!Input.GetKey(controls.right) && !Input.GetKey(controls.left))
+        {
             inputs.x = 0;
-
-        //verifica el estado de los colisionadores de escaladao adelante y atras que en combinacion con la tecla click izquierdo permiten activar el escalado de objetos
-        
+        }
         //Jumping
         jump = Input.GetKey(controls.jump);
     }
-    void checkMouse()
+    private void checkMouse()
     {
         if (Input.GetKey(controls.climb))
         {
-            //recupera el script del gameObject escalar para validar el estado de la colision
             if (colision)
             {
                 escalando = true;
-                Debug.Log("toy escalando");
+                RotateTowardsXZ(esc.getTarget());
             }
             else
             {
                 escalando = false;
-                Debug.Log("no toy escalando");
             }
         }
         else
         {
             escalando = false;
+            if (DoingCorner)
+            {
+                DoingCorner = false;
+            }
         }
         
     }
@@ -179,7 +227,6 @@ public class PlayerControls : MonoBehaviour
         {
             UIController.instance.desactivarPaneles();
             Time.timeScale = 1f;
-
             Cursor.visible = false;
             Cursor.lockState = CursorLockMode.Locked;
         }
@@ -187,7 +234,6 @@ public class PlayerControls : MonoBehaviour
         {
             UIController.instance.pausar();
             Time.timeScale = 0f;
-
             Cursor.visible = true;
             Cursor.lockState = CursorLockMode.None;
         }
@@ -203,11 +249,21 @@ public class PlayerControls : MonoBehaviour
             Time.timeScale = 1f;
         }
     }
-
     public void checkClimbStatus()
     {
-        colision = esc.isActive(); 
+        colision = esc.isActive();
         corner = esc.isCorner();
     }
-    
+    private void RotateTowardsXZ(Transform target)
+    {
+        Vector3 direction = target.position - transform.position;
+        Quaternion temp = Quaternion.LookRotation(direction);
+        Quaternion rotation = Quaternion.Euler(0, temp.eulerAngles.y, 0);
+        transform.rotation = rotation;
+    }
+    private void SpawnAt(Transform target)
+    {
+        Vector3 pos = target.position - transform.position;
+        controller.transform.position = pos;
+    }
 }
