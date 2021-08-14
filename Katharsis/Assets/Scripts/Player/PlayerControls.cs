@@ -18,9 +18,10 @@ public class PlayerControls : MonoBehaviour
     //escalar
     private bool escalando = false;
     private bool colision = false;
-    private bool corner = false;
+    public bool corner = false;
     private Escalar esc;
-    private bool DoingCorner = false;
+    public bool DoingCorner = false;
+    Vector3 pos = Vector3.zero;
 
     //velocidades
     private float baseSpeed = 10f, rotateSpeed = 0.1f, turnSmooth, climbSpeed = 5f;
@@ -73,17 +74,21 @@ public class PlayerControls : MonoBehaviour
         //Movimiento con inputs
         if (direction.magnitude > 0.1)
         {
-            if (escalando || DoingCorner)
+            if (escalando)
             {
                 Climb();
             }
             else
             {
-                MoveHorizontal();
+                if (!DoingCorner)
+                {
+                    MoveHorizontal();
+                    pos = Vector3.zero;
+                }
             }
         }
         //Fall
-        if (!controller.isGrounded && velocity.y > terminalVelocity && !escalando)
+        if (!controller.isGrounded && velocity.y > terminalVelocity && !escalando && !DoingCorner)
         {
             velocity.y += gravity * Time.deltaTime;
         }
@@ -118,7 +123,6 @@ public class PlayerControls : MonoBehaviour
                 movDir = Vector3.down;
             }
             controller.Move(movDir.normalized * climbSpeed * Time.deltaTime * Time.timeScale);
-
         }
         else
         {
@@ -131,14 +135,21 @@ public class PlayerControls : MonoBehaviour
     private void DoCorner()
     {
         direction = Vector3.zero;
-        Vector3 pos = this.gameObject.transform.GetChild(2).transform.GetChild(3).position - transform.position;
+        if(pos == Vector3.zero)
+        {
+            Debug.Log("calculando pos");
+            pos = this.gameObject.transform.GetChild(2).transform.GetChild(3).position - transform.position;
+        }
         if (!isGrounded)
         {
             controller.Move(pos * Time.deltaTime * Time.timeScale);
         }
         else
         {
+            escalando = false;
             DoingCorner = false;
+            pos = Vector3.zero;
+            corner = false;
         }
     }
     private void StopYvelocity()
@@ -217,6 +228,7 @@ public class PlayerControls : MonoBehaviour
             if (DoingCorner)
             {
                 DoingCorner = false;
+                pos = Vector3.zero;
             }
         }
         
