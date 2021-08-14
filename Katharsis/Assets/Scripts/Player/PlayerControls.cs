@@ -18,10 +18,10 @@ public class PlayerControls : MonoBehaviour
     //escalar
     private bool escalando = false;
     private bool colision = false;
-    public bool corner = false;
+    private bool corner = false;
     private Escalar esc;
-    public bool DoingCorner = false;
-    Vector3 pos = Vector3.zero;
+    private bool DoingCorner = false;
+    public Vector3 pos = Vector3.zero;
 
     //velocidades
     private float baseSpeed = 10f, rotateSpeed = 0.1f, turnSmooth, climbSpeed = 5f;
@@ -83,7 +83,6 @@ public class PlayerControls : MonoBehaviour
                 if (!DoingCorner)
                 {
                     MoveHorizontal();
-                    pos = Vector3.zero;
                 }
             }
         }
@@ -137,7 +136,6 @@ public class PlayerControls : MonoBehaviour
         direction = Vector3.zero;
         if(pos == Vector3.zero)
         {
-            Debug.Log("calculando pos");
             pos = this.gameObject.transform.GetChild(2).transform.GetChild(3).position - transform.position;
         }
         if (!isGrounded)
@@ -275,7 +273,7 @@ public class PlayerControls : MonoBehaviour
     }
     private void SpawnAt(Transform target)
     {
-        Vector3 pos = target.position - transform.position;
-        controller.transform.position = pos;
+        Vector3 Spos = target.position - transform.position;
+        controller.transform.position = Spos;
     }
 }
