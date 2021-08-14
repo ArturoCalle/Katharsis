@@ -21,6 +21,7 @@ public class PlayerControls : MonoBehaviour
     private bool corner = false;
     private Escalar esc;
     private bool DoingCorner = false;
+    public Vector3 pos = Vector3.zero;
 
     //velocidades
     private float baseSpeed = 10f, rotateSpeed = 0.1f, turnSmooth, climbSpeed = 5f;
@@ -73,17 +74,20 @@ public class PlayerControls : MonoBehaviour
         //Movimiento con inputs
         if (direction.magnitude > 0.1)
         {
-            if (escalando || DoingCorner)
+            if (escalando)
             {
                 Climb();
             }
             else
             {
-                MoveHorizontal();
+                if (!DoingCorner)
+                {
+                    MoveHorizontal();
+                }
             }
         }
         //Fall
-        if (!controller.isGrounded && velocity.y > terminalVelocity && !escalando)
+        if (!controller.isGrounded && velocity.y > terminalVelocity && !escalando && !DoingCorner)
         {
             velocity.y += gravity * Time.deltaTime;
         }
@@ -118,7 +122,6 @@ public class PlayerControls : MonoBehaviour
                 movDir = Vector3.down;
             }
             controller.Move(movDir.normalized * climbSpeed * Time.deltaTime * Time.timeScale);
-
         }
         else
         {
@@ -131,14 +134,20 @@ public class PlayerControls : MonoBehaviour
     private void DoCorner()
     {
         direction = Vector3.zero;
-        Vector3 pos = this.gameObject.transform.GetChild(2).transform.GetChild(3).position - transform.position;
+        if(pos == Vector3.zero)
+        {
+            pos = this.gameObject.transform.GetChild(2).transform.GetChild(3).position - transform.position;
+        }
         if (!isGrounded)
         {
             controller.Move(pos * Time.deltaTime * Time.timeScale);
         }
         else
         {
+            escalando = false;
             DoingCorner = false;
+            pos = Vector3.zero;
+            corner = false;
         }
     }
     private void StopYvelocity()
@@ -217,6 +226,7 @@ public class PlayerControls : MonoBehaviour
             if (DoingCorner)
             {
                 DoingCorner = false;
+                pos = Vector3.zero;
             }
         }
         
@@ -263,7 +273,7 @@ public class PlayerControls : MonoBehaviour
     }
     private void SpawnAt(Transform target)
     {
-        Vector3 pos = target.position - transform.position;
-        controller.transform.position = pos;
+        Vector3 Spos = target.position - transform.position;
+        controller.transform.position = Spos;
     }
 }
