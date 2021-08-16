@@ -139,8 +139,8 @@ public class PlayerControls : MonoBehaviour
             pos = this.gameObject.transform.GetChild(2).transform.GetChild(3).position - transform.position;
         }
         if (!isGrounded)
-        {
-            controller.Move(pos * Time.deltaTime * Time.timeScale);
+        {   
+            controller.Move(pos.normalized * Time.deltaTime * Time.timeScale);
         }
         else
         {
@@ -219,17 +219,8 @@ public class PlayerControls : MonoBehaviour
             {
                 escalando = false;
             }
+
         }
-        else
-        {
-            escalando = false;
-            if (DoingCorner)
-            {
-                DoingCorner = false;
-                pos = Vector3.zero;
-            }
-        }
-        
     }
     public void PauseUnpause()
     {
