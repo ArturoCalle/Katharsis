@@ -19,7 +19,7 @@ public class PanelOpciones : MonoBehaviour
     {
         reiniciarBotones();
         seleccion = 0;
-        locked = false;
+        locked = true;
         
     }
     private void Update()
