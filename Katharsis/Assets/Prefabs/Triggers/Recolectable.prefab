@@ -217,8 +217,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 4, y: 2.6685958, z: 4}
-  m_Center: {x: 0, y: -0.17376083, z: 0}
+  m_Size: {x: 4, y: 2.6685958, z: 2.002207}
+  m_Center: {x: -0.000000006232942, y: -0.17376089, z: 0.9988964}
 --- !u!114 &2007779952465330492
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -233,6 +233,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   aviso: {fileID: 2007779953376869489}
   nota: {fileID: 2007779952596473343}
+  plane: {fileID: 2007779952178800681}
+  i: {fileID: 0}
+  escena: 'Sala '
+  nombre: nota1
 --- !u!1 &2007779952596473343
 GameObject:
   m_ObjectHideFlags: 0
@@ -251,7 +255,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2007779952596473339
 RectTransform:
   m_ObjectHideFlags: 0
@@ -592,7 +596,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Sample text
+  m_Text: Nota 1
 --- !u!1 &3732967718079648371
 GameObject:
   m_ObjectHideFlags: 0
