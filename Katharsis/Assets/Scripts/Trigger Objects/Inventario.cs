@@ -45,4 +45,14 @@ public class Inventario : MonoBehaviour
             
         }
     }
+
+    public void cargarInventario()
+    {
+
+    }
+
+    public void guardarInventario()
+    {
+
+    }
 }

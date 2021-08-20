@@ -8,10 +8,11 @@ public class Recolectable : MonoBehaviour
     public GameObject aviso;
     public GameObject nota;
     public string escena;
-    public string nombre;
+    public string nombre; //id
 
     bool recolectado = false;
     bool inCollectRange = false;
+
     // Start is called before the first frame update
     public void OnTriggerStay(Collider col)
     {
