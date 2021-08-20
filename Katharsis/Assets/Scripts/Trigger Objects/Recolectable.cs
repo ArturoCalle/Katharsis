@@ -73,7 +73,6 @@ public class Recolectable : MonoBehaviour
                     aviso.SetActive(false);
                     nota.SetActive(false);
                     mostrandoNota = false;
-                    i.setLock(false);
                 }
                 else
                 {
