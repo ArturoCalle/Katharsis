@@ -34,6 +34,7 @@ public class Inventario : MonoBehaviour
         }
     }
 
+
     private void crearInventario()
     {
         GameObject nuevoItem;
