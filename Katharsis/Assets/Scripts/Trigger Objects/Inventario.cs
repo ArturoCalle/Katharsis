@@ -42,6 +42,7 @@ public class Inventario : MonoBehaviour
         mostrarSeleccion();
     }
 
+
     private void crearInventario()
     {
         GameObject nuevoItem;
