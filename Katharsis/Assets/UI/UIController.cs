@@ -150,12 +150,9 @@ public class UIController : MonoBehaviour
     {
         Debug.Log("GameOver");
         PlayerControls.instance.freeze(true);
-        panelMuerte.SetActive(true);
-        if (Input.GetKeyDown(KeyCode.Z))
-        {
-            Debug.Log("OPRIMÍ Z");
-            desactivarPaneles();
-        }
+        //panelMuerte.SetActive(true);
+        Debug.Log(CheckpointGeneral.instance.lastCheckpoint.transform);
+        PlayerControls.instance.SpawnAt(CheckpointGeneral.instance.lastCheckpoint.transform);
 
 
     }

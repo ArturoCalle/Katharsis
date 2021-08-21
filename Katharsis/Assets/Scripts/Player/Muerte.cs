@@ -8,8 +8,7 @@ public class Muerte : MonoBehaviour
         if (other.tag == "Mortal")
         {
             UIController.instance.EndGame();
-            Debug.Log("ouch");
-
+            
         }
     }
 }

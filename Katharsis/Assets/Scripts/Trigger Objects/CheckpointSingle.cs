@@ -10,9 +10,9 @@ public class CheckpointSingle : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            Debug.Log("objeto jugador");
             checkpointGeneral.PlayerThroughCheckpoint(this);
-            Destroy(gameObject);
+            gameObject.SetActive(false);
+
         }
         
 
