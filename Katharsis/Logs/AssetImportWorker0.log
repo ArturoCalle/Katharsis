@@ -15,11 +15,11 @@ C:/Users/pbr98/Desktop/Tesis/Game/Katharsis/Katharsis
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-50406
+55207
 Successfully changed project path to: C:/Users/pbr98/Desktop/Tesis/Game/Katharsis/Katharsis
 C:/Users/pbr98/Desktop/Tesis/Game/Katharsis/Katharsis
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 202.24 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 273.04 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2020.3.11f1 (99c7afb366b3)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2020.3.11f1/Editor/Data/Resources/UnitySubsystems
@@ -36,88 +36,68 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2020.3.11f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2020.3.11f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2020.3.11f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56304
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56252
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.11f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.014888 seconds.
+Registered in 0.179369 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 248.94 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 153.54 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  5.519 seconds
+- Completed reload, in  5.676 seconds
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.039287 seconds.
+Registered in 0.017702 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 157.56 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 322.25 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  5.753 seconds
+- Completed reload, in  5.474 seconds
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
 Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
 Launched and connected shader compiler UnityShaderCompiler.exe after 0.21 seconds
-Refreshing native plugins compatible for Editor in 1.61 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 2.13 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3103 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 137.6 MB.
-System memory in use after: 137.8 MB.
+Unloading 3102 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 137.7 MB.
+System memory in use after: 137.9 MB.
 
-Unloading 20 unused Assets to reduce memory usage. Loaded Objects now: 3540.
-Total: 8.286100 ms (FindLiveObjects: 1.161800 ms CreateObjectMapping: 0.698000 ms MarkObjects: 6.201100 ms  DeleteObjects: 0.220400 ms)
-
-========================================================================
-Received Import Request.
-  path: Assets/Scripts/SceneManager/Save.cs
-  artifactKey: Guid(06aaa91220161394c9adc3f1465d286c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/SceneManager/Save.cs using Guid(06aaa91220161394c9adc3f1465d286c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3778330cc338178612735346d4dce916') in 0.290281 seconds
-  Import took 0.307219 seconds .
+Unloading 20 unused Assets to reduce memory usage. Loaded Objects now: 3539.
+Total: 9.502100 ms (FindLiveObjects: 0.569900 ms CreateObjectMapping: 0.252700 ms MarkObjects: 8.472300 ms  DeleteObjects: 0.203600 ms)
 
 ========================================================================
 Received Import Request.
-  Time since last request: 14.647637 seconds.
-  path: Assets/Scripts/SceneManager/Save.cs
-  artifactKey: Guid(06aaa91220161394c9adc3f1465d286c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/SceneManager/Save.cs using Guid(06aaa91220161394c9adc3f1465d286c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3778330cc338178612735346d4dce916') in 0.081561 seconds
-  Import took 0.117093 seconds .
+  path: Assets/Scripts/SaveLoad/Save.cs
+  artifactKey: Guid(9fc92e6b766f5654dac6390dc6361269) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveLoad/Save.cs using Guid(9fc92e6b766f5654dac6390dc6361269) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '793047c05641b1d378bd4ea6f8fcfea2') in 0.107627 seconds
+  Import took 0.122371 seconds .
 
 ========================================================================
 Received Prepare
+The file 'UserSettings/EditorUserSettings.asset' seems to have merge conflicts. Please open it in a text editor and fix the merge.
+
+Trying to reload asset but can't find object on disk
+
 Registering precompiled user dll's ...
-Registered in 0.128574 seconds.
+Registered in 0.050291 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.37 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 1.44 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  4.648 seconds
+- Completed reload, in  5.013 seconds
 Platform modules already initialized, skipping
 Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 1.68 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 1.13 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 3008 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 128.9 MB.
-System memory in use after: 129.1 MB.
+System memory in use before: 129.1 MB.
+System memory in use after: 129.4 MB.
 
 Unloading 16 unused Assets to reduce memory usage. Loaded Objects now: 3542.
-Total: 10.149700 ms (FindLiveObjects: 0.774000 ms CreateObjectMapping: 0.343500 ms MarkObjects: 8.704500 ms  DeleteObjects: 0.128300 ms)
-
-========================================================================
-Received Import Request.
-  Time since last request: 39.411863 seconds.
-  path: Assets/Scripts/SaveLoad/Save.cs
-  artifactKey: Guid(9fc92e6b766f5654dac6390dc6361269) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/SaveLoad/Save.cs using Guid(9fc92e6b766f5654dac6390dc6361269) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b6b846f38a8ff814b92915c73893c0df') in 0.027107 seconds
-  Import took 0.044000 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 1027.693922 seconds.
-  path: Assets/Scenes/Cocina.unity
-  artifactKey: Guid(9fc0d4010bbf28b4594072e72b8655ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/Cocina.unity using Guid(9fc0d4010bbf28b4594072e72b8655ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b13494109a02958aff019fb858700a26') in 0.049502 seconds
-  Import took 0.067861 seconds .
+Total: 6.315900 ms (FindLiveObjects: 0.538300 ms CreateObjectMapping: 0.170100 ms MarkObjects: 5.536100 ms  DeleteObjects: 0.068400 ms)
 
