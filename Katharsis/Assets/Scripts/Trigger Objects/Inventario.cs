@@ -8,14 +8,24 @@ public class Inventario : MonoBehaviour
 {
     public List<Recolectable> inventario = new List<Recolectable>();
     public GameObject prefab;
+    public GameObject scroll;
 
     List<Boton> items = new List<Boton>();
+    int seleccion;
+    bool locked;
+    bool mostrandoNota;
+
+    public static Inventario instance;
 
     // Start is called before the first frame update
     void Start()
     {
+        mostrandoNota = false;
         crearInventario();
-        //TO DO cargar lista de recolectables 
+        seleccion = 0;
+        locked = true;
+        //TO DO cargar lista de recolectables
+        instance = this;
     }
 
     // Update is called once per frame
@@ -32,7 +42,9 @@ public class Inventario : MonoBehaviour
                 items[i].actualizarTexto("???");
             }
         }
+        mostrarSeleccion();
     }
+
 
     private void crearInventario()
     {
@@ -44,5 +56,65 @@ public class Inventario : MonoBehaviour
             items.Add(actual);
             
         }
+    }
+    void mostrarSeleccion()
+    {
+        for (int i = 0; i < items.Count; i++)
+        {
+            Boton actual = items[i].getBoton();
+            if (i == seleccion)
+            {
+                actual.setActive(true);
+            }
+            else
+            {
+                actual.setActive(false);
+            }
+        }
+    }
+    public void cambiarSeleccion(int s)
+    {
+        if (seleccion + s <= -1)
+        {
+            seleccion = items.Count - 1;
+        }
+        else if (seleccion + s >= items.Count)
+        {
+            seleccion = 0;
+        }
+        else
+        {
+            seleccion = seleccion + s;
+        }
+        scroll.GetComponent<ScrollRect>().verticalNormalizedPosition = scrollValue();
+    }
+    public float scrollValue()
+    {
+
+        float value = 1-(float)seleccion/(float)items.Count;
+        return value;
+    }
+
+    public void seleccionar()
+    {
+        
+        if(inventario[seleccion].isCollected())
+        {
+            
+            inventario[seleccion].mostrarNota();      
+            
+        }
+    }
+    public bool isLocked()
+    {
+        return locked;
+    }
+    public void setLock(bool value)
+    {
+        locked = value;
+    }
+    public int getSeleccion()
+    {
+        return seleccion;
     }
 }

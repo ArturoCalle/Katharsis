@@ -7,18 +7,25 @@ public class Recolectable : MonoBehaviour
 {
     public GameObject aviso;
     public GameObject nota;
+    public GameObject plane;
+    public Inventario i;
+
     public string escena;
     public string nombre;
 
     bool recolectado = false;
     bool inCollectRange = false;
+    bool mostrandoNota = false;
     // Start is called before the first frame update
     public void OnTriggerStay(Collider col)
     {
         if(col.tag == "Player")
         {
-           aviso.SetActive(true);
-           inCollectRange = true;
+            if(plane.activeInHierarchy)
+            {
+               aviso.SetActive(true);
+               inCollectRange = true;
+            }
         }
     }
     public void OnTriggerExit(Collider col)
@@ -29,16 +36,17 @@ public class Recolectable : MonoBehaviour
 
     public void mostrarNota()
     {
-        nota.SetActive(true);
         PlayerControls.instance.freeze(true);
+        nota.SetActive(true);
+        aviso.SetActive(true);
         aviso.GetComponentInChildren<Text>().text = "(Z) aceptar";
     }
-   
+
     private void Update()
     {
         if(recolectado)
         {
-            gameObject.SetActive(false);
+           plane.SetActive(false);
         }
         if(inCollectRange)
         {
@@ -48,16 +56,32 @@ public class Recolectable : MonoBehaviour
             }
         }
         if (aviso.activeInHierarchy)
-        {
-            
+        {         
             if (Input.GetKeyDown(KeyCode.Z))
             {
-                aviso.SetActive(false);
-                nota.SetActive(false);
-                PlayerControls.instance.freeze(false);
-                recolectado = true;
+                if(!recolectado)
+                {
+                    aviso.SetActive(false);
+                    nota.SetActive(false);
+                    PlayerControls.instance.freeze(false);
+                    recolectado = true;
+                    mostrandoNota = false;
+
+                }
+                else if(mostrandoNota)
+                {
+                    aviso.SetActive(false);
+                    nota.SetActive(false);
+                    mostrandoNota = false;
+                    i.setLock(false);
+                }
+                else
+                {
+                    mostrandoNota = true;
+                }
 
             }
+            
         }
     }
     public bool isCollected()

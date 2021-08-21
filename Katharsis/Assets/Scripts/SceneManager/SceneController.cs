@@ -15,4 +15,9 @@ public class SceneController : MonoBehaviour
     {
         SceneManager.LoadScene(nombre);
     }
+
+    public Scene getCurrentScene()
+    {
+        return SceneManager.GetActiveScene();
+    }
 }

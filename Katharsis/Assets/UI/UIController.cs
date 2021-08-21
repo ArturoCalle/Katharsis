@@ -15,12 +15,14 @@ public class UIController : MonoBehaviour
     public GameObject panelNotas;
     public GameObject panelMuerte;
 
+    Recolectable nota;
+
     // Start is called before the first frame update
     void Start()
     {
         instance = this;
         panelOpciones.GetComponent<PanelOpciones>().reiniciarBotones();
-        panelOpciones.SetActive(false);
+        desactivarPaneles();
 
     }
 
@@ -29,12 +31,9 @@ public class UIController : MonoBehaviour
     {
         if (instance.pauseScreen.activeInHierarchy)
         {
-            getInputs();
+            getInputsMenu();
         }
-        if(instance.panelMuerte.activeInHierarchy)
-        {
-            getInputs();
-        }
+
         /*
         if (fadeToBlack)
         {
@@ -57,51 +56,66 @@ public class UIController : MonoBehaviour
         */
 
     }
-    void getInputs()
+
+    void getInputsMenu()
     {
         menuPausa mp = pauseScreen.GetComponent<menuPausa>();
         PanelOpciones po = panelOpciones.GetComponent<PanelOpciones>();
-         
-
+        Inventario i = panelNotas.GetComponent<PanelInventario>().inventario;
         if (Input.GetKeyDown(KeyCode.W))
         {
             if (!mp.isLocked())
             {
                 mp.cambiarSeleccion(-1);
             }
-            else if (!po.isLocked())
+            if (!po.isLocked())
             {
                 po.cambiarSeleccion(-1);
+            }
+            if(!i.isLocked())
+            {
+                
+                i.cambiarSeleccion(-1);
             }
         }
         if (Input.GetKeyDown(KeyCode.S))
         {
+            
             if (!mp.isLocked())
             {
                 mp.cambiarSeleccion(1);
             }
-            else if (!po.isLocked())
+            if (!po.isLocked())
             {
                 po.cambiarSeleccion(1);
+            }
+            if (!i.isLocked())
+            {
+                i.cambiarSeleccion(1);
             }
         }
         if (Input.GetKeyDown(KeyCode.Z))
         {
-
+            Debug.Log(i.isLocked());
             if (!mp.isLocked())
             {
                 mp.setLock(true);
                 mp.seleccionar();
             }
-            else if(!po.isLocked())
+           if(!po.isLocked())
             {
                 po.setLock(true);
                 po.seleccionar(mp);
             }
+            if (!i.isLocked())
+            {
+                //i.setLock(true);
+                i.seleccionar();
+            }
         }
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            
+           
         }
     }
     public void Reanudar()
@@ -123,6 +137,7 @@ public class UIController : MonoBehaviour
         panelOpciones.SetActive(false);
         pauseScreen.GetComponent<menuPausa>().setLock(false);
         pauseScreen.SetActive(false);
+        panelNotas.SetActive(false);
         panelMuerte.SetActive(false);
     }
 
