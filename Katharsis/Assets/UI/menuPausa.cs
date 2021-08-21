@@ -10,16 +10,17 @@ public class menuPausa : MonoBehaviour
     public GameObject botonOpciones;
     public GameObject botonVolverMenuPrincipal;
    
+    public GameObject panelOpciones;
+    public GameObject panelNotas;
 
     List<Boton> botones;
     int seleccion = 0;
-    bool locked = false;
-    GameObject panelOpciones;
-    GameObject panelNotas;
+    bool locked;
 
     // Start is called before the first frame update
     void Start()
     {
+        locked = false;
         panelOpciones = UIController.instance.panelOpciones;
         panelNotas = UIController.instance.panelNotas;
     }
@@ -103,16 +104,19 @@ public class menuPausa : MonoBehaviour
                 PlayerControls.instance.PauseUnpause();
                 break;
             case 1:
-                Debug.Log("ver notas");
                 panelNotas.SetActive(true);
+                Inventario i = panelNotas.GetComponent<PanelInventario>().inventario;
+                Debug.Log("ver notas");
+                locked = true;
+                i.setLock(false);
+
                 break;
             case 2:
                 Debug.Log("ver opciones");
+                locked = true; 
                 PanelOpciones po = panelOpciones.GetComponent<PanelOpciones>();
                 panelOpciones.SetActive(true);
                 po.reiniciarBotones();
-                setLock(true);
-                panelOpciones.SetActive(true);
                 po.setLock(false);
 
                 break;
