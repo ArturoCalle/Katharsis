@@ -15,6 +15,8 @@ public class Inventario : MonoBehaviour
     bool locked;
     bool mostrandoNota;
 
+    public static Inventario instance;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,7 +24,8 @@ public class Inventario : MonoBehaviour
         crearInventario();
         seleccion = 0;
         locked = true;
-        //TO DO cargar lista de recolectables 
+        //TO DO cargar lista de recolectables
+        instance = this;
     }
 
     // Update is called once per frame
