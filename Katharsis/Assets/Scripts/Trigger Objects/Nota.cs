@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Recolectable : MonoBehaviour 
+public class Nota : MonoBehaviour 
 {
     public GameObject aviso;
     public GameObject nota;
     public GameObject plane;
-    public Inventario i;
+    public PanelNotas i;
 
     public string escena;
     public string nombre;

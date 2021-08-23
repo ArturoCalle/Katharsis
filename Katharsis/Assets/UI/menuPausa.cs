@@ -105,7 +105,7 @@ public class menuPausa : MonoBehaviour
                 break;
             case 1:
                 panelNotas.SetActive(true);
-                Inventario i = panelNotas.GetComponent<PanelInventario>().inventario;
+                PanelNotas i = panelNotas.GetComponent<PanelInventario>().inventario;
                 Debug.Log("ver notas");
                 locked = true;
                 i.setLock(false);

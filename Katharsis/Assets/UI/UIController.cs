@@ -15,7 +15,7 @@ public class UIController : MonoBehaviour
     public GameObject panelNotas;
     public GameObject panelMuerte;
 
-    Recolectable nota;
+    Nota nota;
 
     // Start is called before the first frame update
     void Start()
@@ -61,7 +61,7 @@ public class UIController : MonoBehaviour
     {
         menuPausa mp = pauseScreen.GetComponent<menuPausa>();
         PanelOpciones po = panelOpciones.GetComponent<PanelOpciones>();
-        Inventario i = panelNotas.GetComponent<PanelInventario>().inventario;
+        PanelNotas i = panelNotas.GetComponent<PanelInventario>().inventario;
         if (Input.GetKeyDown(KeyCode.W))
         {
             if (!mp.isLocked())
