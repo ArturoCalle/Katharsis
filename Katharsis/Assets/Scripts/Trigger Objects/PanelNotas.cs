@@ -10,6 +10,8 @@ public class PanelNotas : MonoBehaviour
     public GameObject prefab;
     public GameObject scroll;
 
+    public static PanelNotas instance;
+
     List<Boton> items = new List<Boton>();
     int seleccion;
     bool locked;
@@ -18,6 +20,7 @@ public class PanelNotas : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        instance = this;
         mostrandoNota = false;
         crearInventario();
         seleccion = 0;
