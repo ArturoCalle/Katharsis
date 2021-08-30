@@ -36,7 +36,7 @@ public class Nota : MonoBehaviour
 
     public void mostrarNota()
     {
-        PlayerControls.instance.freeze(true);
+        SceneController.instance.freeze(true);
         nota.SetActive(true);
         aviso.SetActive(true);
         aviso.GetComponentInChildren<Text>().text = "(Z) aceptar";
@@ -53,6 +53,7 @@ public class Nota : MonoBehaviour
             if(Input.GetKeyDown(KeyCode.F))
             {
                 mostrarNota();
+
             }
         }
         if (aviso.activeInHierarchy)
@@ -63,7 +64,7 @@ public class Nota : MonoBehaviour
                 {
                     aviso.SetActive(false);
                     nota.SetActive(false);
-                    PlayerControls.instance.freeze(false);
+                    SceneController.instance.freeze(false);
                     recolectado = true;
                     mostrandoNota = false;
 
