@@ -246,7 +246,7 @@ public class PlayerControls : MonoBehaviour
         Quaternion rotation = Quaternion.Euler(0, temp.eulerAngles.y, 0);
         transform.rotation = rotation;
     }
-    private void SpawnAt(Transform target)
+    public void SpawnAt(Transform target)
     {
         Vector3 Spos = target.position - transform.position;
         controller.transform.position = Spos;
