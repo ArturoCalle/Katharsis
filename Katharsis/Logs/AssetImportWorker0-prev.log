@@ -15,11 +15,11 @@ G:/tuto/universidad/Tesis/Katharsis/Katharsis/Katharsis
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-60267
+56839
 Successfully changed project path to: G:/tuto/universidad/Tesis/Katharsis/Katharsis/Katharsis
 G:/tuto/universidad/Tesis/Katharsis/Katharsis/Katharsis
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 130.17 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 122.30 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2020.3.11f1 (99c7afb366b3)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2020.3.11f1/Editor/Data/Resources/UnitySubsystems
@@ -36,60 +36,97 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2020.3.11f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2020.3.11f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2020.3.11f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56324
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56848
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.11f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.004646 seconds.
+Registered in 0.004005 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 132.59 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 135.88 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  2.152 seconds
+- Completed reload, in  2.125 seconds
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.006914 seconds.
+Registered in 0.006494 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 134.17 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 123.68 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  2.387 seconds
+- Completed reload, in  2.186 seconds
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
 Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.11 seconds
-Refreshing native plugins compatible for Editor in 1.81 ms, found 2 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.08 seconds
+Refreshing native plugins compatible for Editor in 1.15 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 3168 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 143.3 MB.
-System memory in use after: 143.5 MB.
+System memory in use before: 143.5 MB.
+System memory in use after: 143.7 MB.
 
 Unloading 20 unused Assets to reduce memory usage. Loaded Objects now: 3606.
-Total: 7.836200 ms (FindLiveObjects: 2.171500 ms CreateObjectMapping: 0.463800 ms MarkObjects: 5.013900 ms  DeleteObjects: 0.184000 ms)
+Total: 3.842900 ms (FindLiveObjects: 0.637300 ms CreateObjectMapping: 0.166400 ms MarkObjects: 2.896800 ms  DeleteObjects: 0.141200 ms)
 
 ========================================================================
 Received Import Request.
-  path: Assets/Prefabs/Jugador.prefab
-  artifactKey: Guid(3fc03170ae7196f408187550be1c17db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Jugador.prefab using Guid(3fc03170ae7196f408187550be1c17db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '35a07f7cb69d9ca9cd53dcaaa774579d') in 0.519547 seconds
-  Import took 0.566540 seconds .
+  path: Assets/Scenes/Comedor.unity
+  artifactKey: Guid(a2bb4dc365f22464ebb89489b1617a7b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Comedor.unity using Guid(a2bb4dc365f22464ebb89489b1617a7b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6c44703bfa0318ab60c156adf8bdc74b') in 0.027559 seconds
+  Import took 0.136656 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000779 seconds.
-  path: Assets/Scenes/Cocina.unity
-  artifactKey: Guid(9fc0d4010bbf28b4594072e72b8655ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/Cocina.unity using Guid(9fc0d4010bbf28b4594072e72b8655ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6ad2f61452878da995aaf10b5f45be3c') in 0.011225 seconds
-  Import took 0.041749 seconds .
+  Time since last request: 90.110779 seconds.
+  path: Assets/Texturas/wood_plain_205_246_Small - copia.jpg
+  artifactKey: Guid(81062680e44ab7640a7ebb6ebd614faa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Texturas/wood_plain_205_246_Small - copia.jpg using Guid(81062680e44ab7640a7ebb6ebd614faa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cd1bb8ae14b211e8b3d7e46db26bbf37') in 0.273370 seconds
+  Import took 0.352529 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 30.856208 seconds.
-  path: Assets/Scenes/Sala.unity
-  artifactKey: Guid(3655b9e6f30b13d4e8ccd86522b59afd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/Sala.unity using Guid(3655b9e6f30b13d4e8ccd86522b59afd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '39cbc63cd745bf12782cb22359ca4c97') in 0.049339 seconds
-  Import took 0.072377 seconds .
+  Time since last request: 1.765544 seconds.
+  path: Assets/Sistema de Checkpoints
+  artifactKey: Guid(9529c547d37c3e14baa233019ae3b1e6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sistema de Checkpoints using Guid(9529c547d37c3e14baa233019ae3b1e6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f16e70e08dbf6492050b75fd07cbcaef') in 0.007878 seconds
+  Import took 0.085338 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.840541 seconds.
+  path: Assets/Scripts/SceneManager
+  artifactKey: Guid(a45f0d6ca8aa0b44e9942dddb56187ad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SceneManager using Guid(a45f0d6ca8aa0b44e9942dddb56187ad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4492a84f826b2496f88227c03b6838be') in 0.007585 seconds
+  Import took 0.066826 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 17.466672 seconds.
+  path: Assets/Prefabs/Controladores/SceneController.prefab
+  artifactKey: Guid(22bbeaf4ababe4a43874f6b86f80902c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Controladores/SceneController.prefab using Guid(22bbeaf4ababe4a43874f6b86f80902c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9a653498232a91ae820ac7c98d2ac816') in 0.065486 seconds
+  Import took 0.106839 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.006561 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.31 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  2.173 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 1.21 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3073 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 134.7 MB.
+System memory in use after: 135.0 MB.
+
+Unloading 15 unused Assets to reduce memory usage. Loaded Objects now: 3611.
+Total: 3.659100 ms (FindLiveObjects: 0.542000 ms CreateObjectMapping: 0.180000 ms MarkObjects: 2.906000 ms  DeleteObjects: 0.029800 ms)
 
 AssetImportWorkerClient::OnTransportError - code=2 error=End of file
