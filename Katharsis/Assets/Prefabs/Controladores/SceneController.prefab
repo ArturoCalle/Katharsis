@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1794016148437586498}
   - component: {fileID: 1794016148437586501}
+  - component: {fileID: 564097143}
   m_Layer: 0
   m_Name: SceneController
   m_TagString: Untagged
@@ -41,5 +42,24 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b6c46d5d9879a7f4fa669cfd9915e602, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lastCheckpoint: {fileID: 0}
+  checkpoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  prefabJugador: {fileID: 1513287002560204271, guid: 3fc03170ae7196f408187550be1c17db, type: 3}
+--- !u!114 &564097143
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1794016148437586500}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a07c8e804d98dd4e8717b864880178a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

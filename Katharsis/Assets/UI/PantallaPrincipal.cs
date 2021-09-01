@@ -74,7 +74,6 @@ public class PantallaPrincipal : MonoBehaviour
             }
             if (Input.GetKeyDown(KeyCode.Z))
             {
-                Debug.Log(seleccion);
                 seleccionar();
 
             }

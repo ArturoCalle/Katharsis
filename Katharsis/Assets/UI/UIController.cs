@@ -20,8 +20,8 @@ public class UIController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        instance = this;
         panelOpciones.GetComponent<PanelOpciones>().reiniciarBotones();
+        instance = this;
         desactivarPaneles();
 
     }
@@ -29,11 +29,6 @@ public class UIController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (instance.pauseScreen.activeInHierarchy)
-        {
-            getInputsMenu();
-        }
-
         /*
         if (fadeToBlack)
         {
@@ -57,90 +52,91 @@ public class UIController : MonoBehaviour
 
     }
 
-    void getInputsMenu()
+    public void getInputsMenu()
     {
-        if(SceneController.instance.pausa)
+
+        menuPausa mp = pauseScreen.GetComponent<menuPausa>();
+        PanelOpciones po = panelOpciones.GetComponent<PanelOpciones>();
+        PanelNotas i = panelNotas.GetComponent<PanelInventario>().inventario;
+
+        if (Input.GetKeyDown(KeyCode.W))
         {
-            menuPausa mp = pauseScreen.GetComponent<menuPausa>();
-            PanelOpciones po = panelOpciones.GetComponent<PanelOpciones>();
-            PanelNotas i = panelNotas.GetComponent<PanelInventario>().inventario;
-            if (Input.GetKeyDown(KeyCode.W))
+            if (!mp.isLocked())
             {
-                if (!mp.isLocked())
-                {
-                    mp.cambiarSeleccion(-1);
-                }
-                if (!po.isLocked())
-                {
-                    po.cambiarSeleccion(-1);
-                }
-                if(!i.isLocked())
-                {
+                mp.cambiarSeleccion(-1);
+            }
+            if (!po.isLocked())
+            {
+                po.cambiarSeleccion(-1);
+            }
+            if(!i.isLocked())
+            {
                 
-                    i.cambiarSeleccion(-1);
-                }
+                i.cambiarSeleccion(-1);
             }
-            if (Input.GetKeyDown(KeyCode.S))
-            {
+        }
+        if (Input.GetKeyDown(KeyCode.S))
+        {
             
-                if (!mp.isLocked())
-                {
-                    mp.cambiarSeleccion(1);
-                }
-                if (!po.isLocked())
-                {
-                    po.cambiarSeleccion(1);
-                }
-                if (!i.isLocked())
-                {
-                    i.cambiarSeleccion(1);
-                }
-            }
-            if (Input.GetKeyDown(KeyCode.Z))
+            if (!mp.isLocked())
             {
-                Debug.Log(i.isLocked());
-                if (!mp.isLocked())
-                {
-                    mp.setLock(true);
-                    mp.seleccionar();
-                }
-               if(!po.isLocked())
-                {
-                    po.setLock(true);
-                    po.seleccionar(mp);
-                }
-                if (!i.isLocked())
-                {
-                    //i.setLock(true);
-                    i.seleccionar();
-                }
+                mp.cambiarSeleccion(1);
             }
-            if (Input.GetKeyDown(KeyCode.Escape))
+            if (!po.isLocked())
             {
-               
-                if(panelOpciones.activeInHierarchy)
-                {
-                    po.setLock(true);
-                    panelOpciones.SetActive(false);
-                }
-                else if(panelNotas.activeInHierarchy)
-                {
-                    i.setLock(true);
-                    panelNotas.SetActive(false);
-                }
-                else
-                {
-                    Debug.Log("despausando...");
-                    Reanudar();
-                    Debug.Log(SceneController.instance.pausa);
-                }
+                po.cambiarSeleccion(1);
+            }
+            if (!i.isLocked())
+            {
+                i.cambiarSeleccion(1);
+            }
+        }
+        if (Input.GetKeyDown(KeyCode.Z))
+        {
+            if (panelMuerte.activeInHierarchy)
+            {
+                SceneController.instance.restartGameFromCheckpoint();
+            }else if (!mp.isLocked())
+            {
+                mp.setLock(true);
+                mp.seleccionar();
+            }else if(!po.isLocked())
+            {
+                po.setLock(true);
+                po.seleccionar(mp);
+            }else if (!i.isLocked())
+            {
+                //i.setLock(true);
+                i.seleccionar();
+            }  
+        }
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if(panelOpciones.activeInHierarchy)
+            {
+                po.setLock(true);
+                panelOpciones.SetActive(false);
+            }
+            else if(panelNotas.activeInHierarchy)
+            {
+                i.setLock(true);
+                panelNotas.SetActive(false);
+            }
+            else if (panelMuerte.activeInHierarchy)
+            {
+                panelMuerte.SetActive(false);
+                SceneController.instance.cambiarEscena("Pantalla Principal");
+            }
+            else
+            {
+                Reanudar();
             }
         }
     }
     public void Reanudar()
     {
         desactivarPaneles();
-        SceneController.instance.pause();
+        SceneController.instance.resume();
     }
     public void hidePanel(string name)
     {
@@ -162,22 +158,11 @@ public class UIController : MonoBehaviour
 
     public void pausar()
     {
+        Debug.Log("entro a menu pausa");
         panelOpciones.GetComponent<PanelOpciones>().reiniciarBotones();
-        pauseScreen.SetActive(true);
+        instance.pauseScreen.SetActive(true);
     }
-    public void EndGame()
-    {
-        Debug.Log("GameOver");
-        SceneController.instance.freeze(true);
-        panelMuerte.SetActive(true);
-        if (Input.GetKeyDown(KeyCode.Z))
-        {
-            Debug.Log("OPRIMÍ Z");
-            desactivarPaneles();
-        }
-
-
-    }
+    
     
     
     

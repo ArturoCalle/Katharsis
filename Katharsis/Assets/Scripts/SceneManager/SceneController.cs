@@ -6,12 +6,15 @@ using UnityEngine.SceneManagement;
 public class SceneController : MonoBehaviour
 {
     public static SceneController instance;
-
-    public bool pausa;
-    void Start()
+    public CheckpointSingle lastCheckpoint;
+    public List<CheckpointSingle> checkpoints;
+    public GameObject prefabJugador;
+    private GameObject jugador;
+    private void Awake()
     {
+        prefabJugador.transform.position = lastCheckpoint.transform.position;
+        jugador = Instantiate(prefabJugador);
         instance = this;
-        pausa = false;
     }
 
     public void cambiarEscena(string nombre)
@@ -24,27 +27,23 @@ public class SceneController : MonoBehaviour
         return SceneManager.GetActiveScene();
     }
 
-    public void pause()
+    public void resume()
     {
-        if(pausa)
-        {
-             UIController.instance.desactivarPaneles();
-             freeze(false);
-             Cursor.visible = false;
-             Cursor.lockState = CursorLockMode.Locked;
-        }
-        else
-        {
-            UIController.instance.pausar();
-            freeze(true);
-            Cursor.visible = true;
-            Cursor.lockState = CursorLockMode.None;
-        }
+        UIController.instance.desactivarPaneles();
+        freeze(false);
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+    }
+
+    public void pause()
+    {            
+        freeze(true);
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     public void freeze(bool congelar)
     {
-        pausa = congelar;
         if (congelar)
         {
             Time.timeScale = 0f;
@@ -53,5 +52,29 @@ public class SceneController : MonoBehaviour
         {
             Time.timeScale = 1f;
         }
+    }
+    public void EndGame()
+    {
+        pause();
+        UIController.instance.panelMuerte.SetActive(true);
+    }
+    public void restartGameFromCheckpoint()
+    {
+        UIController.instance.desactivarPaneles();
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        jugador.transform.position = lastCheckpoint.transform.position;
+        resume();
+        Debug.Log(jugador.transform.position);
+        Debug.Log(lastCheckpoint.transform.position);
+    }
+    public void PlayerThroughCheckpoint(CheckpointSingle checkpointSingle)
+    {
+        lastCheckpoint = checkpointSingle;
+    }
+
+    public void MenuPausa()
+    {
+        pause();
+        UIController.instance.pauseScreen.SetActive(true);
     }
 }
