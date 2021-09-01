@@ -20,11 +20,11 @@ public class PanelNotas : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        instance = this;
         mostrandoNota = false;
         crearInventario();
         seleccion = 0;
         locked = true;
+        instance = this;
         //TO DO cargar lista de recolectables 
     }
 

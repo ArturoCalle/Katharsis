@@ -12,7 +12,6 @@ public class Respawn : MonoBehaviour
         if (other.tag == "Mortal")
         {
             SceneController.instance.EndGame();
-            
         }
     }
 }

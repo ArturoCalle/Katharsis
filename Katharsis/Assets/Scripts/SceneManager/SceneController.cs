@@ -8,11 +8,10 @@ public class SceneController : MonoBehaviour
     public static SceneController instance;
     public CheckpointSingle lastCheckpoint;
     public List<CheckpointSingle> checkpoints;
-    public bool pausa;
-    void Start()
+
+    private void Awake()
     {
         instance = this;
-        pausa = false;
     }
 
     public void cambiarEscena(string nombre)
@@ -25,34 +24,23 @@ public class SceneController : MonoBehaviour
         return SceneManager.GetActiveScene();
     }
 
-    public void pause(string causa)
+    public void resume()
     {
-        if(pausa)
-        {
-             UIController.instance.desactivarPaneles();
-             freeze(false);
-             Cursor.visible = false;
-             Cursor.lockState = CursorLockMode.Locked;
-        }
-        else
-        {
-            if(causa != "EndGame")
-            {
-                UIController.instance.pausar();
-            }
-            else if(causa == "EndGame")
-            {
-                pausa = true;
-            }
-            freeze(true);
-            Cursor.visible = true;
-            Cursor.lockState = CursorLockMode.None;
-        }
+        UIController.instance.desactivarPaneles();
+        freeze(false);
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+    }
+
+    public void pause()
+    {            
+        freeze(true);
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     public void freeze(bool congelar)
     {
-        pausa = congelar;
         if (congelar)
         {
             Time.timeScale = 0f;
@@ -64,16 +52,23 @@ public class SceneController : MonoBehaviour
     }
     public void EndGame()
     {
-        pause("EndGame");
+        pause();
         UIController.instance.panelMuerte.SetActive(true);
     }
     public void restartGameFromCheckpoint()
     {
         UIController.instance.desactivarPaneles();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        resume();
     }
     public void PlayerThroughCheckpoint(CheckpointSingle checkpointSingle)
     {
-        SceneController.instance.lastCheckpoint = checkpointSingle;
+        lastCheckpoint = checkpointSingle;
+    }
+
+    public void MenuPausa()
+    {
+        pause();
+        UIController.instance.pauseScreen.SetActive(true);
     }
 }

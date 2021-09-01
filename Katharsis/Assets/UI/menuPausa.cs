@@ -9,9 +9,7 @@ public class menuPausa : MonoBehaviour
     public GameObject botonNotas;
     public GameObject botonOpciones;
     public GameObject botonVolverMenuPrincipal;
-   
-    public GameObject panelOpciones;
-    public GameObject panelNotas;
+
 
     List<Boton> botones;
     int seleccion = 0;
@@ -21,8 +19,6 @@ public class menuPausa : MonoBehaviour
     void Start()
     {
         locked = false;
-        panelOpciones = UIController.instance.panelOpciones;
-        panelNotas = UIController.instance.panelNotas;
     }
 
     // Update is called once per frame
@@ -101,28 +97,27 @@ public class menuPausa : MonoBehaviour
         {
             case 0:
                 Debug.Log("reanudar partida");
-                SceneController.instance.pause("Reanudar Partida");
+                SceneController.instance.resume();
                 break;
             case 1:
-                panelNotas.SetActive(true);
-                PanelNotas i = panelNotas.GetComponent<PanelInventario>().inventario;
+                UIController.instance.panelNotas.SetActive(true);
+                PanelNotas i = UIController.instance.panelNotas.GetComponent<PanelInventario>().inventario;
                 Debug.Log("ver notas");
                 locked = true;
                 i.setLock(false);
-
                 break;
             case 2:
                 Debug.Log("ver opciones");
                 locked = true; 
-                PanelOpciones po = panelOpciones.GetComponent<PanelOpciones>();
-                panelOpciones.SetActive(true);
+                PanelOpciones po = UIController.instance.panelOpciones.GetComponent<PanelOpciones>();
+                UIController.instance.panelOpciones.SetActive(true);
                 po.reiniciarBotones();
                 po.setLock(false);
 
                 break;
             case 3:
                 Debug.Log("volver al menú principal");
-                SceneController.instance.pause("Volver a menú principal");
+                //SceneController.instance.pause("Volver a menú principal");
                 SceneController.instance.cambiarEscena("Pantalla Principal");
 
                 break;
