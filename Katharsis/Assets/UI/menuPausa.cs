@@ -101,11 +101,11 @@ public class menuPausa : MonoBehaviour
         {
             case 0:
                 Debug.Log("reanudar partida");
-                PlayerControls.instance.PauseUnpause();
+                SceneController.instance.pause();
                 break;
             case 1:
                 panelNotas.SetActive(true);
-                Inventario i = panelNotas.GetComponent<PanelInventario>().inventario;
+                PanelNotas i = panelNotas.GetComponent<PanelInventario>().inventario;
                 Debug.Log("ver notas");
                 locked = true;
                 i.setLock(false);
@@ -122,7 +122,7 @@ public class menuPausa : MonoBehaviour
                 break;
             case 3:
                 Debug.Log("volver al menú principal");
-                PlayerControls.instance.PauseUnpause();
+                SceneController.instance.pause();
                 SceneController.instance.cambiarEscena("Pantalla Principal");
 
                 break;

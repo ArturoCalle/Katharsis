@@ -18,9 +18,9 @@ public class SaveData
 
     private string[] recolectablesRecogidos()
     {
-        string[] nombres = new string[Inventario.instance.inventario.Count];
+        string[] nombres = new string[PanelNotas.instance.inventario.Count];
         int i = 0;
-        foreach (Recolectable recolectable in Inventario.instance.inventario)
+        foreach (Nota recolectable in PanelNotas.instance.inventario)
         {
             nombres[i] = recolectable.nombre;
             i++;
