@@ -8,11 +8,12 @@ public class SceneController : MonoBehaviour
     public static SceneController instance;
     public CheckpointSingle lastCheckpoint;
     public List<CheckpointSingle> checkpoints;
-
-    public GameObject jugador;
-
+    public GameObject prefabJugador;
+    private GameObject jugador;
     private void Awake()
     {
+        prefabJugador.transform.position = lastCheckpoint.transform.position;
+        jugador = Instantiate(prefabJugador);
         instance = this;
     }
 
