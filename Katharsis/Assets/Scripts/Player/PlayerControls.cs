@@ -164,7 +164,7 @@ public class PlayerControls : MonoBehaviour
         { 
             if (Input.GetKeyDown(KeyCode.Escape))
             {
-               SceneController.instance.pause();
+               SceneController.instance.pause("escape");
             }
             //Controles hacia adelante, hacia atras, cancelar movimiento y sin movimiento en y
             if (Input.GetKey(controls.forwards))
@@ -245,10 +245,5 @@ public class PlayerControls : MonoBehaviour
         Quaternion temp = Quaternion.LookRotation(direction);
         Quaternion rotation = Quaternion.Euler(0, temp.eulerAngles.y, 0);
         transform.rotation = rotation;
-    }
-    public void SpawnAt(Transform target)
-    {
-        Vector3 Spos = target.position - transform.position;
-        controller.transform.position = Spos;
     }
 }

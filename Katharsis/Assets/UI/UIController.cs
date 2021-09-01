@@ -29,7 +29,11 @@ public class UIController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         if (instance.pauseScreen.activeInHierarchy)
+        {
+            getInputsMenu();
+        }else if (instance.panelMuerte.activeInHierarchy)
         {
             getInputsMenu();
         }
@@ -64,6 +68,7 @@ public class UIController : MonoBehaviour
             menuPausa mp = pauseScreen.GetComponent<menuPausa>();
             PanelOpciones po = panelOpciones.GetComponent<PanelOpciones>();
             PanelNotas i = panelNotas.GetComponent<PanelInventario>().inventario;
+
             if (Input.GetKeyDown(KeyCode.W))
             {
                 if (!mp.isLocked())
@@ -98,7 +103,7 @@ public class UIController : MonoBehaviour
             }
             if (Input.GetKeyDown(KeyCode.Z))
             {
-                Debug.Log(i.isLocked());
+                Debug.Log("2");
                 if (!mp.isLocked())
                 {
                     mp.setLock(true);
@@ -114,10 +119,14 @@ public class UIController : MonoBehaviour
                     //i.setLock(true);
                     i.seleccionar();
                 }
+                if (panelMuerte.activeInHierarchy)
+                {
+                    Debug.Log("reiniciando juego desde checkpoint");
+                    SceneController.instance.restartGameFromCheckpoint();
+                }
             }
             if (Input.GetKeyDown(KeyCode.Escape))
             {
-               
                 if(panelOpciones.activeInHierarchy)
                 {
                     po.setLock(true);
@@ -128,7 +137,12 @@ public class UIController : MonoBehaviour
                     i.setLock(true);
                     panelNotas.SetActive(false);
                 }
-                else
+                else if (panelMuerte.activeInHierarchy)
+                {
+                    panelMuerte.SetActive(false);
+                    Debug.Log("activando pantalla principal");
+                    SceneController.instance.cambiarEscena("Pantalla Principal");
+                }else
                 {
                     Debug.Log("despausando...");
                     Reanudar();
@@ -140,7 +154,7 @@ public class UIController : MonoBehaviour
     public void Reanudar()
     {
         desactivarPaneles();
-        SceneController.instance.pause();
+        SceneController.instance.pause("Reanudar");
     }
     public void hidePanel(string name)
     {
@@ -163,21 +177,9 @@ public class UIController : MonoBehaviour
     public void pausar()
     {
         panelOpciones.GetComponent<PanelOpciones>().reiniciarBotones();
-        pauseScreen.SetActive(true);
+        instance.pauseScreen.SetActive(true);
     }
-    public void EndGame()
-    {
-        Debug.Log("GameOver");
-        SceneController.instance.freeze(true);
-        panelMuerte.SetActive(true);
-        if (Input.GetKeyDown(KeyCode.Z))
-        {
-            Debug.Log("OPRIMÍ Z");
-            desactivarPaneles();
-        }
-
-
-    }
+    
     
     
     

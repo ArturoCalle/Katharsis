@@ -101,7 +101,7 @@ public class menuPausa : MonoBehaviour
         {
             case 0:
                 Debug.Log("reanudar partida");
-                SceneController.instance.pause();
+                SceneController.instance.pause("Reanudar Partida");
                 break;
             case 1:
                 panelNotas.SetActive(true);
@@ -122,7 +122,7 @@ public class menuPausa : MonoBehaviour
                 break;
             case 3:
                 Debug.Log("volver al menú principal");
-                SceneController.instance.pause();
+                SceneController.instance.pause("Volver a menú principal");
                 SceneController.instance.cambiarEscena("Pantalla Principal");
 
                 break;

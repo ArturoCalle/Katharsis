@@ -6,7 +6,8 @@ using UnityEngine.SceneManagement;
 public class SceneController : MonoBehaviour
 {
     public static SceneController instance;
-
+    public CheckpointSingle lastCheckpoint;
+    public List<CheckpointSingle> checkpoints;
     public bool pausa;
     void Start()
     {
@@ -24,7 +25,7 @@ public class SceneController : MonoBehaviour
         return SceneManager.GetActiveScene();
     }
 
-    public void pause()
+    public void pause(string causa)
     {
         if(pausa)
         {
@@ -35,7 +36,14 @@ public class SceneController : MonoBehaviour
         }
         else
         {
-            UIController.instance.pausar();
+            if(causa != "EndGame")
+            {
+                UIController.instance.pausar();
+            }
+            else if(causa == "EndGame")
+            {
+                pausa = true;
+            }
             freeze(true);
             Cursor.visible = true;
             Cursor.lockState = CursorLockMode.None;
@@ -53,5 +61,19 @@ public class SceneController : MonoBehaviour
         {
             Time.timeScale = 1f;
         }
+    }
+    public void EndGame()
+    {
+        pause("EndGame");
+        UIController.instance.panelMuerte.SetActive(true);
+    }
+    public void restartGameFromCheckpoint()
+    {
+        UIController.instance.desactivarPaneles();
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+    public void PlayerThroughCheckpoint(CheckpointSingle checkpointSingle)
+    {
+        SceneController.instance.lastCheckpoint = checkpointSingle;
     }
 }
