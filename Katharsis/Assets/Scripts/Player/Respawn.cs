@@ -2,9 +2,10 @@ using UnityEngine;
 
 public class Respawn : MonoBehaviour
 {
+    public GameObject jugador;
     private void Start()
     {
-        transform.position = SceneController.instance.lastCheckpoint.transform.position;
+        //jugador.transform.position = SceneController.instance.lastCheckpoint.transform.position;
     }
 
     private void OnTriggerEnter(Collider other)

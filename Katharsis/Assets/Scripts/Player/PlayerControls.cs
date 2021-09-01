@@ -43,6 +43,7 @@ public class PlayerControls : MonoBehaviour
         controller = GetComponent<CharacterController>();
         instance = this;
         esc = escalar.GetComponent<Escalar>();
+        gameObject.transform.position = SceneController.instance.lastCheckpoint.transform.position;
     }
     void Update()
     {

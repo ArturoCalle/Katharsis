@@ -9,6 +9,8 @@ public class SceneController : MonoBehaviour
     public CheckpointSingle lastCheckpoint;
     public List<CheckpointSingle> checkpoints;
 
+    public GameObject jugador;
+
     private void Awake()
     {
         instance = this;
@@ -59,7 +61,10 @@ public class SceneController : MonoBehaviour
     {
         UIController.instance.desactivarPaneles();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        jugador.transform.position = lastCheckpoint.transform.position;
         resume();
+        Debug.Log(jugador.transform.position);
+        Debug.Log(lastCheckpoint.transform.position);
     }
     public void PlayerThroughCheckpoint(CheckpointSingle checkpointSingle)
     {
