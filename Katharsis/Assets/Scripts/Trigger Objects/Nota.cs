@@ -13,6 +13,7 @@ public class Nota : MonoBehaviour
     public string escena;
     public string nombre;
     public char tipo;
+    public int numNota;
 
     bool recolectado = false;
     bool inCollectRange = false;
@@ -54,7 +55,7 @@ public class Nota : MonoBehaviour
             if(Input.GetKeyDown(KeyCode.F))
             {
                 mostrarNota();
-                InventarioController.instance.agregarNota(nombre, escena, tipo, recolectado);
+                InventarioController.instance.agregarNota(nombre, escena, tipo, recolectado, numNota);
             }
         }
         if (aviso.activeInHierarchy)

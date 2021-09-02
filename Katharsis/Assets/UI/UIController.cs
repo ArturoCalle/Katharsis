@@ -54,82 +54,87 @@ public class UIController : MonoBehaviour
 
     public void getInputsMenu()
     {
+        if (SceneController.instance.pausa)
+        {
+            menuPausa mp = pauseScreen.GetComponent<menuPausa>();
+            PanelOpciones po = panelOpciones.GetComponent<PanelOpciones>();
+            PanelNotas i = panelNotas.GetComponent<PanelInventario>().inventario;
 
-        menuPausa mp = pauseScreen.GetComponent<menuPausa>();
-        PanelOpciones po = panelOpciones.GetComponent<PanelOpciones>();
-        PanelNotas i = panelNotas.GetComponent<PanelInventario>().inventario;
+            if (Input.GetKeyDown(KeyCode.W))
+            {
+                if (!mp.isLocked())
+                {
+                    mp.cambiarSeleccion(-1);
+                }
+                if (!po.isLocked())
+                {
+                    po.cambiarSeleccion(-1);
+                }
+                if (!i.isLocked())
+                {
 
-        if (Input.GetKeyDown(KeyCode.W))
-        {
-            if (!mp.isLocked())
-            {
-                mp.cambiarSeleccion(-1);
+                    i.cambiarSeleccion(-1);
+                }
             }
-            if (!po.isLocked())
+            if (Input.GetKeyDown(KeyCode.S))
             {
-                po.cambiarSeleccion(-1);
+
+                if (!mp.isLocked())
+                {
+                    mp.cambiarSeleccion(1);
+                }
+                if (!po.isLocked())
+                {
+                    po.cambiarSeleccion(1);
+                }
+                if (!i.isLocked())
+                {
+                    i.cambiarSeleccion(1);
+                }
             }
-            if(!i.isLocked())
+            if (Input.GetKeyDown(KeyCode.Z))
             {
-                
-                i.cambiarSeleccion(-1);
+                if (panelMuerte.activeInHierarchy)
+                {
+                    SceneController.instance.restartGameFromCheckpoint();
+                }
+                else if (!mp.isLocked())
+                {
+                    mp.setLock(true);
+                    mp.seleccionar();
+                }
+                else if (!po.isLocked())
+                {
+                    po.setLock(true);
+                    po.seleccionar(mp);
+                }
+                else if (!i.isLocked())
+                {
+                    //i.setLock(true);
+                    i.seleccionar();
+                }
             }
-        }
-        if (Input.GetKeyDown(KeyCode.S))
-        {
-            
-            if (!mp.isLocked())
+            if (Input.GetKeyDown(KeyCode.Escape))
             {
-                mp.cambiarSeleccion(1);
-            }
-            if (!po.isLocked())
-            {
-                po.cambiarSeleccion(1);
-            }
-            if (!i.isLocked())
-            {
-                i.cambiarSeleccion(1);
-            }
-        }
-        if (Input.GetKeyDown(KeyCode.Z))
-        {
-            if (panelMuerte.activeInHierarchy)
-            {
-                SceneController.instance.restartGameFromCheckpoint();
-            }else if (!mp.isLocked())
-            {
-                mp.setLock(true);
-                mp.seleccionar();
-            }else if(!po.isLocked())
-            {
-                po.setLock(true);
-                po.seleccionar(mp);
-            }else if (!i.isLocked())
-            {
-                //i.setLock(true);
-                i.seleccionar();
-            }  
-        }
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            if(panelOpciones.activeInHierarchy)
-            {
-                po.setLock(true);
-                panelOpciones.SetActive(false);
-            }
-            else if(panelNotas.activeInHierarchy)
-            {
-                i.setLock(true);
-                panelNotas.SetActive(false);
-            }
-            else if (panelMuerte.activeInHierarchy)
-            {
-                panelMuerte.SetActive(false);
-                SceneController.instance.cambiarEscena("Pantalla Principal");
-            }
-            else
-            {
-                Reanudar();
+                if (panelOpciones.activeInHierarchy)
+                {
+                    po.setLock(true);
+                    panelOpciones.SetActive(false);
+                }
+                else if (panelNotas.activeInHierarchy)
+                {
+                    i.setLock(true);
+                    panelNotas.SetActive(false);
+                }
+                else if (panelMuerte.activeInHierarchy)
+                {
+                    panelMuerte.SetActive(false);
+                    SceneController.instance.cambiarEscena("Pantalla Principal");
+                }
+                else
+                {
+                    Reanudar();
+                }
             }
         }
     }

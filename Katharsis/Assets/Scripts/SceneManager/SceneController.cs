@@ -10,11 +10,14 @@ public class SceneController : MonoBehaviour
     public List<CheckpointSingle> checkpoints;
     public GameObject prefabJugador;
     private GameObject jugador;
+    public bool pausa;
+
     private void Awake()
     {
         prefabJugador.transform.position = lastCheckpoint.transform.position;
         jugador = Instantiate(prefabJugador);
         instance = this;
+        pausa = false;
     }
 
     public void cambiarEscena(string nombre)
@@ -31,19 +34,21 @@ public class SceneController : MonoBehaviour
     {
         UIController.instance.desactivarPaneles();
         freeze(false);
-        Cursor.visible = true;
-        Cursor.lockState = CursorLockMode.None;
-    }
-
-    public void pause()
-    {            
-        freeze(true);
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
     }
 
+    public void pause()
+    {
+        UIController.instance.pausar();
+        freeze(true);
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+    }
+
     public void freeze(bool congelar)
     {
+        pausa = congelar;
         if (congelar)
         {
             Time.timeScale = 0f;
@@ -55,7 +60,9 @@ public class SceneController : MonoBehaviour
     }
     public void EndGame()
     {
-        pause();
+        freeze(true);
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
         UIController.instance.panelMuerte.SetActive(true);
     }
     public void restartGameFromCheckpoint()

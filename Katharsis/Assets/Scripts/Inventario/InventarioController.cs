@@ -15,9 +15,8 @@ public class InventarioController : MonoBehaviour
     {
         
     }
-    public void agregarNota(string nombre, string escena, char tipo, bool recolectado)
+    public void agregarNota(string nombre, string escena, char tipo, bool recolectado, int numNota)
     {
-        Recolectable nuevo = new Recolectable(nombre, escena, tipo, recolectado);
-       
+        Recolectable nuevo = new Recolectable(nombre, escena, tipo, recolectado, numNota);
     }
 }

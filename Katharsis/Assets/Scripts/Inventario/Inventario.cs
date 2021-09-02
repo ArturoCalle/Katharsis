@@ -12,6 +12,5 @@ public class Inventario
     public void agregarRecolectable(Recolectable nuevo)
     {
         recolectables.Add(nuevo);
-
     }
 }

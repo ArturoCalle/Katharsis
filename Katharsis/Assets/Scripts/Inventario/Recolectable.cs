@@ -8,12 +8,14 @@ public class Recolectable
     private string escena;
     private char tipo;
     private bool recolectado;
-    public Recolectable(string nombre, string escena, char tipo, bool recolectado)
+    private int numNota;
+    public Recolectable(string nombre, string escena, char tipo, bool recolectado, int numNota)
     {
         this.nombre = nombre;
         this.escena = escena;
         this.tipo = tipo;
         this.recolectado = recolectado;
+        this.numNota = numNota;
     }
     public Recolectable()
     {

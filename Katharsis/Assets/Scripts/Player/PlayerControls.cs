@@ -161,51 +161,54 @@ public class PlayerControls : MonoBehaviour
     }
     public void getInputs()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (!SceneController.instance.pausa)
         {
-            SceneController.instance.MenuPausa();
-        }
-        //Controles hacia adelante, hacia atras, cancelar movimiento y sin movimiento en y
-        if (Input.GetKey(controls.forwards))
-        {
-            inputs.z = 1;
-        }
-
-        if (Input.GetKey(controls.backwards))
-        {
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                SceneController.instance.MenuPausa();
+            }
+            //Controles hacia adelante, hacia atras, cancelar movimiento y sin movimiento en y
             if (Input.GetKey(controls.forwards))
-                inputs.z = 0;
-            else
-                inputs.z = -1;
-        }
-        if (!Input.GetKey(controls.forwards) && !Input.GetKey(controls.backwards))
-        {
-            inputs.z = 0;
-        }
-        //Controles rotacion derecha, izquierda, cancelar movimiento y sin movimiento en x
-        if (Input.GetKey(controls.right))
-        {
-            inputs.x = 1;
-        }
+            {
+                inputs.z = 1;
+            }
 
-        if (Input.GetKey(controls.left))
-        {
+            if (Input.GetKey(controls.backwards))
+            {
+                if (Input.GetKey(controls.forwards))
+                    inputs.z = 0;
+                else
+                    inputs.z = -1;
+            }
+            if (!Input.GetKey(controls.forwards) && !Input.GetKey(controls.backwards))
+            {
+                inputs.z = 0;
+            }
+            //Controles rotacion derecha, izquierda, cancelar movimiento y sin movimiento en x
             if (Input.GetKey(controls.right))
+            {
+                inputs.x = 1;
+            }
+
+            if (Input.GetKey(controls.left))
+            {
+                if (Input.GetKey(controls.right))
+                {
+                    inputs.x = 0;
+                }
+                else
+                {
+                    inputs.x = -1;
+                }
+            }
+
+            if (!Input.GetKey(controls.right) && !Input.GetKey(controls.left))
             {
                 inputs.x = 0;
             }
-            else
-            {
-                inputs.x = -1;
-            }
+            //Jumping
+            jump = Input.GetKey(controls.jump);
         }
-
-        if (!Input.GetKey(controls.right) && !Input.GetKey(controls.left))
-        {
-            inputs.x = 0;
-        }
-        //Jumping
-        jump = Input.GetKey(controls.jump);
     }
 
     private void checkMouse()
