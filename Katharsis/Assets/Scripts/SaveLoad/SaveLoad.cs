@@ -22,7 +22,7 @@ public class SaveData
         int i = 0;
         foreach (Nota recolectable in PanelNotas.instance.inventario)
         {
-            nombres[i] = recolectable.nombre;
+            nombres[i] = recolectable.notaUI.nombre;
             i++;
         }
         return nombres;

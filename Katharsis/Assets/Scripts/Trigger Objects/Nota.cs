@@ -5,19 +5,11 @@ using UnityEngine.UI;
 
 public class Nota : MonoBehaviour 
 {
-    public GameObject aviso;
-    public GameObject nota;
+    public NotaUI notaUI;
     public GameObject plane;
     public PanelNotas i;
 
-    public string escena;
-    public string nombre;
-    public char tipo;
-    public int numNota;
-
-    bool recolectado = false;
     bool inCollectRange = false;
-    bool mostrandoNota = false;
     // Start is called before the first frame update
     public void OnTriggerStay(Collider col)
     {
@@ -25,28 +17,20 @@ public class Nota : MonoBehaviour
         {
             if(plane.activeInHierarchy)
             {
-               aviso.SetActive(true);
+               notaUI.mostrarAviso(true);
                inCollectRange = true;
             }
         }
     }
     public void OnTriggerExit(Collider col)
     {
-        aviso.SetActive(false);
+        notaUI.mostrarAviso(false);
         inCollectRange = false;
     }
 
-    public void mostrarNota()
+    void Update()
     {
-        SceneController.instance.freeze(true);
-        nota.SetActive(true);
-        aviso.SetActive(true);
-        aviso.GetComponentInChildren<Text>().text = "(Z) aceptar";
-    }
-
-    private void Update()
-    {
-        if(recolectado)
+        if(notaUI.recolectado)
         {
            plane.SetActive(false);
         }
@@ -54,42 +38,27 @@ public class Nota : MonoBehaviour
         {
             if(Input.GetKeyDown(KeyCode.F))
             {
-                mostrarNota();
-                InventarioController.instance.agregarNota(nombre, escena, tipo, recolectado, numNota);
+                SceneController.instance.freeze(true);
+                notaUI.agregarNotaAInventario();
+                notaUI.mostrarNota();                
             }
         }
-        if (aviso.activeInHierarchy)
+        if (notaUI.isActive())
         {         
             if (Input.GetKeyDown(KeyCode.Z))
             {
-                if(!recolectado)
+                if(!notaUI.recolectado)
                 {
-                    aviso.SetActive(false);
-                    nota.SetActive(false);
                     SceneController.instance.freeze(false);
-                    recolectado = true;
-                    mostrandoNota = false;
-
-                }
-                else if(mostrandoNota)
-                {
-                    aviso.SetActive(false);
-                    nota.SetActive(false);
-                    mostrandoNota = false;
-                    i.setLock(false);
-                }
-                else
-                {
-                    mostrandoNota = true;
+                    notaUI.recolectado = true;
                 }
 
             }
-            
         }
     }
     public bool isCollected()
     {
-        return recolectado;
+        return notaUI.recolectado;
     }
     void Start()
     {

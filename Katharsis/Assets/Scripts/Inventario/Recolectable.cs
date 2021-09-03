@@ -40,6 +40,10 @@ public class Recolectable
     {
         return this.recolectado;
     }
+    public int getNumNota()
+    {
+        return this.numNota;
+    }
 
 
 }
