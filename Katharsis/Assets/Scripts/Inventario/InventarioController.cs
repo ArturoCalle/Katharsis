@@ -27,4 +27,9 @@ public class InventarioController : MonoBehaviour
     {
         return inventario.getNotas();
     }
+    public List<Recolectable> getRecolectables()
+    {
+        return inventario.getRecolectables();
+
+    }
 }

@@ -23,4 +23,8 @@ public class Inventario
         Debug.Log(r.getNombre());
         Debug.Log(r.getEscena());
     }
+    public List<Recolectable> getRecolectables()
+    {
+        return recolectables;
+    }
 }
