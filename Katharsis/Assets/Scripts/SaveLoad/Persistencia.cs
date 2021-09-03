@@ -2,25 +2,36 @@ using UnityEngine;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 
-public class Persistencia: MonoBehaviour
+public static class Persistencia
 {
-    public void savePartida(string name, )
+    public static void GuardarPartida(string name)
     {
         BinaryFormatter formatter = new BinaryFormatter();
         string path = Application.persistentDataPath + "/partida" + name;
         FileStream stream = new FileStream(path, FileMode.Create);
 
-        Partida partida = new Partida();
+        Partida partida = new Partida(InventarioController.instance.getRecolectables(), SceneController.instance.ultimoCheckPoint, SceneController.instance.getCurrentSceneName());
+        formatter.Serialize(stream, partida);
+        stream.Close();
+    }  
 
-
-    }
-
-    public void cargarCheckpoint()
+    public static Partida CargarPartida(string name)
     {
-        InventarioController.instance.
-    }
-    public void cargarInventario()
-    {
+        string path = Application.persistentDataPath + "/partida" + name;
+        if (File.Exists(path))
+        {
+            BinaryFormatter formatter = new BinaryFormatter();
+            FileStream stream = new FileStream(path, FileMode.Open);
 
+            Partida partida = formatter.Deserialize(stream) as Partida;
+            stream.Close();
+
+            return partida;
+        }
+        else
+        {
+            Debug.LogError("save file not found in" + path);
+            return null;
+        }
     }
 }

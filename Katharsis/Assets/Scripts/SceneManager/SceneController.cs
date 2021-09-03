@@ -10,7 +10,6 @@ public class SceneController : MonoBehaviour
     public CheckpointSingle ultimoCheckPoint;
     private GameObject jugador;
     public bool pausa;
-    public Persistencia persistencia;
 
     private void Awake()
     {
@@ -86,14 +85,20 @@ public class SceneController : MonoBehaviour
     }
     public void GuardarPartida()
     {
-
+        Persistencia.GuardarPartida("partida unica");
     }
     public void CargarPartida()
     {
-        //TODO eliminar checkpoints, notas y recolectables de la escena
+        Partida partida = Persistencia.CargarPartida("partida unica");
+        Debug.Log(partida.escena);
     }
     public void nuevaPartida()
     {
         cambiarEscena("sala");
+    }
+
+    public string getCurrentSceneName()
+    {
+        return SceneManager.GetActiveScene().name;
     }
 }
