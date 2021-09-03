@@ -6,8 +6,10 @@ using UnityEngine.UI;
 
 public class PanelNotas : MonoBehaviour
 {
+    private List<Recolectable> inven = new List<Recolectable>();
     public List<Nota> inventario = new List<Nota>();
-    public GameObject prefab;
+    public GameObject notaUiPrefab;
+    public GameObject botonPrefab;
     public GameObject scroll;
 
     public static PanelNotas instance;
@@ -35,7 +37,7 @@ public class PanelNotas : MonoBehaviour
         {
             if (inventario[i].isCollected())
             {
-                items[i].actualizarTexto(inventario[i].nombre);
+                items[i].actualizarTexto(inventario[i].notaUI.nombre);
             }
             else
             {
@@ -50,7 +52,7 @@ public class PanelNotas : MonoBehaviour
         GameObject nuevoItem;
         for(int i = 0; i<inventario.Count;i++)
         {
-            nuevoItem = (GameObject)Instantiate(prefab, transform);
+            nuevoItem = (GameObject)Instantiate(botonPrefab, transform);
             Boton actual = nuevoItem.GetComponent<Boton>();
             items.Add(actual);
             
@@ -100,7 +102,7 @@ public class PanelNotas : MonoBehaviour
         if(inventario[seleccion].isCollected())
         {
             
-            inventario[seleccion].mostrarNota();      
+            inventario[seleccion].notaUI.mostrarNota();      
             
         }
     }
@@ -115,5 +117,9 @@ public class PanelNotas : MonoBehaviour
     public int getSeleccion()
     {
         return seleccion;
+    }
+    public void loadInventory()
+    {
+        
     }
 }
