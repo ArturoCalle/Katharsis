@@ -13,8 +13,12 @@ public class SceneController : MonoBehaviour
 
     private void Awake()
     {
-        prefabJugador.transform.position = ultimoCheckPoint.transform.position;
-        jugador = Instantiate(prefabJugador);
+        Debug.Log(SceneManager.GetActiveScene().name);
+        if(SceneManager.GetActiveScene().name!= "Pantalla Principal")
+        {
+            prefabJugador.transform.position = ultimoCheckPoint.transform.position;
+            jugador = Instantiate(prefabJugador);
+        }
         instance = this;
         pausa = false;
     }
@@ -82,5 +86,9 @@ public class SceneController : MonoBehaviour
     public void GuardarPartida()
     {
 
+    }
+    public void nuevaPartida()
+    {
+        cambiarEscena("sala");
     }
 }
