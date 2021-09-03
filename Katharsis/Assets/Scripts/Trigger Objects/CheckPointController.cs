@@ -21,7 +21,7 @@ public class CheckPointController : MonoBehaviour
 
     public void PlayerThroughCheckpoint(CheckpointSingle checkpointSingle)
     {
-        SceneController.instance.lastCheckpoint = checkpointSingle;
+        SceneController.instance.ultimoCheckPoint = checkpointSingle;
         SceneController.instance.GuardarPartida();
     }
 }

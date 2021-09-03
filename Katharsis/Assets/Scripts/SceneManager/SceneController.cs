@@ -79,4 +79,8 @@ public class SceneController : MonoBehaviour
         pause();
         UIController.instance.pauseScreen.SetActive(true);
     }
+    public void GuardarPartida()
+    {
+
+    }
 }
