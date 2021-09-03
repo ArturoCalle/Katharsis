@@ -8,7 +8,7 @@ public class CheckpointSingle : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            SceneController.instance.PlayerThroughCheckpoint(this);
+            CheckPointController.instance.PlayerThroughCheckpoint(this);
             gameObject.SetActive(false);
         }
     }

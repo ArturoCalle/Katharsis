@@ -6,15 +6,14 @@ using UnityEngine.SceneManagement;
 public class SceneController : MonoBehaviour
 {
     public static SceneController instance;
-    public CheckpointSingle lastCheckpoint;
-    public List<CheckpointSingle> checkpoints;
     public GameObject prefabJugador;
+    public CheckpointSingle ultimoCheckPoint;
     private GameObject jugador;
     public bool pausa;
 
     private void Awake()
     {
-        prefabJugador.transform.position = lastCheckpoint.transform.position;
+        prefabJugador.transform.position = ultimoCheckPoint.transform.position;
         jugador = Instantiate(prefabJugador);
         instance = this;
         pausa = false;
@@ -69,14 +68,10 @@ public class SceneController : MonoBehaviour
     {
         UIController.instance.desactivarPaneles();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        jugador.transform.position = lastCheckpoint.transform.position;
+        jugador.transform.position = ultimoCheckPoint.transform.position;
         resume();
         Debug.Log(jugador.transform.position);
-        Debug.Log(lastCheckpoint.transform.position);
-    }
-    public void PlayerThroughCheckpoint(CheckpointSingle checkpointSingle)
-    {
-        lastCheckpoint = checkpointSingle;
+        Debug.Log(ultimoCheckPoint.transform.position);
     }
 
     public void MenuPausa()
