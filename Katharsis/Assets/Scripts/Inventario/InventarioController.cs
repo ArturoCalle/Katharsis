@@ -23,4 +23,9 @@ public class InventarioController : MonoBehaviour
         inventario.agregarRecolectable(nuevo);
 
     }
+    public List<Recolectable> getRecolectables()
+    {
+        return inventario.getRecolectables();
+
+    }
 }
