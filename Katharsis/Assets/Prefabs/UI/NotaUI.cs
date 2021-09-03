@@ -12,18 +12,16 @@ public class NotaUI : MonoBehaviour
     public string nombre;
     public char tipo;
     public int numNota;
-
     public bool recolectado;
     
-    Recolectable recolectable;
+    
     public NotaUI(Recolectable r)
     {
-        recolectable = r;
-        escena = recolectable.getEscena();
-        nombre = recolectable.getNombre();
-        tipo = recolectable.getTipo();
-        numNota = recolectable.getNumNota();
-        recolectado = recolectable.getRecolectado();
+        escena = r.getEscena();
+        nombre = r.getNombre();
+        tipo = r.getTipo();
+        numNota = r.getNumNota();
+        recolectado = r.getRecolectado();
     }
     // Start is called before the first frame update
     void Start()

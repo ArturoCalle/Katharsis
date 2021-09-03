@@ -100,7 +100,8 @@ public class PantallaPrincipal : MonoBehaviour
         switch(seleccion)
         {
             case 0:
-                SceneController.instance.cambiarEscena("Cocina");
+                SceneController.instance.nuevaPartida() ;
+
                 //TO DO crear nueva partida
                 break;
             case 1:
