@@ -100,11 +100,12 @@ public class PantallaPrincipal : MonoBehaviour
         switch(seleccion)
         {
             case 0:
-                SceneController.instance.nuevaPartida() ;
+                SceneController.instance.nuevaPartida();
 
                 //TO DO crear nueva partida
                 break;
             case 1:
+                SceneController.instance.CargarPartida();
                 //TO DO crear cargar partida
                 break;
             case 2:

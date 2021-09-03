@@ -18,7 +18,6 @@ public class Inventario
     public void agregarRecolectable(Recolectable nuevo)
     {
         recolectables[nuevo.getNumNota() - 1]= nuevo;
-
         Recolectable r = recolectables[nuevo.getNumNota() - 1];
         Debug.Log(r.getNumNota());
         Debug.Log(r.getNombre());

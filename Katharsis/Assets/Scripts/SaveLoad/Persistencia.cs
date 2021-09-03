@@ -1,18 +1,26 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using System.IO;
+using System.Runtime.Serialization.Formatters.Binary;
 
-public class Persistencia : MonoBehaviour
+public class Persistencia: MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public void savePartida(string name, )
     {
-        
+        BinaryFormatter formatter = new BinaryFormatter();
+        string path = Application.persistentDataPath + "/partida" + name;
+        FileStream stream = new FileStream(path, FileMode.Create);
+
+        Partida partida = new Partida();
+
+
     }
 
-    // Update is called once per frame
-    void Update()
+    public void cargarCheckpoint()
     {
-        
+        InventarioController.instance.
+    }
+    public void cargarInventario()
+    {
+
     }
 }

@@ -21,6 +21,10 @@ public class InventarioController : MonoBehaviour
     {
         Recolectable nuevo = new Recolectable(nombre, escena, tipo, recolectado, numNota);
         inventario.agregarRecolectable(nuevo);
+    }
 
+    public List<Recolectable> getNotas()
+    {
+        return inventario.getNotas();
     }
 }

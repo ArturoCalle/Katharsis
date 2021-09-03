@@ -2,17 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Partida : MonoBehaviour
+public class Partida
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    int numNota;
 
-    // Update is called once per frame
-    void Update()
+    public Partida()
     {
-        
+
     }
 }
