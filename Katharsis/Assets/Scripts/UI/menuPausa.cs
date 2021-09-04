@@ -96,28 +96,24 @@ public class menuPausa : MonoBehaviour
         switch (seleccion)
         {
             case 0:
-                Debug.Log("reanudar partida");
                 SceneController.instance.resume();
                 break;
             case 1:
                 UIController.instance.panelNotas.SetActive(true);
                 PanelNotas i = UIController.instance.panelNotas.GetComponent<PanelInventario>().inventario;
-                Debug.Log("ver notas");
                 locked = true;
                 i.setLock(false);
                 break;
             case 2:
-                Debug.Log("ver opciones");
                 locked = true; 
-                PanelOpciones po = UIController.instance.panelOpciones.GetComponent<PanelOpciones>();
                 UIController.instance.panelOpciones.SetActive(true);
+                PanelOpciones po = UIController.instance.panelOpciones.GetComponent<PanelOpciones>();
                 po.reiniciarBotones();
                 po.setLock(false);
 
                 break;
             case 3:
-                Debug.Log("volver al menú principal");
-                //SceneController.instance.pause("Volver a menú principal");
+                SceneController.instance.resume();
                 SceneController.instance.cambiarEscena("Pantalla Principal");
 
                 break;

@@ -6,8 +6,7 @@ using UnityEngine.UI;
 
 public class PanelNotas : MonoBehaviour
 {
-    private List<Recolectable> inven = new List<Recolectable>();
-    public List<Nota> inventario = new List<Nota>();
+    private List<Recolectable> inventario = new List<Recolectable>();
     public GameObject notaUiPrefab;
     public GameObject botonPrefab;
     public GameObject scroll;
@@ -22,11 +21,13 @@ public class PanelNotas : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        cargarInventario();
         mostrandoNota = false;
         crearInventario();
         seleccion = 0;
         locked = true;
         instance = this;
+        print();
         //TO DO cargar lista de recolectables 
     }
 
@@ -35,9 +36,9 @@ public class PanelNotas : MonoBehaviour
     {
         for(int i = 0; i < inventario.Count; i++)
         {
-            if (inventario[i].isCollected())
+            if (inventario[i].getRecolectado())
             {
-                items[i].actualizarTexto(inventario[i].notaUI.nombre);
+                items[i].actualizarTexto(inventario[i].getNombre());
             }
             else
             {
@@ -98,11 +99,13 @@ public class PanelNotas : MonoBehaviour
 
     public void seleccionar()
     {
-        
-        if(inventario[seleccion].isCollected())
+        GameObject nota;
+        if(inventario[seleccion].getRecolectado())
         {
-            
-            inventario[seleccion].notaUI.mostrarNota();      
+            nota = (GameObject)Instantiate(notaUiPrefab, transform);
+            NotaUI notaui = nota.GetComponent<NotaUI>();
+            notaui.setDatos(inventario[seleccion]);
+            notaui.mostrarNota();
             
         }
     }
@@ -118,8 +121,12 @@ public class PanelNotas : MonoBehaviour
     {
         return seleccion;
     }
-    public void loadInventory()
+    public void cargarInventario()
     {
-        List<Recolectable> inventario = InventarioController.instance.getRecolectables()
+        inventario = InventarioController.instance.getRecolectables();
+    }
+    public void print()
+    {
+        Debug.Log("inventario: " + inventario.Count);
     }
 }

@@ -58,14 +58,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2baf53457a5c7d34a8345bed2feb6dea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventario:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  prefab: {fileID: 3792852915522359521, guid: f4fc2416bbcb9f743ab6a2b709e03eb9, type: 3}
+  notaUiPrefab: {fileID: 5529437570859556400, guid: 3642aad681a1df04989234f59d9ad119, type: 3}
+  botonPrefab: {fileID: 3792852915522359521, guid: f4fc2416bbcb9f743ab6a2b709e03eb9, type: 3}
   scroll: {fileID: 1647261625795880764}
 --- !u!114 &760105255
 MonoBehaviour:
@@ -964,7 +958,7 @@ GameObject:
   - component: {fileID: 8141782200799403166}
   - component: {fileID: 8141782200799403161}
   m_Layer: 5
-  m_Name: UI Canvas
+  m_Name: UI Controller
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1263,8 +1257,6 @@ MonoBehaviour:
   botonNotas: {fileID: 4926797700337410662}
   botonOpciones: {fileID: 4926797700502957189}
   botonVolverMenuPrincipal: {fileID: 4926797700839905197}
-  panelOpciones: {fileID: 8141782200691431527}
-  panelNotas: {fileID: 1019498196}
 --- !u!1001 &4365032761120297212
 PrefabInstance:
   m_ObjectHideFlags: 0

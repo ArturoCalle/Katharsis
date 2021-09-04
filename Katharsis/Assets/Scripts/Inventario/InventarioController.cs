@@ -24,6 +24,11 @@ public class InventarioController : MonoBehaviour
         SceneController.instance.GuardarPartida();
     }
 
+    public void cargarInventario(bool[] recolectados)
+    {
+
+    }
+
     public List<Recolectable> getRecolectables()
     {
         return inventario.getRecolectables();

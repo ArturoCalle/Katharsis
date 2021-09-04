@@ -60,4 +60,12 @@ public class NotaUI : MonoBehaviour
     {
         return (aviso.activeInHierarchy);
     }
+    public void setDatos(Recolectable r)
+    {
+        escena = r.getEscena();
+        nombre = r.getNombre();
+        tipo = r.getTipo();
+        numNota = r.getNumNota();
+        recolectado = r.getRecolectado();
+    }
 }
