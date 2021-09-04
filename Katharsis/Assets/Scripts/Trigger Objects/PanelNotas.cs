@@ -120,6 +120,6 @@ public class PanelNotas : MonoBehaviour
     }
     public void loadInventory()
     {
-        
+        List<Recolectable> inventario = InventarioController.instance.getRecolectables()
     }
 }
