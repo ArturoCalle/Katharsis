@@ -13,7 +13,6 @@ public class SceneController : MonoBehaviour
 
     private void Awake()
     {
-        Debug.Log(SceneManager.GetActiveScene().name);
         if(SceneManager.GetActiveScene().name!= "Pantalla Principal")
         {
             prefabJugador.transform.position = ultimoCheckPoint.transform.position;
@@ -90,7 +89,9 @@ public class SceneController : MonoBehaviour
     public void CargarPartida()
     {
         Partida partida = Persistencia.CargarPartida("partida unica");
-        Debug.Log(partida.escena);
+        Debug.Log("notas: " + partida.notasRecogidas.Length);
+        InventarioController.instance.cargarInventario(partida.notasRecogidas);
+        SceneManager.LoadScene(partida.escena);
     }
     public void nuevaPartida()
     {

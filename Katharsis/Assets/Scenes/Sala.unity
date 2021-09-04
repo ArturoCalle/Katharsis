@@ -3049,6 +3049,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 591901582}
+  - component: {fileID: 591901583}
   m_Layer: 0
   m_Name: notas
   m_TagString: Untagged
@@ -3071,6 +3072,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &591901583
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 591901581}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3cedaf369262140489a4cb6647e951f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  notas:
+  - {fileID: 2007779952439757696}
 --- !u!1 &596407359
 GameObject:
   m_ObjectHideFlags: 0
@@ -8312,10 +8327,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   aviso: {fileID: 846494629}
   nota: {fileID: 1744862849}
-  escena: sala
-  nombre: nota1
+  escena: Sala
+  nombre: nota0
   tipo: 49
-  numNota: 1
+  numNota: 0
   recolectado: 0
 --- !u!1001 &1907682600
 PrefabInstance:
@@ -10159,6 +10174,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1ecd245678500fc4ba0d354bb4fa59f7, type: 3}
+--- !u!114 &2007779952439757696 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2007779952465330492, guid: 1ecd245678500fc4ba0d354bb4fa59f7, type: 3}
+  m_PrefabInstance: {fileID: 2007779952439757695}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fee07b9e973e60d4d8bdc4f3cc0861d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2154214285176435976
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10337,6 +10363,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3011320700132528715, guid: 95e26f898435ee143bb7d9a61bbfff92, type: 3}
+      propertyPath: notasSceneManager
+      value: 
+      objectReference: {fileID: 591901583}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 95e26f898435ee143bb7d9a61bbfff92, type: 3}
 --- !u!1001 &3035549550384430633

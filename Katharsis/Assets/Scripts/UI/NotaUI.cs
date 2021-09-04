@@ -34,8 +34,10 @@ public class NotaUI : MonoBehaviour
     {
         if (aviso.activeInHierarchy)
         {
+            
             if (Input.GetKeyDown(KeyCode.Z))
             {
+                Debug.Log("desactivar nota");
                 aviso.SetActive(false);
                 nota.SetActive(false);
             }

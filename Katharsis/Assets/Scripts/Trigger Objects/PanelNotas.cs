@@ -21,20 +21,21 @@ public class PanelNotas : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        cargarInventario();
-        mostrandoNota = false;
+        
         crearInventario();
+
+        mostrandoNota = false;
         seleccion = 0;
-        locked = true;
+        locked = false;
         instance = this;
-        print();
         //TO DO cargar lista de recolectables 
     }
 
     // Update is called once per frame
     void Update()
     {
-        for(int i = 0; i < inventario.Count; i++)
+        
+        for (int i = 0; i < inventario.Count; i++)
         {
             if (inventario[i].getRecolectado())
             {
@@ -50,6 +51,7 @@ public class PanelNotas : MonoBehaviour
 
     private void crearInventario()
     {
+        cargarInventario();
         GameObject nuevoItem;
         for(int i = 0; i<inventario.Count;i++)
         {
@@ -99,6 +101,7 @@ public class PanelNotas : MonoBehaviour
 
     public void seleccionar()
     {
+        cargarInventario();
         GameObject nota;
         if(inventario[seleccion].getRecolectado())
         {
@@ -124,9 +127,5 @@ public class PanelNotas : MonoBehaviour
     public void cargarInventario()
     {
         inventario = InventarioController.instance.getRecolectables();
-    }
-    public void print()
-    {
-        Debug.Log("inventario: " + inventario.Count);
     }
 }
