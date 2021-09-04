@@ -85,10 +85,20 @@ public class SceneController : MonoBehaviour
     }
     public void GuardarPartida()
     {
-
+        Persistencia.GuardarPartida("partida unica");
+    }
+    public void CargarPartida()
+    {
+        Partida partida = Persistencia.CargarPartida("partida unica");
+        Debug.Log(partida.escena);
     }
     public void nuevaPartida()
     {
         cambiarEscena("sala");
+    }
+
+    public string getCurrentSceneName()
+    {
+        return SceneManager.GetActiveScene().name;
     }
 }
