@@ -5,7 +5,6 @@ using UnityEngine;
 public class InventarioController : MonoBehaviour
 {
     public static InventarioController instance;
-    public NotasSceneManager notasSceneManager;
     private Inventario inventario;
     void Start()
     {
@@ -22,7 +21,7 @@ public class InventarioController : MonoBehaviour
     {
         Recolectable nuevo = new Recolectable(nombre, escena, tipo, recolectado, numNota);
         inventario.agregarRecolectable(nuevo);
-        notasSceneManager.verificarNotas();
+        NotasSceneController.instance.verificarNotas();
         SceneController.instance.GuardarPartida();
     }
 

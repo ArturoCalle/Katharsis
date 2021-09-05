@@ -32,20 +32,20 @@ public class NotaUI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (aviso.activeInHierarchy)
+        if (aviso.activeInHierarchy && nota.activeInHierarchy)
         {
-            
             if (Input.GetKeyDown(KeyCode.Z))
             {
-                Debug.Log("desactivar nota");
                 aviso.SetActive(false);
                 nota.SetActive(false);
+
             }
 
         }
     }
     public void mostrarNota()
-    {  
+    {
+        SceneController.instance.freeze(true);
         nota.SetActive(true);
         aviso.SetActive(true);
         aviso.GetComponentInChildren<Text>().text = "(Z) aceptar";
@@ -54,9 +54,11 @@ public class NotaUI : MonoBehaviour
     {
         aviso.SetActive(mostrar);
     }
-    public void agregarNotaAInventario()
+    public void agregarNotaAInventario(GameObject nota)
     {
         InventarioController.instance.agregarNota(nombre, escena, tipo, recolectado, numNota);
+        recolectado = true;
+        nota.SetActive(false);
     }
     public bool isActive()
     {

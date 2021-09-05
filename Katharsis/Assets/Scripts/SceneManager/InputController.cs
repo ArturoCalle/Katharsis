@@ -7,10 +7,12 @@ public class InputController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Time.timeScale == 0f)
+        if (SceneController.instance.pausa)
         {
+
             UIController.instance.getInputsMenu();
-        }else if(Time.timeScale == 1f)
+        }
+        else if(SceneController.instance.pausa)
         {
             PlayerControls.instance.getInputs();
         }
