@@ -21,7 +21,7 @@ public class Recolectable
     {
         this.nombre = "???";
         this.escena = "???";
-        recolectado = false;
+        recolectado  = false;
     }
 
     public string getNombre()

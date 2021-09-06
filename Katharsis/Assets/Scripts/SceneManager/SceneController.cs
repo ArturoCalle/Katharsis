@@ -15,6 +15,7 @@ public class SceneController : MonoBehaviour
     {
         if(SceneManager.GetActiveScene().name!= "Pantalla Principal")
         {
+
             prefabJugador.transform.position = ultimoCheckPoint.transform.position;
             jugador = Instantiate(prefabJugador);
         }
