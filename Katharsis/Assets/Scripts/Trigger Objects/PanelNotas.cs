@@ -6,8 +6,7 @@ using UnityEngine.UI;
 
 public class PanelNotas : MonoBehaviour
 {
-    private List<Recolectable> inven = new List<Recolectable>();
-    public List<Nota> inventario = new List<Nota>();
+    private List<Recolectable> inventario = new List<Recolectable>();
     public GameObject notaUiPrefab;
     public GameObject botonPrefab;
     public GameObject scroll;
@@ -22,10 +21,12 @@ public class PanelNotas : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        mostrandoNota = false;
+        
         crearInventario();
+
+        mostrandoNota = false;
         seleccion = 0;
-        locked = true;
+        locked = false;
         instance = this;
         //TO DO cargar lista de recolectables 
     }
@@ -33,11 +34,12 @@ public class PanelNotas : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        for(int i = 0; i < inventario.Count; i++)
+        
+        for (int i = 0; i < inventario.Count; i++)
         {
-            if (inventario[i].isCollected())
+            if (inventario[i].getRecolectado())
             {
-                items[i].actualizarTexto(inventario[i].notaUI.nombre);
+                items[i].actualizarTexto(inventario[i].getNombre());
             }
             else
             {
@@ -49,6 +51,7 @@ public class PanelNotas : MonoBehaviour
 
     private void crearInventario()
     {
+        cargarInventario();
         GameObject nuevoItem;
         for(int i = 0; i<inventario.Count;i++)
         {
@@ -98,11 +101,19 @@ public class PanelNotas : MonoBehaviour
 
     public void seleccionar()
     {
-        
-        if(inventario[seleccion].isCollected())
+        cargarInventario();
+        GameObject gameObjectNota;
+        if(inventario[seleccion].getRecolectado())
         {
-            
-            inventario[seleccion].notaUI.mostrarNota();      
+            gameObjectNota = (GameObject)Instantiate(notaUiPrefab, transform);
+            NotaUI notaui = gameObjectNota.GetComponent<NotaUI>();
+            notaui.gameObject.SetActive(true);
+
+
+            notaui.setDatos(inventario[seleccion]);
+            Debug.Log("mostrar nota!!!!");
+            notaui.mostrarNota();
+
             
         }
     }
@@ -118,8 +129,8 @@ public class PanelNotas : MonoBehaviour
     {
         return seleccion;
     }
-    public void loadInventory()
+    public void cargarInventario()
     {
-        List<Recolectable> inventario = InventarioController.instance.getRecolectables()
+        inventario = InventarioController.instance.getRecolectables();
     }
 }

@@ -58,7 +58,7 @@ public class UIController : MonoBehaviour
         {
             menuPausa mp = pauseScreen.GetComponent<menuPausa>();
             PanelOpciones po = panelOpciones.GetComponent<PanelOpciones>();
-            PanelNotas i = panelNotas.GetComponent<PanelInventario>().inventario;
+            PanelNotas i = panelNotas.GetComponent<PanelInventario>().panelNotas;
 
             if (Input.GetKeyDown(KeyCode.W))
             {
@@ -120,11 +120,13 @@ public class UIController : MonoBehaviour
                 {
                     po.setLock(true);
                     panelOpciones.SetActive(false);
+                    mp.setLock(false);
                 }
                 else if (panelNotas.activeInHierarchy)
                 {
                     i.setLock(true);
                     panelNotas.SetActive(false);
+                    mp.setLock(false);
                 }
                 else if (panelMuerte.activeInHierarchy)
                 {
@@ -163,7 +165,7 @@ public class UIController : MonoBehaviour
 
     public void pausar()
     {
-        Debug.Log("entro a menu pausa");
+       
         panelOpciones.GetComponent<PanelOpciones>().reiniciarBotones();
         instance.pauseScreen.SetActive(true);
     }

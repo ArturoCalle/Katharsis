@@ -6,10 +6,11 @@ using UnityEngine;
 public class Inventario
 {
     private List<Recolectable> recolectables;
+    private int numeroTotalNotas= 15;
     public Inventario()
     {
         recolectables = new List<Recolectable>();
-        for (int i = 0; i< 20; i++)
+        for (int i = 0; i< numeroTotalNotas; i++)
         {
             Recolectable nuevo = new Recolectable();
             recolectables.Add(nuevo);
@@ -19,9 +20,7 @@ public class Inventario
     {
         recolectables[nuevo.getNumNota()]= nuevo;
         Recolectable r = recolectables[nuevo.getNumNota()];
-        Debug.Log(r.getNumNota());
-        Debug.Log(r.getNombre());
-        Debug.Log(r.getEscena());
+        
     }
     public List<Recolectable> getRecolectables()
     {

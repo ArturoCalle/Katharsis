@@ -24,42 +24,28 @@ public class Nota : MonoBehaviour
     }
     public void OnTriggerExit(Collider col)
     {
-        notaUI.mostrarAviso(false);
-        inCollectRange = false;
+        if(!notaUI.recolectado)
+        {
+            notaUI.mostrarAviso(false);
+            inCollectRange = false;
+        }
     }
 
     void Update()
     {
-        if(notaUI.recolectado)
-        {
-           plane.SetActive(false);
-        }
+        
         if(inCollectRange)
         {
             if(Input.GetKeyDown(KeyCode.F))
             {
-                SceneController.instance.freeze(true);
-                notaUI.agregarNotaAInventario();
-                notaUI.mostrarNota();                
+                
+                notaUI.agregarNotaAInventario(plane);
+                notaUI.mostrarNota();  
             }
         }
-        if (notaUI.isActive())
-        {         
-            if (Input.GetKeyDown(KeyCode.Z))
-            {
-                if(!notaUI.recolectado)
-                {
-                    SceneController.instance.freeze(false);
-                    notaUI.recolectado = true;
-                }
 
-            }
-        }
     }
-    public bool isCollected()
-    {
-        return notaUI.recolectado;
-    }
+    
     void Start()
     {
         

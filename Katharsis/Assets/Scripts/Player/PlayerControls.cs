@@ -43,7 +43,6 @@ public class PlayerControls : MonoBehaviour
         controller = GetComponent<CharacterController>();
         instance = this;
         esc = escalar.GetComponent<Escalar>();
-        Debug.Log(gameObject);
     }
     void Update()
     {

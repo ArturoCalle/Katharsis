@@ -21,7 +21,6 @@ public class PantallaPrincipal : MonoBehaviour
         botones.Add(cargarJuego.GetComponent<Boton>());
         botones.Add(opciones.GetComponent<Boton>());
         botones.Add(salir.GetComponent<Boton>());
-        Debug.Log(botones.Count);
         seleccion = 0;
         locked = false;
 
