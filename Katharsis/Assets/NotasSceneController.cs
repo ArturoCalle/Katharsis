@@ -26,4 +26,8 @@ public class NotasSceneController : MonoBehaviour
            Debug.Log(r[i].getNombre() +" "+ r[i].getRecolectado());   
         }
     }
+    public Nota getNota(int index)
+    {
+        return notas[index];
+    }
 }

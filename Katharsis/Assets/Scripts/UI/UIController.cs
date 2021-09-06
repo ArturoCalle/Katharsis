@@ -58,7 +58,7 @@ public class UIController : MonoBehaviour
         {
             menuPausa mp = pauseScreen.GetComponent<menuPausa>();
             PanelOpciones po = panelOpciones.GetComponent<PanelOpciones>();
-            PanelNotas i = panelNotas.GetComponent<PanelInventario>().inventario;
+            PanelNotas i = panelNotas.GetComponent<PanelInventario>().panelNotas;
 
             if (Input.GetKeyDown(KeyCode.W))
             {

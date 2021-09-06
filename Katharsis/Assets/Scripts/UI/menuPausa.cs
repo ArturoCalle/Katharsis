@@ -100,7 +100,7 @@ public class menuPausa : MonoBehaviour
                 break;
             case 1:
                 UIController.instance.panelNotas.SetActive(true);
-                PanelNotas i = UIController.instance.panelNotas.GetComponent<PanelInventario>().inventario;
+                PanelNotas i = UIController.instance.panelNotas.GetComponent<PanelInventario>().panelNotas;
                 locked = true;
                 i.setLock(false);
                 break;

@@ -41,4 +41,9 @@ public class InventarioController : MonoBehaviour
         return inventario.getRecolectables();
 
     }
+    public Recolectable getRecolectable(int index)
+    {
+        List<Recolectable> rs = inventario.getRecolectables();
+        return rs[index];
+    }
 }

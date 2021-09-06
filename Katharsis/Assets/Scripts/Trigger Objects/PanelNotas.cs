@@ -102,13 +102,18 @@ public class PanelNotas : MonoBehaviour
     public void seleccionar()
     {
         cargarInventario();
-        GameObject nota;
+        GameObject gameObjectNota;
         if(inventario[seleccion].getRecolectado())
         {
-            nota = (GameObject)Instantiate(notaUiPrefab, transform);
-            NotaUI notaui = nota.GetComponent<NotaUI>();
+            gameObjectNota = (GameObject)Instantiate(notaUiPrefab, transform);
+            NotaUI notaui = gameObjectNota.GetComponent<NotaUI>();
+            notaui.gameObject.SetActive(true);
+
+
             notaui.setDatos(inventario[seleccion]);
+            Debug.Log("mostrar nota!!!!");
             notaui.mostrarNota();
+
             
         }
     }
