@@ -21,17 +21,17 @@ public class InventarioController : MonoBehaviour
     {
         Recolectable nuevo = new Recolectable(nombre, escena, tipo, recolectado, numNota);
         inventario.agregarRecolectable(nuevo);
-        NotasSceneController.instance.verificarNotas();
         SceneController.instance.GuardarPartida();
     }
 
-    public void cargarInventario(bool[] recolectados)
+    public void cargarInventario(Partida p)
     {
-        for(int i =0; i<recolectados.Length;i++)
+        for(int i =0; i<p.notasRecogidas.Length;i++)
         {
-            if(recolectados[i])
+            if(p.notasRecogidas[i])
             {
-                Debug.Log("nota: "+ i + " recogida");
+                Debug.Log("nota: "+p.nombreNotas[i]+ " recogida");
+                agregarNota(p.nombreNotas[i],p.escenaNotas[i], p.tipoNotas[i],p.notasRecogidas[i], i);
             }
         }
     }

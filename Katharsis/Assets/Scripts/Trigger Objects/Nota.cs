@@ -43,6 +43,7 @@ public class Nota : MonoBehaviour
                 notaUI.mostrarNota();  
             }
         }
+        
 
     }
     

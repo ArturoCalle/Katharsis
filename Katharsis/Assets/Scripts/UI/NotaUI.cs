@@ -59,6 +59,7 @@ public class NotaUI : MonoBehaviour
         recolectado = true;
         InventarioController.instance.agregarNota(nombre, escena, tipo, recolectado, numNota);
         nota.SetActive(false);
+        
     }
     public bool isActive()
     {

@@ -9,7 +9,7 @@ public class CheckpointSingle : MonoBehaviour
         if (other.tag == "Player")
         {
             CheckPointController.instance.PlayerThroughCheckpoint(this);
-            gameObject.SetActive(false);
+            //gameObject.SetActive(false);
         }
     }
 }
