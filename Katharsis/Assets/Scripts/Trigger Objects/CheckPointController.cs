@@ -21,8 +21,10 @@ public class CheckPointController : MonoBehaviour
 
     public void PlayerThroughCheckpoint(CheckpointSingle checkpointSingle)
     {
+        
         SceneController.instance.ultimoCheckPoint = checkpointSingle;
-        SceneController.instance.GuardarPartida();
+        //SceneController.instance.GuardarPartida();
+        
     }
 
     public void cargarCheckpoints(int[] checkpoints) // megafonos

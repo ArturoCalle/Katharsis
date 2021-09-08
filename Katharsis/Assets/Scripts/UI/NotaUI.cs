@@ -38,7 +38,6 @@ public class NotaUI : MonoBehaviour
             {
                 aviso.SetActive(false);
                 nota.SetActive(false);
-
             }
 
         }
@@ -59,6 +58,7 @@ public class NotaUI : MonoBehaviour
         recolectado = true;
         InventarioController.instance.agregarNota(nombre, escena, tipo, recolectado, numNota);
         nota.SetActive(false);
+        
     }
     public bool isActive()
     {

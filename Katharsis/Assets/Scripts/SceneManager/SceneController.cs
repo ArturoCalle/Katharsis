@@ -85,18 +85,27 @@ public class SceneController : MonoBehaviour
     }
     public void GuardarPartida()
     {
+        Debug.Log("guardando....");
         Persistencia.GuardarPartida("partida unica");
     }
     public void CargarPartida()
     {
         Partida partida = Persistencia.CargarPartida("partida unica");
-        Debug.Log("notas: " + partida.notasRecogidas.Length);
-        InventarioController.instance.cargarInventario(partida.notasRecogidas);
+        InventarioController.instance.cargarInventario(partida);
         SceneManager.LoadScene(partida.escena);
+
+    }
+    public void cargarInventario()
+    {
+        Partida partida = Persistencia.CargarPartida("partida unica");
+        InventarioController.instance.cargarInventario(partida);
     }
     public void nuevaPartida()
     {
+        InventarioController.instance.vaciarInventario();
+        GuardarPartida();
         cambiarEscena("sala");
+        
     }
 
     public string getCurrentSceneName()

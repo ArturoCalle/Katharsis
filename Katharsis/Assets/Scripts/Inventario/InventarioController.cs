@@ -10,30 +10,41 @@ public class InventarioController : MonoBehaviour
     {
         instance = this;
         inventario = new Inventario();
+
+        SceneController.instance.cargarInventario();
     }
     
     void Update()
     {
         
     }
-
+    public void vaciarInventario()
+    {
+        inventario = new Inventario();
+    }
     public void agregarNota(string nombre, string escena, char tipo, bool recolectado, int numNota)
     {
         Recolectable nuevo = new Recolectable(nombre, escena, tipo, recolectado, numNota);
         inventario.agregarRecolectable(nuevo);
-        NotasSceneController.instance.verificarNotas();
         SceneController.instance.GuardarPartida();
     }
-
-    public void cargarInventario(bool[] recolectados)
+    public void cargarNota(string nombre, string escena, char tipo, bool recolectado, int numNota)
     {
-        for(int i =0; i<recolectados.Length;i++)
+        Recolectable nuevo = new Recolectable(nombre, escena, tipo, recolectado, numNota);
+        inventario.agregarRecolectable(nuevo);
+    }
+
+    public void cargarInventario(Partida p)
+    {
+        for (int i = 0; i < p.notasRecogidas.Length; i++)
         {
-            if(recolectados[i])
+            if (p.notasRecogidas[i])
             {
-                Debug.Log("nota: "+ i + " recogida");
+                
+                cargarNota(p.nombreNotas[i], p.escenaNotas[i], p.tipoNotas[i], p.notasRecogidas[i], i);
             }
         }
+        
     }
 
     public List<Recolectable> getRecolectables()

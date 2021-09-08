@@ -6,6 +6,12 @@ using UnityEngine;
 public class Partida
 {
     public bool[] notasRecogidas; //se guardan todas las notas, la posicion de la nota es el identificador y se guarda si esta o no recogida
+    public string[] nombreNotas;
+    public char[] tipoNotas;
+    public string[] escenaNotas;
+
+
+
     //TODO int [] bocinas; //Estos son los checkpont especiales entre puertas. Ej bocina
     public float [] LastcheckpointPos; // posicion del ultimo checkpoint
     public string escena; //tener cuidados de que la escena sea la misma del checkpoint
@@ -14,10 +20,16 @@ public class Partida
     {
         this.escena = escena;
         notasRecogidas = new bool[r.Count];
+        nombreNotas = new string[r.Count];
+        tipoNotas = new char[r.Count];
+        escenaNotas = new string[r.Count];
         int i = 0;
         foreach (Recolectable h in r)
         {
             notasRecogidas[i] = h.getRecolectado();
+            nombreNotas[i] = h.getNombre();
+            tipoNotas[i] = h.getTipo();
+            escenaNotas[i] = h.getEscena();
             i++;
         }
         LastcheckpointPos = new float[3];

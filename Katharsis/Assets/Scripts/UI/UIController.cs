@@ -14,6 +14,7 @@ public class UIController : MonoBehaviour
     public GameObject panelOpciones;
     public GameObject panelNotas;
     public GameObject panelMuerte;
+    public GameObject NotaUI;
 
     Nota nota;
 
