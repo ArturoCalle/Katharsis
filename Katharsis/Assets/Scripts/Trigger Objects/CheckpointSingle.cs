@@ -6,10 +6,13 @@ public class CheckpointSingle : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Player")
+        if(this.gameObject.name != "ChechPointStart")
         {
-            CheckPointController.instance.PlayerThroughCheckpoint(this);
-            gameObject.SetActive(false);
+            if (other.tag == "Player")
+            {
+                CheckPointController.instance.PlayerThroughCheckpoint(this);
+                gameObject.SetActive(false);
+            }
         }
     }
 }
