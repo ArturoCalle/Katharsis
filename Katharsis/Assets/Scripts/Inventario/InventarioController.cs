@@ -10,13 +10,18 @@ public class InventarioController : MonoBehaviour
     {
         instance = this;
         inventario = new Inventario();
+
+        SceneController.instance.cargarInventario();
     }
     
     void Update()
     {
         
     }
-
+    public void vaciarInventario()
+    {
+        inventario = new Inventario();
+    }
     public void agregarNota(string nombre, string escena, char tipo, bool recolectado, int numNota)
     {
         Recolectable nuevo = new Recolectable(nombre, escena, tipo, recolectado, numNota);
@@ -35,7 +40,7 @@ public class InventarioController : MonoBehaviour
         {
             if (p.notasRecogidas[i])
             {
-                Debug.Log("nota: " + p.nombreNotas[i] + " recogida");
+                
                 cargarNota(p.nombreNotas[i], p.escenaNotas[i], p.tipoNotas[i], p.notasRecogidas[i], i);
             }
         }

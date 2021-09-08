@@ -95,9 +95,17 @@ public class SceneController : MonoBehaviour
         SceneManager.LoadScene(partida.escena);
 
     }
+    public void cargarInventario()
+    {
+        Partida partida = Persistencia.CargarPartida("partida unica");
+        InventarioController.instance.cargarInventario(partida);
+    }
     public void nuevaPartida()
     {
+        InventarioController.instance.vaciarInventario();
+        GuardarPartida();
         cambiarEscena("sala");
+        
     }
 
     public string getCurrentSceneName()

@@ -16,7 +16,7 @@ public class PanelNotas : MonoBehaviour
     List<Boton> items = new List<Boton>();
     int seleccion;
     bool locked;
-    bool mostrandoNota;
+    public bool mostrandoNota;
 
     // Start is called before the first frame update
     void Start()
@@ -102,18 +102,13 @@ public class PanelNotas : MonoBehaviour
     public void seleccionar()
     {
         cargarInventario();
-        GameObject gameObjectNota;
         if(inventario[seleccion].getRecolectado())
         {
-            gameObjectNota = (GameObject)Instantiate(notaUiPrefab, transform);
-            NotaUI notaui = gameObjectNota.GetComponent<NotaUI>();
-            notaui.gameObject.SetActive(true);
+            UIController.instance.NotaUI.SetActive(true);
+            UIController.instance.NotaUI.GetComponent<NotaUIMenu>().recolectable = inventario[seleccion];
 
-
-            notaui.setDatos(inventario[seleccion]);
-            Debug.Log("mostrar nota!!!!");
-            notaui.mostrarNota();
-
+            mostrandoNota = true;
+            locked = true;
             
         }
     }

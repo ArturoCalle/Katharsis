@@ -38,7 +38,6 @@ public class NotaUI : MonoBehaviour
             {
                 aviso.SetActive(false);
                 nota.SetActive(false);
-
             }
 
         }
