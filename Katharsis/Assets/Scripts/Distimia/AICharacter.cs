@@ -27,6 +27,8 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 		CapsuleCollider m_Capsule;
 		public bool IsAlive = true;
 
+		public static AICharacter instance;
+
 
 		void Start()
 		{
@@ -38,6 +40,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 
 			m_Rigidbody.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezeRotationZ;
 			m_OrigGroundCheckDistance = m_GroundCheckDistance;
+			instance = this;
 		}
 
 
@@ -47,7 +50,9 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 			// convert the world relative moveInput vector into a local-relative
 			// turn amount and forward amount required to head in the desired
 			// direction.
-			if (move.magnitude > 1f) move.Normalize();
+			if (move.magnitude > 1f){
+				move.Normalize();
+			}
 			move = transform.InverseTransformDirection(move);
 			CheckGroundStatus();
 			move = Vector3.ProjectOnPlane(move, m_GroundNormal);
@@ -55,66 +60,6 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 			m_ForwardAmount = move.z;
 
 			ApplyExtraTurnRotation();
-
-			// control and velocity handling is different when grounded and airborne:
-			if (m_IsGrounded)
-			{
-				HandleGroundedMovement(jump);
-			}
-			else
-			{
-				HandleAirborneMovement();
-			}
-
-			if (m_Animator.GetCurrentAnimatorStateInfo(0).IsName("Exit"))
-            {
-				IsAlive = false;
-            }
-
-		}
-
-        private void OnTriggerEnter(Collider other)
-        {
-            if (other.tag == "Enemy")
-            {
-				Punch();
-            }
-            else if(other.tag == "Player"){
-				Bit();
-            }
-        }
-
-        public void Bit() {
-			m_Animator.SetBool("bit", true);
-		}
-
-		void Punch()
-        {
-			int randomNumber = Mathf.RoundToInt(UnityEngine.Random.Range(0f, 100f));
-			m_Animator.SetFloat("punch", randomNumber);
-		}
-
-		void HandleAirborneMovement()
-		{
-			// apply extra gravity from multiplier:
-			Vector3 extraGravityForce = (Physics.gravity * m_GravityMultiplier) - Physics.gravity;
-			m_Rigidbody.AddForce(extraGravityForce);
-
-			m_GroundCheckDistance = m_Rigidbody.velocity.y < 0 ? m_OrigGroundCheckDistance : 0.01f;
-		}
-
-
-		void HandleGroundedMovement(bool jump)
-		{
-			// check whether conditions are right to allow a jump:
-			if (jump && m_Animator.GetCurrentAnimatorStateInfo(0).IsName("Grounded"))
-			{
-				// jump!
-				m_Rigidbody.velocity = new Vector3(m_Rigidbody.velocity.x, m_JumpPower, m_Rigidbody.velocity.z);
-				m_IsGrounded = false;
-				m_Animator.applyRootMotion = false;
-				m_GroundCheckDistance = 0.1f;
-			}
 		}
 
 		void ApplyExtraTurnRotation()

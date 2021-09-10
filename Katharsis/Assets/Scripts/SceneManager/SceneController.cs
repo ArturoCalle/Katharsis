@@ -7,18 +7,23 @@ public class SceneController : MonoBehaviour
 {
     public static SceneController instance;
     public GameObject prefabJugador;
+    public GameObject prefabDistimia;
     public CheckpointSingle ultimoCheckPoint;
     private GameObject jugador;
+    private GameObject distimia;
     public bool pausa;
+    Vector3 DistimiaPos;
 
     private void Awake()
     {
         if(SceneManager.GetActiveScene().name!= "Pantalla Principal")
         {
-
             prefabJugador.transform.position = ultimoCheckPoint.transform.position;
             jugador = Instantiate(prefabJugador);
+            prefabDistimia.transform.position = DistimiaPos;
+            distimia = Instantiate(prefabDistimia);
         }
+
         instance = this;
         pausa = false;
     }
@@ -92,6 +97,10 @@ public class SceneController : MonoBehaviour
     {
         Partida partida = Persistencia.CargarPartida("partida unica");
         InventarioController.instance.cargarInventario(partida);
+        TargetController.instance.cargarLastTarget(partida.targetAI);
+        DistimiaPos.x = partida.distimia[0];
+        DistimiaPos.y = partida.distimia[1];
+        DistimiaPos.z = partida.distimia[2];
         SceneManager.LoadScene(partida.escena);
 
     }
@@ -100,12 +109,12 @@ public class SceneController : MonoBehaviour
         Partida partida = Persistencia.CargarPartida("partida unica");
         InventarioController.instance.cargarInventario(partida);
     }
+ 
     public void nuevaPartida()
     {
         InventarioController.instance.vaciarInventario();
         GuardarPartida();
         cambiarEscena("sala");
-        
     }
 
     public string getCurrentSceneName()
