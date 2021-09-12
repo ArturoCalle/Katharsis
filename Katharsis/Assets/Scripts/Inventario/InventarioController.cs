@@ -10,8 +10,10 @@ public class InventarioController : MonoBehaviour
     {
         instance = this;
         inventario = new Inventario();
-
-        SceneController.instance.cargarInventario();
+        if(SceneController.instance.getCurrentSceneName() != "Pantalla Principal")
+        {
+            SceneController.instance.cargarInventario();
+        }
     }
     
     void Update()

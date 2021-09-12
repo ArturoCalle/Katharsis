@@ -15,14 +15,18 @@ public class SceneTriggerController : MonoBehaviour
     {
         quitarDeEscena = new List<Recolectable>();
         instance = this;
-        verificarNotas();
+        cargar = false;
 
     }
 
     // Update is called once per frame
     void Update()
     {
-       
+       if(cargar == false)
+        {
+            verificarNotas();
+            cargar = true;
+        }
        if(notasPorQuitar.Count != 0)
        {
             string nombre = notasPorQuitar.Pop();
@@ -31,14 +35,23 @@ public class SceneTriggerController : MonoBehaviour
     }
     public void verificarNotas()
     {
-        List<Recolectable> r = InventarioController.instance.getRecolectables();
-        for (int i = 0; i < r.Count; i++)
+        if(InventarioController.instance.getRecolectables() != null)
         {
-           if(r[i].getRecolectado()&&(SceneController.instance.getCurrentSceneName() == r[i].getEscena()))
-           {
+
+            List<Recolectable> r = InventarioController.instance.getRecolectables();
+            for (int i = 0; i < r.Count; i++)
+            {
+               if(r[i].getRecolectado()&&(SceneController.instance.getCurrentSceneName() == r[i].getEscena()))
+               {
                 
-                notasPorQuitar.Push(r[i].getNombre());
-           }
+                    notasPorQuitar.Push(r[i].getNombre());
+               }
+            }
+        }
+        else
+        {
+            Debug.Log("holi");
+            cargar = false;
         }
     }
   
