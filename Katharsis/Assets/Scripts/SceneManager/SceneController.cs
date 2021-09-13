@@ -7,20 +7,39 @@ public class SceneController : MonoBehaviour
 {
     public static SceneController instance;
     public GameObject prefabJugador;
+    public GameObject prefabDistimia;
     public CheckpointSingle ultimoCheckPoint;
     private GameObject jugador;
+    private GameObject distimia;
     public bool pausa;
+    private Vector3 DistimiaPos;
 
     private void Awake()
     {
-        if(SceneManager.GetActiveScene().name!= "Pantalla Principal")
+        if(SceneManager.GetActiveScene().name != "Pantalla Principal")
         {
-
             prefabJugador.transform.position = ultimoCheckPoint.transform.position;
             jugador = Instantiate(prefabJugador);
         }
+
         instance = this;
         pausa = false;
+    }
+
+    private void Start()
+    {
+        Debug.Log("start");
+        if (SceneManager.GetActiveScene().name == "Sala")
+        {
+            Debug.Log("sala");
+            
+                Debug.Log("partida nueva");
+                DistimiaPos.x = 34.84798f;
+                DistimiaPos.y = -3.165409f;
+                DistimiaPos.z = -47.99375f;
+            prefabDistimia.transform.position = DistimiaPos;
+            distimia = Instantiate(prefabDistimia);
+        }
     }
 
     public void cambiarEscena(string nombre)
@@ -92,20 +111,19 @@ public class SceneController : MonoBehaviour
     {
         Partida partida = Persistencia.CargarPartida("partida unica");
         InventarioController.instance.cargarInventario(partida);
+        TargetController.instance.cargarLastTarget(partida.targetAI);
         SceneManager.LoadScene(partida.escena);
-
     }
     public void cargarInventario()
     {
         Partida partida = Persistencia.CargarPartida("partida unica");
         InventarioController.instance.cargarInventario(partida);
-    }
+    }   
+ 
     public void nuevaPartida()
     {
         InventarioController.instance.vaciarInventario();
-        GuardarPartida();
         cambiarEscena("sala");
-        
     }
 
     public string getCurrentSceneName()
