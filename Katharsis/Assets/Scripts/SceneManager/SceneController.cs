@@ -12,20 +12,34 @@ public class SceneController : MonoBehaviour
     private GameObject jugador;
     private GameObject distimia;
     public bool pausa;
-    Vector3 DistimiaPos;
+    private Vector3 DistimiaPos;
 
     private void Awake()
     {
-        if(SceneManager.GetActiveScene().name!= "Pantalla Principal")
+        if(SceneManager.GetActiveScene().name != "Pantalla Principal")
         {
             prefabJugador.transform.position = ultimoCheckPoint.transform.position;
             jugador = Instantiate(prefabJugador);
-            prefabDistimia.transform.position = DistimiaPos;
-            distimia = Instantiate(prefabDistimia);
         }
 
         instance = this;
         pausa = false;
+    }
+
+    private void Start()
+    {
+        Debug.Log("start");
+        if (SceneManager.GetActiveScene().name == "Sala")
+        {
+            Debug.Log("sala");
+            
+                Debug.Log("partida nueva");
+                DistimiaPos.x = 34.84798f;
+                DistimiaPos.y = -3.165409f;
+                DistimiaPos.z = -47.99375f;
+            prefabDistimia.transform.position = DistimiaPos;
+            distimia = Instantiate(prefabDistimia);
+        }
     }
 
     public void cambiarEscena(string nombre)
@@ -98,22 +112,17 @@ public class SceneController : MonoBehaviour
         Partida partida = Persistencia.CargarPartida("partida unica");
         InventarioController.instance.cargarInventario(partida);
         TargetController.instance.cargarLastTarget(partida.targetAI);
-        DistimiaPos.x = partida.distimia[0];
-        DistimiaPos.y = partida.distimia[1];
-        DistimiaPos.z = partida.distimia[2];
         SceneManager.LoadScene(partida.escena);
-
     }
     public void cargarInventario()
     {
         Partida partida = Persistencia.CargarPartida("partida unica");
         InventarioController.instance.cargarInventario(partida);
-    }
+    }   
  
     public void nuevaPartida()
     {
         InventarioController.instance.vaciarInventario();
-        GuardarPartida();
         cambiarEscena("sala");
     }
 
