@@ -100,7 +100,6 @@ public class PantallaPrincipal : MonoBehaviour
         {
             case 0:
                 SceneController.instance.nuevaPartida();
-
                 //TO DO crear nueva partida
                 break;
             case 1:

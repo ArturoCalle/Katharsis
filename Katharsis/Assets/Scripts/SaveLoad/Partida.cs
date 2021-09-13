@@ -11,7 +11,7 @@ public class Partida
     public string[] escenaNotas;
 
     //AI
-    public float[] distimia;
+    public float[] distimia; //ultima posicion de distimia x, y, z
     public int targetAI;
 
 
@@ -45,8 +45,6 @@ public class Partida
         this.distimia[0] = distimia.position.x;
         this.distimia[1] = distimia.position.y;
         this.distimia[2] = distimia.position.z;
-        
-
 
     }
 
