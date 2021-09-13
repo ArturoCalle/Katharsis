@@ -19,7 +19,7 @@ public class Partida
     public float [] LastcheckpointPos; // posicion del ultimo checkpoint
     public string escena; //tener cuidados de que la escena sea la misma del checkpoint
 
-    public Partida(List<Recolectable> r, CheckpointSingle lc, string escena, Transform distimia, int targetAI)
+    public Partida(List<Recolectable> r, CheckpointSingle lc, string escena, int targetAI)
     {
         this.escena = escena;
         notasRecogidas = new bool[r.Count];
@@ -41,10 +41,11 @@ public class Partida
         LastcheckpointPos[1] = lc.gameObject.transform.position.y;
         LastcheckpointPos[2] = lc.gameObject.transform.position.z;
         //personajes
+        /*
         this.distimia = new float[3];
         this.distimia[0] = distimia.position.x;
         this.distimia[1] = distimia.position.y;
-        this.distimia[2] = distimia.position.z;
+        this.distimia[2] = distimia.position.z;*/
 
     }
 
