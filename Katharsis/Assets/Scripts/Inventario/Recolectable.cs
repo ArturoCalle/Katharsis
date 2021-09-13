@@ -8,20 +8,27 @@ public class Recolectable
     private string escena;
     private char tipo;
     private bool recolectado;
-    private int numNota;
+    private int numRecolectable;
     public Recolectable(string nombre, string escena, char tipo, bool recolectado, int numNota)
     {
         this.nombre = nombre;
         this.escena = escena;
         this.tipo = tipo;
         this.recolectado = recolectado;
-        this.numNota = numNota;
+        this.numRecolectable = numNota;
+    }
+    public Recolectable(string nombre, string escena, bool recolectado, int numNota)
+    {
+        this.nombre = nombre;
+        this.escena = escena;
+        this.recolectado = recolectado;
+        this.numRecolectable = numNota;
     }
     public Recolectable()
     {
         this.nombre = "???";
         this.escena = "???";
-        recolectado  = false;
+        recolectado = false;
     }
 
     public string getNombre()
@@ -42,7 +49,12 @@ public class Recolectable
     }
     public int getNumNota()
     {
-        return this.numNota;
+        return this.numRecolectable;
+    } 
+
+    public void setRecolectado(bool recolectado)
+    {
+        this.recolectado = recolectado;
     }
 
 

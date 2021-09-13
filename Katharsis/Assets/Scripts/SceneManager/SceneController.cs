@@ -123,6 +123,7 @@ public class SceneController : MonoBehaviour
     public void nuevaPartida()
     {
         InventarioController.instance.vaciarInventario();
+        GuardarPartida();
         cambiarEscena("sala");
     }
 

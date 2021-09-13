@@ -40,7 +40,8 @@ public class Nota : MonoBehaviour
             {
                 
                 notaUI.agregarNotaAInventario(plane);
-                notaUI.mostrarNota();  
+                notaUI.mostrarNota();
+                inCollectRange = false;
             }
         }
         
