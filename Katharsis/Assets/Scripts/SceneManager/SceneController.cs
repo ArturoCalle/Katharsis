@@ -12,34 +12,18 @@ public class SceneController : MonoBehaviour
     private GameObject jugador;
     private GameObject distimia;
     public bool pausa;
-    private Vector3 DistimiaPos;
+    public List<GameObject> trigger;
 
     private void Awake()
     {
+        instanciarDistimia();
         if(SceneManager.GetActiveScene().name != "Pantalla Principal")
         {
             prefabJugador.transform.position = ultimoCheckPoint.transform.position;
             jugador = Instantiate(prefabJugador);
         }
-
         instance = this;
         pausa = false;
-    }
-
-    private void Start()
-    {
-        Debug.Log("start");
-        if (SceneManager.GetActiveScene().name == "Sala")
-        {
-            Debug.Log("sala");
-            
-                Debug.Log("partida nueva");
-                DistimiaPos.x = 34.84798f;
-                DistimiaPos.y = -3.165409f;
-                DistimiaPos.z = -47.99375f;
-            prefabDistimia.transform.position = DistimiaPos;
-            distimia = Instantiate(prefabDistimia);
-        }
     }
 
     public void cambiarEscena(string nombre)
@@ -111,7 +95,7 @@ public class SceneController : MonoBehaviour
     {
         Partida partida = Persistencia.CargarPartida("partida unica");
         InventarioController.instance.cargarInventario(partida);
-        TargetController.instance.cargarLastTarget(partida.targetAI);
+        AICharacterControl.instance.cargarLastTarget(partida.targetAI);
         SceneManager.LoadScene(partida.escena);
     }
     public void cargarInventario()
@@ -130,5 +114,26 @@ public class SceneController : MonoBehaviour
     public string getCurrentSceneName()
     {
         return SceneManager.GetActiveScene().name;
+    }
+
+    private void instanciarDistimia()
+    {
+        if (SceneManager.GetActiveScene().name == "Sala")
+        {
+            findTriggerByName("Distimia Trigger");
+        }
+    }
+
+    private GameObject findTriggerByName(string name)
+    {
+        foreach (GameObject go in trigger)
+        {
+            Debug.Log("buscando " + go.gameObject.name);
+            if(go.gameObject.name == name)
+            {
+                Debug.Log("encontro al trigger" + name + "en la posicion" + go.transform.position);
+            }
+        }
+        return null;
     }
 }
