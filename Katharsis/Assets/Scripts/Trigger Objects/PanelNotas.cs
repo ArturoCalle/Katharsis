@@ -105,7 +105,7 @@ public class PanelNotas : MonoBehaviour
         if(inventario[seleccion].getRecolectado())
         {
             UIController.instance.NotaUI.SetActive(true);
-            UIController.instance.NotaUI.GetComponent<NotaUIMenu>().recolectable = inventario[seleccion];
+            UIController.instance.NotaUI.GetComponent<NotaUIMenu>().actualizarNota(inventario[seleccion]);
 
             mostrandoNota = true;
             locked = true;

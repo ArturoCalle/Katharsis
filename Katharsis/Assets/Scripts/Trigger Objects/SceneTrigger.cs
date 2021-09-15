@@ -19,8 +19,6 @@ public class SceneTrigger : MonoBehaviour
 
         if(r.getRecolectado() && !recolectado)
         {
-            Debug.Log(r.getNombre());
-            Debug.Log(r.getRecolectado());
             if (col.tag == "Player")
             {
                 aviso.enabled = true;

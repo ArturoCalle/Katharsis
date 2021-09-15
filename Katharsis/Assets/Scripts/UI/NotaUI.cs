@@ -13,8 +13,15 @@ public class NotaUI : MonoBehaviour
     public char tipo;
     public int numNota;
     public bool recolectado;
-    
-    
+
+    public Sprite hoja_informativa;
+    public Sprite hoja_tutorial;
+    public Sprite hoja_historia;
+    public Sprite hoja_motivacional;
+
+    SpriteRenderer spriterenderer;
+
+
     public NotaUI(Recolectable r)
     {
         escena = r.getEscena();
@@ -32,6 +39,7 @@ public class NotaUI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        cambiarHoja(tipo);
         if (aviso.activeInHierarchy && nota.activeInHierarchy)
         {
             if (Input.GetKeyDown(KeyCode.Z))
@@ -41,6 +49,7 @@ public class NotaUI : MonoBehaviour
             }
 
         }
+
     }
     public void mostrarNota()
     {
@@ -71,5 +80,26 @@ public class NotaUI : MonoBehaviour
         tipo = r.getTipo();
         numNota = r.getNumNota();
         recolectado = r.getRecolectado();
+    }
+    void cambiarHoja(char tipo)
+    {
+        switch(tipo)
+        {
+            case 'T':
+                nota.transform.GetChild(0).GetComponent<Image>().sprite = hoja_tutorial;
+                break;
+            case 'H':
+                nota.transform.GetChild(0).GetComponent<Image>().sprite = hoja_historia;
+                break;
+            case 'I':
+                nota.transform.GetChild(0).GetComponent<Image>().sprite = hoja_informativa;
+                break;
+            case 'M':
+                nota.transform.GetChild(0).GetComponent<Image>().sprite = hoja_motivacional;
+                break;
+            default:
+                nota.transform.GetChild(0).GetComponent<Image>().sprite = hoja_tutorial;
+                break;
+        }
     }
 }

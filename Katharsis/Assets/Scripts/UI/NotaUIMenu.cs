@@ -10,6 +10,11 @@ public class NotaUIMenu : MonoBehaviour
     public Image imagen;
     public Text aviso;
     public PanelNotas panelNotas;
+
+    public Sprite hoja_informativa;
+    public Sprite hoja_tutorial;
+    public Sprite hoja_historia;
+    public Sprite hoja_motivacional;
     // Start is called before the first frame update
     void Start()
     {
@@ -54,6 +59,28 @@ public class NotaUIMenu : MonoBehaviour
     {
         recolectable = r;
         texto.text = recolectable.getNombre();
+        cambiarHoja(r.getTipo());
+    }
+    void cambiarHoja(char tipo)
+    {
+        switch (tipo)
+        {
+            case 'T':
+                gameObject.GetComponent<Image>().sprite = hoja_tutorial;
+                break;
+            case 'H':
+                gameObject.GetComponent<Image>().sprite = hoja_historia;
+                break;
+            case 'I':
+                gameObject.GetComponent<Image>().sprite = hoja_informativa;
+                break;
+            case 'M':
+                gameObject.GetComponent<Image>().sprite = hoja_motivacional;
+                break;
+            default:
+                gameObject.GetComponent<Image>().sprite = hoja_tutorial;
+                break;
+        }
     }
 
 }
