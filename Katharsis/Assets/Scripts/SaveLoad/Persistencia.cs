@@ -10,7 +10,7 @@ public static class Persistencia
         string path = Application.persistentDataPath + "/partida" + name;
         FileStream stream = new FileStream(path, FileMode.Create);
 
-        Partida partida = new Partida(InventarioController.instance.getRecolectables(), SceneController.instance.ultimoCheckPoint, SceneController.instance.getCurrentSceneName(), AICharacterControl.instance.getLastPersistencia());
+        Partida partida = new Partida(InventarioController.instance.getRecolectables(), SceneController.instance.ultimoCheckPoint, SceneController.instance.getCurrentSceneName());
         formatter.Serialize(stream, partida);
         stream.Close();
     }  

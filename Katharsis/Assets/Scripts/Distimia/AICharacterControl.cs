@@ -10,11 +10,9 @@ public class AICharacterControl : MonoBehaviour
     public UnityEngine.AI.NavMeshAgent agent { get; private set; }             // the navmesh agent required for the path finding
     public AICharacter character { get; private set; }                         // the character we are controlling
     private Transform target;                                                   // target to aim for
-    public List<Transform> targets;
+    public List<GameObject> targets;
     private int last;
     public static AICharacterControl instance;
-    public Transform init;
-    private SceneController sc;
 
     private void Start()
     {
@@ -24,8 +22,7 @@ public class AICharacterControl : MonoBehaviour
 
 	    agent.updateRotation = false;
 	    agent.updatePosition = true;
-
-        sc = SceneController.instance;
+        targets = SceneController.instance.targets;
     }
 
 
@@ -45,6 +42,10 @@ public class AICharacterControl : MonoBehaviour
         if (agent.remainingDistance == agent.stoppingDistance)
         {
             target = getNext();
+            if(target == null)
+            {
+                SceneController.instance.destroyDistimia();
+            }
         }
         else
         {
@@ -57,29 +58,18 @@ public class AICharacterControl : MonoBehaviour
         {
             last++;
             Debug.Log("El ultimo es " + last);
-            return targets[last];
+            return targets[last].transform;
         }
         else
         {
             Debug.Log("No hay mas targets " + last);
-            return targets[0];
+            return null;
         }
     }
 
     public Transform getLast()
     {
-        return targets[last];
-    }
-    public Transform getInit()
-    {
-        if (last == 0)
-        {
-            return init;
-        }
-        else
-        {
-            return targets[last - 1];
-        }
+        return targets[last].transform;
     }
     public int getLastPersistencia()
     {

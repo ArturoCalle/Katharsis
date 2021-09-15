@@ -52,7 +52,7 @@ public class SceneTrigger : MonoBehaviour
             if(Input.GetKeyDown(KeyCode.F))
             {
                 recolectar();
-                //gameObject.SetActive(false);
+                gameObject.SetActive(false);
             }
         }
     }

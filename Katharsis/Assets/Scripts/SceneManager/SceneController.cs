@@ -10,13 +10,13 @@ public class SceneController : MonoBehaviour
     public GameObject prefabDistimia;
     public CheckpointSingle ultimoCheckPoint;
     private GameObject jugador;
-    private GameObject distimia;
+    private GameObject distimia = null;
     public bool pausa;
     public List<GameObject> trigger;
+    public List<GameObject> targets;
 
     private void Awake()
     {
-        instanciarDistimia();
         if(SceneManager.GetActiveScene().name != "Pantalla Principal")
         {
             prefabJugador.transform.position = ultimoCheckPoint.transform.position;
@@ -25,7 +25,17 @@ public class SceneController : MonoBehaviour
         instance = this;
         pausa = false;
     }
-
+    private void Update()
+    {
+        if(SceneManager.GetActiveScene().name != "Pantalla Principal")
+        {
+            if (!findTriggerByName("Distimia Trigger").activeInHierarchy && distimia == null)
+            {
+                Debug.Log(distimia);
+                instanciarDistimia();
+            }
+        }
+    }
     public void cambiarEscena(string nombre)
     {
         SceneManager.LoadScene(nombre);
@@ -120,7 +130,8 @@ public class SceneController : MonoBehaviour
     {
         if (SceneManager.GetActiveScene().name == "Sala")
         {
-            findTriggerByName("Distimia Trigger");
+            prefabDistimia.transform.position = findTriggerByName("Distimia Trigger").transform.position;
+            distimia = Instantiate(prefabDistimia);
         }
     }
 
@@ -128,12 +139,16 @@ public class SceneController : MonoBehaviour
     {
         foreach (GameObject go in trigger)
         {
-            Debug.Log("buscando " + go.gameObject.name);
             if(go.gameObject.name == name)
             {
-                Debug.Log("encontro al trigger" + name + "en la posicion" + go.transform.position);
+                return go;
             }
         }
         return null;
+    }
+
+    public void destroyDistimia()
+    {
+        Destroy(prefabDistimia);
     }
 }

@@ -19,7 +19,7 @@ public class Partida
     public float [] LastcheckpointPos; // posicion del ultimo checkpoint
     public string escena; //tener cuidados de que la escena sea la misma del checkpoint
 
-    public Partida(List<Recolectable> r, CheckpointSingle lc, string escena, int targetAI)
+    public Partida(List<Recolectable> r, CheckpointSingle lc, string escena)
     {
         this.escena = escena;
         notasRecogidas = new bool[r.Count];
