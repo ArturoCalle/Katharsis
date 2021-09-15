@@ -12,7 +12,6 @@ public class SceneController : MonoBehaviour
     private GameObject jugador;
     private GameObject distimia;
     public bool pausa;
-    private Vector3 DistimiaPos;
     public List<GameObject> trigger;
 
     private void Awake()
@@ -121,7 +120,20 @@ public class SceneController : MonoBehaviour
     {
         if (SceneManager.GetActiveScene().name == "Sala")
         {
-            
+            findTriggerByName("Distimia Trigger");
         }
+    }
+
+    private GameObject findTriggerByName(string name)
+    {
+        foreach (GameObject go in trigger)
+        {
+            Debug.Log("buscando " + go.gameObject.name);
+            if(go.gameObject.name == name)
+            {
+                Debug.Log("encontro al trigger" + name + "en la posicion" + go.transform.position);
+            }
+        }
+        return null;
     }
 }
