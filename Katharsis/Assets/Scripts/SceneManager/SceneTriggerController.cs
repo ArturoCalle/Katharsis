@@ -72,7 +72,7 @@ public class SceneTriggerController : MonoBehaviour
             }
             else
             {
-                Debug.Log("agregando nota al stack");
+                
                 notasPorQuitar.Push(nombre);
                 break;
             }
