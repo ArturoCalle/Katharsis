@@ -22,7 +22,7 @@ public class AICharacterControl : MonoBehaviour
 
 	    agent.updateRotation = false;
 	    agent.updatePosition = true;
-        targets = SceneController.instance.targets;
+        targets = SceneIAController.instance.targets;
         last = 0;
     }
 
@@ -58,7 +58,7 @@ public class AICharacterControl : MonoBehaviour
         }
         else
         {
-            SceneController.instance.destroyDistimia();
+            SceneIAController.instance.destroyDistimia();
             return null;
         }
     }

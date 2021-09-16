@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SceneTriggerController : MonoBehaviour
+public class SceneNotasController: MonoBehaviour
 {
     public List<GameObject> notas = new List<GameObject>();
     Stack<string> notasPorQuitar = new Stack<string>();
     List<Recolectable> quitarDeEscena;
-    public static SceneTriggerController instance;
+    public static SceneNotasController instance;
     public bool cargar;
 
     // Start is called before the first frame update
@@ -78,4 +78,5 @@ public class SceneTriggerController : MonoBehaviour
             }
         }
     }
+
 }

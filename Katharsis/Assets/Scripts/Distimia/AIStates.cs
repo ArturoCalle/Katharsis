@@ -4,8 +4,13 @@ using UnityEngine;
 
 public class AIStates : MonoBehaviour
 {
-    enum Estados
+    enum Estados { activo, inactivo, enfadado, busqueda };
+    private Estados actual;
+    private void Start()
     {
-        Activo, inactivo, enfadado
+        actual = Estados.inactivo;
     }
+
+   
+
 }

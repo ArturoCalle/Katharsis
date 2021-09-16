@@ -3310,7 +3310,7 @@ GameObject:
   - component: {fileID: 591901582}
   - component: {fileID: 591901583}
   m_Layer: 0
-  m_Name: notas
+  m_Name: SceneNotasController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4177,6 +4177,60 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7187982945635055006, guid: 73bd0d70ca6b89e4b94fd2f01b932d31, type: 3}
   m_PrefabInstance: {fileID: 735670945}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &745772469
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 745772471}
+  - component: {fileID: 745772470}
+  m_Layer: 0
+  m_Name: SceneIaController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &745772470
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 745772469}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a92ca7ad39b22547b5c786fd4b934b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefabDistimiaSala: {fileID: 9001871470660022190, guid: 360c72a565645a544863ffce1951891d, type: 3}
+  prefabDistimiaComedor: {fileID: 0}
+  prefabDistimiaCocina: {fileID: 0}
+  trigger:
+  - {fileID: 3662721333031447108, guid: e902a72eb21360546bef36cf762bb6e7, type: 3}
+  targets:
+  - {fileID: 1590159502}
+  - {fileID: 1489363893211053366}
+  - {fileID: 1380018797}
+  - {fileID: 1164812470}
+  - {fileID: 1753238514}
+--- !u!4 &745772471
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 745772469}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -5.8461046, y: 17.363075, z: -68.81602}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &765455506 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1864606473321635543, guid: 808461c2cfc256c44878e08e6de08ffe, type: 3}
@@ -6613,6 +6667,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3662721333031447108, guid: e902a72eb21360546bef36cf762bb6e7, type: 3}
   m_PrefabInstance: {fileID: 4473746189932269317}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1167395676 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 51059978, guid: e902a72eb21360546bef36cf762bb6e7, type: 3}
+  m_PrefabInstance: {fileID: 4473746189932269317}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1167395675}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60a273627fcbf6e44afcf5036a240801, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1175739494 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4728538145068272360, guid: 9cf59e4f90f444a4aab4fddf78a984c4, type: 3}
@@ -6888,63 +6953,6 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: c0b53c19525001344a20866efde794c3, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 808461c2cfc256c44878e08e6de08ffe, type: 3}
---- !u!1001 &1232459078
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 9001871470660022183, guid: 360c72a565645a544863ffce1951891d, type: 3}
-      propertyPath: m_RootOrder
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 9001871470660022183, guid: 360c72a565645a544863ffce1951891d, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -23.890066
-      objectReference: {fileID: 0}
-    - target: {fileID: 9001871470660022183, guid: 360c72a565645a544863ffce1951891d, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.10105324
-      objectReference: {fileID: 0}
-    - target: {fileID: 9001871470660022183, guid: 360c72a565645a544863ffce1951891d, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -39.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 9001871470660022183, guid: 360c72a565645a544863ffce1951891d, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9001871470660022183, guid: 360c72a565645a544863ffce1951891d, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9001871470660022183, guid: 360c72a565645a544863ffce1951891d, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9001871470660022183, guid: 360c72a565645a544863ffce1951891d, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9001871470660022183, guid: 360c72a565645a544863ffce1951891d, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9001871470660022183, guid: 360c72a565645a544863ffce1951891d, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9001871470660022183, guid: 360c72a565645a544863ffce1951891d, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9001871470660022190, guid: 360c72a565645a544863ffce1951891d, type: 3}
-      propertyPath: m_Name
-      value: Distimia Sala
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 360c72a565645a544863ffce1951891d, type: 3}
 --- !u!4 &1249580278 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1986426425064669329, guid: ce8b8e22b7d0d57418d8f86f0540d354, type: 3}
@@ -8303,8 +8311,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1575744513}
+  - component: {fileID: 1575744514}
   m_Layer: 0
-  m_Name: Triggers Histroria
+  m_Name: SceneTriggerController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8325,6 +8334,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1575744514
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1575744512}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be851dd59cedbdd40b7a8378849677a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggers:
+  - {fileID: 1167395676}
 --- !u!1 &1590159502
 GameObject:
   m_ObjectHideFlags: 0

@@ -7,13 +7,11 @@ public class SceneController : MonoBehaviour
 {
     public static SceneController instance;
     public GameObject prefabJugador;
-    public GameObject prefabDistimia;
     public CheckpointSingle ultimoCheckPoint;
     private GameObject jugador;
-    private GameObject distimia = null;
+    
     public bool pausa;
-    public List<GameObject> trigger;
-    public List<GameObject> targets;
+    
 
     private void Awake()
     {
@@ -27,12 +25,9 @@ public class SceneController : MonoBehaviour
     }
     private void Update()
     {
-        if(SceneManager.GetActiveScene().name != "Pantalla Principal")
+        if(SceneManager.GetActiveScene().name == "Sala")
         {
-            if (!findTriggerByName("Distimia Trigger").activeInHierarchy && distimia == null)
-            {
-                instanciarDistimia();
-            }
+            
         }
     }
     public void cambiarEscena(string nombre)
@@ -124,30 +119,9 @@ public class SceneController : MonoBehaviour
     {
         return SceneManager.GetActiveScene().name;
     }
-
-    private void instanciarDistimia()
+    
+    public Scene getActiveScene()
     {
-        if (SceneManager.GetActiveScene().name == "Sala")
-        {
-            prefabDistimia.transform.position = findTriggerByName("Distimia Trigger").transform.position;
-            distimia = Instantiate(prefabDistimia);
-        }
-    }
-
-    private GameObject findTriggerByName(string name)
-    {
-        foreach (GameObject go in trigger)
-        {
-            if(go.gameObject.name == name)
-            {
-                return go;
-            }
-        }
-        return null;
-    }
-
-    public void destroyDistimia()
-    {
-        Destroy(distimia);
+        return SceneManager.GetActiveScene();
     }
 }
