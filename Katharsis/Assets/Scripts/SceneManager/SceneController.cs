@@ -31,7 +31,6 @@ public class SceneController : MonoBehaviour
         {
             if (!findTriggerByName("Distimia Trigger").activeInHierarchy && distimia == null)
             {
-                Debug.Log(distimia);
                 instanciarDistimia();
             }
         }
@@ -149,6 +148,6 @@ public class SceneController : MonoBehaviour
 
     public void destroyDistimia()
     {
-        Destroy(prefabDistimia);
+        Destroy(distimia);
     }
 }

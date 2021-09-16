@@ -23,6 +23,7 @@ public class AICharacterControl : MonoBehaviour
 	    agent.updateRotation = false;
 	    agent.updatePosition = true;
         targets = SceneController.instance.targets;
+        last = 0;
     }
 
 
@@ -31,7 +32,7 @@ public class AICharacterControl : MonoBehaviour
         if (target != null)
         {
             agent.SetDestination(target.position);
-        }else{
+        } else {
             target = getLast();
             agent.SetDestination(target.position);
         }
@@ -42,10 +43,6 @@ public class AICharacterControl : MonoBehaviour
         if (agent.remainingDistance == agent.stoppingDistance)
         {
             target = getNext();
-            if(target == null)
-            {
-                SceneController.instance.destroyDistimia();
-            }
         }
         else
         {
@@ -57,12 +54,11 @@ public class AICharacterControl : MonoBehaviour
         if (last < targets.Count)
         {
             last++;
-            Debug.Log("El ultimo es " + last);
             return targets[last].transform;
         }
         else
         {
-            Debug.Log("No hay mas targets " + last);
+            SceneController.instance.destroyDistimia();
             return null;
         }
     }
