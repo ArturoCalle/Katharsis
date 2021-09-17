@@ -18,8 +18,11 @@ public class CheckPointController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(!cargar)
+        
+        if (!cargar)
         {
+            
+            Debug.Log(SceneController.instance.CheckpointPuerta);
             if(SceneController.instance.CheckpointPuerta != "")
             {
                 if(checkpoints.Count != 0)
@@ -27,6 +30,7 @@ public class CheckPointController : MonoBehaviour
                     SceneController.instance.ultimoCheckPoint = getCheckpoint(SceneController.instance.CheckpointPuerta);
                     SceneController.instance.CheckpointPuerta = "";
                     cargar = true;
+                    SceneController.instance.respawn();
                 }
             }
         }

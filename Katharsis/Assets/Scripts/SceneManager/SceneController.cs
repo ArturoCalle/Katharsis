@@ -13,6 +13,7 @@ public class SceneController : MonoBehaviour
     
     
     public bool pausa;
+    bool cargar = false;
     
 
     private void Awake()
@@ -28,6 +29,11 @@ public class SceneController : MonoBehaviour
     }
     private void Update()
     {
+        /*if(!cargar)
+        {
+            CargarPartida();
+            cargar = true;
+        }*/
         if(SceneManager.GetActiveScene().name == "Sala")
         {
             
@@ -35,16 +41,12 @@ public class SceneController : MonoBehaviour
     }
     public void cambiarEscena(string nombre)
     {
-        SceneManager.LoadScene(nombre);
+        
         if(CheckpointPuerta != "")
         {
-            ultimoCheckPoint = CheckPointController.instance.getCheckpoint(CheckpointPuerta);
-            //Destroy(jugador);
-            Debug.Log(ultimoCheckPoint);
-            //prefabJugador.transform.position = ultimoCheckPoint.transform.position;
-            //jugador = Instantiate(prefabJugador);
+            GuardarPartida();
         }
-        Debug.Log(CheckpointPuerta);
+        SceneManager.LoadScene(nombre);
 
     }
 
@@ -110,11 +112,12 @@ public class SceneController : MonoBehaviour
     }
     public void CargarPartida()
     {
+        
         Partida partida = Persistencia.CargarPartida("partida unica");
+        CheckpointPuerta = partida.CheckpointPuerta;
         InventarioController.instance.cargarInventario(partida);
         AICharacterControl.instance.cargarLastTarget(partida.targetAI);
-        
-        Debug.Log(CheckpointPuerta);
+               
         SceneManager.LoadScene(partida.escena);
     }
     public void cargarInventario()
@@ -143,5 +146,11 @@ public class SceneController : MonoBehaviour
     {
         CheckpointPuerta = nuevo;
 
+    }
+    public void respawn()
+    {
+        Destroy(jugador);
+        prefabJugador.transform.position = ultimoCheckPoint.transform.position;
+        jugador = Instantiate(prefabJugador);
     }
 }
