@@ -17,11 +17,14 @@ public class Partida
 
     //TODO int [] bocinas; //Estos son los checkpont especiales entre puertas. Ej bocina
     public float [] LastcheckpointPos; // posicion del ultimo checkpoint
+    public string CheckpointPuerta;
     public string escena; //tener cuidados de que la escena sea la misma del checkpoint
 
-    public Partida(List<Recolectable> r, CheckpointSingle lc, string escena)
+    public Partida(List<Recolectable> r, CheckpointSingle lc, string escena, string CheckpointPuerta)
     {
+        
         this.escena = escena;
+        this.CheckpointPuerta = CheckpointPuerta;
         notasRecogidas = new bool[r.Count];
         nombreNotas = new string[r.Count];
         tipoNotas = new char[r.Count];

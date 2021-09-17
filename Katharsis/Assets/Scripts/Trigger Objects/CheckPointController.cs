@@ -6,6 +6,8 @@ public class CheckPointController : MonoBehaviour
 {
     public List<CheckpointSingle> checkpoints;
     public static CheckPointController instance;
+    public CheckpointPuerta checkPuerta;
+    bool cargar = false;
 
     // Start is called before the first frame update
     void Start()
@@ -17,6 +19,21 @@ public class CheckPointController : MonoBehaviour
     void Update()
     {
         
+        if (!cargar)
+        {
+            
+            Debug.Log(SceneController.instance.CheckpointPuerta);
+            if(SceneController.instance.CheckpointPuerta != "")
+            {
+                if(checkpoints.Count != 0)
+                {
+                    SceneController.instance.ultimoCheckPoint = getCheckpoint(SceneController.instance.CheckpointPuerta);
+                    SceneController.instance.CheckpointPuerta = "";
+                    cargar = true;
+                    SceneController.instance.respawn();
+                }
+            }
+        }
     }
 
     public void PlayerThroughCheckpoint(CheckpointSingle checkpointSingle)
@@ -27,8 +44,32 @@ public class CheckPointController : MonoBehaviour
         
     }
 
+    public void PlayerThroughCheckpoint(CheckpointPuerta checkpointPuerta)
+    {
+
+        SceneController.instance.CheckpointPuerta = checkpointPuerta.gameObject.name;
+        
+    }
+
     public void cargarCheckpoints(int[] checkpoints) // megafonos
     {
         //TODO
+    }
+    public CheckpointSingle getCheckpoint(string nombre)
+    {
+        if(checkpoints.Count == 0)
+        {
+            Debug.Log("VERGA");
+        }
+       foreach(CheckpointSingle cs in checkpoints)
+        {
+            Debug.Log(cs.gameObject.name);
+            if(cs.gameObject.name == nombre)
+            {
+                return cs;
+            }
+
+        }
+        return null;
     }
 }
