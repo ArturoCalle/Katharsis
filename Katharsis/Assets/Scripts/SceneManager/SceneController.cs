@@ -9,6 +9,8 @@ public class SceneController : MonoBehaviour
     public GameObject prefabJugador;
     public CheckpointSingle ultimoCheckPoint;
     private GameObject jugador;
+    public string CheckpointPuerta = "";
+    
     
     public bool pausa;
     
@@ -17,6 +19,7 @@ public class SceneController : MonoBehaviour
     {
         if(SceneManager.GetActiveScene().name != "Pantalla Principal")
         {
+            
             prefabJugador.transform.position = ultimoCheckPoint.transform.position;
             jugador = Instantiate(prefabJugador);
         }
@@ -33,6 +36,16 @@ public class SceneController : MonoBehaviour
     public void cambiarEscena(string nombre)
     {
         SceneManager.LoadScene(nombre);
+        if(CheckpointPuerta != "")
+        {
+            ultimoCheckPoint = CheckPointController.instance.getCheckpoint(CheckpointPuerta);
+            //Destroy(jugador);
+            Debug.Log(ultimoCheckPoint);
+            //prefabJugador.transform.position = ultimoCheckPoint.transform.position;
+            //jugador = Instantiate(prefabJugador);
+        }
+        Debug.Log(CheckpointPuerta);
+
     }
 
     public Scene getCurrentScene()
@@ -100,6 +113,8 @@ public class SceneController : MonoBehaviour
         Partida partida = Persistencia.CargarPartida("partida unica");
         InventarioController.instance.cargarInventario(partida);
         AICharacterControl.instance.cargarLastTarget(partida.targetAI);
+        
+        Debug.Log(CheckpointPuerta);
         SceneManager.LoadScene(partida.escena);
     }
     public void cargarInventario()
@@ -123,5 +138,10 @@ public class SceneController : MonoBehaviour
     public Scene getActiveScene()
     {
         return SceneManager.GetActiveScene();
+    }
+    public void nuevoCheckpointPuerta(string nuevo)
+    {
+        CheckpointPuerta = nuevo;
+
     }
 }
