@@ -81,8 +81,6 @@ public class SceneController : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         jugador.transform.position = ultimoCheckPoint.transform.position;
         resume();
-        Debug.Log(jugador.transform.position);
-        Debug.Log(ultimoCheckPoint.transform.position);
     }
 
     public void MenuPausa()
