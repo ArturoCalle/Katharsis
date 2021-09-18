@@ -9,14 +9,18 @@ public class SceneController : MonoBehaviour
     public GameObject prefabJugador;
     public CheckpointSingle ultimoCheckPoint;
     private GameObject jugador;
+    public string CheckpointPuerta = "";
+    
     
     public bool pausa;
+    bool cargar = false;
     
 
     private void Awake()
     {
         if(SceneManager.GetActiveScene().name != "Pantalla Principal")
         {
+            
             prefabJugador.transform.position = ultimoCheckPoint.transform.position;
             jugador = Instantiate(prefabJugador);
         }
@@ -25,6 +29,11 @@ public class SceneController : MonoBehaviour
     }
     private void Update()
     {
+        /*if(!cargar)
+        {
+            CargarPartida();
+            cargar = true;
+        }*/
         if(SceneManager.GetActiveScene().name == "Sala")
         {
             
@@ -32,7 +41,13 @@ public class SceneController : MonoBehaviour
     }
     public void cambiarEscena(string nombre)
     {
+        
+        if(CheckpointPuerta != "")
+        {
+            GuardarPartida();
+        }
         SceneManager.LoadScene(nombre);
+
     }
 
     public Scene getCurrentScene()
@@ -95,9 +110,12 @@ public class SceneController : MonoBehaviour
     }
     public void CargarPartida()
     {
+        
         Partida partida = Persistencia.CargarPartida("partida unica");
+        CheckpointPuerta = partida.CheckpointPuerta;
         InventarioController.instance.cargarInventario(partida);
         AICharacterControl.instance.cargarLastTarget(partida.targetAI);
+               
         SceneManager.LoadScene(partida.escena);
     }
     public void cargarInventario()
@@ -121,5 +139,16 @@ public class SceneController : MonoBehaviour
     public Scene getActiveScene()
     {
         return SceneManager.GetActiveScene();
+    }
+    public void nuevoCheckpointPuerta(string nuevo)
+    {
+        CheckpointPuerta = nuevo;
+
+    }
+    public void respawn()
+    {
+        Destroy(jugador);
+        prefabJugador.transform.position = ultimoCheckPoint.transform.position;
+        jugador = Instantiate(prefabJugador);
     }
 }
