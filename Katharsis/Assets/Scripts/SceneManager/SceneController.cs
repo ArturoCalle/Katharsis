@@ -18,9 +18,11 @@ public class SceneController : MonoBehaviour
 
     private void Awake()
     {
-        if(SceneManager.GetActiveScene().name != "Pantalla Principal")
+        if (SceneManager.GetActiveScene().name != "Pantalla Principal")
         {
-            
+            Partida partida = Persistencia.CargarPartida("partida unica");
+            CheckpointPuerta = partida.CheckpointPuerta;
+
             prefabJugador.transform.position = ultimoCheckPoint.transform.position;
             jugador = Instantiate(prefabJugador);
         }
