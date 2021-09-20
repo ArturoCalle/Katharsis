@@ -10,7 +10,7 @@ public class AICharacterControl : MonoBehaviour
     public UnityEngine.AI.NavMeshAgent agent { get; private set; }             // the navmesh agent required for the path finding
     public AICharacter character { get; private set; }                         // the character we are controlling
     private Transform target;                                                   // target to aim for
-    public List<GameObject> targets;
+    private List<GameObject> targets;
     private int last;
     public static AICharacterControl instance;
 
@@ -27,7 +27,6 @@ public class AICharacterControl : MonoBehaviour
         target = targets[0].transform;
         agent.SetDestination(target.position);
     }
-
 
     private void Update()
     {
