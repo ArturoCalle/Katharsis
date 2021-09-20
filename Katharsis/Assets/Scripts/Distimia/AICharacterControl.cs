@@ -23,49 +23,31 @@ public class AICharacterControl : MonoBehaviour
 	    agent.updateRotation = false;
 	    agent.updatePosition = true;
         targets = SceneIAController.instance.targets;
-        last = 0;
+        last = 1;
+        target = targets[0].transform;
+        agent.SetDestination(target.position);
     }
 
 
     private void Update()
     {
-        if (target != null)
-        {
-            agent.SetDestination(target.position);
-        } else {
-            target = getLast();
-            agent.SetDestination(target.position);
-        }
         if (agent.remainingDistance > agent.stoppingDistance)
         {
             character.Move(agent.desiredVelocity, false);
         }
-        if (agent.remainingDistance == agent.stoppingDistance)
+        else if (agent.remainingDistance == agent.stoppingDistance)
         {
-            target = getNext();
+            if (last < targets.Count - 1)
+            {
+                last++;
+                target = targets[last].transform;
+                agent.SetDestination(target.position);
+            }
+            else
+            {
+                SceneIAController.instance.destroyDistimia();
+            }
         }
-        else
-        {
-            character.Move(Vector3.zero, false);
-        }
-    }
-    public Transform getNext()
-    {
-        if (last < targets.Count)
-        {
-            last++;
-            return targets[last].transform;
-        }
-        else
-        {
-            SceneIAController.instance.destroyDistimia();
-            return null;
-        }
-    }
-
-    public Transform getLast()
-    {
-        return targets[last].transform;
     }
     public int getLastPersistencia()
     {
