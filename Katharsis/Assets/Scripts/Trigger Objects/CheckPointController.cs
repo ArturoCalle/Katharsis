@@ -12,12 +12,7 @@ public class CheckPointController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
         instance = this;
-        if (SceneController.instance.CheckpointPuerta != "")
-        {
-            cargar = false;
-        }
     }
 
     // Update is called once per frame
@@ -25,15 +20,19 @@ public class CheckPointController : MonoBehaviour
     {
         
         if (!cargar)
-        {       
-             if(checkpoints.Count != 0)
-             {
-                 SceneController.instance.ultimoCheckPoint = getCheckpoint(SceneController.instance.CheckpointPuerta);
-                 SceneController.instance.CheckpointPuerta = "";
-                 SceneController.instance.GuardarPartida();
-                 cargar = true;
-                 SceneController.instance.respawn();
-             }
+        {
+            
+            //Debug.Log(SceneController.instance.CheckpointPuerta);
+            if(SceneController.instance.CheckpointPuerta != "")
+            {
+                if(checkpoints.Count != 0)
+                {
+                    SceneController.instance.ultimoCheckPoint = getCheckpoint(SceneController.instance.CheckpointPuerta);
+                    SceneController.instance.CheckpointPuerta = "";
+                    cargar = true;
+                    SceneController.instance.respawn();
+                }
+            }
         }
     }
 
@@ -58,8 +57,13 @@ public class CheckPointController : MonoBehaviour
     }
     public CheckpointSingle getCheckpoint(string nombre)
     {
+        if(checkpoints.Count == 0)
+        {
+            Debug.Log("VERGA");
+        }
        foreach(CheckpointSingle cs in checkpoints)
         {
+            Debug.Log(cs.gameObject.name);
             if(cs.gameObject.name == nombre)
             {
                 return cs;

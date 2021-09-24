@@ -27,10 +27,18 @@ public class SceneIAController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (SceneTriggerController.instance.findTriggerByName("Distimia Trigger").recolectado && actual == Estados.inactivo)
+        if(SceneController.instance.getCurrentSceneName() == "Sala")
+        {
+            if (SceneTriggerController.instance.findTriggerByName("Distimia Trigger").recolectado && actual == Estados.inactivo)
+            {
+                instanciarDistimia();
+            }
+        }
+        if(SceneController.instance.getCurrentSceneName() == "Cocina" && actual == Estados.inactivo)
         {
             instanciarDistimia();
         }
+        
     }
 
     private void instanciarDistimia()
@@ -39,6 +47,12 @@ public class SceneIAController : MonoBehaviour
         { 
             distimia = Instantiate(prefabDistimiaSala);
             actual = Estados.activo;
+        }
+        if(SceneController.instance.getCurrentSceneName() == "Cocina")
+        {
+            distimia = Instantiate(prefabDistimiaCocina);
+            actual = Estados.activo;
+            //TODO cuando se recorra toda la cocina, se debe cambiar el estado y este debe persistir
         }
     }
 
