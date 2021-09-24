@@ -20,7 +20,9 @@ public class SceneController : MonoBehaviour
     {
         if(SceneManager.GetActiveScene().name != "Pantalla Principal")
         {
-            
+            Partida partida = Persistencia.CargarPartida("partida unica");
+            CheckpointPuerta = partida.CheckpointPuerta;
+
             prefabJugador.transform.position = ultimoCheckPoint.transform.position;
             jugador = Instantiate(prefabJugador);
         }
@@ -29,11 +31,7 @@ public class SceneController : MonoBehaviour
     }
     private void Update()
     {
-        /*if(!cargar)
-        {
-            CargarPartida();
-            cargar = true;
-        }*/
+        
         if(SceneManager.GetActiveScene().name == "Sala")
         {
             
