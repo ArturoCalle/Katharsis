@@ -60,6 +60,7 @@ public class PlayerControls : MonoBehaviour
         direction = inputs.normalized;
         isGrounded = groundCheck.GetComponent<GroundCheck>().isGrounded();
         movDir = new Vector3();
+
         //Tocar piso o escalar
         if (isGrounded || escalando)
         {

@@ -22,7 +22,7 @@ public class CheckPointController : MonoBehaviour
         if (!cargar)
         {
             
-            Debug.Log(SceneController.instance.CheckpointPuerta);
+            //Debug.Log(SceneController.instance.CheckpointPuerta);
             if(SceneController.instance.CheckpointPuerta != "")
             {
                 if(checkpoints.Count != 0)
