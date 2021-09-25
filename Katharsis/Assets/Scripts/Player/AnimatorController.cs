@@ -47,18 +47,7 @@ public class AnimatorController : MonoBehaviour
         {
             //Si no hay inputs hace las animaciones de IDLE segun el numero aleatorio generado en el update
             animator.SetBool("walk", false);
-            if(animator.GetCurrentAnimatorStateInfo(0).IsName("IDLE f"))
-            {
-                if(idle > 6 && idle < 8)
-                {
-                    animator.Play("LookRight f");
-                    idle = 0;
-                }else if(idle > 8 && idle < 10)
-                {
-                    animator.Play("LookLeft f");
-                    idle = 0;
-                }
-            }
+            IDLE();
             
         }
         //Se asignan los valores de las variables controladores que llegan del PlayerControls
@@ -102,5 +91,24 @@ public class AnimatorController : MonoBehaviour
         
         
         
+    }
+    public void IDLE()
+    {
+        if (animator.GetCurrentAnimatorStateInfo(0).IsName("IDLE f"))
+        {
+            Debug.Log("playing IDLE");
+            if (idle > 2 && idle < 6)
+            {
+                animator.Play("LookRight f");
+                Debug.Log("playing LookRight f");
+                idle = 0;
+            }
+            else if (idle >= 6 && idle <= 10)
+            {
+                animator.Play("LookLeft f");
+                Debug.Log("playing LookLeft f");
+                idle = 0;
+            }
+        }
     }
 }

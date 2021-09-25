@@ -22,15 +22,14 @@ public class Partida
 
     public Partida(List<Recolectable> r, CheckpointSingle lc, string escena, string CheckpointPuerta)
     {
-        
         this.escena = escena;
         this.CheckpointPuerta = CheckpointPuerta;
         notasRecogidas = new bool[r.Count];
         nombreNotas = new string[r.Count];
         tipoNotas = new char[r.Count];
         escenaNotas = new string[r.Count];
-
         int i = 0;
+
         foreach (Recolectable h in r)
         {
             notasRecogidas[i] = h.getRecolectado();
