@@ -59,7 +59,7 @@ public class CheckPointController : MonoBehaviour
     {
         if(checkpoints.Count == 0)
         {
-            Debug.Log("VERGA");
+            
         }
        foreach(CheckpointSingle cs in checkpoints)
         {
