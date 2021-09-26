@@ -8,7 +8,8 @@ public class UIController : MonoBehaviour
 {
     public static UIController instance;
     public Image blackScreen;
-    public float fadeSpeed;
+    Color objectColor;
+    //public float fadeSpeed;
     public bool fadeToBlack, fadeFromBlack;
     public GameObject pauseScreen;
     public GameObject panelOpciones;
@@ -21,6 +22,7 @@ public class UIController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        StartCoroutine(aclararPantalla());
         panelOpciones.GetComponent<PanelOpciones>().reiniciarBotones();
         instance = this;
         desactivarPaneles();
@@ -30,26 +32,9 @@ public class UIController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        /*
-        if (fadeToBlack)
-        {
-            blackScreen.color = new Color(blackScreen.color.r, blackScreen.color.g, blackScreen.color.b, Mathf.MoveTowards(blackScreen.color.a, 1f, fadeSpeed * Time.deltaTime));
-
-            if (blackScreen.color.a == 1f)
-            {
-                fadeToBlack = false;
-            }
-        }
-        if (fadeFromBlack)
-        {
-            blackScreen.color = new Color(blackScreen.color.r, blackScreen.color.g, blackScreen.color.b, Mathf.MoveTowards(blackScreen.color.a, 1f, fadeSpeed * Time.deltaTime));
-
-            if (blackScreen.color.a == 0f)
-            {
-                fadeFromBlack = false;
-            }
-        }
-        */
+        
+        //oscurecerPantalla();
+        
 
     }
 
@@ -171,7 +156,45 @@ public class UIController : MonoBehaviour
         instance.pauseScreen.SetActive(true);
     }
     
-    
-    
-    
+    /*
+    public void oscurecerPantalla()
+    {
+        if(SceneController.instance.CheckpointPuerta != "")
+        {         
+            blackScreen.color = new Color(blackScreen.color.r, blackScreen.color.g, blackScreen.color.b, Mathf.MoveTowards(blackScreen.color.a, 1f, fadeSpeed * Time.deltaTime));
+
+            if (blackScreen.color.a == 1f)
+            {
+                fadeToBlack = false;
+            }
+        }
+        if (fadeFromBlack)
+        {
+            
+        }
+        
+    }
+    */
+    public IEnumerator aclararPantalla(float fadeSpeed = 007.45E-2f)
+    {
+        
+        objectColor = blackScreen.GetComponent<Image>().color;
+        float fadeAmount;        
+        while (blackScreen.GetComponent<Image>().color.a > 0)
+        {            
+            fadeAmount = objectColor.a - (fadeSpeed * Time.deltaTime);
+            objectColor = new Color(objectColor.r, objectColor.g, objectColor.b, fadeAmount);
+            blackScreen.GetComponent<Image>().color = objectColor;
+            yield return null;
+            
+        }
+    }
+
+
 }
+/*blackScreen.color = new Color(blackScreen.color.r, blackScreen.color.g, blackScreen.color.b, Mathf.MoveTowards(blackScreen.color.a, 1f, fadeSpeed * Time.deltaTime));
+
+if (blackScreen.color.a == 0f)
+{
+    fadeFromBlack = false;
+}*/
