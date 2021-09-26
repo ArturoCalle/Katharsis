@@ -23,6 +23,7 @@ public class UIController : MonoBehaviour
     void Start()
     {
         StartCoroutine(aclararPantalla());
+        //StartCoroutine(oscurecerPantalla());
         panelOpciones.GetComponent<PanelOpciones>().reiniciarBotones();
         instance = this;
         desactivarPaneles();
@@ -155,29 +156,28 @@ public class UIController : MonoBehaviour
         panelOpciones.GetComponent<PanelOpciones>().reiniciarBotones();
         instance.pauseScreen.SetActive(true);
     }
+
     
-    /*
-    public void oscurecerPantalla()
+    public IEnumerator oscurecerPantalla(float fadeSpeed = 007.45E-2f)
     {
+        Debug.Log("oscurecer");
         if(SceneController.instance.CheckpointPuerta != "")
         {         
-            blackScreen.color = new Color(blackScreen.color.r, blackScreen.color.g, blackScreen.color.b, Mathf.MoveTowards(blackScreen.color.a, 1f, fadeSpeed * Time.deltaTime));
-
-            if (blackScreen.color.a == 1f)
-            {
-                fadeToBlack = false;
+            objectColor = blackScreen.GetComponent<Image>().color;
+            float fadeAmount;        
+            while (blackScreen.GetComponent<Image>().color.a <1)
+            {            
+                fadeAmount = objectColor.a + (fadeSpeed * Time.deltaTime);
+                objectColor = new Color(objectColor.r, objectColor.g, objectColor.b, fadeAmount);
+                blackScreen.GetComponent<Image>().color = objectColor;
+                yield return null;            
             }
-        }
-        if (fadeFromBlack)
-        {
-            
-        }
-        
+        }             
     }
-    */
+    
     public IEnumerator aclararPantalla(float fadeSpeed = 007.45E-2f)
     {
-        
+        Debug.Log("aclarar");
         objectColor = blackScreen.GetComponent<Image>().color;
         float fadeAmount;        
         while (blackScreen.GetComponent<Image>().color.a > 0)
