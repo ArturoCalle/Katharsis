@@ -13,8 +13,8 @@ public class CheckpointPuerta : MonoBehaviour
             {
                 CheckPointController.instance.PlayerThroughCheckpoint(this);
                 //gameObject.SetActive(false);
-                SceneController.instance.GuardarPartida();                
-                SceneController.instance.cambiarEscena(escenaDestino);
+                SceneController.instance.GuardarPartida();
+                StartCoroutine(UIController.instance.oscurecerPantalla(escenaDestino));
             }
         }
     }

@@ -29,8 +29,7 @@ public class CheckPointController : MonoBehaviour
                 {
                     SceneController.instance.ultimoCheckPoint = getCheckpoint(SceneController.instance.CheckpointPuerta);
                     SceneController.instance.CheckpointPuerta = "";
-                    cargar = true;
-                    StartCoroutine(UIController.instance.oscurecerPantalla());
+                    cargar = true;                    
                     SceneController.instance.respawn();
                 }
             }

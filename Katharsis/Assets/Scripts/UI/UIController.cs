@@ -158,8 +158,9 @@ public class UIController : MonoBehaviour
     }
 
     
-    public IEnumerator oscurecerPantalla(float fadeSpeed = 007.45E-2f)
+    public IEnumerator oscurecerPantalla(string escena)
     {
+        float fadeSpeed = 087.45E-2f;
         Debug.Log("oscurecer");
         if(SceneController.instance.CheckpointPuerta != "")
         {         
@@ -170,12 +171,13 @@ public class UIController : MonoBehaviour
                 fadeAmount = objectColor.a + (fadeSpeed * Time.deltaTime);
                 objectColor = new Color(objectColor.r, objectColor.g, objectColor.b, fadeAmount);
                 blackScreen.GetComponent<Image>().color = objectColor;
-                yield return null;            
+                yield return null;              
             }
+            SceneController.instance.cambiarEscena(escena);
         }             
     }
     
-    public IEnumerator aclararPantalla(float fadeSpeed = 007.45E-2f)
+    public IEnumerator aclararPantalla(float fadeSpeed = 087.45E-2f)
     {
         Debug.Log("aclarar");
         objectColor = blackScreen.GetComponent<Image>().color;
