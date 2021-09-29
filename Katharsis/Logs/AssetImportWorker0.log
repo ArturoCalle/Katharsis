@@ -15,11 +15,11 @@ G:/tuto/universidad/Tesis/Katharsis/Katharsis/Katharsis
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-58268
+59015
 Successfully changed project path to: G:/tuto/universidad/Tesis/Katharsis/Katharsis/Katharsis
 G:/tuto/universidad/Tesis/Katharsis/Katharsis/Katharsis
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 92.47 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 89.71 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2020.3.11f1 (99c7afb366b3)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2020.3.11f1/Editor/Data/Resources/UnitySubsystems
@@ -36,152 +36,135 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2020.3.11f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2020.3.11f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2020.3.11f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56096
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56972
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.11f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.002519 seconds.
+Registered in 0.002167 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 88.26 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 88.25 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.407 seconds
+- Completed reload, in  1.478 seconds
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.004535 seconds.
+Registered in 0.003802 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 92.63 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 89.01 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.546 seconds
+- Completed reload, in  1.523 seconds
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
 Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
 Launched and connected shader compiler UnityShaderCompiler.exe after 0.05 seconds
-Refreshing native plugins compatible for Editor in 0.80 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 0.83 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 3184 Unused Serialized files (Serialized files now loaded: 0)
 System memory in use before: 143.2 MB.
 System memory in use after: 143.4 MB.
 
 Unloading 20 unused Assets to reduce memory usage. Loaded Objects now: 3622.
-Total: 3.365600 ms (FindLiveObjects: 0.366100 ms CreateObjectMapping: 0.100200 ms MarkObjects: 2.757000 ms  DeleteObjects: 0.139900 ms)
+Total: 3.348500 ms (FindLiveObjects: 0.356000 ms CreateObjectMapping: 0.097300 ms MarkObjects: 2.768000 ms  DeleteObjects: 0.125700 ms)
 
 ========================================================================
 Received Import Request.
-  path: Assets/Scenes/Sala/NavMesh.asset
-  artifactKey: Guid(df66292909ecd18458de42e422945b0c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/Sala/NavMesh.asset using Guid(df66292909ecd18458de42e422945b0c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '577417cbfcfc6cfd8e56f7a7b9af9fbc') in 0.059880 seconds
-  Import took 0.066051 seconds .
+  path: Assets/Prefabs/UI Controller.prefab
+  artifactKey: Guid(b9f7b4ddca33881499d09b72585581b6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/UI Controller.prefab using Guid(b9f7b4ddca33881499d09b72585581b6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fdd560be2a814ea94b54a7fc320fe426') in 0.114068 seconds
+  Import took 0.120130 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000207 seconds.
-  path: Assets/Scenes/Sala
-  artifactKey: Guid(31a74bfb68734c84fba4f0f6adbd21d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/Sala using Guid(31a74bfb68734c84fba4f0f6adbd21d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f1550a751312fcfe7109833f21b14178') in 0.024001 seconds
-  Import took 0.029451 seconds .
+  Time since last request: 0.000215 seconds.
+  path: Assets/Prefabs/Jugador.prefab
+  artifactKey: Guid(3fc03170ae7196f408187550be1c17db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Jugador.prefab using Guid(3fc03170ae7196f408187550be1c17db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2a677d7afe199a170a4e645c73e0d089') in 0.207715 seconds
+  Import took 0.215012 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000183 seconds.
-  path: Assets/Timeline 1.playable
-  artifactKey: Guid(5ce4e3cdd2d645144b5e3071cfa6d340) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Timeline 1.playable using Guid(5ce4e3cdd2d645144b5e3071cfa6d340) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ad4384a2e8bb239f3db0d4084251dfdd') in 0.025415 seconds
-  Import took 0.037022 seconds .
+  Time since last request: 0.000231 seconds.
+  path: Assets/Prefabs/DisablePlayer.signal
+  artifactKey: Guid(13c13d60d0c1f624e9fcbe87d703f50e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/DisablePlayer.signal using Guid(13c13d60d0c1f624e9fcbe87d703f50e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6642288b0ed22272473221e8d93b9faf') in 0.011213 seconds
+  Import took 0.017031 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 2.208129 seconds.
-  path: Assets/Modelos/Separador.fbx
-  artifactKey: Guid(8a91c6ae754c4f04e821ff70855af5ef) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Modelos/Separador.fbx using Guid(8a91c6ae754c4f04e821ff70855af5ef) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '41c25fe71634b4304de9235adc5e9ede') in 0.337888 seconds
-  Import took 0.344072 seconds .
+  Time since last request: 0.000311 seconds.
+  path: Assets/Prefabs/EnablePlayer.signal
+  artifactKey: Guid(2028939f823ef7d4b9b7043c621d247d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/EnablePlayer.signal using Guid(2028939f823ef7d4b9b7043c621d247d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd25c8d5568ca4ebfe76ea021e1086bd4') in 0.009257 seconds
+  Import took 0.015120 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 7.877288 seconds.
-  path: Assets/Modelos/Personajes/Distimia 1.fbx
-  artifactKey: Guid(4747755f75a2d324e92e9231995b785c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Modelos/Personajes/Distimia 1.fbx using Guid(4747755f75a2d324e92e9231995b785c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4303d9dd7188eb2750ae03674b2c1208') in 0.354685 seconds
-  Import took 0.361539 seconds .
+  Time since last request: 1.101817 seconds.
+  path: Assets/Prefabs/Controladores/SceneController.prefab
+  artifactKey: Guid(22bbeaf4ababe4a43874f6b86f80902c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Controladores/SceneController.prefab using Guid(22bbeaf4ababe4a43874f6b86f80902c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '44406aa8371881f6ea0f5f8617218075') in 0.088932 seconds
+  Import took 0.097074 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 474.162209 seconds.
-  path: Assets/Modelos/Personajes/Distimia 1.fbx
-  artifactKey: Guid(4747755f75a2d324e92e9231995b785c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Modelos/Personajes/Distimia 1.fbx using Guid(4747755f75a2d324e92e9231995b785c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4b67d5211f880fae19a141307f21c521') in 0.379611 seconds
-  Import took 0.387815 seconds .
+  Time since last request: 0.000268 seconds.
+  path: Assets/Prefabs/Controladores/SceneIaController.prefab
+  artifactKey: Guid(b909e716dbe10dc45b54a17a3e5a20e7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Controladores/SceneIaController.prefab using Guid(b909e716dbe10dc45b54a17a3e5a20e7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'de35b4d43d805183f5ccfce83b8a809e') in 0.038129 seconds
+  Import took 0.046274 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 356.120354 seconds.
-  path: Assets/Modelos/Personajes/Distimia 1.fbx
-  artifactKey: Guid(4747755f75a2d324e92e9231995b785c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Modelos/Personajes/Distimia 1.fbx using Guid(4747755f75a2d324e92e9231995b785c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2b218e96a4226a80712ecc3d56527d1a') in 0.346946 seconds
-  Import took 0.360201 seconds .
+  Time since last request: 0.000234 seconds.
+  path: Assets/Prefabs/Controladores/SceneNotasController.prefab
+  artifactKey: Guid(59cf6268e65325147863c234d546485a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Controladores/SceneNotasController.prefab using Guid(59cf6268e65325147863c234d546485a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '29683e6c7befd54f337fcbb7d9237ffc') in 0.063109 seconds
+  Import took 0.070308 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 97.316026 seconds.
-  path: Assets/Modelos/Personajes/Distimia 2.fbx
-  artifactKey: Guid(0d491ba39cc292743b6d7b70e5129aba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Modelos/Personajes/Distimia 2.fbx using Guid(0d491ba39cc292743b6d7b70e5129aba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2e61729d76917a934038a3328887e395') in 0.349143 seconds
-  Import took 0.360185 seconds .
+  Time since last request: 4.237847 seconds.
+  path: Assets/Prefabs/Triggers/Distimia Trigger Sala.prefab
+  artifactKey: Guid(e902a72eb21360546bef36cf762bb6e7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Triggers/Distimia Trigger Sala.prefab using Guid(e902a72eb21360546bef36cf762bb6e7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a0a4dba3f99a2f31e9955b96ad7fbfd1') in 0.036215 seconds
+  Import took 0.042764 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 304.145894 seconds.
-  path: Assets/Modelos/Personajes/Distimia 2.fbx
-  artifactKey: Guid(0d491ba39cc292743b6d7b70e5129aba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Modelos/Personajes/Distimia 2.fbx using Guid(0d491ba39cc292743b6d7b70e5129aba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2b00061b6cf8a7855e4a286cfef28cbe') in 0.378885 seconds
-  Import took 0.390808 seconds .
+  Time since last request: 0.000252 seconds.
+  path: Assets/Prefabs/Triggers/Recolectable.prefab
+  artifactKey: Guid(1ecd245678500fc4ba0d354bb4fa59f7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Triggers/Recolectable.prefab using Guid(1ecd245678500fc4ba0d354bb4fa59f7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '13cb3e8c07da4c1e60a080a51962ad4e') in 0.039336 seconds
+  Import took 0.046848 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 111.882526 seconds.
-  path: Assets/Modelos/Personajes/Armature_ArmatureAction.anim
-  artifactKey: Guid(5104ed9bbc37b294db76320b11c58dae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Modelos/Personajes/Armature_ArmatureAction.anim using Guid(5104ed9bbc37b294db76320b11c58dae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3115a7034e289d771678d14d769c442c') in 0.056873 seconds
-  Import took 0.104713 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 106.266805 seconds.
-  path: Assets/Modelos/Animaciones/Distimia
-  artifactKey: Guid(ef7df74309b02eb46b891325d243a2fe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Modelos/Animaciones/Distimia using Guid(ef7df74309b02eb46b891325d243a2fe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '85e0304703515c646aa27f995ce24e2b') in 0.044613 seconds
-  Import took 0.050694 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 1.603676 seconds.
-  path: Assets/Modelos/Animaciones/Distimia/Distimia.controller
-  artifactKey: Guid(579e6eda7968ddb4ab72b2626859318e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Modelos/Animaciones/Distimia/Distimia.controller using Guid(579e6eda7968ddb4ab72b2626859318e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fe73506b3cd649058fd53e71c7a98df6') in 0.039581 seconds
-  Import took 0.045478 seconds .
+  Time since last request: 0.000197 seconds.
+  path: Assets/Prefabs/Triggers/Distimia Trigger Sala.prefab
+  artifactKey: Guid(e902a72eb21360546bef36cf762bb6e7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Triggers/Distimia Trigger Sala.prefab using Guid(e902a72eb21360546bef36cf762bb6e7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a0a4dba3f99a2f31e9955b96ad7fbfd1') in 0.041252 seconds
+  Import took 0.047669 seconds .
 
 ========================================================================
 Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.006030 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.79 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.553 seconds
-Platform modules already initialized, skipping
 Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 0.85 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 3.13 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3089 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 151.6 MB.
-System memory in use after: 151.8 MB.
+Unloading 12 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 92.9 MB.
+System memory in use after: 93.1 MB.
 
-Unloading 16 unused Assets to reduce memory usage. Loaded Objects now: 3669.
-Total: 2.986500 ms (FindLiveObjects: 0.352500 ms CreateObjectMapping: 0.085500 ms MarkObjects: 2.510400 ms  DeleteObjects: 0.036100 ms)
+Unloading 16 unused Assets to reduce memory usage. Loaded Objects now: 3631.
+Total: 3.329700 ms (FindLiveObjects: 0.393200 ms CreateObjectMapping: 0.124100 ms MarkObjects: 2.774400 ms  DeleteObjects: 0.036700 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 4.833506 seconds.
+  path: Assets/Prefabs/Triggers/Recolectable.prefab
+  artifactKey: Guid(1ecd245678500fc4ba0d354bb4fa59f7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Triggers/Recolectable.prefab using Guid(1ecd245678500fc4ba0d354bb4fa59f7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5f55c6a642b5ea3668c919f988a11fbe') in 0.032615 seconds
+  Import took 0.039245 seconds .
 
