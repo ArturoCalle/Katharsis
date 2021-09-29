@@ -5,6 +5,10 @@ using UnityEngine;
 public class CheckpointPuerta : MonoBehaviour
 {
     public string escenaDestino;
+    void Update()
+    {
+        this.gameObject.transform.Rotate(0, 10, 0 * Time.deltaTime);
+    }
     private void OnTriggerEnter(Collider other)
     {
         if (this.gameObject.name != "ChechPointStart")
