@@ -37,11 +37,8 @@ public class CheckPointController : MonoBehaviour
     }
 
     public void PlayerThroughCheckpoint(CheckpointSingle checkpointSingle)
-    {
-        
-        SceneController.instance.ultimoCheckPoint = checkpointSingle;
-        //SceneController.instance.GuardarPartida();
-        
+    { 
+        SceneController.instance.ultimoCheckPoint = checkpointSingle;   
     }
 
     public void PlayerThroughCheckpoint(CheckpointPuerta checkpointPuerta)

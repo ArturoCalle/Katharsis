@@ -9,7 +9,7 @@ public class CheckpointSingle : MonoBehaviour
         if(this.gameObject.name != "ChechPointStart")
         {
             if (other.tag == "Player")
-            {
+            {   
                 CheckPointController.instance.PlayerThroughCheckpoint(this);
                 gameObject.SetActive(false);
             }

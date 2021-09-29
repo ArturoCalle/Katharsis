@@ -96,17 +96,15 @@ public class AnimatorController : MonoBehaviour
     {
         if (animator.GetCurrentAnimatorStateInfo(0).IsName("IDLE f"))
         {
-            Debug.Log("playing IDLE");
+            
             if (idle > 2 && idle < 6)
             {
                 animator.Play("LookRight f");
-                Debug.Log("playing LookRight f");
                 idle = 0;
             }
             else if (idle >= 6 && idle <= 10)
             {
                 animator.Play("LookLeft f");
-                Debug.Log("playing LookLeft f");
                 idle = 0;
             }
         }
