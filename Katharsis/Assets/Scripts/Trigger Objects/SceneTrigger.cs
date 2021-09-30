@@ -23,9 +23,7 @@ public class SceneTrigger : MonoBehaviour
             {
                 aviso.enabled = true;
             }
-        }    
-
-        
+        }            
     }
     public void OnTriggerExit(Collider col)
     {

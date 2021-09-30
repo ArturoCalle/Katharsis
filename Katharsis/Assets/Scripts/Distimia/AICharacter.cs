@@ -49,6 +49,14 @@ public class AICharacter : MonoBehaviour
 		// convert the world relative moveInput vector into a local-relative
 		// turn amount and forward amount required to head in the desired
 		// direction.
+		if(m_Animator.GetCurrentAnimatorStateInfo(0).IsName("Levantarse"))
+        {
+			move = Vector3.zero;
+        }
+        else
+        {
+			m_Animator.SetBool("Caminar", true);
+		}
 		if (move.magnitude > 1f){
 			move.Normalize();
 		}

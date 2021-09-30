@@ -32,10 +32,6 @@ public class SceneController : MonoBehaviour
     private void Update()
     {
         
-        if(SceneManager.GetActiveScene().name == "Sala")
-        {
-            
-        }
     }
     public void cambiarEscena(string nombre)
     {
