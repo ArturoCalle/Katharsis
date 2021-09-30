@@ -1,22 +1,33 @@
 fileFormatVersion: 2
-guid: c60aa2ab82715f64f80d715ea0caa8a2
+guid: 0d491ba39cc292743b6d7b70e5129aba
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable:
   - first:
       74: 4781951162920444690
-    second: walk
-  externalObjects:
+    second: Sentado
   - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Material
-    second: {fileID: 2100000, guid: c4b7a07f4bd11704c86943ae4931a592, type: 2}
+      74: -276464399521975653
+    second: Levantarse
   - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: old_caucasian_male_detailed
-    second: {fileID: 2100000, guid: 8824887111c52f04c88ffde167f1d454, type: 2}
+      74: -1245888001772292248
+    second: Caminar
+  - first:
+      74: 3349204526208454161
+    second: Ansiedad
+  - first:
+      74: -1764482450783128530
+    second: Estruendo
+  - first:
+      74: -1246731831762816583
+    second: Caminar enojado
+  - first:
+      74: -4377060501772615429
+    second: Pose enojado
+  - first:
+      74: 4594303134292970328
+    second: Idle enojado
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -45,11 +56,185 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: walk
+      name: Levantarse
       takeName: Armature|ArmatureAction
       internalID: 0
       firstFrame: 10
-      lastFrame: 59
+      lastFrame: 20
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Caminar
+      takeName: Armature|ArmatureAction
+      internalID: 0
+      firstFrame: 30
+      lastFrame: 70
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Ansiedad
+      takeName: Armature|ArmatureAction
+      internalID: 0
+      firstFrame: 90
+      lastFrame: 120
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Estruendo
+      takeName: Armature|ArmatureAction
+      internalID: 0
+      firstFrame: 130
+      lastFrame: 180
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Caminar enojado
+      takeName: Armature|ArmatureAction
+      internalID: 0
+      firstFrame: 200
+      lastFrame: 240
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Idle enojado
+      takeName: Armature|ArmatureAction
+      internalID: 0
+      firstFrame: 250
+      lastFrame: 290
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Sentado
+      takeName: Armature|ArmatureAction
+      internalID: 0
+      firstFrame: 9
+      lastFrame: 10
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -118,167 +303,7 @@ ModelImporter:
   importAnimation: 1
   humanDescription:
     serializedVersion: 3
-    human:
-    - boneName: root
-      humanName: Hips
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: pierna.L
-      humanName: LeftUpperLeg
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: pierna.R
-      humanName: RightUpperLeg
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: Pantorrilla.L
-      humanName: LeftLowerLeg
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: Pantorrilla.R
-      humanName: RightLowerLeg
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: pie.L
-      humanName: LeftFoot
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: pie.R
-      humanName: RightFoot
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: espina1
-      humanName: Spine
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: espina2
-      humanName: Chest
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: cuello
-      humanName: Neck
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: cabeza
-      humanName: Head
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: hombro.L
-      humanName: LeftShoulder
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: hombro.R
-      humanName: RightShoulder
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: brazo.L
-      humanName: LeftUpperArm
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: brazo.R
-      humanName: RightUpperArm
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: antebrazo.L
-      humanName: LeftLowerArm
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: antebrazo.R
-      humanName: RightLowerArm
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: mano.L
-      humanName: LeftHand
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: mano.R
-      humanName: RightHand
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: espina3
-      humanName: UpperChest
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
+    human: []
     skeleton:
     - name: distimia(Clone)
       parentName: 
@@ -287,13 +312,13 @@ ModelImporter:
       scale: {x: 1, y: 1, z: 1}
     - name: disti
       parentName: distimia(Clone)
-      position: {x: -0, y: 0, z: 0}
-      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
-      scale: {x: 100, y: 100, z: 100}
+      position: {x: -0, y: 0.10388541, z: 0}
+      rotation: {x: -6.123234e-17, y: 1, z: 6.123234e-17, w: -3.7493994e-33}
+      scale: {x: 1, y: 1, z: 1}
     - name: Armature
       parentName: distimia(Clone)
-      position: {x: -0, y: 0, z: 0}
-      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      position: {x: -0, y: 0.10388541, z: 0}
+      rotation: {x: -0.7071067, y: 5.302452e-33, z: 5.302451e-33, w: 0.7071068}
       scale: {x: 100, y: 100, z: 100}
     - name: root
       parentName: Armature
@@ -318,7 +343,7 @@ ModelImporter:
     - name: cuello
       parentName: espina3
       position: {x: -0, y: 0.004831204, z: 0}
-      rotation: {x: 0.24442543, y: -0.000000057796846, z: -0.000000043706688, w: 0.9696681}
+      rotation: {x: 0.24442537, y: -0.000000057796832, z: -0.00000004370668, w: 0.9696681}
       scale: {x: 1, y: 1, z: 1}
     - name: cabeza
       parentName: cuello
@@ -338,12 +363,12 @@ ModelImporter:
     - name: brazo.L
       parentName: hombro.L
       position: {x: 0.0000000028312206, y: 0.007234321, z: 7.194245e-16}
-      rotation: {x: -0.040347334, y: -0.006095723, z: 0.14702763, w: 0.98829037}
+      rotation: {x: -0.040347315, y: -0.0060956986, z: 0.14702763, w: 0.98829037}
       scale: {x: 0.99999994, y: 1, z: 1}
     - name: antebrazo.L
       parentName: brazo.L
       position: {x: 0.000000004060632, y: 0.011723735, z: 1.1641532e-10}
-      rotation: {x: 0.009299398, y: 0.014720487, z: -0.015268509, w: 0.99973184}
+      rotation: {x: 0.009299439, y: 0.014720583, z: -0.015268775, w: 0.99973184}
       scale: {x: 0.99999994, y: 0.99999994, z: 1}
     - name: mano.L
       parentName: antebrazo.L
@@ -360,15 +385,20 @@ ModelImporter:
       position: {x: -0, y: 0.004831204, z: 0}
       rotation: {x: 0.80012953, y: 0.59982723, z: -0.00000022145093, w: -4.0712816e-10}
       scale: {x: 1.0000001, y: 1.0000001, z: 1}
+    - name: Obeja
+      parentName: hombro.R
+      position: {x: -0.0052920016, y: 0.014918296, z: 0.04981264}
+      rotation: {x: -0.24160582, y: -0.2811997, z: 0.6355011, w: 0.67726785}
+      scale: {x: 0.0006654252, y: 0.00066542515, z: 0.0006654252}
     - name: brazo.R
       parentName: hombro.R
       position: {x: -0.0000000028312206, y: 0.007234321, z: 2.842171e-16}
-      rotation: {x: -0.04060948, y: 0.0060095442, z: -0.1449338, w: 0.9885894}
+      rotation: {x: -0.040609486, y: 0.0060095014, z: -0.14493383, w: 0.9885894}
       scale: {x: 0.9999999, y: 0.9999999, z: 1}
     - name: antebrazo.R
       parentName: brazo.R
       position: {x: 0.0000000020412887, y: 0.011723735, z: 1.8626451e-11}
-      rotation: {x: 0.009658952, y: -0.01498565, z: 0.0134149995, w: 0.9997511}
+      rotation: {x: 0.009659041, y: -0.014985511, z: 0.0134148225, w: 0.9997511}
       scale: {x: 1, y: 0.99999994, z: 1}
     - name: mano.R
       parentName: antebrazo.R
@@ -462,14 +492,54 @@ ModelImporter:
       scale: {x: 1, y: 1, z: 1}
     - name: OJOS
       parentName: distimia(Clone)
-      position: {x: -0.023280527, y: 0, z: 0}
-      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
-      scale: {x: 100, y: 100, z: 100}
+      position: {x: -0.023280527, y: 0.10388541, z: 0}
+      rotation: {x: -6.123234e-17, y: 1, z: 6.123234e-17, w: -3.7493994e-33}
+      scale: {x: 1, y: 1, z: 1}
     - name: Plane
       parentName: distimia(Clone)
-      position: {x: -0.018384708, y: -0.007038598, z: 0.00064070936}
-      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
-      scale: {x: 100, y: 100, z: 100}
+      position: {x: -0.018384708, y: 0.096846804, z: 0.00064070936}
+      rotation: {x: -6.123234e-17, y: 1, z: 6.123234e-17, w: -3.7493994e-33}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Pantaloneta
+      parentName: distimia(Clone)
+      position: {x: 0.044905208, y: 3.230288, z: 0.1551125}
+      rotation: {x: 0.50132334, y: -0.49867308, z: -0.49867314, w: 0.50132346}
+      scale: {x: 0.19183563, y: 0.28866053, z: 0.2932047}
+    - name: disti.001
+      parentName: distimia(Clone)
+      position: {x: 0.37585345, y: 0.24644493, z: 0.41782534}
+      rotation: {x: -4.32978e-17, y: 0.7071067, z: 0.7071068, w: -4.3297806e-17}
+      scale: {x: 3.9275362, y: 5.208526, z: 4.3675613}
+    - name: Plane.005
+      parentName: distimia(Clone)
+      position: {x: 2.457126, y: 5.4483757, z: 0.32632288}
+      rotation: {x: 0.80050856, y: 0.5452903, z: 0.13625795, w: 0.20803453}
+      scale: {x: 0.11621139, y: 0.116211385, z: 0.1162114}
+    - name: Plane.007
+      parentName: distimia(Clone)
+      position: {x: 3.0909219, y: 5.384371, z: 0.5943702}
+      rotation: {x: 0.80050856, y: 0.5452903, z: 0.13625795, w: 0.20803453}
+      scale: {x: 0.11621139, y: 0.116211385, z: 0.1162114}
+    - name: Plane.003
+      parentName: distimia(Clone)
+      position: {x: -3.1572876, y: 5.3165164, z: 0.6302794}
+      rotation: {x: 0.6345019, y: 0.74765694, z: -0.08895272, w: -0.1746538}
+      scale: {x: 0.11621139, y: 0.11621139, z: 0.1162114}
+    - name: Plane.004
+      parentName: distimia(Clone)
+      position: {x: -2.3593042, y: 5.4481688, z: 0.24375619}
+      rotation: {x: 0.6262963, y: 0.73288023, z: -0.13512234, w: -0.22887011}
+      scale: {x: 0.11621139, y: 0.11621139, z: 0.11621139}
+    - name: chaqueta
+      parentName: distimia(Clone)
+      position: {x: 0.000000059604645, y: 0.13317737, z: 0.23445132}
+      rotation: {x: -4.3393134e-17, y: 0.70741093, z: 0.7068025, w: -4.32024e-17}
+      scale: {x: 0.15592527, y: 0.15592527, z: 0.15592527}
+    - name: Collider
+      parentName: distimia(Clone)
+      position: {x: 0.030240463, y: 5.1125116, z: 0.13749266}
+      rotation: {x: -6.123234e-17, y: 1, z: 6.123234e-17, w: -3.7493994e-33}
+      scale: {x: 0.77848786, y: 0.69532824, z: 0.60952157}
     armTwist: 0.5
     foreArmTwist: 0.5
     upperLegTwist: 0.5
@@ -484,7 +554,7 @@ ModelImporter:
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   autoGenerateAvatarMappingIfUnspecified: 1
-  animationType: 3
+  animationType: 2
   humanoidOversampling: 1
   avatarSetup: 1
   addHumanoidExtraRootOnlyWhenUsingAvatar: 1
