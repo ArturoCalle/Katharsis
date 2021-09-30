@@ -55,7 +55,7 @@ public class AICharacter : MonoBehaviour
         }
         else
         {
-			m_Animator.SetBool("Caminar", true);
+			m_Animator.Play("Caminar");
 		}
 		if (move.magnitude > 1f){
 			move.Normalize();
@@ -74,20 +74,6 @@ public class AICharacter : MonoBehaviour
 		// help the character turn faster (this is in addition to root rotation in the animation)
 		float turnSpeed = Mathf.Lerp(m_StationaryTurnSpeed, m_MovingTurnSpeed, m_ForwardAmount);
 		transform.Rotate(0, m_TurnAmount * turnSpeed * Time.deltaTime, 0);
-	}
-
-
-	public void OnAnimatorMove()
-	{
-		// we implement this function to override the default root motion.
-		// this allows us to modify the positional speed before it's applied.
-		if (m_IsGrounded && Time.deltaTime > 0)
-		{
-			Vector3 v = (m_Animator.deltaPosition * m_MoveSpeedMultiplier) / Time.deltaTime;
-			// we preserve the existing y part of the current velocity.
-			v.y = m_Rigidbody.velocity.y;
-			m_Rigidbody.velocity = v;
-		}
 	}
 
 	void CheckGroundStatus()
