@@ -29,6 +29,7 @@ public class CheckPointController : MonoBehaviour
                 {
                     SceneController.instance.ultimoCheckPoint = getCheckpoint(SceneController.instance.CheckpointPuerta);
                     SceneController.instance.CheckpointPuerta = "";
+                    
                     cargar = true;                    
                     SceneController.instance.respawn();
                 }

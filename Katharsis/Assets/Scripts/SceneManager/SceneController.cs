@@ -32,7 +32,7 @@ public class SceneController : MonoBehaviour
     private void Update()
     {
         
-        if(SceneManager.GetActiveScene().name == "Sala")
+        if(SceneManager.GetActiveScene().name != "Pantalla Principal")
         {
             
         }
@@ -146,8 +146,8 @@ public class SceneController : MonoBehaviour
     public void respawn()
     {
         Destroy(jugador);
-        Debug.Log(ultimoCheckPoint);
         prefabJugador.transform.position = ultimoCheckPoint.transform.position;
         jugador = Instantiate(prefabJugador);
+        GuardarPartida();
     }
 }
