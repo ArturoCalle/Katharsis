@@ -146,6 +146,7 @@ public class SceneController : MonoBehaviour
     public void respawn()
     {
         Destroy(jugador);
+        Debug.Log(ultimoCheckPoint);
         prefabJugador.transform.position = ultimoCheckPoint.transform.position;
         jugador = Instantiate(prefabJugador);
     }
