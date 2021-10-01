@@ -5,17 +5,22 @@ using UnityEngine;
 public class SceneIAController : MonoBehaviour
 {
     public GameObject prefabDistimia;
-
     private GameObject distimia = null;
-    public List<GameObject> trigger;
-
     public static SceneIAController instance;
-
-    public List<GameObject> targets;
+    public GameObject[] targets;
+    public GameObject startPos;
 
     private void Start()
     {
         instance = this;
+    }
+
+    private void Update()
+    {
+        if(SceneTriggerController.instance.findTriggerByName("Distimia Trigger").recolectado && distimia == null)
+        {
+            instanciarDistimia(startPos.transform);
+        }
     }
 
     public void instanciarDistimia(Transform posicion)
