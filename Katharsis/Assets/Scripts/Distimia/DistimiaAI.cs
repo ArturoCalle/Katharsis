@@ -11,9 +11,9 @@ namespace UnityStandardAssets.Assets.ThirdPerson
         public AICharacter character;
 
         private int targetIndex = 0;
-        float velocidadDePaseo = 5f;
+        public float velocidadDePaseo = 0f;
 
-        public float chaseSpeed = 1f;
+        public float chaseSpeed = 10f;
         public GameObject target;
 
         public bool isAlive;
@@ -63,7 +63,7 @@ namespace UnityStandardAssets.Assets.ThirdPerson
             if(Vector3.Distance(this.transform.position, SceneIAController.instance.targets[targetIndex].transform.position ) >= 2)
             {
                 agent.SetDestination(SceneIAController.instance.targets[targetIndex].transform.position);
-                character.Move(agent.desiredVelocity, false);
+                velocidadDePaseo = character.Move(agent.desiredVelocity, false);
             }else if (Vector3.Distance(this.transform.position, SceneIAController.instance.targets[targetIndex].transform.position) <= 2)
             {
                 targetIndex += 1;
@@ -74,7 +74,7 @@ namespace UnityStandardAssets.Assets.ThirdPerson
             }
             else
             {
-                character.Move(Vector3.zero, false);
+                velocidadDePaseo = character.Move(Vector3.zero, false);
             }
         }
 

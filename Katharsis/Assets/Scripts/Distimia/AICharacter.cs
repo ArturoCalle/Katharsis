@@ -41,13 +41,13 @@ namespace UnityStandardAssets.Assets.ThirdPerson
 		}
 
 
-		public void Move(Vector3 move, bool jump)
+		public float Move(Vector3 move, bool jump)
 		{
 
             // convert the world relative moveInput vector into a local-relative
             // turn amount and forward amount required to head in the desired
             // direction.
-            if (m_Animator.GetCurrentAnimatorStateInfo(0).IsName("Caminar") || m_Animator.GetCurrentAnimatorStateInfo(0).IsName("Ansiedad"))
+            if (m_Animator.GetCurrentAnimatorStateInfo(0).IsTag("Caminar"))
             {
 				if (move.magnitude > 1f) move.Normalize();
 				move = transform.InverseTransformDirection(move);
@@ -57,14 +57,19 @@ namespace UnityStandardAssets.Assets.ThirdPerson
 				m_ForwardAmount = move.z;
 
 				ApplyExtraTurnRotation();
-
-				if (m_Animator.GetCurrentAnimatorStateInfo(0).IsName("Exit"))
-				{
-					IsAlive = false;
-				}
-			}
-
+				return 5f;
+            }
+            else
+            {
+				return 0f;
+            }
+			
 		}
+
+		public void Ansiedad()
+        {
+			m_Animator.SetBool("Ansiedad", true);
+        }
 
 		void ApplyExtraTurnRotation()
 		{
