@@ -11,10 +11,6 @@ public class SceneTriggerController : MonoBehaviour
     {
         instance = this;
     }
-    private void Update()
-    {
-        
-    }
 
     public SceneTrigger findTriggerByName(string name)
     {

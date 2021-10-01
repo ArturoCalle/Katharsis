@@ -26,6 +26,8 @@ namespace UnityStandardAssets.Assets.ThirdPerson
 		Vector3 m_CapsuleCenter;
 		CapsuleCollider m_Capsule;
 		public bool IsAlive = true;
+		private bool enfadado = false;
+		private GameObject trompi;
 
 
 		void Start()
@@ -57,7 +59,14 @@ namespace UnityStandardAssets.Assets.ThirdPerson
 				m_ForwardAmount = move.z;
 
 				ApplyExtraTurnRotation();
-				return 5f;
+                if (!enfadado)
+                {
+					return 5f;
+                }
+                else
+                {
+					return 8f;
+                }
             }
             else
             {
@@ -78,8 +87,28 @@ namespace UnityStandardAssets.Assets.ThirdPerson
 			transform.Rotate(0, m_TurnAmount * turnSpeed * Time.deltaTime, 0);
 		}
 
+        private void OnTriggerEnter(Collider other)
+        {
+            if (other.tag == "jugador")
+            {
+				trompi = other.gameObject;
+				enfadado = true;
+            }
+        }
 
-		void CheckGroundStatus()
+		public GameObject getTarget()
+        {
+			if(trompi != null)
+            {
+				return trompi;
+            }
+            else
+            {
+				return null;
+            }
+        }
+
+        void CheckGroundStatus()
 		{
 			RaycastHit hitInfo;
 #if UNITY_EDITOR

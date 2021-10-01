@@ -15,7 +15,6 @@ public class GroundCheck : MonoBehaviour
     {
         if (col.gameObject.name != "trompi" && col.tag != "Checkpoint" && col.gameObject.name != "Jugador")
         {
-
             grounded = true;
         }
         

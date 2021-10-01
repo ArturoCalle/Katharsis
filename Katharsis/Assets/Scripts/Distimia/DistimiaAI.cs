@@ -76,25 +76,18 @@ namespace UnityStandardAssets.Assets.ThirdPerson
             {
                 velocidadDePaseo = character.Move(Vector3.zero, false);
             }
+            if (velocidadDePaseo == 8f && character.getTarget() != null)
+            {
+                target = character.getTarget();
+                state = DistimiaAI.State.buscarTrompi;
+            }
         }
-
+      
         void BuscarTrompi()
         {
             agent.speed = chaseSpeed;
             agent.SetDestination(target.transform.position);
             character.Move(agent.desiredVelocity, false);
-        }
-        private void OnTriggerEnter(Collider other)
-        {
-            if(SceneController.instance.getCurrentSceneName() != "Sala")
-            {
-                if (other.tag == "player")
-                {
-                    target = other.gameObject;
-                    state = DistimiaAI.State.buscarTrompi;
-                }
-
-            }
         }
     }
 }
