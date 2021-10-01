@@ -32,10 +32,6 @@ public class SceneController : MonoBehaviour
     private void Update()
     {
         
-        if(SceneManager.GetActiveScene().name != "Pantalla Principal")
-        {
-            
-        }
     }
     public void cambiarEscena(string nombre)
     {
@@ -112,7 +108,7 @@ public class SceneController : MonoBehaviour
         Partida partida = Persistencia.CargarPartida("partida unica");
         CheckpointPuerta = partida.CheckpointPuerta;
         InventarioController.instance.cargarInventario(partida);
-        AICharacterControl.instance.cargarLastTarget(partida.targetAI);
+        //AICharacterControl.instance.cargarLastTarget(partida.targetAI);
                
         SceneManager.LoadScene(partida.escena);
     }
@@ -146,8 +142,8 @@ public class SceneController : MonoBehaviour
     public void respawn()
     {
         Destroy(jugador);
+        Debug.Log(ultimoCheckPoint);
         prefabJugador.transform.position = ultimoCheckPoint.transform.position;
         jugador = Instantiate(prefabJugador);
-        GuardarPartida();
     }
 }
