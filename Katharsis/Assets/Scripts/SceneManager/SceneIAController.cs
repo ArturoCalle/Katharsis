@@ -9,18 +9,25 @@ public class SceneIAController : MonoBehaviour
     public static SceneIAController instance;
     public GameObject[] targets;
     public GameObject startPos;
+    public bool InsDistimia;
 
     private void Start()
     {
+        InsDistimia = true;
         instance = this;
     }
 
     private void Update()
     {
-        if(SceneTriggerController.instance.findTriggerByName("Distimia Trigger").recolectado && distimia == null)
+        if (InsDistimia && distimia == null)
         {
-            instanciarDistimia(startPos.transform);
+            if (SceneTriggerController.instance.findTriggerByName("Distimia Trigger").recolectado)
+            {
+                SceneTriggerController.instance.findTriggerByName("Distimia Trigger").transform.parent.gameObject.SetActive(false);
+                instanciarDistimia(startPos.transform);
+            }
         }
+        
     }
 
     public void instanciarDistimia(Transform posicion)
@@ -32,6 +39,7 @@ public class SceneIAController : MonoBehaviour
     public void destroyDistimia()
     {
         Destroy(distimia);
+        InsDistimia = false;
     }
 
 }
