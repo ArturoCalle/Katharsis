@@ -8,7 +8,7 @@ public class SceneController : MonoBehaviour
     public static SceneController instance;
     public GameObject prefabJugador;
     public CheckpointSingle ultimoCheckPoint;
-    private GameObject jugador;
+    public GameObject jugador;
     public string CheckpointPuerta = "";
     
     
