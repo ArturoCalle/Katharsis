@@ -114,7 +114,7 @@ public class SceneController : MonoBehaviour
         Partida partida = Persistencia.CargarPartida("partida unica");
         CheckpointPuerta = partida.CheckpointPuerta;
         InventarioController.instance.cargarInventario(partida);
-        AICharacterControl.instance.cargarLastTarget(partida.targetAI);
+        //AICharacterControl.instance.cargarLastTarget(partida.targetAI);
                
         SceneManager.LoadScene(partida.escena);
     }
