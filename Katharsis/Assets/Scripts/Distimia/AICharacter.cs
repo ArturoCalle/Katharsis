@@ -43,7 +43,7 @@ namespace UnityStandardAssets.Assets.ThirdPerson
 		}
 
 
-		public float Move(Vector3 move, bool jump)
+		public void Move(Vector3 move, bool jump)
 		{
 
             // convert the world relative moveInput vector into a local-relative
@@ -59,18 +59,6 @@ namespace UnityStandardAssets.Assets.ThirdPerson
 				m_ForwardAmount = move.z;
 
 				ApplyExtraTurnRotation();
-                if (!enfadado)
-                {
-					return 5f;
-                }
-                else
-                {
-					return 8f;
-                }
-            }
-            else
-            {
-				return 0f;
             }
 			
 		}
@@ -86,27 +74,6 @@ namespace UnityStandardAssets.Assets.ThirdPerson
 			float turnSpeed = Mathf.Lerp(m_StationaryTurnSpeed, m_MovingTurnSpeed, m_ForwardAmount);
 			transform.Rotate(0, m_TurnAmount * turnSpeed * Time.deltaTime, 0);
 		}
-
-        private void OnTriggerEnter(Collider other)
-        {
-            if (other.tag == "jugador")
-            {
-				trompi = other.gameObject;
-				enfadado = true;
-            }
-        }
-
-		public GameObject getTarget()
-        {
-			if(trompi != null)
-            {
-				return trompi;
-            }
-            else
-            {
-				return null;
-            }
-        }
 
         void CheckGroundStatus()
 		{

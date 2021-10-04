@@ -11,12 +11,14 @@ namespace UnityStandardAssets.Assets.ThirdPerson
         public AICharacter character;
 
         private int targetIndex = 0;
-        public float velocidadDePaseo = 0f;
+        public float velocidadDePaseo = 5f;
 
         public float chaseSpeed = 10f;
-        public GameObject target;
+        public GameObject jugador;
 
         public bool isAlive;
+
+        public float radioBusqueda = 10f;
         
         public enum State
         {
@@ -34,10 +36,21 @@ namespace UnityStandardAssets.Assets.ThirdPerson
             agent.updatePosition = true;
             agent.updateRotation = false;
 
-            state = DistimiaAI.State.pasear;
+            state = State.pasear;
             isAlive = true;
 
             StartCoroutine("FSM");
+
+            jugador = SceneController.instance.jugador;
+        }
+
+        private void Update()
+        {
+            float distance = Vector3.Distance(jugador.transform.position, transform.position);
+            if (distance <= radioBusqueda)
+            {
+                state = State.buscarTrompi;
+            }
         }
         IEnumerator FSM()
         {
@@ -63,7 +76,7 @@ namespace UnityStandardAssets.Assets.ThirdPerson
             if(Vector3.Distance(this.transform.position, SceneIAController.instance.targets[targetIndex].transform.position ) >= 2)
             {
                 agent.SetDestination(SceneIAController.instance.targets[targetIndex].transform.position);
-                velocidadDePaseo = character.Move(agent.desiredVelocity, false);
+                character.Move(agent.desiredVelocity, false);
             }else if (Vector3.Distance(this.transform.position, SceneIAController.instance.targets[targetIndex].transform.position) <= 2)
             {
                 targetIndex += 1;
@@ -74,20 +87,16 @@ namespace UnityStandardAssets.Assets.ThirdPerson
             }
             else
             {
-                velocidadDePaseo = character.Move(Vector3.zero, false);
-            }
-            if (velocidadDePaseo == 8f && character.getTarget() != null)
-            {
-                target = character.getTarget();
-                state = DistimiaAI.State.buscarTrompi;
+                character.Move(Vector3.zero, false);
             }
         }
       
         void BuscarTrompi()
         {
             agent.speed = chaseSpeed;
-            agent.SetDestination(target.transform.position);
+            agent.SetDestination(jugador.transform.position);
             character.Move(agent.desiredVelocity, false);
+            RigController.instance.setRigWeightToOne(jugador.transform);
         }
     }
 }
