@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Playables;
 
 public class SceneController : MonoBehaviour
 {
@@ -10,6 +11,8 @@ public class SceneController : MonoBehaviour
     public CheckpointSingle ultimoCheckPoint;
     public GameObject jugador;
     public string CheckpointPuerta = "";
+    public PlayableDirector timeline;
+    public GameObject cutsceneCam;
     
     
     public bool pausa;
@@ -149,5 +152,8 @@ public class SceneController : MonoBehaviour
         prefabJugador.transform.position = ultimoCheckPoint.transform.position;
         jugador = Instantiate(prefabJugador);
         GuardarPartida();
+        cutsceneCam.SetActive(true);
+        timeline.Play();
+
     }
 }
