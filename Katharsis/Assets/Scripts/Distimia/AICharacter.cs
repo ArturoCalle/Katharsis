@@ -66,11 +66,6 @@ namespace UnityStandardAssets.Assets.ThirdPerson
 			
 		}
 
-		public void Ansiedad()
-        {
-			m_Animator.SetBool("Ansiedad", true);
-        }
-
 		void ApplyExtraTurnRotation()
 		{
 			// help the character turn faster (this is in addition to root rotation in the animation)
@@ -78,8 +73,7 @@ namespace UnityStandardAssets.Assets.ThirdPerson
 			transform.Rotate(0, m_TurnAmount * turnSpeed * Time.deltaTime, 0);
 		}
 
-
-		void CheckGroundStatus()
+        void CheckGroundStatus()
 		{
 			RaycastHit hitInfo;
 #if UNITY_EDITOR
