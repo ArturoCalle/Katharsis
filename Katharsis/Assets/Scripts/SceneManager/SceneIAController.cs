@@ -4,99 +4,42 @@ using UnityEngine;
 
 public class SceneIAController : MonoBehaviour
 {
-    public GameObject prefabDistimiaSala;
-    public GameObject prefabDistimiaComedor;
-    public GameObject prefabDistimiaCocina;
-
+    public GameObject prefabDistimia;
     private GameObject distimia = null;
-    public List<GameObject> trigger;
-
     public static SceneIAController instance;
-
-    enum Estados { activo, inactivo, enfadado, busqueda };
-    private Estados actual;
-
-    public List<GameObject> targets;
+    public GameObject[] targets;
+    public GameObject startPos;
+    public bool InsDistimia;
 
     private void Start()
     {
-        actual = Estados.inactivo;
+        InsDistimia = true;
         instance = this;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        if(SceneController.instance.getCurrentSceneName() == "Sala")
+        if (InsDistimia && distimia == null)
         {
-            if (SceneTriggerController.instance.findTriggerByName("Distimia Trigger").recolectado && actual == Estados.inactivo)
+            if (SceneTriggerController.instance.findTriggerByName("Distimia Trigger").recolectado)
             {
-                instanciarDistimia();
+                SceneTriggerController.instance.findTriggerByName("Distimia Trigger").transform.parent.gameObject.SetActive(false);
+                instanciarDistimia(startPos.transform);
             }
-        }
-        if(SceneController.instance.getCurrentSceneName() == "Cocina" && actual == Estados.inactivo)
-        {
-            instanciarDistimia();
         }
         
     }
 
-    private void instanciarDistimia()
+    public void instanciarDistimia(Transform posicion)
     {
-        if (SceneController.instance.getActiveScene().name == "Sala")
-        { 
-            distimia = Instantiate(prefabDistimiaSala);
-            actual = Estados.activo;
-        }
-        if(SceneController.instance.getCurrentSceneName() == "Cocina")
-        {
-            distimia = Instantiate(prefabDistimiaCocina);
-            actual = Estados.activo;
-            //TODO cuando se recorra toda la cocina, se debe cambiar el estado y este debe persistir
-        }
+        prefabDistimia.transform.position = posicion.position;
+        distimia = Instantiate(prefabDistimia);
     }
 
     public void destroyDistimia()
     {
         Destroy(distimia);
-    }
-
-    public void setEnum(string estado)
-    {
-        switch (estado)
-        {
-            case "activo":
-                actual = Estados.activo;
-                break;
-            case "inactivo":
-                actual = Estados.inactivo;
-                break;
-            case "enfadado":
-                actual = Estados.enfadado;
-                break;
-            case "busqueda":
-                actual = Estados.busqueda;
-                break;
-            default:
-                break;
-        }
-    }
-
-    public string getEstado()
-    {
-        switch (actual)
-        {
-            case Estados.activo:
-                return "activo";
-            case Estados.inactivo:
-                return "inactivo";
-            case Estados.busqueda:
-                return "busqueda";
-            case Estados.enfadado:
-                return "enfadado";
-            default:
-                return "";
-        }
+        InsDistimia = false;
     }
 
 }
