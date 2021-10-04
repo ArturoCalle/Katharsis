@@ -12,8 +12,7 @@ public class SceneController : MonoBehaviour
     public GameObject jugador;
     public string CheckpointPuerta = "";
     public PlayableDirector timeline;
-    public GameObject cutsceneCam;
-    
+    public GameObject cutsceneCam;      
     
     public bool pausa;
     bool cargar = false;
@@ -30,7 +29,7 @@ public class SceneController : MonoBehaviour
             jugador = Instantiate(prefabJugador);
         }
         instance = this;
-        pausa = false;
+        pausa = false;        
     }
     private void Update()
     {
@@ -152,8 +151,8 @@ public class SceneController : MonoBehaviour
         prefabJugador.transform.position = ultimoCheckPoint.transform.position;
         jugador = Instantiate(prefabJugador);
         GuardarPartida();
-        cutsceneCam.SetActive(true);
-        timeline.Play();
+        //cutsceneCam.SetActive(true);
+        //timeline.Play();
 
     }
 }

@@ -7,10 +7,14 @@ public class EntradaCutscene : MonoBehaviour
 {
     public GameObject cutsceneCam;
     public PlayableDirector timeline;
+    public GameObject camarasVirtuales;
+
 
     private void OnTriggerExit(Collider other)
     {
         timeline.Stop();
+        cutsceneCam.SetActive(false);
+        //camarasVirtuales.SetActive(false);
         
         //SceneController.instance.jugador.SetActive(true);
     }
@@ -22,6 +26,7 @@ public class EntradaCutscene : MonoBehaviour
         StartCoroutine(FinishCut());
         */
         this.gameObject.GetComponent<BoxCollider>().enabled = false;
+        //camarasVirtuales.SetActive(true);
         cutsceneCam.SetActive(true);
         
         //SceneController.instance.jugador.SetActive(false);

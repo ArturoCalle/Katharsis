@@ -372,7 +372,7 @@ MonoBehaviour:
   - m_Script
   m_LockStageInInspector: 
   m_StreamingVersion: 20170927
-  m_Priority: 10
+  m_Priority: 0
   m_StandbyUpdate: 2
   m_LookAt: {fileID: 0}
   m_Follow: {fileID: 0}
@@ -1210,8 +1210,8 @@ GameObject:
   m_Component:
   - component: {fileID: 220822009}
   m_Layer: 0
-  m_Name: "C\xE1maras cinem\xE1ticas"
-  m_TagString: Untagged
+  m_Name: CamarasCinematicas
+  m_TagString: Cinematica
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2092,7 +2092,7 @@ MonoBehaviour:
   - m_Script
   m_LockStageInInspector: 
   m_StreamingVersion: 20170927
-  m_Priority: 10
+  m_Priority: 0
   m_StandbyUpdate: 2
   m_LookAt: {fileID: 0}
   m_Follow: {fileID: 0}
@@ -8147,9 +8147,9 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
-  far clip plane: 1000
-  field of view: 60
+  near clip plane: 0.1
+  far clip plane: 5000
+  field of view: 60.000004
   orthographic: 0
   orthographic size: 5
   m_Depth: 0
@@ -8174,8 +8174,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1334817596}
-  m_LocalRotation: {x: -0.03246615, y: 0.73957556, z: -0.035748035, w: -0.67133904}
-  m_LocalPosition: {x: 2.0265884, y: -3.174679, z: 59.794712}
+  m_LocalRotation: {x: -0.0033319984, y: 0.98909307, z: -0.022562655, w: -0.14551568}
+  m_LocalPosition: {x: -62.081192, y: 3.42801, z: 26.033262}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 220822009}
@@ -8593,7 +8593,7 @@ MonoBehaviour:
   - m_Script
   m_LockStageInInspector: 
   m_StreamingVersion: 20170927
-  m_Priority: 10
+  m_Priority: 0
   m_StandbyUpdate: 2
   m_LookAt: {fileID: 0}
   m_Follow: {fileID: 0}
@@ -8953,7 +8953,7 @@ MonoBehaviour:
   - m_Script
   m_LockStageInInspector: 
   m_StreamingVersion: 20170927
-  m_Priority: 10
+  m_Priority: 0
   m_StandbyUpdate: 2
   m_LookAt: {fileID: 0}
   m_Follow: {fileID: 0}
@@ -10297,7 +10297,7 @@ PlayableDirector:
   m_Enabled: 1
   serializedVersion: 3
   m_PlayableAsset: {fileID: 11400000, guid: 3723614bb66209d4bae2e672eeab19c3, type: 2}
-  m_InitialState: 1
+  m_InitialState: 0
   m_WrapMode: 2
   m_DirectorUpdateMode: 1
   m_InitialTime: 0
@@ -13050,6 +13050,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cutsceneCam: {fileID: 1334817596}
   timeline: {fileID: 1689545177}
+  camarasVirtuales: {fileID: 220822008}
 --- !u!65 &2114904228
 BoxCollider:
   m_ObjectHideFlags: 0
