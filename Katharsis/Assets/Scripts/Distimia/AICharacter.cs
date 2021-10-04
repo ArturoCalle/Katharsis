@@ -43,7 +43,7 @@ namespace UnityStandardAssets.Assets.ThirdPerson
 		}
 
 
-		public void Move(Vector3 move, bool jump)
+		public float Move(Vector3 move, bool jump)
 		{
 
             // convert the world relative moveInput vector into a local-relative
@@ -59,14 +59,14 @@ namespace UnityStandardAssets.Assets.ThirdPerson
 				m_ForwardAmount = move.z;
 
 				ApplyExtraTurnRotation();
+				return 5f;
+            }
+            else
+            {
+				return 0f;
             }
 			
 		}
-
-		public void Ansiedad()
-        {
-			m_Animator.SetBool("Ansiedad", true);
-        }
 
 		void ApplyExtraTurnRotation()
 		{

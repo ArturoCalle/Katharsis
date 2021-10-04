@@ -11,19 +11,21 @@ namespace UnityStandardAssets.Assets.ThirdPerson
         public AICharacter character;
 
         private int targetIndex = 0;
-        public float velocidadDePaseo = 5f;
+        private float velocidadDePaseo = 0f;
 
-        public float chaseSpeed = 10f;
+        private float chaseSpeed = 0f;
         public GameObject jugador;
 
         public bool isAlive;
+        private bool mirarTrompi;
 
-        public float radioBusqueda = 10f;
+        public float radioBusqueda = 50f;
         
         public enum State
         {
             pasear,
-            buscarTrompi
+            buscarTrompi,
+            mirarTrompiMientrasPasea
         }
         public State state;
 
@@ -47,9 +49,17 @@ namespace UnityStandardAssets.Assets.ThirdPerson
         private void Update()
         {
             float distance = Vector3.Distance(jugador.transform.position, transform.position);
-            if (distance <= radioBusqueda)
+            Debug.Log(distance);
+            if (SceneController.instance.getCurrentSceneName() != "Sala")
             {
-                state = State.buscarTrompi;
+                if(distance <= radioBusqueda)
+                {
+                    //TODO chase speed
+                    state = State.buscarTrompi;
+                }
+            }else
+            {
+                mirarTrompi = true;
             }
         }
         IEnumerator FSM()
@@ -72,11 +82,15 @@ namespace UnityStandardAssets.Assets.ThirdPerson
 
         void Pasear()
         {
+            if (mirarTrompi)
+            {
+                RigController.instance.setRigWeightToOne(jugador.transform);
+            }
             agent.speed = velocidadDePaseo;
             if(Vector3.Distance(this.transform.position, SceneIAController.instance.targets[targetIndex].transform.position ) >= 2)
             {
                 agent.SetDestination(SceneIAController.instance.targets[targetIndex].transform.position);
-                character.Move(agent.desiredVelocity, false);
+                velocidadDePaseo = character.Move(agent.desiredVelocity, false);
             }else if (Vector3.Distance(this.transform.position, SceneIAController.instance.targets[targetIndex].transform.position) <= 2)
             {
                 targetIndex += 1;
@@ -87,7 +101,7 @@ namespace UnityStandardAssets.Assets.ThirdPerson
             }
             else
             {
-                character.Move(Vector3.zero, false);
+                velocidadDePaseo = character.Move(Vector3.zero, false);
             }
         }
       
@@ -95,7 +109,7 @@ namespace UnityStandardAssets.Assets.ThirdPerson
         {
             agent.speed = chaseSpeed;
             agent.SetDestination(jugador.transform.position);
-            character.Move(agent.desiredVelocity, false);
+            chaseSpeed = character.Move(agent.desiredVelocity, false);
             RigController.instance.setRigWeightToOne(jugador.transform);
         }
     }
