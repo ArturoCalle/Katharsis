@@ -26,8 +26,6 @@ namespace UnityStandardAssets.Assets.ThirdPerson
 		Vector3 m_CapsuleCenter;
 		CapsuleCollider m_Capsule;
 		public bool IsAlive = true;
-		private bool enfadado = false;
-		private GameObject trompi;
 
 
 		void Start()

@@ -9,7 +9,6 @@ public class RigController : MonoBehaviour
     private void Start()
     {
         instance = this;
-
     }
 
     public void setRigWeightToOne(Transform trompi)
