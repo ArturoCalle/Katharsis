@@ -27,7 +27,6 @@ public class SceneIAController : MonoBehaviour
                 instanciarDistimia(startPos.transform);
             }
         }
-        
     }
 
     public void instanciarDistimia(Transform posicion)
