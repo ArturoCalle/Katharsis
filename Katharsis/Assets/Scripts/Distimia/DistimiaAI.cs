@@ -20,7 +20,7 @@ namespace UnityStandardAssets.Assets.ThirdPerson
         private bool mirarTrompi;
 
         public float radioBusqueda = 20f;
-        public float golpeBusqueda = 10f;
+        public float radioGolpe = 10f;
 
         public enum State
         {
