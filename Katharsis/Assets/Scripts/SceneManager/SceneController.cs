@@ -2,15 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Playables;
 
 public class SceneController : MonoBehaviour
 {
     public static SceneController instance;
     public GameObject prefabJugador;
     public CheckpointSingle ultimoCheckPoint;
-    private GameObject jugador;
+    public GameObject jugador;
     public string CheckpointPuerta = "";
-    
+    public PlayableDirector timeline;
+    public GameObject cutsceneCam;      
     
     public bool pausa;
     bool cargar = false;
@@ -27,11 +29,15 @@ public class SceneController : MonoBehaviour
             jugador = Instantiate(prefabJugador);
         }
         instance = this;
-        pausa = false;
+        pausa = false;        
     }
     private void Update()
     {
         
+        if(SceneManager.GetActiveScene().name != "Pantalla Principal")
+        {
+            
+        }
     }
     public void cambiarEscena(string nombre)
     {
@@ -108,7 +114,7 @@ public class SceneController : MonoBehaviour
         Partida partida = Persistencia.CargarPartida("partida unica");
         CheckpointPuerta = partida.CheckpointPuerta;
         InventarioController.instance.cargarInventario(partida);
-        //AICharacterControl.instance.cargarLastTarget(partida.targetAI);
+        AICharacterControl.instance.cargarLastTarget(partida.targetAI);
                
         SceneManager.LoadScene(partida.escena);
     }
@@ -142,8 +148,11 @@ public class SceneController : MonoBehaviour
     public void respawn()
     {
         Destroy(jugador);
-        Debug.Log(ultimoCheckPoint);
         prefabJugador.transform.position = ultimoCheckPoint.transform.position;
         jugador = Instantiate(prefabJugador);
+        GuardarPartida();
+        //cutsceneCam.SetActive(true);
+        //timeline.Play();
+
     }
 }
