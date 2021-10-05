@@ -13,7 +13,7 @@ public class RigController : MonoBehaviour
 
     public void setRigWeightToOne(Transform trompi)
     {
-        gameObject.transform.GetChild(0).transform.position = trompi.position;
+        gameObject.transform.GetChild(0).transform.position = trompi.position + new Vector3(0, 4f, 0);
         rig.weight = Mathf.MoveTowards(rig.weight, 1, lookSpeed * Time.deltaTime);
     }
     public void setRigWeightToZero()

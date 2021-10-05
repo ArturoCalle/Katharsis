@@ -21,9 +21,16 @@ public class SceneIAController : MonoBehaviour
     {
         if (InsDistimia && distimia == null)
         {
-            if (SceneTriggerController.instance.findTriggerByName("Distimia Trigger").recolectado)
+            if(SceneController.instance.getCurrentSceneName() == "Sala")
             {
-                SceneTriggerController.instance.findTriggerByName("Distimia Trigger").transform.parent.gameObject.SetActive(false);
+                if (SceneTriggerController.instance.findTriggerByName("Distimia Trigger").recolectado)
+                {
+                    SceneTriggerController.instance.findTriggerByName("Distimia Trigger").transform.parent.gameObject.SetActive(false);
+                    instanciarDistimia(startPos.transform);
+                }
+            }
+            else if (SceneController.instance.getCurrentSceneName() == "Comedor")
+            {
                 instanciarDistimia(startPos.transform);
             }
         }

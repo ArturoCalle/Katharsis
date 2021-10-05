@@ -54,12 +54,10 @@ namespace UnityStandardAssets.Assets.ThirdPerson
             {
                 if(distance <= radioBusqueda)
                 {
-                    //TODO chase speed
                     state = State.buscarTrompi;
                 }
                 if (distance <= radioGolpe)
                 {
-                    //TODO chase speed
                     state = State.golpearTrompi;
                 }
 
@@ -79,7 +77,7 @@ namespace UnityStandardAssets.Assets.ThirdPerson
                         Pasear();
                         break;
                     case State.buscarTrompi:
-                        BuscarTrompi();
+                        PerseguirTrompi();
                         break;
                     case State.golpearTrompi:
                         GolpearTrompi();
@@ -115,11 +113,11 @@ namespace UnityStandardAssets.Assets.ThirdPerson
             }
         }
       
-        void BuscarTrompi()
+        void PerseguirTrompi()
         {
             agent.speed = chaseSpeed;
             agent.SetDestination(jugador.transform.position);
-            chaseSpeed = character.Move(agent.desiredVelocity, false);
+            chaseSpeed = character.Move(agent.desiredVelocity, true);
             RigController.instance.setRigWeightToOne(jugador.transform);
         }
 

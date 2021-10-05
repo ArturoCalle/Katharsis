@@ -41,29 +41,49 @@ namespace UnityStandardAssets.Assets.ThirdPerson
 		}
 
 
-		public float Move(Vector3 move, bool jump)
+		public float Move(Vector3 move, bool enojado)
 		{
 
             // convert the world relative moveInput vector into a local-relative
             // turn amount and forward amount required to head in the desired
             // direction.
-            if (m_Animator.GetCurrentAnimatorStateInfo(0).IsTag("Caminar"))
+            if (!enojado)
             {
-				if (move.magnitude > 1f) move.Normalize();
-				move = transform.InverseTransformDirection(move);
-				CheckGroundStatus();
-				move = Vector3.ProjectOnPlane(move, m_GroundNormal);
-				m_TurnAmount = Mathf.Atan2(move.x, move.z);
-				m_ForwardAmount = move.z;
-
-				ApplyExtraTurnRotation();
-				return 5f;
+				if (m_Animator.GetCurrentAnimatorStateInfo(0).IsTag("Caminar"))
+				{
+					desplazar(move);
+					return 5f;
+				}
+				else
+				{
+					return 0f;
+				}
+			}
+			
+			if (enojado)
+			{
+				m_Animator.SetBool("Enojado", true);
+				desplazar(move);
+				return 8f;
             }
             else
             {
-				return 0f;
-            }
-			
+				m_Animator.SetBool("Enojado", false);
+				return 5f;
+			}
+
+		}
+
+		private void desplazar(Vector3 move)
+        {
+			if (move.magnitude > 1f) move.Normalize();
+			move = transform.InverseTransformDirection(move);
+			CheckGroundStatus();
+			move = Vector3.ProjectOnPlane(move, m_GroundNormal);
+			m_TurnAmount = Mathf.Atan2(move.x, move.z);
+			m_ForwardAmount = move.z;
+
+			ApplyExtraTurnRotation();
 		}
 
 		void ApplyExtraTurnRotation()
