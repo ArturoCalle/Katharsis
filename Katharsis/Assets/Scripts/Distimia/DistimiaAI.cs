@@ -7,22 +7,32 @@ namespace UnityStandardAssets.Assets.ThirdPerson
 {
     public class DistimiaAI : MonoBehaviour
     {
+        //NavMesh
         public NavMeshAgent agent;
         public AICharacter character;
-
+        //Ruta
         private int targetIndex = 0;
-        public float velocidadDePaseo = 0f;
-
-        public float chaseSpeed = 10f;
-        public GameObject target;
-
+        private int inicioRuta;
+        private int finRuta;
+        private float velocidadDePaseo = 0f;
+        //Persecución Trompi
+        private float chaseSpeed = 0f;
+        public GameObject jugador;
+        //Variables utiles
         public bool isAlive;
-        
+        private bool mirarTrompi;
+        private bool escondido;
+        //Cambios de estado
+        public float radioBusqueda = 20f;
+        public float radioGolpe = 10f;
+
         public enum State
         {
             pasear,
-            buscarTrompi
+            buscarTrompi,
+            golpearTrompi
         }
+        //Control estado
         public State state;
 
         // Start is called before the first frame update
@@ -30,15 +40,36 @@ namespace UnityStandardAssets.Assets.ThirdPerson
         {
             agent = GetComponent<NavMeshAgent>();
             character = GetComponent<AICharacter>();
-
             agent.updatePosition = true;
             agent.updateRotation = false;
-
-            state = DistimiaAI.State.pasear;
+            state = State.pasear;
             isAlive = true;
-
             StartCoroutine("FSM");
+            jugador = SceneController.instance.jugador;
         }
+        //Cambia de estados segun las variables de cambio de estado y la escena en la que se encuentre
+        private void Update()
+        {
+            float distance = Vector3.Distance(jugador.transform.position, transform.position);
+            if (SceneController.instance.getCurrentSceneName() != "Sala")
+            {
+
+                if (true) //TODO cono de visión
+                {
+                    mirarTrompi = true;
+                }
+                if(distance <= radioBusqueda)
+                {
+                    state = State.buscarTrompi;
+                }
+                if (distance <= radioGolpe)
+                {
+                    state = State.golpearTrompi;
+                }
+
+            }
+        }
+        //corutina
         IEnumerator FSM()
         {
             while (isAlive)
@@ -49,53 +80,52 @@ namespace UnityStandardAssets.Assets.ThirdPerson
                         Pasear();
                         break;
                     case State.buscarTrompi:
-                        BuscarTrompi();
+                        PerseguirTrompi();
+                        break;
+                    case State.golpearTrompi:
+                        GolpearTrompi();
                         break;
                 }
                 yield return null;
             }
         }
 
-
         void Pasear()
         {
+            if (mirarTrompi)
+            {
+                RigController.instance.Mirar(jugador.transform);
+            }
             agent.speed = velocidadDePaseo;
-            if(Vector3.Distance(this.transform.position, SceneIAController.instance.targets[targetIndex].transform.position ) >= 2)
+            //Ruta con NavMesh
+            if(Vector3.Distance(this.transform.position, SceneIAController.instance.targets[targetIndex].transform.position ) > 2)
             {
                 agent.SetDestination(SceneIAController.instance.targets[targetIndex].transform.position);
                 velocidadDePaseo = character.Move(agent.desiredVelocity, false);
             }else if (Vector3.Distance(this.transform.position, SceneIAController.instance.targets[targetIndex].transform.position) <= 2)
             {
+                //Pasa al siguiente target TODO sistema de rutas
                 targetIndex += 1;
                 if (targetIndex == SceneIAController.instance.targets.Length)
                 {
                     SceneIAController.instance.destroyDistimia();
                 }
             }
-            else
-            {
-                velocidadDePaseo = character.Move(Vector3.zero, false);
-            }
         }
-
-        void BuscarTrompi()
+      
+        void PerseguirTrompi()
         {
             agent.speed = chaseSpeed;
-            agent.SetDestination(target.transform.position);
-            character.Move(agent.desiredVelocity, false);
+            agent.SetDestination(jugador.transform.position);
+            chaseSpeed = character.Move(agent.desiredVelocity, true);
+            RigController.instance.Mirar(jugador.transform);
         }
-        private void OnTriggerEnter(Collider other)
-        {
-            if(SceneController.instance.getCurrentSceneName() != "Sala")
-            {
-                if (other.tag == "player")
-                {
-                    target = other.gameObject;
-                    state = DistimiaAI.State.buscarTrompi;
-                }
 
-            }
+        void GolpearTrompi()
+        {
+            //TODO
         }
+
     }
 }
 
