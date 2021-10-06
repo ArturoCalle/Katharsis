@@ -10,6 +10,9 @@ public class Partida
     public char[] tipoNotas;
     public string[] escenaNotas;
 
+    public bool[] sceneTriggerRecolectados;
+    public string[] SceneTriggerNombre;
+
     //AI
     public float[] distimia; //ultima posicion de distimia x, y, z
     public int targetAI;
@@ -38,6 +41,14 @@ public class Partida
             escenaNotas[i] = h.getEscena();
             i++;
         }
+        /* TO DO guardar los triggers recolectados
+        i = 0;
+        foreach (SceneTrigger s in st)
+        {
+            sceneTriggerRecolectados[i] = s.recolectado;
+            SceneTriggerNombre[i] = s.nombre;
+            i++;
+        }*/
         LastcheckpointPos = new float[3];
         LastcheckpointPos[0] = lc.gameObject.transform.position.x;
         LastcheckpointPos[1] = lc.gameObject.transform.position.y;

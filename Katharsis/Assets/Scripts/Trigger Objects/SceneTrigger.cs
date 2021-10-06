@@ -21,6 +21,7 @@ public class SceneTrigger : MonoBehaviour
         {
             if (col.tag == "Player")
             {
+                Debug.Log("puto");
                 aviso.enabled = true;
             }
         }            
@@ -34,6 +35,7 @@ public class SceneTrigger : MonoBehaviour
     }
     private void Start()
     {
+        
         recolectable = new Recolectable(nombre, SceneController.instance.getCurrentSceneName(), recolectado, numero);
         aviso.enabled = false;
         foreach (GameObject go in objetosBloqueados)

@@ -49,7 +49,6 @@ public class SceneNotasController: MonoBehaviour
         }
         else
         {
-            Debug.Log("holi");
             cargar = false;
         }
     }
@@ -62,7 +61,7 @@ public class SceneNotasController: MonoBehaviour
             {
                 if(n.GetComponent<NotaUI>().nombre == nombre)
                 {
-                    
+                    n.GetComponent<NotaUI>().recolectado = true;
                     n.transform.GetChild(0).gameObject.SetActive(false);
                     cargar = false;
 
