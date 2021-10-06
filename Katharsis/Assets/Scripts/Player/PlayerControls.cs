@@ -151,6 +151,11 @@ public class PlayerControls : MonoBehaviour
             corner = false;
         }
     }
+    public void playArepa()
+    {
+        AnimatorController.instance.playArepa();
+        this.enabled = false;
+    }
     private void StopYvelocity()
     {
         velocity.y = 0;

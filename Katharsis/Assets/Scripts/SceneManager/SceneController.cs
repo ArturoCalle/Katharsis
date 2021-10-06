@@ -11,9 +11,13 @@ public class SceneController : MonoBehaviour
     public CheckpointSingle ultimoCheckPoint;
     public GameObject jugador;
     public string CheckpointPuerta = "";
-    public PlayableDirector timeline;
-    public GameObject cutsceneCam;      
-    
+
+    //cinematics
+    public PlayableDirector timeline2;
+    public GameObject cutsceneCam2;
+    public PlayableDirector timeline1;
+    public GameObject cutsceneCam1;
+
     public bool pausa;
     bool cargar = false;
     
@@ -24,7 +28,6 @@ public class SceneController : MonoBehaviour
         {
             Partida partida = Persistencia.CargarPartida("partida unica");
             CheckpointPuerta = partida.CheckpointPuerta;
-
             prefabJugador.transform.position = ultimoCheckPoint.transform.position;
             jugador = Instantiate(prefabJugador);
         }
@@ -33,13 +36,31 @@ public class SceneController : MonoBehaviour
     }
     private void Update()
     {
-        
         if(SceneManager.GetActiveScene().name != "Pantalla Principal")
         {
             if(cargar == false)
             {
                 respawn();
             }
+        }
+
+        if(timeline1.state.ToString() == "Paused")
+        {
+            cutsceneCam1.SetActive(false);
+            PlayerControls.instance.enabled = true;
+        }
+        else
+        {
+            PlayerControls.instance.playArepa();
+        }
+        if (timeline2.state.ToString() == "Paused")
+        {
+            cutsceneCam2.SetActive(false);
+            PlayerControls.instance.enabled = true;
+        }
+        else
+        {
+            PlayerControls.instance.enabled = false;
         }
     }
     public void cambiarEscena(string nombre)

@@ -27,9 +27,13 @@ public class AnimatorController : MonoBehaviour
         if (time >= interpolationPeriod)
         {
             time = time - interpolationPeriod;
-            idle = Random.Range(0f, 10f);
+            idle = Random.Range(0f, 5f);
         }
         //
+    }
+    public void playArepa()
+    {
+        animator.Play("Arepa");
     }
     public void move(Vector3 inputs, float velocityY, bool isGrounded, bool jump, bool escalando, bool corner)
     {
