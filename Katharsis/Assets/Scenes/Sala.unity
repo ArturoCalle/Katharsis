@@ -3077,6 +3077,7 @@ Transform:
   - {fileID: 1249580278}
   - {fileID: 2121523378}
   - {fileID: 1281731923}
+  - {fileID: 1635979140}
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5407,7 +5408,7 @@ PlayableDirector:
   m_Enabled: 1
   serializedVersion: 3
   m_PlayableAsset: {fileID: 11400000, guid: 800943a939753fd4c95a8a1d28e319fc, type: 2}
-  m_InitialState: 1
+  m_InitialState: 0
   m_WrapMode: 2
   m_DirectorUpdateMode: 1
   m_InitialTime: 0
@@ -6704,6 +6705,63 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1028307617}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1001 &1035583112
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 549011443}
+    m_Modifications:
+    - target: {fileID: 5916427006886877088, guid: e030b7329d5715b479f3306f11f5bc41, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5916427006886877088, guid: e030b7329d5715b479f3306f11f5bc41, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -89.59
+      objectReference: {fileID: 0}
+    - target: {fileID: 5916427006886877088, guid: e030b7329d5715b479f3306f11f5bc41, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -11.38
+      objectReference: {fileID: 0}
+    - target: {fileID: 5916427006886877088, guid: e030b7329d5715b479f3306f11f5bc41, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -49.42
+      objectReference: {fileID: 0}
+    - target: {fileID: 5916427006886877088, guid: e030b7329d5715b479f3306f11f5bc41, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5916427006886877088, guid: e030b7329d5715b479f3306f11f5bc41, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5916427006886877088, guid: e030b7329d5715b479f3306f11f5bc41, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5916427006886877088, guid: e030b7329d5715b479f3306f11f5bc41, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5916427006886877088, guid: e030b7329d5715b479f3306f11f5bc41, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5916427006886877088, guid: e030b7329d5715b479f3306f11f5bc41, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5916427006886877088, guid: e030b7329d5715b479f3306f11f5bc41, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5916427006886877089, guid: e030b7329d5715b479f3306f11f5bc41, type: 3}
+      propertyPath: m_Name
+      value: Distimia Sala
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e030b7329d5715b479f3306f11f5bc41, type: 3}
 --- !u!1 &1046874114
 GameObject:
   m_ObjectHideFlags: 3
@@ -7590,7 +7648,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1164812470}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9.7, y: -1, z: 53.4}
+  m_LocalPosition: {x: 9.7, y: -6.09, z: 53.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1489363893151552019}
@@ -8612,7 +8670,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1380018797}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.5, y: -1, z: 124}
+  m_LocalPosition: {x: 10.5, y: -6.09, z: 124}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1489363893151552019}
@@ -9789,7 +9847,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1590159502}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 36.1, y: -1, z: 83.51}
+  m_LocalPosition: {x: 36.1, y: -6.09, z: 83.51}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1489363893151552019}
@@ -10134,6 +10192,16 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 7234202008142396859, guid: b60c0be1b18bdb942843a78dec632e45, type: 3}
   m_PrefabInstance: {fileID: 1635095096}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1635979139 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5916427006886877089, guid: e030b7329d5715b479f3306f11f5bc41, type: 3}
+  m_PrefabInstance: {fileID: 1035583112}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1635979140 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5916427006886877088, guid: e030b7329d5715b479f3306f11f5bc41, type: 3}
+  m_PrefabInstance: {fileID: 1035583112}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1643405600
 GameObject:
@@ -10565,7 +10633,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ad10e4113786ee546b5e5563829d2b45, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -130.11
+      value: -136.33
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ad10e4113786ee546b5e5563829d2b45, type: 3}
       propertyPath: m_LocalPosition.y
@@ -10933,7 +11001,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1753238514}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.1, y: -1, z: 7.5}
+  m_LocalPosition: {x: -3.1, y: -6.09, z: 7.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1489363893151552019}
@@ -13094,7 +13162,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 570738694871548881, guid: c486dbf43585fd647bbc3bc9f6f88336, type: 3}
       propertyPath: m_Name
-      value: distimia trigger
+      value: Distimia Trigger
+      objectReference: {fileID: 0}
+    - target: {fileID: 804668789259770010, guid: c486dbf43585fd647bbc3bc9f6f88336, type: 3}
+      propertyPath: m_Name
+      value: Distimia Trigger
       objectReference: {fileID: 0}
     - target: {fileID: 909862902433044843, guid: c486dbf43585fd647bbc3bc9f6f88336, type: 3}
       propertyPath: m_RootOrder
@@ -13311,7 +13383,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1489363893211053366}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 33.8, y: -1, z: 118.7}
+  m_LocalPosition: {x: 33.8, y: -6.09, z: 118.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1489363893151552019}
@@ -14960,6 +15032,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 5782977959068711124, guid: b909e716dbe10dc45b54a17a3e5a20e7, type: 3}
+      propertyPath: startPos
+      value: 
+      objectReference: {fileID: 1635979139}
+    - target: {fileID: 5782977959068711124, guid: b909e716dbe10dc45b54a17a3e5a20e7, type: 3}
       propertyPath: targets.Array.data[0]
       value: 
       objectReference: {fileID: 1590159502}
@@ -15029,7 +15105,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5782977959068711127, guid: b909e716dbe10dc45b54a17a3e5a20e7, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b909e716dbe10dc45b54a17a3e5a20e7, type: 3}

@@ -52,12 +52,7 @@ namespace UnityStandardAssets.Assets.ThirdPerson
         {
             float distance = Vector3.Distance(jugador.transform.position, transform.position);
             if (SceneController.instance.getCurrentSceneName() != "Sala")
-            {
-
-                if (true) //TODO cono de visión
-                {
-                    mirarTrompi = true;
-                }
+            {                                
                 if(distance <= radioBusqueda)
                 {
                     state = State.buscarTrompi;
