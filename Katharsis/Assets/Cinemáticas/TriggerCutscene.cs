@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Playables;
 
-public class EntradaCutscene : MonoBehaviour
+public class TriggerCutscene : MonoBehaviour
 {
     public GameObject cutsceneCam;
     public PlayableDirector timeline;
-    public GameObject camarasVirtuales;
+    
 
 
     private void OnTriggerExit(Collider other)
@@ -29,8 +29,10 @@ public class EntradaCutscene : MonoBehaviour
         //camarasVirtuales.SetActive(true);
         cutsceneCam.SetActive(true);
         
+        
         //SceneController.instance.jugador.SetActive(false);
         timeline.Play();
+        
 
     }
     /*

@@ -23,7 +23,7 @@ public class UIController : MonoBehaviour
     void Start()
     {
         StartCoroutine(aclararPantalla());
-        //StartCoroutine(oscurecerPantalla());
+        //StartCoroutine(oscurecerPantallaYCambiarEscena());
         panelOpciones.GetComponent<PanelOpciones>().reiniciarBotones();
         instance = this;
         desactivarPaneles();
@@ -34,7 +34,7 @@ public class UIController : MonoBehaviour
     void Update()
     {
         
-        //oscurecerPantalla();
+        //oscurecerPantallaYCambiarEscena();
         
 
     }
@@ -158,7 +158,7 @@ public class UIController : MonoBehaviour
     }
 
     
-    public IEnumerator oscurecerPantalla(string escena)
+    public IEnumerator oscurecerPantallaYCambiarEscena(string escena)
     {
         float fadeSpeed = 087.45E-2f;
         Debug.Log("oscurecer");
@@ -175,6 +175,20 @@ public class UIController : MonoBehaviour
             }
             SceneController.instance.cambiarEscena(escena);
         }             
+    }
+    public IEnumerator oscurecerPantalla()
+    {
+        float fadeSpeed = 087.45E-2f;
+        objectColor = blackScreen.GetComponent<Image>().color;
+        float fadeAmount;
+        while (blackScreen.GetComponent<Image>().color.a < 1)
+        {
+            fadeAmount = objectColor.a + (fadeSpeed * Time.deltaTime);
+            objectColor = new Color(objectColor.r, objectColor.g, objectColor.b, fadeAmount);
+            blackScreen.GetComponent<Image>().color = objectColor;
+            yield return null;
+        }
+
     }
     
     public IEnumerator aclararPantalla(float fadeSpeed = 087.45E-2f)

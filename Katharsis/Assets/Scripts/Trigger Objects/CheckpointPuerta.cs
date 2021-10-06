@@ -18,7 +18,7 @@ public class CheckpointPuerta : MonoBehaviour
                 CheckPointController.instance.PlayerThroughCheckpoint(this);
                 //gameObject.SetActive(false);
                 SceneController.instance.GuardarPartida();
-                StartCoroutine(UIController.instance.oscurecerPantalla(escenaDestino));
+                StartCoroutine(UIController.instance.oscurecerPantallaYCambiarEscena(escenaDestino));
             }
         }
     }
