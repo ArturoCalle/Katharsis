@@ -15,7 +15,6 @@ public class SceneController : MonoBehaviour
     public GameObject cutsceneCam;      
     
     public bool pausa;
-    bool cargar = false;
     
 
     private void Awake()
@@ -31,14 +30,7 @@ public class SceneController : MonoBehaviour
         instance = this;
         pausa = false;        
     }
-    private void Update()
-    {
-        
-        if(SceneManager.GetActiveScene().name != "Pantalla Principal")
-        {
-            
-        }
-    }
+  
     public void cambiarEscena(string nombre)
     {
         
@@ -151,8 +143,5 @@ public class SceneController : MonoBehaviour
         prefabJugador.transform.position = ultimoCheckPoint.transform.position;
         jugador = Instantiate(prefabJugador);
         GuardarPartida();
-        //cutsceneCam.SetActive(true);
-        //timeline.Play();
-
     }
 }
