@@ -1,6 +1,5 @@
 using System.Collections;
 using UnityEngine;
-using System;
 using UnityEngine.AI;
 
 namespace UnityStandardAssets.Assets.ThirdPerson
@@ -17,20 +16,25 @@ namespace UnityStandardAssets.Assets.ThirdPerson
         private float velocidadDePaseo = 0f;
         //Persecución Trompi
         private float chaseSpeed = 0f;
-        public GameObject jugador;
+        //Distimia se destruye cuando estas estan en true y termina la ruta
+        public bool SalirSala;
+        public bool SalirComedor;
         //Variables utiles
-        public bool isAlive;
         private bool mirarTrompi;
-        private bool escondido;
+        private bool puedeVerTrompi;
+        private float anguloDeBusqueda = 120; //angulo de rango de busqueda trompi. Este angulo debe ser el doble al radio de efecto de HeadAim (de -60 a 60, osea 120 para esta funcionalidad)
         //Cambios de estado
         public float radioBusqueda = 20f;
         public float radioGolpe = 10f;
+        //LayerMasks
+        public LayerMask targetMask;
+        public LayerMask obstructionMask;
 
         public enum State
         {
-            pasear,
-            buscarTrompi,
-            golpearTrompi
+            Tranquilo,
+            Enfadado,
+            Ansioso
         }
         //Control estado
         public State state;
@@ -42,78 +46,89 @@ namespace UnityStandardAssets.Assets.ThirdPerson
             character = GetComponent<AICharacter>();
             agent.updatePosition = true;
             agent.updateRotation = false;
-            state = State.pasear;
-            isAlive = true;
+            state = State.Tranquilo;
             StartCoroutine("FSM");
-            jugador = SceneController.instance.jugador;
+            SalirSala = false;
+            SalirComedor = false;
+            if (SceneController.instance.getCurrentSceneName() == "Sala")
+            {
+                inicioRuta = 3;
+            }else if (SceneController.instance.getCurrentSceneName() == "Comedor")
+            {
+                inicioRuta = 1;
+            }
         }
         //Cambia de estados segun las variables de cambio de estado y la escena en la que se encuentre
         private void Update()
         {
-            float distance = Vector3.Distance(jugador.transform.position, transform.position);
-            if (SceneController.instance.getCurrentSceneName() != "Sala")
-            {                                
-                if(distance <= radioBusqueda)
+            if (SceneController.instance.getCurrentSceneName() == "Sala")
+            {
+                if (SceneTriggerController.instance.findTriggerByName("megafono").recolectado)
                 {
-                    state = State.buscarTrompi;
+                    SalirSala = true;
                 }
-                if (distance <= radioGolpe)
+            }
+            else
+            {
+                if (puedeVerTrompi)
                 {
-                    state = State.golpearTrompi;
+                    state = State.Enfadado;
                 }
-
             }
         }
         //corutina
         IEnumerator FSM()
         {
-            while (isAlive)
+            while (true)
             {
+                FieldOfViewCheck();
+                Debug.Log("0");
                 switch (state)
                 {
-                    case State.pasear:
+                    case State.Tranquilo:
                         Pasear();
                         break;
-                    case State.buscarTrompi:
+                    case State.Enfadado:
                         PerseguirTrompi();
                         break;
-                    case State.golpearTrompi:
-                        GolpearTrompi();
+                    case State.Ansioso:
+                        Ansiedad();
                         break;
                 }
                 yield return null;
             }
         }
 
-        void Pasear()
+        void Pasear()//Al movimiento de trompi se le envian dos variables de estado, en esta funcion, las dos variables estan el false
         {
-            if (mirarTrompi)
-            {
-                RigController.instance.Mirar(jugador.transform);
-            }
             agent.speed = velocidadDePaseo;
             //Ruta con NavMesh
             if(Vector3.Distance(this.transform.position, SceneIAController.instance.targets[targetIndex].transform.position ) > 2)
             {
                 agent.SetDestination(SceneIAController.instance.targets[targetIndex].transform.position);
-                velocidadDePaseo = character.Move(agent.desiredVelocity, false);
+                velocidadDePaseo = character.Move(agent.desiredVelocity, false, false);
             }else if (Vector3.Distance(this.transform.position, SceneIAController.instance.targets[targetIndex].transform.position) <= 2)
             {
-                //Pasa al siguiente target TODO sistema de rutas
                 targetIndex += 1;
                 if (targetIndex == SceneIAController.instance.targets.Length)
                 {
-                    SceneIAController.instance.destroyDistimia();
+                    if (SalirSala)
+                    {
+                        SceneIAController.instance.destroyDistimia();
+                    }
+                    else
+                    {
+                        targetIndex = inicioRuta;
+                    }
                 }
             }
         }
       
-        void PerseguirTrompi()
+        void PerseguirTrompi()//Al movimiento de trompi se le envian dos variables de estado, en esta funcion, la variable de enojado esta en true
         {
             agent.speed = chaseSpeed;
-            agent.SetDestination(jugador.transform.position);
-            chaseSpeed = character.Move(agent.desiredVelocity, true);
-            RigController.instance.Mirar(jugador.transform);
+            chaseSpeed = character.Move(agent.desiredVelocity, true, false);
+            //TODO animaiciones extra, sonidos, demas mecanicas
         }
 
         void GolpearTrompi()
@@ -121,6 +136,50 @@ namespace UnityStandardAssets.Assets.ThirdPerson
             //TODO
         }
 
+        void Ansiedad()//Al movimiento de trompi se le envian dos variables de estado, en esta funcion, la variable de ansioso esta en true
+        {
+            //TODO
+        }
+
+        private void FieldOfViewCheck()
+        {
+            Collider[] rangeChecks = Physics.OverlapSphere(transform.position, radioBusqueda, targetMask);
+            Debug.Log("1");
+            if (rangeChecks.Length != 0)
+            {
+                Debug.Log("2");
+                Transform target = rangeChecks[0].transform;
+                Vector3 directionToTarget = (target.position - transform.position).normalized;
+
+                if (Vector3.Angle(transform.forward, directionToTarget) < anguloDeBusqueda / 2)
+                {
+                    float distanceToTarget = Vector3.Distance(transform.position, target.position);
+                    Debug.Log("3");
+                    if (!Physics.Raycast(transform.position, directionToTarget, distanceToTarget, obstructionMask))
+                    {
+                        puedeVerTrompi = true;
+                        agent.SetDestination(target.position);
+                        RigController.instance.Mirar(target);
+                        Debug.Log("4");
+                    }
+                    else
+                    {
+                        puedeVerTrompi = false;
+                        Debug.Log("5");
+                    }
+                }
+                else
+                {
+                    puedeVerTrompi = false;
+                    Debug.Log("6");
+                }
+            }
+            else if (puedeVerTrompi)
+            {
+                puedeVerTrompi = false;
+                Debug.Log("7");
+            }
+        }
     }
 }
 

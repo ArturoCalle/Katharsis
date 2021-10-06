@@ -43,24 +43,26 @@ public class SceneController : MonoBehaviour
                 respawn();
             }
         }
-
-        if(timeline1.state.ToString() == "Paused")
+        if (SceneManager.GetActiveScene().name == "Sala" && jugador != null)
         {
-            cutsceneCam1.SetActive(false);
-            PlayerControls.instance.enabled = true;
-        }
-        else
-        {
-            PlayerControls.instance.playArepa();
-        }
-        if (timeline2.state.ToString() == "Paused")
-        {
-            cutsceneCam2.SetActive(false);
-            PlayerControls.instance.enabled = true;
-        }
-        else
-        {
-            PlayerControls.instance.enabled = false;
+            if (timeline1.state.ToString() == "Paused")
+            {
+                cutsceneCam1.SetActive(false);
+                PlayerControls.instance.enabled = true;
+            }
+            else
+            {
+                PlayerControls.instance.playArepa();
+            }
+            if (timeline2.state.ToString() == "Paused")
+            {
+                cutsceneCam2.SetActive(false);
+                PlayerControls.instance.enabled = true;
+            }
+            else
+            {
+                PlayerControls.instance.enabled = false;
+            }
         }
     }
     public void cambiarEscena(string nombre)
