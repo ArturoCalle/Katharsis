@@ -15,6 +15,7 @@ public class SceneController : MonoBehaviour
     public GameObject cutsceneCam;      
     
     public bool pausa;
+    bool cargar = false;
     
 
     private void Awake()
@@ -30,7 +31,17 @@ public class SceneController : MonoBehaviour
         instance = this;
         pausa = false;        
     }
-  
+    private void Update()
+    {
+        
+        if(SceneManager.GetActiveScene().name != "Pantalla Principal")
+        {
+            if(cargar == false)
+            {
+                respawn();
+            }
+        }
+    }
     public void cambiarEscena(string nombre)
     {
         
@@ -140,8 +151,13 @@ public class SceneController : MonoBehaviour
     public void respawn()
     {
         Destroy(jugador);
-        prefabJugador.transform.position = ultimoCheckPoint.transform.position;
-        jugador = Instantiate(prefabJugador);
-        GuardarPartida();
+        if(ultimoCheckPoint != null)
+        {
+            prefabJugador.transform.position = ultimoCheckPoint.transform.position;
+            prefabJugador.transform.rotation = ultimoCheckPoint.transform.rotation;
+            jugador = Instantiate(prefabJugador);
+            GuardarPartida();
+            cargar = true;
+        }
     }
 }

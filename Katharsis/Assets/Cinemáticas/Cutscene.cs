@@ -3,13 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Playables;
 
-public class CinematicaController : MonoBehaviour
+public class Cutscene : MonoBehaviour
 {
-    public static CinematicaController instance;
-    public List<PlayableDirector> cinematicas;
-    private void Awake()
+    public GameObject cutsceneCam;
+    public PlayableDirector timeline;
+    public GameObject camarasVirtuales;
+    
+    void Awake()
     {
-        
+        timeline.Play();
     }
 
     // Update is called once per frame
