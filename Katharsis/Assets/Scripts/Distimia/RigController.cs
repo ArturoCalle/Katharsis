@@ -17,7 +17,7 @@ public class RigController : MonoBehaviour
 
     public void Mirar(Transform trompi)
     {
-        gameObject.transform.GetChild(0).transform.position = trompi.position + new Vector3(0, 4f, 0);
+        gameObject.transform.GetChild(0).transform.position = trompi.position;
         rigMirada.weight = Mathf.MoveTowards(rigMirada.weight, 1, lookSpeed * Time.deltaTime);
     }
     public void DejarDeMirar()
