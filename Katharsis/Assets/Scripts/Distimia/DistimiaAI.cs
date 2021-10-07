@@ -153,7 +153,11 @@ namespace UnityStandardAssets.Assets.ThirdPerson
                     if (!Physics.Raycast(cabeza.transform.position, directionToTarget, distanceToTarget, obstructionMask))
                     {
                         puedeVerTrompi = true;
-                        state = State.Enfadado;
+                        if(SceneController.instance.getCurrentSceneName() != "Sala")
+                        {
+                            state = State.Enfadado;
+
+                        }
                     }
                     else
                     {
