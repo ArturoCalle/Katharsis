@@ -16,7 +16,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 0
 --- !u!4 &2779912517190571090
 Transform:
@@ -124,7 +124,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &5023235791703564026
 Transform:
@@ -211,12 +211,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4766039016663470412}
+  - component: {fileID: 5100504556807783444}
   m_Layer: 0
   m_Name: Indoor plant_3_BI_blend
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &4766039016663470412
 Transform:
@@ -227,7 +228,7 @@ Transform:
   m_GameObject: {fileID: 5291605967888223222}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 37.3, y: 39.699997, z: 184.7}
-  m_LocalScale: {x: 5, y: 5, z: 5}
+  m_LocalScale: {x: 4, y: 4, z: 4}
   m_Children:
   - {fileID: 5023235791703564026}
   - {fileID: 2061717105853891037}
@@ -235,6 +236,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &5100504556807783444
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5291605967888223222}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.39245474, y: 0.4281435, z: 0.45320892}
+  m_Center: {x: 0.027706563, y: 0.19821882, z: 0.010543823}
 --- !u!1 &9207524585241164513
 GameObject:
   m_ObjectHideFlags: 0
@@ -251,7 +265,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &2061717105853891037
 Transform:
