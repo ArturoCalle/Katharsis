@@ -41,7 +41,7 @@ namespace UnityStandardAssets.Assets.ThirdPerson
 		}
 
 
-		public float Move(Vector3 move, bool enojado)
+		public float Move(Vector3 move, bool enojado, bool ansioso)
 		{
 
             // convert the world relative moveInput vector into a local-relative
