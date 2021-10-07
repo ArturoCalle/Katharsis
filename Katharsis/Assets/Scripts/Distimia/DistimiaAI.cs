@@ -78,7 +78,6 @@ namespace UnityStandardAssets.Assets.ThirdPerson
             while (true)
             {
                 FieldOfViewCheck();
-                Debug.Log("0");
                 switch (state)
                 {
                     case State.Tranquilo:
