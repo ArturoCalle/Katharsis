@@ -9,6 +9,7 @@ namespace UnityStandardAssets.Assets.ThirdPerson
         //NavMesh
         public NavMeshAgent agent;
         public AICharacter character;
+        public GameObject cabeza;
         //Ruta
         private int targetIndex = 0;
         private int inicioRuta;
@@ -21,8 +22,9 @@ namespace UnityStandardAssets.Assets.ThirdPerson
         public bool SalirComedor;
         //Variables utiles
         private bool mirarTrompi;
-        private bool puedeVerTrompi;
-        private float anguloDeBusqueda = 120; //angulo de rango de busqueda trompi. Este angulo debe ser el doble al radio de efecto de HeadAim (de -60 a 60, osea 120 para esta funcionalidad)
+        public bool puedeVerTrompi;
+        public float anguloDeBusqueda = 120; //angulo de rango de busqueda trompi. Este angulo debe ser el doble al radio de efecto de HeadAim (de -60 a 60, osea 120 para esta funcionalidad)
+        public GameObject Jugador;
         //Cambios de estado
         public float radioBusqueda = 20f;
         public float radioGolpe = 10f;
@@ -46,6 +48,7 @@ namespace UnityStandardAssets.Assets.ThirdPerson
             character = GetComponent<AICharacter>();
             agent.updatePosition = true;
             agent.updateRotation = false;
+            Jugador = SceneController.instance.jugador;
             state = State.Tranquilo;
             StartCoroutine("FSM");
             SalirSala = false;
@@ -66,13 +69,6 @@ namespace UnityStandardAssets.Assets.ThirdPerson
                 if (SceneTriggerController.instance.findTriggerByName("megafono").recolectado)
                 {
                     SalirSala = true;
-                }
-            }
-            else
-            {
-                if (puedeVerTrompi)
-                {
-                    state = State.Enfadado;
                 }
             }
         }
@@ -128,6 +124,8 @@ namespace UnityStandardAssets.Assets.ThirdPerson
         {
             agent.speed = chaseSpeed;
             chaseSpeed = character.Move(agent.desiredVelocity, true, false);
+            agent.SetDestination(Jugador.transform.position);
+            RigController.instance.Mirar(Jugador.transform);
             //TODO animaiciones extra, sonidos, demas mecanicas
         }
 
@@ -143,41 +141,34 @@ namespace UnityStandardAssets.Assets.ThirdPerson
 
         private void FieldOfViewCheck()
         {
-            Collider[] rangeChecks = Physics.OverlapSphere(transform.position, radioBusqueda, targetMask);
-            Debug.Log("1");
+            Collider[] rangeChecks = Physics.OverlapSphere(cabeza.transform.position, radioBusqueda, targetMask);
+
             if (rangeChecks.Length != 0)
             {
-                Debug.Log("2");
                 Transform target = rangeChecks[0].transform;
-                Vector3 directionToTarget = (target.position - transform.position).normalized;
+                Vector3 directionToTarget = (target.position - cabeza.transform.position).normalized;
 
-                if (Vector3.Angle(transform.forward, directionToTarget) < anguloDeBusqueda / 2)
+                if (Vector3.Angle(cabeza.transform.forward, directionToTarget) < anguloDeBusqueda / 2)
                 {
-                    float distanceToTarget = Vector3.Distance(transform.position, target.position);
-                    Debug.Log("3");
-                    if (!Physics.Raycast(transform.position, directionToTarget, distanceToTarget, obstructionMask))
+                    float distanceToTarget = Vector3.Distance(cabeza.transform.position, target.position);
+                    if (!Physics.Raycast(cabeza.transform.position, directionToTarget, distanceToTarget, obstructionMask))
                     {
                         puedeVerTrompi = true;
-                        agent.SetDestination(target.position);
-                        RigController.instance.Mirar(target);
-                        Debug.Log("4");
+                        state = State.Enfadado;
                     }
                     else
                     {
                         puedeVerTrompi = false;
-                        Debug.Log("5");
                     }
                 }
                 else
                 {
                     puedeVerTrompi = false;
-                    Debug.Log("6");
                 }
             }
             else if (puedeVerTrompi)
             {
                 puedeVerTrompi = false;
-                Debug.Log("7");
             }
         }
     }
