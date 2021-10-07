@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityStandardAssets.Assets.ThirdPerson;
 
 public class SceneIAController : MonoBehaviour
 {

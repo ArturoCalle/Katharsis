@@ -21,7 +21,6 @@ public class SceneTrigger : MonoBehaviour
         {
             if (col.tag == "Player")
             {
-                Debug.Log("puto");
                 aviso.enabled = true;
             }
         }            
