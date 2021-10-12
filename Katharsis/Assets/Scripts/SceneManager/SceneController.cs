@@ -154,6 +154,7 @@ public class SceneController : MonoBehaviour
     {
         InventarioController.instance.vaciarInventario();
         GuardarPartida();
+        UIController.instance.oscurecerPantalla();
         cambiarEscena("sala");
     }
 

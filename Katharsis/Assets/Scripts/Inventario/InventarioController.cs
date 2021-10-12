@@ -10,20 +10,21 @@ public class InventarioController : MonoBehaviour
     {
         instance = this;
         inventario = new Inventario();
-        if(SceneController.instance.getCurrentSceneName() != "Pantalla Principal")
+        if (SceneController.instance.getCurrentSceneName() != "Pantalla Principal")
         {
             SceneController.instance.cargarInventario();
         }
     }
-    
+
     void Update()
     {
-        
+
     }
     public void vaciarInventario()
     {
         inventario = new Inventario();
     }
+    // funcion para cargar una nota nueva en el inventario, recibe los parametros y por dentro crea el recolectable
     public void agregarNota(string nombre, string escena, char tipo, bool recolectado, int numNota)
     {
         Recolectable nuevo = new Recolectable(nombre, escena, tipo, recolectado, numNota);
@@ -42,11 +43,11 @@ public class InventarioController : MonoBehaviour
         {
             if (p.notasRecogidas[i])
             {
-                
+
                 cargarNota(p.nombreNotas[i], p.escenaNotas[i], p.tipoNotas[i], p.notasRecogidas[i], i);
             }
         }
-        
+
     }
 
     public List<Recolectable> getRecolectables()
@@ -58,5 +59,14 @@ public class InventarioController : MonoBehaviour
     {
         List<Recolectable> rs = inventario.getRecolectables();
         return rs[index];
+    }
+    public void agregarTrigger(Recolectable r)
+    {
+        inventario.agregarTrigger(r);
+        SceneController.instance.GuardarPartida();
+    }
+    public List<Recolectable> getTriggers()
+    {
+        return inventario.getTriggers();
     }
 }

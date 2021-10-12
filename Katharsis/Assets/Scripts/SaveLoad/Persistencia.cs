@@ -7,10 +7,10 @@ public static class Persistencia
     public static void GuardarPartida(string name)
     {
         BinaryFormatter formatter = new BinaryFormatter();
-        string path = Application.persistentDataPath + "/partida" + name;
+        string path = Application.persistentDataPath + "/partida" + name; 
         FileStream stream = new FileStream(path, FileMode.Create);
 
-        Partida partida = new Partida(InventarioController.instance.getRecolectables(), SceneController.instance.ultimoCheckPoint, SceneController.instance.getCurrentSceneName(), SceneController.instance.CheckpointPuerta);
+        Partida partida = new Partida(InventarioController.instance.getRecolectables(), SceneController.instance.ultimoCheckPoint, SceneController.instance.getCurrentSceneName(), SceneController.instance.CheckpointPuerta, InventarioController.instance.getTriggers());
         formatter.Serialize(stream, partida);
         stream.Close();
     }  

@@ -23,7 +23,7 @@ public class Partida
     public string CheckpointPuerta;
     public string escena; //tener cuidados de que la escena sea la misma del checkpoint
 
-    public Partida(List<Recolectable> r, CheckpointSingle lc, string escena, string CheckpointPuerta)
+    public Partida(List<Recolectable> r, CheckpointSingle lc, string escena, string CheckpointPuerta, List<Recolectable> t)
     {
         this.escena = escena;
         this.CheckpointPuerta = CheckpointPuerta;

@@ -64,5 +64,8 @@ public class SceneTrigger : MonoBehaviour
         }
         aviso.enabled = false;
         recolectado = true;
+        InventarioController.instance.agregarTrigger(recolectable);
+
     }
+    
 }
