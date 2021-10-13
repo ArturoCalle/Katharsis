@@ -12,6 +12,8 @@ public class Partida
 
     public bool[] sceneTriggerRecolectados;
     public int[] sceneTriggerNum;
+    public string[] sceneTriggerEscena;
+    public string[] sceneTriggerNombre;
 
     //AI
     public float[] distimia; //ultima posicion de distimia x, y, z
@@ -27,6 +29,9 @@ public class Partida
     {
         sceneTriggerNum = new int[t.Count];
         sceneTriggerRecolectados = new bool[t.Count];
+        sceneTriggerEscena = new string[t.Count];
+        sceneTriggerNombre = new string[t.Count];
+
         this.escena = escena;
         this.CheckpointPuerta = CheckpointPuerta;
         notasRecogidas = new bool[r.Count];
@@ -44,10 +49,13 @@ public class Partida
             i++;
         }
 
-        for(int j = 0; j < t.Count ;j++)
+        for (int j = 0; j < t.Count; j++)
         {
             sceneTriggerRecolectados[j] = t[j].getRecolectado();
             sceneTriggerNum[j] = t[j].getNumNota();
+            sceneTriggerEscena[j] = t[j].getEscena();
+            sceneTriggerNombre[j] = t[j].getNombre();
+
         }
         LastcheckpointPos = new float[3];
         LastcheckpointPos[0] = lc.gameObject.transform.position.x;

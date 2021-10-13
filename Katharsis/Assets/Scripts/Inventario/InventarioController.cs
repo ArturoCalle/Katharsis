@@ -43,9 +43,13 @@ public class InventarioController : MonoBehaviour
         {
             if (p.notasRecogidas[i])
             {
-
                 cargarNota(p.nombreNotas[i], p.escenaNotas[i], p.tipoNotas[i], p.notasRecogidas[i], i);
             }
+        }
+        for(int i = 0; i<p.sceneTriggerNum.Length; i++)
+        {
+            Recolectable r = new Recolectable(p.sceneTriggerNombre[i], p.sceneTriggerEscena[i], p.sceneTriggerRecolectados[i], p.sceneTriggerNum[i]);
+            inventario.agregarTrigger(r);
         }
 
     }

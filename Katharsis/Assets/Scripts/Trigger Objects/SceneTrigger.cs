@@ -76,5 +76,14 @@ public class SceneTrigger : MonoBehaviour
         InventarioController.instance.agregarTrigger(recolectable);
 
     }
-    
+    public void recolectar(bool recolectar)
+    {
+        foreach (GameObject go in objetosBloqueados)
+        {
+            go.SetActive(true);
+        }
+        aviso.enabled = false;
+        recolectado = recolectar;
+        recolectable.setRecolectado(true);
+    }
 }
