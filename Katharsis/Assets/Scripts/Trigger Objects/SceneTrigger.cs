@@ -7,6 +7,7 @@ public class SceneTrigger : MonoBehaviour
 {
     public List<GameObject> objetosBloqueados;//los objetos trigger desbloquean otros objetos, el objeto a desbloquear PUEDEN tener un componente en cuya funcion start tenga la rutina necesaria para iniciar una accion en su funcion start(), sea una animacion, instanciar un objeto en escena, etc...
     public Text aviso;
+    public bool automatico;
     public string nombre;
     public int numero;
     public bool recolectado;
@@ -16,12 +17,19 @@ public class SceneTrigger : MonoBehaviour
     public void OnTriggerStay(Collider col)
     {
         Recolectable r = InventarioController.instance.getRecolectable(recolectableBloqueante);
-
         if(r.getRecolectado() && !recolectado)
         {
             if (col.tag == "Player")
             {
-                aviso.enabled = true;
+                if(!automatico)
+                {
+
+                    aviso.enabled = true;
+                }
+                else
+                {
+                    recolectar();
+                }
             }
         }            
     }
@@ -64,6 +72,7 @@ public class SceneTrigger : MonoBehaviour
         }
         aviso.enabled = false;
         recolectado = true;
+        recolectable.setRecolectado(true);
         InventarioController.instance.agregarTrigger(recolectable);
 
     }

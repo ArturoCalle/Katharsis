@@ -11,7 +11,7 @@ public class Partida
     public string[] escenaNotas;
 
     public bool[] sceneTriggerRecolectados;
-    public string[] SceneTriggerNombre;
+    public int[] sceneTriggerNum;
 
     //AI
     public float[] distimia; //ultima posicion de distimia x, y, z
@@ -25,6 +25,8 @@ public class Partida
 
     public Partida(List<Recolectable> r, CheckpointSingle lc, string escena, string CheckpointPuerta, List<Recolectable> t)
     {
+        sceneTriggerNum = new int[t.Count];
+        sceneTriggerRecolectados = new bool[t.Count];
         this.escena = escena;
         this.CheckpointPuerta = CheckpointPuerta;
         notasRecogidas = new bool[r.Count];
@@ -41,14 +43,12 @@ public class Partida
             escenaNotas[i] = h.getEscena();
             i++;
         }
-        /* TO DO guardar los triggers recolectados
-        i = 0;
-        foreach (SceneTrigger s in st)
+
+        for(int j = 0; j < t.Count ;j++)
         {
-            sceneTriggerRecolectados[i] = s.recolectado;
-            SceneTriggerNombre[i] = s.nombre;
-            i++;
-        }*/
+            sceneTriggerRecolectados[j] = t[j].getRecolectado();
+            sceneTriggerNum[j] = t[j].getNumNota();
+        }
         LastcheckpointPos = new float[3];
         LastcheckpointPos[0] = lc.gameObject.transform.position.x;
         LastcheckpointPos[1] = lc.gameObject.transform.position.y;
