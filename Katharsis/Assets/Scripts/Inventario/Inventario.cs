@@ -7,8 +7,10 @@ public class Inventario
 {
     private List<Recolectable> recolectables;
     private int numeroTotalNotas= 15;
+    private List<Recolectable> triggers;
     public Inventario()
     {
+        triggers = new List<Recolectable>();
         recolectables = new List<Recolectable>();
         for (int i = 0; i< numeroTotalNotas; i++)
         {
@@ -25,5 +27,13 @@ public class Inventario
     public List<Recolectable> getRecolectables()
     {
         return recolectables;
+    }
+    public void agregarTrigger(Recolectable nuevo)
+    {
+        triggers.Add(nuevo);
+    }
+    public List<Recolectable> getTriggers()
+    {
+        return triggers;
     }
 }

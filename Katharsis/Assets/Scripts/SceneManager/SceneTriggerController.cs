@@ -15,6 +15,14 @@ public class SceneTriggerController : MonoBehaviour
         cargar = false;
     }
 
+    private void Update()
+    {
+        if(cargar == false)
+        {
+            recogerTriggers();
+        }
+    }
+
     public SceneTrigger findTriggerByName(string name)
     {
         foreach (SceneTrigger go in triggers)
@@ -30,6 +38,33 @@ public class SceneTriggerController : MonoBehaviour
     public List<SceneTrigger> getTriggers()
     {
         return triggers;
+    }
+
+    public void recogerTriggers()
+    {
+        if(InventarioController.instance.getTriggers() != null)
+        {
+            List<Recolectable> rs = InventarioController.instance.getTriggers();
+            foreach(Recolectable r in rs)
+            {
+                if (r.getEscena() == SceneController.instance.getCurrentSceneName() && r.getRecolectado())
+                {
+                    Debug.Log(triggers.Count);
+                    for (int i = 0; i < triggers.Count; i++)
+                    {
+                        if (triggers[i].numero == r.getNumNota())
+                        {
+                            triggers[i].recolectar(true);
+                        }
+                   }
+                }
+            }
+            cargar = true;
+        }
+        else
+        {
+            cargar = false;
+        }
     }
 
 }
