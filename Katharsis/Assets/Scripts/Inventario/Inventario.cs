@@ -5,14 +5,15 @@ using UnityEngine;
 
 public class Inventario
 {
+    public TextosNotas textosNotas;
     private List<Recolectable> recolectables;
-    private int numeroTotalNotas= 15;
     private List<Recolectable> triggers;
     public Inventario()
     {
+        textosNotas = new TextosNotas();
         triggers = new List<Recolectable>();
         recolectables = new List<Recolectable>();
-        for (int i = 0; i< numeroTotalNotas; i++)
+        for (int i = 0; i< textosNotas.textos.Length; i++)
         {
             Recolectable nuevo = new Recolectable();
             recolectables.Add(nuevo);
@@ -35,5 +36,9 @@ public class Inventario
     public List<Recolectable> getTriggers()
     {
         return triggers;
+    }
+    public string getTextoNota(int index) 
+    {
+        return textosNotas.textos[index];
     }
 }
