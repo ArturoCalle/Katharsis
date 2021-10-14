@@ -6,7 +6,8 @@ using UnityEngine.UI;
 public class NotaUIMenu : MonoBehaviour
 {
     public Recolectable recolectable;
-    public Text texto;
+    public Text nombreNota;
+    public Text textoNota;
     public Image imagen;
     public Text aviso;
     public PanelNotas panelNotas;
@@ -18,10 +19,11 @@ public class NotaUIMenu : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
         if(recolectable == null)
         {
             recolectable = new Recolectable();
-
+            
         }
     }
 
@@ -41,16 +43,17 @@ public class NotaUIMenu : MonoBehaviour
     }
     public void mostrarNota()
     {
-        texto.text = recolectable.getNombre();
-
+        nombreNota.text = recolectable.getNombre();
+        textoNota.text = InventarioController.instance.getTextoNota(recolectable.getNumNota());
         gameObject.GetComponent<Image>().enabled= true;
-        texto.enabled = true;
+        nombreNota.enabled = true;
+        //textoNota.enabled = true;
         aviso.enabled = true;
     }
     public void ocultarNota()
     {
         gameObject.GetComponent<Image>().enabled = false;
-        texto.enabled = false;
+        nombreNota.enabled = false;
         aviso.enabled = false;
         gameObject.SetActive(false);
 
@@ -58,7 +61,7 @@ public class NotaUIMenu : MonoBehaviour
     public void actualizarNota(Recolectable r)
     {
         recolectable = r;
-        texto.text = recolectable.getNombre();
+        nombreNota.text = recolectable.getNombre();
         cambiarHoja(r.getTipo());
     }
     void cambiarHoja(char tipo)
