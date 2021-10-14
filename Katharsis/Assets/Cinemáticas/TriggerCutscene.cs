@@ -7,7 +7,7 @@ public class TriggerCutscene : MonoBehaviour
 {
     public GameObject cutsceneCam;
     public PlayableDirector timeline;
-    
+
 
 
     private void OnTriggerExit(Collider other)
@@ -15,7 +15,7 @@ public class TriggerCutscene : MonoBehaviour
         timeline.Stop();
         cutsceneCam.SetActive(false);
         //camarasVirtuales.SetActive(false);
-        
+
         //SceneController.instance.jugador.SetActive(true);
     }
     private void OnTriggerEnter(Collider other)
@@ -28,12 +28,17 @@ public class TriggerCutscene : MonoBehaviour
         this.gameObject.GetComponent<BoxCollider>().enabled = false;
         //camarasVirtuales.SetActive(true);
         cutsceneCam.SetActive(true);
-        
-        
+
+
         //SceneController.instance.jugador.SetActive(false);
         timeline.Play();
-        
 
+
+    }
+    public void playAnimation()
+    {
+        cutsceneCam.SetActive(true);
+        timeline.Play();
     }
     /*
     IEnumerator FinishCut()
