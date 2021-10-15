@@ -7,6 +7,7 @@ public class NotaUI : MonoBehaviour
 {
     public GameObject aviso;
     public GameObject nota;
+    public Text textoNota;
 
     public string escena;
     public string nombre;
@@ -29,17 +30,23 @@ public class NotaUI : MonoBehaviour
         tipo = r.getTipo();
         numNota = r.getNumNota();
         recolectado = r.getRecolectado();
+
     }
     // Start is called before the first frame update
     void Start()
     {
+        
+        nota.gameObject.transform.GetChild(1).GetComponent<Text>().text = nombre;
+        cambiarHoja(tipo);
+        textoNota.text = InventarioController.instance.getTextoNota(numNota);
         
     }
 
     // Update is called once per frame
     void Update()
     {
-        cambiarHoja(tipo);
+        
+        
         if (aviso.activeInHierarchy && nota.activeInHierarchy)
         {
             if (Input.GetKeyDown(KeyCode.Z))

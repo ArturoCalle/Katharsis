@@ -73,4 +73,8 @@ public class InventarioController : MonoBehaviour
     {
         return inventario.getTriggers();
     }
+    public string getTextoNota(int index)
+    {
+        return inventario.getTextoNota(index);
+    }
 }

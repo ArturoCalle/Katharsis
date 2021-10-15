@@ -91,11 +91,12 @@ public class PanelNotas : MonoBehaviour
             seleccion = seleccion + s;
         }
         scroll.GetComponent<ScrollRect>().verticalNormalizedPosition = scrollValue();
+        Debug.Log(scrollValue());
     }
     public float scrollValue()
     {
 
-        float value = 1-(float)seleccion/(float)items.Count;
+        float value = 1-((float)seleccion/((float)items.Count-1));
         return value;
     }
 

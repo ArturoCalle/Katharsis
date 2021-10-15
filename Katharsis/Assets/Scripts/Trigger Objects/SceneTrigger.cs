@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Events;
 
 public class SceneTrigger : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class SceneTrigger : MonoBehaviour
     public int numero;
     public bool recolectado;
     public int recolectableBloqueante;//Requiere el numero de recolectable que es necesario recoger para activarse
+    public UnityEvent onTriggerCollected;
 
     private Recolectable recolectable;
     public void OnTriggerStay(Collider col)
@@ -74,7 +76,7 @@ public class SceneTrigger : MonoBehaviour
         recolectado = true;
         recolectable.setRecolectado(true);
         InventarioController.instance.agregarTrigger(recolectable);
-
+        onTriggerCollected?.Invoke();
     }
     public void recolectar(bool recolectar)
     {
@@ -86,4 +88,5 @@ public class SceneTrigger : MonoBehaviour
         recolectado = recolectar;
         recolectable.setRecolectado(true);
     }
+
 }
