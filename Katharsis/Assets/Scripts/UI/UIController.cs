@@ -47,7 +47,7 @@ public class UIController : MonoBehaviour
             PanelOpciones po = panelOpciones.GetComponent<PanelOpciones>();
             PanelNotas i = panelNotas.GetComponent<PanelInventario>().panelNotas;
 
-            if (Input.GetKeyDown(KeyCode.W))
+            if (Input.GetKeyDown(KeyCode.W)||Input.GetKeyDown(KeyCode.UpArrow))
             {
                 if (!mp.isLocked())
                 {
@@ -63,7 +63,7 @@ public class UIController : MonoBehaviour
                     i.cambiarSeleccion(-1);
                 }
             }
-            if (Input.GetKeyDown(KeyCode.S))
+            if (Input.GetKeyDown(KeyCode.S)||Input.GetKeyDown(KeyCode.DownArrow))
             {
 
                 if (!mp.isLocked())
@@ -79,7 +79,7 @@ public class UIController : MonoBehaviour
                     i.cambiarSeleccion(1);
                 }
             }
-            if (Input.GetKeyDown(KeyCode.Z))
+            if (Input.GetKeyDown(KeyCode.Z)||Input.GetKeyDown(KeyCode.Return))
             {
                 if (panelMuerte.activeInHierarchy)
                 {
@@ -101,7 +101,7 @@ public class UIController : MonoBehaviour
                     i.seleccionar();
                 }
             }
-            if (Input.GetKeyDown(KeyCode.Escape))
+            if (Input.GetKeyDown(KeyCode.Escape)|| Input.GetKeyDown(KeyCode.X))
             {
                 if (panelOpciones.activeInHierarchy)
                 {
