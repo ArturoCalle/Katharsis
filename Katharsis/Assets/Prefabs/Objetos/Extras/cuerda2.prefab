@@ -90,7 +90,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3777844481627040111}
-  - component: {fileID: 896293843223183382}
+  - component: {fileID: 8136348810553278278}
   m_Layer: 0
   m_Name: cuerda2
   m_TagString: Escalable
@@ -105,18 +105,18 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4550404904597648341}
-  m_LocalRotation: {x: -0, y: -0.9778603, z: -0, w: 0.20925902}
-  m_LocalPosition: {x: 44.76, y: -3.04, z: -27.81}
-  m_LocalScale: {x: 10, y: 9.5, z: 10}
+  m_LocalRotation: {x: -0, y: -0.70645195, z: 0, w: -0.70776105}
+  m_LocalPosition: {x: -110.75015, y: -27.06932, z: -81.048935}
+  m_LocalScale: {x: 10, y: 9.9, z: 10}
   m_Children:
   - {fileID: 1467174634623222108}
   - {fileID: 6025007914757232757}
   - {fileID: 6737325421701361862}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: -155.842, z: 0}
---- !u!65 &896293843223183382
-BoxCollider:
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &8136348810553278278
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -125,9 +125,10 @@ BoxCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.04164467, y: 1.6037022, z: 0.030640965}
-  m_Center: {x: -0.052037057, y: 0.7865351, z: 0.0025674289}
+  m_Radius: 0.01
+  m_Height: 1.6018187
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.8258619, z: 0}
 --- !u!1 &5299491202521974336
 GameObject:
   m_ObjectHideFlags: 0
@@ -151,8 +152,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5299491202521974336}
-  m_LocalRotation: {x: 0.5, y: 0.49999997, z: 0.5, w: -0.5}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalRotation: {x: -0.5, y: -0.49999997, z: -0.5, w: 0.5}
+  m_LocalPosition: {x: -0.05717004, y: 0.015191552, z: 0.004763646}
   m_LocalScale: {x: 0.5933893, y: 0.5933893, z: 0.5933893}
   m_Children: []
   m_Father: {fileID: 3777844481627040111}
@@ -217,7 +218,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 4d8f4f60c45fde547903222b405f170e, type: 2}
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
