@@ -15,7 +15,7 @@ public class TextosNotas
             "Los personas que padecen depresion pueden tener falta de energia, perdida del interes o incapacidad de sentir placer.",
             "Escuchar con empatia, aceptacion y respeto por la otra persona pueden ser claves para ayudar en momentos de crisis",
             "¿Como te sientes? ¿Que puedes hacer? ¿Puedes hablar de ello?",
-            "- No presiones a la persona a hablar.\n - No digas cosas como 'no deberias sentirte asi'\n - No le hables de tus propios problemas\n - No le quites su fortaleza\n - No pienses y actues como si tuvieras que resolver el problema",
+            "No temas buscar ayuda de un expero en salud mental.",
             "En casos de depresion severa, hasta bañarse, vestirse o levantarse, pueden ser tareas problematicas de realizar.",
             "Los comentarios sobre muerte y suicidio son señales de alarma y no deben ser pasados por alto.",
             "Si desapareciera en este instante nadie notaria que no estoy, nunca les peocupa como me siento , siempre es todo como ellos quieren. ",
