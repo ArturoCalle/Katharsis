@@ -8,7 +8,7 @@ public class TextosNotas
 
     public TextosNotas()
     {
-        textos = new string[16] {"A lo largo del juego hay notas escondidas, presiona (F) para recogerlas. Algunas notas desbloquean acciones e interacciones con objetos del mapa",
+        textos = new string[17] {"A lo largo del juego hay notas escondidas, presiona (F) para recogerlas. Algunas notas desbloquean acciones e interacciones con objetos del mapa",
             "Es como un pozo, profundo, oscuro y desesperante. ",
             "Todo aquello que anhelaba hacer ahora se siente...sin vida. ",
             "Manteniendo presionado (click izquierdo) estando cerca de una cuerda te sujetara a ella y puedes escalar con las teclas de movimiento.",
@@ -23,6 +23,7 @@ public class TextosNotas
             "Eres una persona valiosa, así tu mente diga que no lo eres. Recuerdalo.",
             "Evita el debate y la discusion cuando una persona esta en crisis, valora sus reacciones y palabras con respeto y comprension.",
             "Veo ese plato pero se siente como si mi mente no estuviera presnte... es como estar abstraido en una nube de pensamientos. Sin necesidad, sin apetito, sin ganas de estar aca.",
-            "Cuando distimia esta enojado puedes esconderte para evitar que te atrape." };
+            "Cuando distimia esta enojado puedes esconderte para evitar que te atrape.",
+            "La depresion no es un estado del cual se pueda salir a voluntad"};
     }
 }
