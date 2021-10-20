@@ -50,6 +50,7 @@ namespace UnityStandardAssets.Assets.ThirdPerson
             agent.updateRotation = false;
             Jugador = SceneController.instance.jugador;
             state = State.Tranquilo;
+            cabeza = transform.GetChild(0).GetChild(4).GetChild(0).GetChild(0).GetChild(0).gameObject;
             StartCoroutine("FSM");
             SalirSala = false;
             SalirComedor = false;
@@ -70,6 +71,10 @@ namespace UnityStandardAssets.Assets.ThirdPerson
                 {
                     SalirSala = true;
                 }
+            }
+            if (!puedeVerTrompi)
+            {
+                state = State.Tranquilo;
             }
         }
         //corutina
@@ -96,14 +101,21 @@ namespace UnityStandardAssets.Assets.ThirdPerson
 
         void Pasear()//Al movimiento de trompi se le envian dos variables de estado, en esta funcion, las dos variables estan el false
         {
+            
+            if(RigController.instance != null)
+            {
+                RigController.instance.DejarDeMirar();
+            }
+            agent.SetDestination( SceneIAController.instance.targets[targetIndex].transform.position );
             agent.speed = velocidadDePaseo;
+            velocidadDePaseo = character.Move(agent.desiredVelocity, false, false);
             //Ruta con NavMesh
-            if(Vector3.Distance(this.transform.position, SceneIAController.instance.targets[targetIndex].transform.position ) > 2)
+            if (Vector3.Distance(transform.position, SceneIAController.instance.targets[targetIndex].transform.position) > 2)
             {
                 agent.SetDestination(SceneIAController.instance.targets[targetIndex].transform.position);
                 velocidadDePaseo = character.Move(agent.desiredVelocity, false, false);
-            }else if (Vector3.Distance(this.transform.position, SceneIAController.instance.targets[targetIndex].transform.position) <= 2)
-            {
+            }else if (Vector3.Distance(transform.position, SceneIAController.instance.targets[targetIndex].transform.position) <= 2)
+            { 
                 targetIndex += 1;
                 if (targetIndex == SceneIAController.instance.targets.Length)
                 {
@@ -156,7 +168,6 @@ namespace UnityStandardAssets.Assets.ThirdPerson
                         if(SceneController.instance.getCurrentSceneName() != "Sala")
                         {
                             state = State.Enfadado;
-
                         }
                     }
                     else

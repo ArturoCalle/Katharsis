@@ -39,35 +39,21 @@ namespace UnityStandardAssets.Assets.ThirdPerson
 
 		public float Move(Vector3 move, bool enojado, bool ansioso)
 		{
-
-            // convert the world relative moveInput vector into a local-relative
-            // turn amount and forward amount required to head in the desired
-            // direction.
-            if (!enojado)
-            {
-				if (m_Animator.GetCurrentAnimatorStateInfo(0).IsTag("Caminar"))
-				{
-					desplazar(move);
-					return 5f;
-				}
-				else
-				{
-					return 0f;
-				}
-			}
-			
 			if (enojado)
 			{
 				m_Animator.SetBool("Enojado", true);
 				desplazar(move);
 				return 8f;
-            }
-            else
+			}else
             {
 				m_Animator.SetBool("Enojado", false);
-				return 5f;
+				if (m_Animator.GetCurrentAnimatorStateInfo(0).IsTag("Caminar"))
+				{
+					desplazar(move);
+					return 5f;
+				}
+				return 0;
 			}
-
 		}
 
 		private void desplazar(Vector3 move)

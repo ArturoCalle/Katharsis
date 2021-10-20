@@ -956,6 +956,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2669658401754539197}
+  - component: {fileID: 5023730780290717166}
   m_Layer: 0
   m_Name: Pantorrilla.L
   m_TagString: Untagged
@@ -978,6 +979,20 @@ Transform:
   m_Father: {fileID: 1027242849407281777}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &5023730780290717166
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3561101345469964632}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.003
+  m_Height: 0.04
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &3622542999801989196
 GameObject:
   m_ObjectHideFlags: 0
@@ -1369,6 +1384,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8457667830734622474}
+  - component: {fileID: 2650952017520029596}
   m_Layer: 0
   m_Name: Pantorrilla.R
   m_TagString: Untagged
@@ -1391,6 +1407,20 @@ Transform:
   m_Father: {fileID: 166985209148718257}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &2650952017520029596
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5279066372284721497}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.003
+  m_Height: 0.04
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &5455873015459169871
 GameObject:
   m_ObjectHideFlags: 0
@@ -2524,8 +2554,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rigMirada: {fileID: 7795184658806910812}
-  "rigPu\xF1o": {fileID: 0}
-  rigPatada: {fileID: 0}
+  "rigPu\xF1o": {fileID: 7795184658806910812}
+  rigPatada: {fileID: 7795184658806910812}
 --- !u!1 &9216929085681947974
 GameObject:
   m_ObjectHideFlags: 0

@@ -122,6 +122,13 @@ public class PlayerControls : MonoBehaviour
             {
                 movDir = Vector3.down;
             }
+            if(inputs.x == 1)
+            {
+                movDir = Vector3.left;
+            }else if (inputs.x == -1)
+            {
+                movDir = Vector3.right;
+            }
             controller.Move(movDir.normalized * climbSpeed * Time.deltaTime * Time.timeScale);
         }
         else
