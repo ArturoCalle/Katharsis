@@ -37,26 +37,43 @@ namespace UnityStandardAssets.Assets.ThirdPerson
 		}
 
 
-		public float Move(Vector3 move, bool enojado, bool ansioso)
+		public float Move(Vector3 move, bool enojado, bool golpearArriba, bool golpearAbajo)
 		{
+			if(golpearArriba)
+            {
+				m_Animator.Play("GolpeAlto");
+            }else if (golpearAbajo)
+            {
+				m_Animator.Play("GolpeBajo");
+			}
+			if(m_Animator.GetCurrentAnimatorStateInfo(0).IsTag("GolpeAlto") || 
+				m_Animator.GetCurrentAnimatorStateInfo(0).IsTag("GolpeBajo"))
+            {
+				return 0f;
+            }
 			if (enojado)
 			{
 				m_Animator.SetBool("Enojado", true);
-				desplazar(move);
+				Desplazar(move);
 				return 8f;
 			}else
             {
 				m_Animator.SetBool("Enojado", false);
 				if (m_Animator.GetCurrentAnimatorStateInfo(0).IsTag("Caminar"))
 				{
-					desplazar(move);
+					Desplazar(move);
 					return 5f;
 				}
 				return 0;
 			}
 		}
 
-		private void desplazar(Vector3 move)
+        public void PlayAnsiedad()
+        {
+			m_Animator.Play("Ansiedad");
+        }
+
+        private void Desplazar(Vector3 move)
         {
 			if (move.magnitude > 1f) move.Normalize();
 			move = transform.InverseTransformDirection(move);
