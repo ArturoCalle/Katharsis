@@ -6,14 +6,14 @@ public class Escalar : MonoBehaviour
 {
     bool colision;
     public Corner corn;
-    Transform target;
+    Collider target;
     //si  la colision de un objeto es una esquina se puede escalar
     private void OnTriggerStay(Collider col)
     {
         if (col.gameObject.tag == "Escalable")
         {
             colision = true;
-            target = col.transform;
+            target = col;
         }
     }
     private void OnTriggerExit(Collider col)
@@ -29,7 +29,7 @@ public class Escalar : MonoBehaviour
     {
         return corn.corner;
     }
-    public Transform getTarget()
+    public Collider getTarget()
     {
         return target;
     }
