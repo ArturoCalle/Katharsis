@@ -110,7 +110,7 @@ namespace UnityStandardAssets.Assets.ThirdPerson
             }
         }
 
-        void Pasear(bool ansioso)//Al movimiento de trompi se le envian dos variables de estado, en esta funcion, Distimia puede estar tranquilo o ansioso
+        void Pasear(bool ansioso)//Move(Vector3 move, bool enojado, bool golpearArriba, bool golpearAbajo)
         {   
             if(RigController.instance != null)
             {
@@ -145,7 +145,7 @@ namespace UnityStandardAssets.Assets.ThirdPerson
             }
         }
       
-        void PerseguirTrompi()//Al movimiento de trompi se le envian dos variables de estado, en esta funcion, la variable de enojado esta en true
+        void PerseguirTrompi()//Move(Vector3 move, bool enojado, bool golpearArriba, bool golpearAbajo)
         {
             agent.speed = chaseSpeed;
             chaseSpeed = character.Move(agent.desiredVelocity, true, false, false);
