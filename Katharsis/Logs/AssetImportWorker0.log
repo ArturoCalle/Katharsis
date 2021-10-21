@@ -15,11 +15,11 @@ C:/Users/Camilo/Documents/GitHub/Katharsis/Katharsis
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-59506
+52892
 Successfully changed project path to: C:/Users/Camilo/Documents/GitHub/Katharsis/Katharsis
 C:/Users/Camilo/Documents/GitHub/Katharsis/Katharsis
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 119.45 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 476.11 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2020.3.11f1 (99c7afb366b3)
 [Subsystems] Discovering subsystems at path C:/Unity Hub/2020.3.11f1/Editor/Data/Resources/UnitySubsystems
@@ -36,987 +36,692 @@ Initialize mono
 Mono path[0] = 'C:/Unity Hub/2020.3.11f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Unity Hub/2020.3.11f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
 Mono config path = 'C:/Unity Hub/2020.3.11f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56528
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56280
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Unity Hub/2020.3.11f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.002819 seconds.
+Registered in 0.005421 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 101.05 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 196.31 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.674 seconds
+- Completed reload, in  3.718 seconds
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.008443 seconds.
+Registered in 0.017920 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 130.96 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 528.63 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  2.862 seconds
+- Completed reload, in 10.835 seconds
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
 Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.08 seconds
-Refreshing native plugins compatible for Editor in 0.88 ms, found 2 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.35 seconds
+Refreshing native plugins compatible for Editor in 0.93 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 3409 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 153.0 MB.
-System memory in use after: 153.2 MB.
+System memory in use before: 153.6 MB.
+System memory in use after: 153.8 MB.
 
 Unloading 21 unused Assets to reduce memory usage. Loaded Objects now: 3846.
-Total: 6.827400 ms (FindLiveObjects: 0.443100 ms CreateObjectMapping: 0.886100 ms MarkObjects: 5.353500 ms  DeleteObjects: 0.142900 ms)
+Total: 5.151700 ms (FindLiveObjects: 0.561600 ms CreateObjectMapping: 0.416400 ms MarkObjects: 4.011300 ms  DeleteObjects: 0.154000 ms)
 
 ========================================================================
 Received Import Request.
-  path: Assets/Escenas/Pantalla Principal.unity
-  artifactKey: Guid(74f1cb3c99412124c975f1539fffb02f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Escenas/Pantalla Principal.unity using Guid(74f1cb3c99412124c975f1539fffb02f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9486ea0f7bf9917e7907d644f9ff8de3') in 0.031690 seconds
-  Import took 0.041734 seconds .
-
-========================================================================
-Received Prepare
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 7.34 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 13 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 78.6 MB.
-System memory in use after: 78.8 MB.
-
-Unloading 13 unused Assets to reduce memory usage. Loaded Objects now: 3846.
-Total: 13.482500 ms (FindLiveObjects: 0.839100 ms CreateObjectMapping: 0.376800 ms MarkObjects: 12.196000 ms  DeleteObjects: 0.068500 ms)
+  path: Assets/Escenas/reloj/Metal_Seamed.jpg
+  artifactKey: Guid(843f12fdbf97c1a408406dad5e5c798f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Escenas/reloj/Metal_Seamed.jpg using Guid(843f12fdbf97c1a408406dad5e5c798f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cc0f27fed2c9f1bc1ad3832558e1213a') in 0.245784 seconds
+  Import took 0.269832 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 2672.110550 seconds.
-  path: Assets/Escenas/Comedor.unity
-  artifactKey: Guid(a2bb4dc365f22464ebb89489b1617a7b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Escenas/Comedor.unity using Guid(a2bb4dc365f22464ebb89489b1617a7b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a88e679f5301cfcc406b6500223b0d2e') in 0.057246 seconds
-  Import took 0.068894 seconds .
+  Time since last request: 0.000783 seconds.
+  path: Assets/Escenas/reloj/_Wood_Cherry_Original_1.jpg
+  artifactKey: Guid(8fcceee75d0a8194ea5ee1532b5045cf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Escenas/reloj/_Wood_Cherry_Original_1.jpg using Guid(8fcceee75d0a8194ea5ee1532b5045cf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c6742783f5d42d9afaec45430659262a') in 0.113222 seconds
+  Import took 0.141930 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 2.484827 seconds.
-  path: Assets/Escenas/Sala.unity
-  artifactKey: Guid(3655b9e6f30b13d4e8ccd86522b59afd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Escenas/Sala.unity using Guid(3655b9e6f30b13d4e8ccd86522b59afd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a40eb542701abe717e17a4ef2265bd50') in 0.014469 seconds
-  Import took 0.027769 seconds .
+  Time since last request: 0.001057 seconds.
+  path: Assets/Escenas/reloj/Wood_Cherry_Original.jpg
+  artifactKey: Guid(7ed2dceff017bc84caa7aa9373384fba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Escenas/reloj/Wood_Cherry_Original.jpg using Guid(7ed2dceff017bc84caa7aa9373384fba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ed7a28640859712531fb69e849ccb381') in 0.070160 seconds
+  Import took 0.090894 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 415.922034 seconds.
-  path: Assets/Cinemáticas/Mirar a Distimia.playable
-  artifactKey: Guid(3723614bb66209d4bae2e672eeab19c3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Cinemáticas/Mirar a Distimia.playable using Guid(3723614bb66209d4bae2e672eeab19c3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ca3da609c7d979566778c0466eccfb4b') in 0.071942 seconds
-  Import took 0.081033 seconds .
+  Time since last request: 0.000696 seconds.
+  path: Assets/Escenas/reloj/Wood_Veneer_01.jpg
+  artifactKey: Guid(aea3770af8a913b45a44bbf1f0d763ae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Escenas/reloj/Wood_Veneer_01.jpg using Guid(aea3770af8a913b45a44bbf1f0d763ae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eb00c0312c65c1ebc04e2794d1632a68') in 0.065054 seconds
+  Import took 0.077172 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000286 seconds.
-  path: Assets/Cinemáticas/Tocar distimia y mirar megafono.playable
-  artifactKey: Guid(8ca7b9c4f684643428d069416a08c295) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Cinemáticas/Tocar distimia y mirar megafono.playable using Guid(8ca7b9c4f684643428d069416a08c295) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '60f74791049f1d1f67ddb13433550ac4') in 0.016179 seconds
-  Import took 0.025866 seconds .
+  Time since last request: 0.000944 seconds.
+  path: Assets/Escenas/reloj/_Wood_Cherry_Original_2.jpg
+  artifactKey: Guid(ffd996c127f557043b5cb3ed9533ef87) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Escenas/reloj/_Wood_Cherry_Original_2.jpg using Guid(ffd996c127f557043b5cb3ed9533ef87) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dfedb9e79792fc61a9c9be4e851f10b2') in 0.055200 seconds
+  Import took 0.071277 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000249 seconds.
-  path: Assets/Cinemáticas/Trompi cayendo del cielo.playable
-  artifactKey: Guid(800943a939753fd4c95a8a1d28e319fc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Cinemáticas/Trompi cayendo del cielo.playable using Guid(800943a939753fd4c95a8a1d28e319fc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2b1dbe12d08cfa34f27278d4bf925995') in 0.025118 seconds
-  Import took 0.036850 seconds .
+  Time since last request: 0.001057 seconds.
+  path: Assets/Escenas/reloj/Metal_Rough.jpg
+  artifactKey: Guid(ae1a6293d155ee246a3548380398d298) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Escenas/reloj/Metal_Rough.jpg using Guid(ae1a6293d155ee246a3548380398d298) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4c5c3c635944de96413403594ff4d0cd') in 0.050679 seconds
+  Import took 0.066394 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 3.680188 seconds.
-  path: Assets/Cinemáticas/Cutscene.cs
-  artifactKey: Guid(a9f2fc4db4de2eb46949acdaadef5110) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Cinemáticas/Cutscene.cs using Guid(a9f2fc4db4de2eb46949acdaadef5110) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0430f2a8bcb00eda896e95e2fff567fe') in 0.025724 seconds
-  Import took 0.036706 seconds .
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.013195 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.15 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.926 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 0.88 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3311 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 144.0 MB.
-System memory in use after: 144.3 MB.
-
-Unloading 17 unused Assets to reduce memory usage. Loaded Objects now: 3848.
-Total: 3.897300 ms (FindLiveObjects: 0.596400 ms CreateObjectMapping: 0.265800 ms MarkObjects: 3.005000 ms  DeleteObjects: 0.028700 ms)
+  Time since last request: 0.000999 seconds.
+  path: Assets/Escenas/reloj/Metal_Seamed1.jpg
+  artifactKey: Guid(e894abf30a4b2ce4e916326010576b65) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Escenas/reloj/Metal_Seamed1.jpg using Guid(e894abf30a4b2ce4e916326010576b65) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9927b03281b7e3f93051a382053ee322') in 0.033621 seconds
+  Import took 0.051137 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 310.679566 seconds.
-  path: Assets/Modelos/Soja Exiles/Barber Shop Prop and Build Kit/Textures/Misc/trash can texture.png
-  artifactKey: Guid(4541ffaace14fbe408cc59587ca599e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Modelos/Soja Exiles/Barber Shop Prop and Build Kit/Textures/Misc/trash can texture.png using Guid(4541ffaace14fbe408cc59587ca599e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '39c69a177777bc73da6a53f5a95628d9') in 0.215818 seconds
-  Import took 0.226688 seconds .
+  Time since last request: 5.508559 seconds.
+  path: Assets/Escenas/reloj/Materials
+  artifactKey: Guid(454acc815a4749248b83d23db703ac25) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Escenas/reloj/Materials using Guid(454acc815a4749248b83d23db703ac25) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2314f104c26fa9484557a94eaa37f5a8') in 0.032509 seconds
+  Import took 0.055938 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000243 seconds.
-  path: Assets/Modelos/Personajes/trompi.fbx
-  artifactKey: Guid(ba4576f240cbc114dbfca193ec9dd161) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Modelos/Personajes/trompi.fbx using Guid(ba4576f240cbc114dbfca193ec9dd161) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7fce683073c86b86d7ee9c1c2314ceed') in 0.281942 seconds
-  Import took 0.292727 seconds .
+  Time since last request: 0.002187 seconds.
+  path: Assets/Escenas/reloj/Materials/Wood_Veneer_01.mat
+  artifactKey: Guid(cfd8f74eac184d1418b4bf43524c21ac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Escenas/reloj/Materials/Wood_Veneer_01.mat using Guid(cfd8f74eac184d1418b4bf43524c21ac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ab8d4bc999dfec9a8bf403d3259138e4') in 0.246352 seconds
+  Import took 0.281954 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000296 seconds.
-  path: Assets/Modelos/Soja Exiles/Barber Shop Prop and Build Kit/Textures/Misc/trash can texture.png
-  artifactKey: Guid(4541ffaace14fbe408cc59587ca599e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Modelos/Soja Exiles/Barber Shop Prop and Build Kit/Textures/Misc/trash can texture.png using Guid(4541ffaace14fbe408cc59587ca599e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '39c69a177777bc73da6a53f5a95628d9') in 0.020652 seconds
-  Import took 0.030616 seconds .
+  Time since last request: 0.001716 seconds.
+  path: Assets/Escenas/reloj/Materials/Metal_Rough.mat
+  artifactKey: Guid(c62be7b8943abb44090961575ca5a4c6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Escenas/reloj/Materials/Metal_Rough.mat using Guid(c62be7b8943abb44090961575ca5a4c6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '343457e6c545656f3dae8c93e355bc00') in 0.050723 seconds
+  Import took 0.074106 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000239 seconds.
-  path: Assets/Modelos/Soja Exiles/NY Style Pizza SE/Models/Build Kit PZ Exterior_04.fbx
-  artifactKey: Guid(ffc5eaeb0f09e93498ff3f7136ed0d68) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Modelos/Soja Exiles/NY Style Pizza SE/Models/Build Kit PZ Exterior_04.fbx using Guid(ffc5eaeb0f09e93498ff3f7136ed0d68) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '61db795f712819e854806456580dfae9') in 0.054408 seconds
-  Import took 0.064015 seconds .
+  Time since last request: 0.009068 seconds.
+  path: Assets/Escenas/reloj/Materials/_Wood_Cherry_Original_2.mat
+  artifactKey: Guid(35c6a757719524c4793f96d6148b5527) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Escenas/reloj/Materials/_Wood_Cherry_Original_2.mat using Guid(35c6a757719524c4793f96d6148b5527) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '21b5a76cfe8fb84e86fd91d5c4bf9dbb') in 0.057393 seconds
+  Import took 0.087195 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.003563 seconds.
+  path: Assets/Escenas/reloj/Materials/_Wood_Cherry_Original_1.mat
+  artifactKey: Guid(5d4a75ac123212a40b260c19b6624480) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Escenas/reloj/Materials/_Wood_Cherry_Original_1.mat using Guid(5d4a75ac123212a40b260c19b6624480) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e316158622b09575153d8ff0ffa13b04') in 0.075487 seconds
+  Import took 0.094017 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 17.211395 seconds.
+  path: Assets/Modelos/Soja Exiles/Bar Interior Exterior Kit/Models/Glasses_LowerPolyVer6.fbx
+  artifactKey: Guid(4602ab4c69adbe947892e00735be4564) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modelos/Soja Exiles/Bar Interior Exterior Kit/Models/Glasses_LowerPolyVer6.fbx using Guid(4602ab4c69adbe947892e00735be4564) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4b07ed3ce72cb041c0b3711c17eafc7f') in 0.285362 seconds
+  Import took 0.302092 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000724 seconds.
+  path: Assets/Modelos/Soja Exiles/Police Department/Models/PD_Furniture_01.fbx
+  artifactKey: Guid(01e0a7356def4c2458af47aff3459add) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modelos/Soja Exiles/Police Department/Models/PD_Furniture_01.fbx using Guid(01e0a7356def4c2458af47aff3459add) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7fc4b21e5c4588f7b5063ab29c6793ef') in 0.259562 seconds
+  Import took 0.270922 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000716 seconds.
+  path: Assets/Modelos/Soja Exiles/Bar Interior Exterior Kit/Materials/Other/Glass Beer Bottle 01.mat
+  artifactKey: Guid(9ce8a30a77d08ab47bc206060379c1a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modelos/Soja Exiles/Bar Interior Exterior Kit/Materials/Other/Glass Beer Bottle 01.mat using Guid(9ce8a30a77d08ab47bc206060379c1a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4b67b781eb2e653ecb35b98ab4cddfdc') in 0.082415 seconds
+  Import took 0.098397 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000992 seconds.
+  path: Assets/Modelos/Soja Exiles/SE Basic Assets/Materials/glass 02.mat
+  artifactKey: Guid(3bded00981e95504a8e47f996835ca9a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modelos/Soja Exiles/SE Basic Assets/Materials/glass 02.mat using Guid(3bded00981e95504a8e47f996835ca9a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fc8e9eab2c06aebd6b99de22c8507524') in 0.058628 seconds
+  Import took 0.068679 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000744 seconds.
+  path: Assets/Modelos/Soja Exiles/NY Style Pizza SE/Models/Pizza Furniture.fbx
+  artifactKey: Guid(6ca055f2d0bb91e4d9f613613ee0eaef) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modelos/Soja Exiles/NY Style Pizza SE/Models/Pizza Furniture.fbx using Guid(6ca055f2d0bb91e4d9f613613ee0eaef) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9d6f80963bfebabb7d8c71884becc734') in 0.360420 seconds
+  Import took 0.370763 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001030 seconds.
+  path: Assets/Modelos/Soja Exiles/Bar Interior Exterior Kit/Prefabs/Props/Glassware/Beer Glasses/curved beer glass_LightBeer.prefab
+  artifactKey: Guid(af2d2c91cc9bfd748b1771b04a076665) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modelos/Soja Exiles/Bar Interior Exterior Kit/Prefabs/Props/Glassware/Beer Glasses/curved beer glass_LightBeer.prefab using Guid(af2d2c91cc9bfd748b1771b04a076665) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '502000b203a3ee6854dff4cd2c5cd790') in 0.092129 seconds
+  Import took 0.109782 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000948 seconds.
+  path: Assets/Modelos/Soja Exiles/SE Basic Assets/Materials/Glass.mat
+  artifactKey: Guid(88b88f875cf0af442996954ba27bdf64) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modelos/Soja Exiles/SE Basic Assets/Materials/Glass.mat using Guid(88b88f875cf0af442996954ba27bdf64) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e2f926e30f4f5e1d3c9d1142ecd7e73f') in 0.056617 seconds
+  Import took 0.071153 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000781 seconds.
+  path: Assets/Modelos/Soja Exiles/Post Office/Models/INT_01.fbx
+  artifactKey: Guid(726f87a21f117684fa009580c3aa3a43) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modelos/Soja Exiles/Post Office/Models/INT_01.fbx using Guid(726f87a21f117684fa009580c3aa3a43) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '54b3ae07ce7a6ae7e154808c295fad5d') in 0.132372 seconds
+  Import took 0.149934 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000813 seconds.
+  path: Assets/Modelos/Soja Exiles/Bar Interior Exterior Kit/Materials/Other/Glass Wine Bottle Wrapper 02.mat
+  artifactKey: Guid(c93f53f2e5b52ce4aa972abed0a24a5f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modelos/Soja Exiles/Bar Interior Exterior Kit/Materials/Other/Glass Wine Bottle Wrapper 02.mat using Guid(c93f53f2e5b52ce4aa972abed0a24a5f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '77082dbd052fa027b37b76d6ebf2d7c3') in 0.063267 seconds
+  Import took 0.077361 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000707 seconds.
+  path: Assets/Modelos/Soja Exiles/Bar Interior Exterior Kit/Prefabs/Props/Glassware/Beer Glasses/Beer Glass Filled_BeerDark.prefab
+  artifactKey: Guid(ea6b92010af011b44bb5f850542d3def) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modelos/Soja Exiles/Bar Interior Exterior Kit/Prefabs/Props/Glassware/Beer Glasses/Beer Glass Filled_BeerDark.prefab using Guid(ea6b92010af011b44bb5f850542d3def) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'acbf73106c014ff950b9c6e9eb3fd834') in 0.081405 seconds
+  Import took 0.094003 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000900 seconds.
+  path: Assets/Modelos/Soja Exiles/Coffee Or Tea/Prefabs/Props/Containers & Misc/Glass Container Small Beans 01.prefab
+  artifactKey: Guid(a7d6aefff358c94419003adb48d5d36c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modelos/Soja Exiles/Coffee Or Tea/Prefabs/Props/Containers & Misc/Glass Container Small Beans 01.prefab using Guid(a7d6aefff358c94419003adb48d5d36c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b13684d48e0016efb0f76f9e3076f947') in 0.162862 seconds
+  Import took 0.176290 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001299 seconds.
+  path: Assets/Modelos/Soja Exiles/SE Basic Assets/Materials/glass 03.mat
+  artifactKey: Guid(266fb6016862b8b4ba1eec482c572c21) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modelos/Soja Exiles/SE Basic Assets/Materials/glass 03.mat using Guid(266fb6016862b8b4ba1eec482c572c21) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '54e8d5842b2e4cfbe04b2a10034be42f') in 0.845955 seconds
+  Import took 0.860190 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001193 seconds.
+  path: Assets/Modelos/Soja Exiles/Bar Interior Exterior Kit/Prefabs/Props/Glassware/Wine Champ Glasses/Wine Glass Fancy_RedWine.prefab
+  artifactKey: Guid(fdfd9d8c9ade64d418fb5b72833da55b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modelos/Soja Exiles/Bar Interior Exterior Kit/Prefabs/Props/Glassware/Wine Champ Glasses/Wine Glass Fancy_RedWine.prefab using Guid(fdfd9d8c9ade64d418fb5b72833da55b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '17c794bfa6d6e50f51576d788cdc6aac') in 0.086627 seconds
+  Import took 0.098646 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000984 seconds.
+  path: Assets/Modelos/Soja Exiles/Brick Project Demo Build Kit/Models/Courthouse Ext.fbx
+  artifactKey: Guid(9d72afc9fed9288409f9b23c8dbb0f03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modelos/Soja Exiles/Brick Project Demo Build Kit/Models/Courthouse Ext.fbx using Guid(9d72afc9fed9288409f9b23c8dbb0f03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dac3d935c843b7b7879ba9ec2713d96c') in 0.418197 seconds
+  Import took 0.429791 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000720 seconds.
+  path: Assets/Modelos/Soja Exiles/Bar Interior Exterior Kit/Materials/Other/Glass Wine Bottle Wrapper 05.mat
+  artifactKey: Guid(ba25d9126ddcf8e47a25836e8a36bb67) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modelos/Soja Exiles/Bar Interior Exterior Kit/Materials/Other/Glass Wine Bottle Wrapper 05.mat using Guid(ba25d9126ddcf8e47a25836e8a36bb67) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b523cc08abedcd3eaac5756650dc1ce9') in 0.062592 seconds
+  Import took 0.083539 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001107 seconds.
+  path: Assets/Modelos/Soja Exiles/Barber Shop Prop and Build Kit/Models/Barber Shop Wall Furniture and Chair - 02.fbx
+  artifactKey: Guid(111827f73e785fd49af5ddbd6ec08172) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modelos/Soja Exiles/Barber Shop Prop and Build Kit/Models/Barber Shop Wall Furniture and Chair - 02.fbx using Guid(111827f73e785fd49af5ddbd6ec08172) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a708e2ad7122b20ade1386daeed9c163') in 0.159493 seconds
+  Import took 0.171974 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000964 seconds.
+  path: Assets/Modelos/Soja Exiles/Coffee Or Tea/Models/Coffee props.fbx
+  artifactKey: Guid(43b6f36adc72d6140a8da4c1ed60b31a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modelos/Soja Exiles/Coffee Or Tea/Models/Coffee props.fbx using Guid(43b6f36adc72d6140a8da4c1ed60b31a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cf5c687a7642eb1cfe9a25b0ed2c1d5c') in 0.159947 seconds
+  Import took 0.250749 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 193.591057 seconds.
+  path: Assets/Modelos/Soja Exiles/Barber Shop Prop and Build Kit/Models/Barber Shop Wall Furniture and Chair - 01.fbx
+  artifactKey: Guid(0553179d7279d8d4c96e1fde9e8eec71) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modelos/Soja Exiles/Barber Shop Prop and Build Kit/Models/Barber Shop Wall Furniture and Chair - 01.fbx using Guid(0553179d7279d8d4c96e1fde9e8eec71) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a333075f994d79f10aeb0a44c15f6a03') in 0.186353 seconds
+  Import took 0.200166 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000223 seconds.
+  path: Assets/Modelos/Soja Exiles/Brick Project Demo Build Kit/Materials/Frame Mat Collection/Barber Shop/Barbershop_02_02.mat
+  artifactKey: Guid(8d87c633687b01b4fa03372c5bd2348b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modelos/Soja Exiles/Brick Project Demo Build Kit/Materials/Frame Mat Collection/Barber Shop/Barbershop_02_02.mat using Guid(8d87c633687b01b4fa03372c5bd2348b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b20b2741951a6ded3057dbac82b15b39') in 0.074774 seconds
+  Import took 0.084509 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000408 seconds.
+  path: Assets/Modelos/Soja Exiles/Brick Project Demo Build Kit/Materials/Frame Mat Collection/Bar/Bar_02_01.mat
+  artifactKey: Guid(aa00c017037d5bf49ba31b086b3e2604) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modelos/Soja Exiles/Brick Project Demo Build Kit/Materials/Frame Mat Collection/Bar/Bar_02_01.mat using Guid(aa00c017037d5bf49ba31b086b3e2604) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '782f2ccf22cd1ee3742d1e75c4ce8d9b') in 0.054367 seconds
+  Import took 0.069353 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000745 seconds.
+  path: Assets/Modelos/Soja Exiles/Brick Project Demo Build Kit/Textures/Frame Image Collection/Bar/Bar_02_02.png
+  artifactKey: Guid(35628953598b4584991fc31630b80c30) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modelos/Soja Exiles/Brick Project Demo Build Kit/Textures/Frame Image Collection/Bar/Bar_02_02.png using Guid(35628953598b4584991fc31630b80c30) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5e44b94a6f367fa6d369ff69feb8d893') in 0.050888 seconds
+  Import took 0.065446 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000278 seconds.
+  path: Assets/Modelos/Soja Exiles/Brick Project Demo Build Kit/Materials/Frame Mat Collection/Bar/Bar_02_03.mat
+  artifactKey: Guid(15f9225b1f82baa41a781d41e13b5df0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modelos/Soja Exiles/Brick Project Demo Build Kit/Materials/Frame Mat Collection/Bar/Bar_02_03.mat using Guid(15f9225b1f82baa41a781d41e13b5df0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1836d96d44b4e0ae5fd79d40fd94b7bc') in 0.049974 seconds
+  Import took 0.060523 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000255 seconds.
+  path: Assets/Modelos/Soja Exiles/Brick Project Demo Build Kit/Materials/Frame Mat Collection/Barber Shop/Barbershop_02_01.mat
+  artifactKey: Guid(7ffa029418b72d94a88b7413c30c06b7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modelos/Soja Exiles/Brick Project Demo Build Kit/Materials/Frame Mat Collection/Barber Shop/Barbershop_02_01.mat using Guid(7ffa029418b72d94a88b7413c30c06b7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5e5d12148d8937f6a6ad64330c237cb8') in 0.050155 seconds
+  Import took 0.063828 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000789 seconds.
+  path: Assets/Modelos/Soja Exiles/Brick Project Demo Build Kit/Materials/Frame Mat Collection/Bar/Bar_02_02.mat
+  artifactKey: Guid(f91cba4cc27f1104ca46402fa75b8536) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modelos/Soja Exiles/Brick Project Demo Build Kit/Materials/Frame Mat Collection/Bar/Bar_02_02.mat using Guid(f91cba4cc27f1104ca46402fa75b8536) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dcde662882ece045a003ddff48434d51') in 0.042258 seconds
+  Import took 0.057255 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000234 seconds.
+  path: Assets/Modelos/Soja Exiles/Brick Project Demo Build Kit/Textures/Frame Image Collection/Barber Shop/Barber_02_06.png
+  artifactKey: Guid(5794c09d72ab4bf419d04a7529df6566) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modelos/Soja Exiles/Brick Project Demo Build Kit/Textures/Frame Image Collection/Barber Shop/Barber_02_06.png using Guid(5794c09d72ab4bf419d04a7529df6566) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7b32bea06a393e0e2c82bd7107186348') in 0.042714 seconds
+  Import took 0.054378 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000226 seconds.
+  path: Assets/Modelos/Soja Exiles/Barber Shop Prop and Build Kit/Textures/Props/Barber Shop Props 02.png
+  artifactKey: Guid(815261b2a684097409120fc63feb8e28) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modelos/Soja Exiles/Barber Shop Prop and Build Kit/Textures/Props/Barber Shop Props 02.png using Guid(815261b2a684097409120fc63feb8e28) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a2e9b0812efa7d99afd9830f582511dd') in 0.045788 seconds
+  Import took 0.061713 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000492 seconds.
+  path: Assets/Modelos/Soja Exiles/Brick Project Demo Build Kit/Materials/Frame Mat Collection/Bar/Bar_02_05.mat
+  artifactKey: Guid(a3047abc1e543d245a3d46ba27de8d53) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modelos/Soja Exiles/Brick Project Demo Build Kit/Materials/Frame Mat Collection/Bar/Bar_02_05.mat using Guid(a3047abc1e543d245a3d46ba27de8d53) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'faf3e1addbf7fb8f91c501b7fc4cc00e') in 0.049980 seconds
+  Import took 0.060914 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000221 seconds.
+  path: Assets/Modelos/Soja Exiles/Sleazy Lawyer Office/Models/Furniture.fbx
+  artifactKey: Guid(51c14883014b0e74fb0996c74ba44e14) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modelos/Soja Exiles/Sleazy Lawyer Office/Models/Furniture.fbx using Guid(51c14883014b0e74fb0996c74ba44e14) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '72c847407fdcd3ab4da9c47b89697736') in 0.204881 seconds
+  Import took 0.220921 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000336 seconds.
+  path: Assets/Modelos/Soja Exiles/Brick Project Demo Build Kit/Materials/Frame Mat Collection/Bar/Bar_02_07.mat
+  artifactKey: Guid(884abf73df3155140b5d27bf5c76694d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modelos/Soja Exiles/Brick Project Demo Build Kit/Materials/Frame Mat Collection/Bar/Bar_02_07.mat using Guid(884abf73df3155140b5d27bf5c76694d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e11102c7d3c1717afc1748a9485639bb') in 0.051030 seconds
+  Import took 0.061365 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000253 seconds.
+  path: Assets/Modelos/Soja Exiles/Brick Project Demo Build Kit/Textures/Frame Image Collection/Bar/Bar_02_07.png
+  artifactKey: Guid(cac5f5335682e6149a0aae4a439c70da) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modelos/Soja Exiles/Brick Project Demo Build Kit/Textures/Frame Image Collection/Bar/Bar_02_07.png using Guid(cac5f5335682e6149a0aae4a439c70da) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ee923913e65dbe735f65953d921b6408') in 0.023698 seconds
+  Import took 0.034482 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000453 seconds.
+  path: Assets/Modelos/Soja Exiles/Brick Project Demo Build Kit/Materials/Frame Mat Collection/Barber Shop/Barbershop_02_03.mat
+  artifactKey: Guid(6372385ec9a52584689719e5da63dd54) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modelos/Soja Exiles/Brick Project Demo Build Kit/Materials/Frame Mat Collection/Barber Shop/Barbershop_02_03.mat using Guid(6372385ec9a52584689719e5da63dd54) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '69993cb7d5bafae8470cdd46e467fb4d') in 0.060497 seconds
+  Import took 0.071506 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000260 seconds.
+  path: Assets/Modelos/Soja Exiles/Brick Project Demo Build Kit/Textures/Frame Image Collection/Bar/Bar_02_06.png
+  artifactKey: Guid(b662be29fd3d9284983202005784c9bf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modelos/Soja Exiles/Brick Project Demo Build Kit/Textures/Frame Image Collection/Bar/Bar_02_06.png using Guid(b662be29fd3d9284983202005784c9bf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a221860ec643291ca2eb9b276f8138b6') in 0.035463 seconds
+  Import took 0.047232 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001970 seconds.
+  path: Assets/Modelos/Soja Exiles/Brick Project Demo Build Kit/Materials/Frame Mat Collection/Bar/Bar_02_04.mat
+  artifactKey: Guid(12025ee6260a62b4ab94b3bfd457465d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modelos/Soja Exiles/Brick Project Demo Build Kit/Materials/Frame Mat Collection/Bar/Bar_02_04.mat using Guid(12025ee6260a62b4ab94b3bfd457465d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6f31e829181523d9789ceaa755b3a78b') in 0.062817 seconds
+  Import took 0.073064 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000293 seconds.
+  path: Assets/Modelos/Soja Exiles/Brick Project Demo Build Kit/Materials/Frame Mat Collection/Bar/Bar_02_06.mat
+  artifactKey: Guid(521123c92065de34ebc8c0c596e1859e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modelos/Soja Exiles/Brick Project Demo Build Kit/Materials/Frame Mat Collection/Bar/Bar_02_06.mat using Guid(521123c92065de34ebc8c0c596e1859e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '432f970f9573dd4f6492fe77c190fec4') in 0.037939 seconds
+  Import took 0.046581 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000236 seconds.
+  path: Assets/Modelos/Soja Exiles/Brick Project Demo Build Kit/Textures/Frame Image Collection/Barber Shop/Barber_02_04.png
+  artifactKey: Guid(bccd3c579398b0346a40825ca379d97f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modelos/Soja Exiles/Brick Project Demo Build Kit/Textures/Frame Image Collection/Barber Shop/Barber_02_04.png using Guid(bccd3c579398b0346a40825ca379d97f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5efd029b4a2ad1b4ebafe1abaa1f8a02') in 0.045295 seconds
+  Import took 0.054805 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000265 seconds.
+  path: Assets/Modelos/Soja Exiles/Brick Project Demo Build Kit/Textures/Frame Image Collection/Barber Shop/Barber_02_07.png
+  artifactKey: Guid(95b661d7299986745b2b8b7f18c64080) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modelos/Soja Exiles/Brick Project Demo Build Kit/Textures/Frame Image Collection/Barber Shop/Barber_02_07.png using Guid(95b661d7299986745b2b8b7f18c64080) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '93f3522be8b0edeca32d74e4b2b8dd27') in 0.031605 seconds
+  Import took 0.044736 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000326 seconds.
+  path: Assets/Modelos/Soja Exiles/Brick Project Demo Build Kit/Materials/Frame Mat Collection/Barber Shop/Barbershop_02_04.mat
+  artifactKey: Guid(7b6811dc0dec01e4e93e8e5c14d9b547) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modelos/Soja Exiles/Brick Project Demo Build Kit/Materials/Frame Mat Collection/Barber Shop/Barbershop_02_04.mat using Guid(7b6811dc0dec01e4e93e8e5c14d9b547) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3aad1ffec2092edc92da0d14be102da7') in 0.046442 seconds
+  Import took 0.055448 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000413 seconds.
+  path: Assets/Modelos/Soja Exiles/Sleazy Lawyer Office/Models/Props.fbx
+  artifactKey: Guid(e15cdeee04197e948bfdd22a61a46939) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modelos/Soja Exiles/Sleazy Lawyer Office/Models/Props.fbx using Guid(e15cdeee04197e948bfdd22a61a46939) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e7b2c37b141d55a1ef0867bed58685db') in 0.193773 seconds
+  Import took 0.204427 seconds .
 
 ========================================================================
 Received Import Request.
   Time since last request: 0.000216 seconds.
-  path: Assets/Modelos/Soja Exiles/Police Department/Models/PD_Props_01.fbx
-  artifactKey: Guid(e3e1ab342dc4f4840ad1a9bce1872047) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Modelos/Soja Exiles/Police Department/Models/PD_Props_01.fbx using Guid(e3e1ab342dc4f4840ad1a9bce1872047) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '557d66139ccabd0fa5b31e73d5389101') in 0.450416 seconds
-  Import took 0.459539 seconds .
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.008541 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.94 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  2.078 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 0.94 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3311 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 161.1 MB.
-System memory in use after: 161.3 MB.
-
-Unloading 16 unused Assets to reduce memory usage. Loaded Objects now: 3896.
-Total: 3.708600 ms (FindLiveObjects: 0.360000 ms CreateObjectMapping: 0.219500 ms MarkObjects: 3.098000 ms  DeleteObjects: 0.027200 ms)
+  path: Assets/Modelos/Soja Exiles/Brick Project Demo Build Kit/Textures/Frame Image Collection/Bar/Bar_02_01.png
+  artifactKey: Guid(0be1f1b32b649e44b954c1c62e41dc89) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modelos/Soja Exiles/Brick Project Demo Build Kit/Textures/Frame Image Collection/Bar/Bar_02_01.png using Guid(0be1f1b32b649e44b954c1c62e41dc89) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '034c49a79ef2247e2dfff8c7106f74b1') in 0.017038 seconds
+  Import took 0.027533 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 220.571347 seconds.
-  path: Assets/Escenas/Sala.unity
-  artifactKey: Guid(3655b9e6f30b13d4e8ccd86522b59afd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Escenas/Sala.unity using Guid(3655b9e6f30b13d4e8ccd86522b59afd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f4e6149056c8cd4dbfa93d82aa29d43a') in 0.071840 seconds
-  Import took 0.092612 seconds .
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.014150 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.89 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  2.402 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 0.97 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3311 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 161.1 MB.
-System memory in use after: 161.3 MB.
-
-Unloading 16 unused Assets to reduce memory usage. Loaded Objects now: 3899.
-Total: 3.746200 ms (FindLiveObjects: 0.414000 ms CreateObjectMapping: 0.298100 ms MarkObjects: 2.998000 ms  DeleteObjects: 0.034000 ms)
+  Time since last request: 0.000238 seconds.
+  path: Assets/Modelos/Soja Exiles/Brick Project Demo Build Kit/Materials/Frame Mat Collection/Barber Shop/Barbershop_02_05.mat
+  artifactKey: Guid(266a07d5cf7454e45a6681c961bc603f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modelos/Soja Exiles/Brick Project Demo Build Kit/Materials/Frame Mat Collection/Barber Shop/Barbershop_02_05.mat using Guid(266a07d5cf7454e45a6681c961bc603f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '837856b8e7f94960501749573030a1ee') in 0.050518 seconds
+  Import took 0.063331 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 256.366159 seconds.
-  path: Assets/Escenas/Sala.unity
-  artifactKey: Guid(3655b9e6f30b13d4e8ccd86522b59afd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Escenas/Sala.unity using Guid(3655b9e6f30b13d4e8ccd86522b59afd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0546864834e39ede623a3f4e55fd64e3') in 0.064568 seconds
-  Import took 0.075648 seconds .
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.010021 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.17 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  2.425 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 1.58 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3311 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 161.1 MB.
-System memory in use after: 161.4 MB.
-
-Unloading 16 unused Assets to reduce memory usage. Loaded Objects now: 3902.
-Total: 4.560600 ms (FindLiveObjects: 0.399600 ms CreateObjectMapping: 0.264500 ms MarkObjects: 3.858500 ms  DeleteObjects: 0.036400 ms)
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.010337 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 3.14 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  2.257 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 1.11 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3311 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 161.1 MB.
-System memory in use after: 161.4 MB.
-
-Unloading 16 unused Assets to reduce memory usage. Loaded Objects now: 3905.
-Total: 13.965400 ms (FindLiveObjects: 1.007800 ms CreateObjectMapping: 0.323400 ms MarkObjects: 12.040300 ms  DeleteObjects: 0.591400 ms)
+  Time since last request: 0.000227 seconds.
+  path: Assets/Modelos/Soja Exiles/Brick Project Demo Build Kit/Textures/Frame Image Collection/Bar/Bar_02_03.png
+  artifactKey: Guid(04aee83e544a96e49b763069abd91dee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modelos/Soja Exiles/Brick Project Demo Build Kit/Textures/Frame Image Collection/Bar/Bar_02_03.png using Guid(04aee83e544a96e49b763069abd91dee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '28e880c59f67b3838bdd7c430b7a6dac') in 0.047927 seconds
+  Import took 0.063447 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 169.604129 seconds.
-  path: Assets/Escenas/Sala.unity
-  artifactKey: Guid(3655b9e6f30b13d4e8ccd86522b59afd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Escenas/Sala.unity using Guid(3655b9e6f30b13d4e8ccd86522b59afd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f8644bb9d3635cbcfdae5d5238cfd0eb') in 0.087371 seconds
-  Import took 0.100755 seconds .
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.009470 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.93 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  2.280 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 0.90 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3311 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 161.1 MB.
-System memory in use after: 161.4 MB.
-
-Unloading 16 unused Assets to reduce memory usage. Loaded Objects now: 3908.
-Total: 9.246000 ms (FindLiveObjects: 1.291200 ms CreateObjectMapping: 0.972300 ms MarkObjects: 6.954700 ms  DeleteObjects: 0.026200 ms)
+  Time since last request: 0.000225 seconds.
+  path: Assets/Modelos/Soja Exiles/Brick Project Demo Build Kit/Textures/Frame Image Collection/Barber Shop/Barber_02_01.png
+  artifactKey: Guid(489d44f34bff72b49bdfdc9b5855c14b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modelos/Soja Exiles/Brick Project Demo Build Kit/Textures/Frame Image Collection/Barber Shop/Barber_02_01.png using Guid(489d44f34bff72b49bdfdc9b5855c14b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fe3be8d3c7e231afce579cea9139cc96') in 0.030333 seconds
+  Import took 0.043722 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 125.589361 seconds.
-  path: Assets/Escenas/Sala.unity
-  artifactKey: Guid(3655b9e6f30b13d4e8ccd86522b59afd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Escenas/Sala.unity using Guid(3655b9e6f30b13d4e8ccd86522b59afd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '376bcaf431b6a71c08457910c030b8fc') in 0.068631 seconds
-  Import took 0.087848 seconds .
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.009702 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.85 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  2.589 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 0.98 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3311 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 161.2 MB.
-System memory in use after: 161.4 MB.
-
-Unloading 16 unused Assets to reduce memory usage. Loaded Objects now: 3911.
-Total: 4.852500 ms (FindLiveObjects: 1.673000 ms CreateObjectMapping: 0.272400 ms MarkObjects: 2.880100 ms  DeleteObjects: 0.025600 ms)
+  Time since last request: 0.000285 seconds.
+  path: Assets/Modelos/Soja Exiles/Barber Shop Prop and Build Kit/Models/Barber Shop Props.fbx
+  artifactKey: Guid(2af834025a92b9446aec1780b97a15a5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modelos/Soja Exiles/Barber Shop Prop and Build Kit/Models/Barber Shop Props.fbx using Guid(2af834025a92b9446aec1780b97a15a5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '164db13be5818033b4fa364d18b62901') in 0.147259 seconds
+  Import took 0.155130 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 161.792703 seconds.
-  path: Assets/Escenas/Sala.unity
-  artifactKey: Guid(3655b9e6f30b13d4e8ccd86522b59afd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Escenas/Sala.unity using Guid(3655b9e6f30b13d4e8ccd86522b59afd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b7a89797330bc98aed1ee5f424d48d06') in 0.055043 seconds
-  Import took 0.070384 seconds .
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.009579 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.16 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  2.166 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 1.96 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3311 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 161.2 MB.
-System memory in use after: 161.4 MB.
-
-Unloading 16 unused Assets to reduce memory usage. Loaded Objects now: 3914.
-Total: 6.231200 ms (FindLiveObjects: 0.906200 ms CreateObjectMapping: 0.627300 ms MarkObjects: 4.659400 ms  DeleteObjects: 0.035600 ms)
+  Time since last request: 0.000209 seconds.
+  path: Assets/Modelos/Soja Exiles/Brick Project Demo Build Kit/Textures/Frame Image Collection/Barber Shop/Barber_02_03.png
+  artifactKey: Guid(e4cd5a0236f06dd44b44ae6918931c0a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modelos/Soja Exiles/Brick Project Demo Build Kit/Textures/Frame Image Collection/Barber Shop/Barber_02_03.png using Guid(e4cd5a0236f06dd44b44ae6918931c0a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '68494c156500aa344114015ef7fe469a') in 0.025928 seconds
+  Import took 0.035522 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 138.729211 seconds.
-  path: Assets/Escenas/Sala.unity
-  artifactKey: Guid(3655b9e6f30b13d4e8ccd86522b59afd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Escenas/Sala.unity using Guid(3655b9e6f30b13d4e8ccd86522b59afd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bdb0660809f7433dc3771e82e278108c') in 0.057587 seconds
-  Import took 0.077531 seconds .
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.007065 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.93 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  2.320 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 1.35 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3311 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 161.2 MB.
-System memory in use after: 161.4 MB.
-
-Unloading 16 unused Assets to reduce memory usage. Loaded Objects now: 3917.
-Total: 6.334800 ms (FindLiveObjects: 0.756900 ms CreateObjectMapping: 0.731400 ms MarkObjects: 4.805000 ms  DeleteObjects: 0.039400 ms)
+  Time since last request: 0.000251 seconds.
+  path: Assets/Modelos/Soja Exiles/Brick Project Demo Build Kit/Textures/Frame Image Collection/Barber Shop/Barber_02_05.png
+  artifactKey: Guid(7ab9c28f724d42b428a4246380322513) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modelos/Soja Exiles/Brick Project Demo Build Kit/Textures/Frame Image Collection/Barber Shop/Barber_02_05.png using Guid(7ab9c28f724d42b428a4246380322513) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a24f929e96fca386a2a700c82e0f871d') in 0.039108 seconds
+  Import took 0.051580 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 176.837725 seconds.
-  path: Assets/Escenas/Sala.unity
-  artifactKey: Guid(3655b9e6f30b13d4e8ccd86522b59afd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Escenas/Sala.unity using Guid(3655b9e6f30b13d4e8ccd86522b59afd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '144fd902377de542a955f9d20832ef19') in 0.039591 seconds
-  Import took 0.055884 seconds .
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.010069 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 3.68 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  2.358 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 1.46 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3311 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 161.2 MB.
-System memory in use after: 161.4 MB.
-
-Unloading 16 unused Assets to reduce memory usage. Loaded Objects now: 3920.
-Total: 13.988200 ms (FindLiveObjects: 0.776800 ms CreateObjectMapping: 0.532300 ms MarkObjects: 12.630300 ms  DeleteObjects: 0.046300 ms)
+  Time since last request: 0.000231 seconds.
+  path: Assets/Modelos/Soja Exiles/Brick Project Demo Build Kit/Textures/Frame Image Collection/Bar/Bar_02_04.png
+  artifactKey: Guid(6893af549588cd64d926540715da8744) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modelos/Soja Exiles/Brick Project Demo Build Kit/Textures/Frame Image Collection/Bar/Bar_02_04.png using Guid(6893af549588cd64d926540715da8744) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd047572604dc5e931ebd1db40a1e32d4') in 0.031754 seconds
+  Import took 0.046638 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 185.720059 seconds.
-  path: Assets/Escenas/Sala.unity
-  artifactKey: Guid(3655b9e6f30b13d4e8ccd86522b59afd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Escenas/Sala.unity using Guid(3655b9e6f30b13d4e8ccd86522b59afd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2b1183c0ccb3b1ccd7eb5bc505ad7873') in 0.028852 seconds
-  Import took 0.042561 seconds .
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.014901 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.89 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  2.363 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 2.04 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3311 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 161.2 MB.
-System memory in use after: 161.4 MB.
-
-Unloading 16 unused Assets to reduce memory usage. Loaded Objects now: 3923.
-Total: 5.187500 ms (FindLiveObjects: 0.452100 ms CreateObjectMapping: 0.297000 ms MarkObjects: 4.399800 ms  DeleteObjects: 0.037100 ms)
+  Time since last request: 0.000402 seconds.
+  path: Assets/Modelos/Soja Exiles/Brick Project Demo Build Kit/Textures/Frame Image Collection/Bar/Bar_02_05.png
+  artifactKey: Guid(f06c2423f42957b449cf68f2caf94ddd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modelos/Soja Exiles/Brick Project Demo Build Kit/Textures/Frame Image Collection/Bar/Bar_02_05.png using Guid(f06c2423f42957b449cf68f2caf94ddd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ee027ed68355f2fe5e4b0c8374a075b6') in 0.024959 seconds
+  Import took 0.036489 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 115.299678 seconds.
-  path: Assets/Escenas/Sala.unity
-  artifactKey: Guid(3655b9e6f30b13d4e8ccd86522b59afd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Escenas/Sala.unity using Guid(3655b9e6f30b13d4e8ccd86522b59afd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '916651a27af65f6e028e33fab6324fd5') in 0.054141 seconds
-  Import took 0.066538 seconds .
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.023911 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.91 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  2.693 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 0.95 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3311 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 161.2 MB.
-System memory in use after: 161.4 MB.
-
-Unloading 16 unused Assets to reduce memory usage. Loaded Objects now: 3926.
-Total: 3.847800 ms (FindLiveObjects: 0.396100 ms CreateObjectMapping: 0.221400 ms MarkObjects: 3.163800 ms  DeleteObjects: 0.064400 ms)
+  Time since last request: 0.000561 seconds.
+  path: Assets/Modelos/Soja Exiles/Brick Project Demo Build Kit/Textures/Frame Image Collection/Barber Shop/Barber_02_02.png
+  artifactKey: Guid(a5e678b28df92914c9f779532789bae4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modelos/Soja Exiles/Brick Project Demo Build Kit/Textures/Frame Image Collection/Barber Shop/Barber_02_02.png using Guid(a5e678b28df92914c9f779532789bae4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7f4afcf8cc99cb0746d31ebb8d768775') in 0.036124 seconds
+  Import took 0.054515 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 97.244929 seconds.
-  path: Assets/Escenas/Sala.unity
-  artifactKey: Guid(3655b9e6f30b13d4e8ccd86522b59afd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Escenas/Sala.unity using Guid(3655b9e6f30b13d4e8ccd86522b59afd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '08e817ae612dd6ba56e5a9f83064a747') in 0.059866 seconds
-  Import took 0.071501 seconds .
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.007692 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.28 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  2.843 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 1.79 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3311 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 161.2 MB.
-System memory in use after: 161.5 MB.
-
-Unloading 16 unused Assets to reduce memory usage. Loaded Objects now: 3929.
-Total: 4.861000 ms (FindLiveObjects: 0.620400 ms CreateObjectMapping: 1.135200 ms MarkObjects: 3.072300 ms  DeleteObjects: 0.031100 ms)
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.007338 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.87 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  2.083 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 2.81 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3311 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 161.2 MB.
-System memory in use after: 161.5 MB.
-
-Unloading 16 unused Assets to reduce memory usage. Loaded Objects now: 3932.
-Total: 7.668200 ms (FindLiveObjects: 0.423100 ms CreateObjectMapping: 0.483900 ms MarkObjects: 6.729600 ms  DeleteObjects: 0.029600 ms)
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.024504 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.67 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  2.649 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 1.20 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3311 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 161.2 MB.
-System memory in use after: 161.5 MB.
-
-Unloading 16 unused Assets to reduce memory usage. Loaded Objects now: 3935.
-Total: 6.835000 ms (FindLiveObjects: 0.471700 ms CreateObjectMapping: 0.235700 ms MarkObjects: 6.095000 ms  DeleteObjects: 0.030500 ms)
+  Time since last request: 0.000280 seconds.
+  path: Assets/Modelos/Soja Exiles/Barber Shop Prop and Build Kit/Materials/Props/Barber Shop Props 02.mat
+  artifactKey: Guid(623cca97d164daa429e579498b0cae78) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modelos/Soja Exiles/Barber Shop Prop and Build Kit/Materials/Props/Barber Shop Props 02.mat using Guid(623cca97d164daa429e579498b0cae78) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '58a304c082bcbf57ff21eac3562455d2') in 0.062654 seconds
+  Import took 0.075840 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 324.249069 seconds.
-  path: Assets/Escenas/Sala.unity
-  artifactKey: Guid(3655b9e6f30b13d4e8ccd86522b59afd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Escenas/Sala.unity using Guid(3655b9e6f30b13d4e8ccd86522b59afd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '06daa689c03689a1b3623d0556981791') in 0.033337 seconds
-  Import took 0.042931 seconds .
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.008004 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.86 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.851 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 0.88 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3311 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 161.2 MB.
-System memory in use after: 161.5 MB.
-
-Unloading 16 unused Assets to reduce memory usage. Loaded Objects now: 3938.
-Total: 4.839900 ms (FindLiveObjects: 0.483100 ms CreateObjectMapping: 0.235000 ms MarkObjects: 4.082900 ms  DeleteObjects: 0.036600 ms)
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.012034 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 3.02 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  2.861 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 3.19 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3311 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 161.2 MB.
-System memory in use after: 161.5 MB.
-
-Unloading 16 unused Assets to reduce memory usage. Loaded Objects now: 3941.
-Total: 5.623100 ms (FindLiveObjects: 0.601900 ms CreateObjectMapping: 0.319900 ms MarkObjects: 4.658900 ms  DeleteObjects: 0.040400 ms)
+  Time since last request: 0.001875 seconds.
+  path: Assets/Modelos/Soja Exiles/Brick Project Demo Build Kit/Materials/Frame Mat Collection/Barber Shop/Barbershop_02_06.mat
+  artifactKey: Guid(05bc5e8dacb2ff54d9cd1e75e1ff095c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modelos/Soja Exiles/Brick Project Demo Build Kit/Materials/Frame Mat Collection/Barber Shop/Barbershop_02_06.mat using Guid(05bc5e8dacb2ff54d9cd1e75e1ff095c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c54e38473f2c3a6e4fb0097832ae33cf') in 0.053681 seconds
+  Import took 0.073280 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 205.083534 seconds.
-  path: Assets/Escenas/Sala.unity
-  artifactKey: Guid(3655b9e6f30b13d4e8ccd86522b59afd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Escenas/Sala.unity using Guid(3655b9e6f30b13d4e8ccd86522b59afd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e731606e71b5268124480f837a0c6aec') in 0.027026 seconds
-  Import took 0.039455 seconds .
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.012747 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.35 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  2.271 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 2.36 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3311 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 161.3 MB.
-System memory in use after: 161.5 MB.
-
-Unloading 16 unused Assets to reduce memory usage. Loaded Objects now: 3944.
-Total: 6.080000 ms (FindLiveObjects: 0.495800 ms CreateObjectMapping: 0.344700 ms MarkObjects: 5.196400 ms  DeleteObjects: 0.040700 ms)
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.008055 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.90 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.892 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 5.70 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3311 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 161.3 MB.
-System memory in use after: 161.5 MB.
-
-Unloading 16 unused Assets to reduce memory usage. Loaded Objects now: 3947.
-Total: 4.710700 ms (FindLiveObjects: 0.661200 ms CreateObjectMapping: 0.288400 ms MarkObjects: 3.719200 ms  DeleteObjects: 0.039300 ms)
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.007644 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.92 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.762 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 1.88 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3311 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 161.3 MB.
-System memory in use after: 161.5 MB.
-
-Unloading 16 unused Assets to reduce memory usage. Loaded Objects now: 3950.
-Total: 4.615900 ms (FindLiveObjects: 0.974600 ms CreateObjectMapping: 0.387300 ms MarkObjects: 3.181600 ms  DeleteObjects: 0.070000 ms)
+  Time since last request: 60.578414 seconds.
+  path: Assets/Escenas/reloj
+  artifactKey: Guid(e933e87f01b9e3248973e316060d6f4a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Escenas/reloj using Guid(e933e87f01b9e3248973e316060d6f4a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '38f56e75608c951704ce0354413b8e1a') in 0.011949 seconds
+  Import took 0.028081 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 376.342083 seconds.
-  path: Assets/Escenas/Sala.unity
-  artifactKey: Guid(3655b9e6f30b13d4e8ccd86522b59afd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Escenas/Sala.unity using Guid(3655b9e6f30b13d4e8ccd86522b59afd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '62b2b6228f68cd033a4fe71544f5ba1d') in 0.045427 seconds
-  Import took 0.054999 seconds .
+  Time since last request: 183.017420 seconds.
+  path: Assets/Modelos/Soja Exiles/SE Basic Assets/Materials/Antique.mat
+  artifactKey: Guid(4a3c4e9ae9b122e449659fdb803fb1dc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modelos/Soja Exiles/SE Basic Assets/Materials/Antique.mat using Guid(4a3c4e9ae9b122e449659fdb803fb1dc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3a96b1e31872a870aadbcde807682f03') in 0.058728 seconds
+  Import took 0.070716 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 112.340819 seconds.
-  path: Assets/Escenas/Sala.unity
-  artifactKey: Guid(3655b9e6f30b13d4e8ccd86522b59afd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Escenas/Sala.unity using Guid(3655b9e6f30b13d4e8ccd86522b59afd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '68c64c3523f60bf3a6b8e5273d1489c3') in 0.007248 seconds
-  Import took 0.016492 seconds .
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.007927 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.90 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.769 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 1.84 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3311 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 161.3 MB.
-System memory in use after: 161.6 MB.
-
-Unloading 16 unused Assets to reduce memory usage. Loaded Objects now: 3953.
-Total: 5.338200 ms (FindLiveObjects: 0.575500 ms CreateObjectMapping: 0.306200 ms MarkObjects: 4.354200 ms  DeleteObjects: 0.099800 ms)
+  Time since last request: 0.000221 seconds.
+  path: Assets/Modelos/Soja Exiles/SE Basic Assets/Materials/Brushed Chrome.mat
+  artifactKey: Guid(403f7691aae4323499829c9fc28c7c6e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modelos/Soja Exiles/SE Basic Assets/Materials/Brushed Chrome.mat using Guid(403f7691aae4323499829c9fc28c7c6e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '52b021aa67e20d669957beb83d88a632') in 0.037480 seconds
+  Import took 0.051478 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 408.282776 seconds.
-  path: Assets/Cinemáticas/TriggerCutscene.cs
-  artifactKey: Guid(b33a86708420aa642b491e36a6962d80) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Cinemáticas/TriggerCutscene.cs using Guid(b33a86708420aa642b491e36a6962d80) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '110708365f0e150dc07f1714113f304c') in 0.039688 seconds
-  Import took 0.053043 seconds .
+  Time since last request: 0.000297 seconds.
+  path: Assets/Modelos/Soja Exiles/SE Basic Assets/Materials/wood 02.mat
+  artifactKey: Guid(26f1b36be16f30d409f9ab1a7d20a8a5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modelos/Soja Exiles/SE Basic Assets/Materials/wood 02.mat using Guid(26f1b36be16f30d409f9ab1a7d20a8a5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '83e75619d1149b0105557f7e9a2e01aa') in 0.072153 seconds
+  Import took 0.086028 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000320 seconds.
-  path: Assets/Cinemáticas/Tocar distimia y mirar megafono.playable
-  artifactKey: Guid(8ca7b9c4f684643428d069416a08c295) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Cinemáticas/Tocar distimia y mirar megafono.playable using Guid(8ca7b9c4f684643428d069416a08c295) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd71f05c54d405ebe30a1c1431ab994cc') in 0.072568 seconds
-  Import took 0.095906 seconds .
+  Time since last request: 0.000385 seconds.
+  path: Assets/Modelos/Soja Exiles/SE Basic Assets/Materials/Wood Floor 01.mat
+  artifactKey: Guid(049ac0e838cb3a342887cf48a2b06db4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modelos/Soja Exiles/SE Basic Assets/Materials/Wood Floor 01.mat using Guid(049ac0e838cb3a342887cf48a2b06db4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9e24ebb671278ae0ddf97f6e3d96faf3') in 0.066169 seconds
+  Import took 0.077567 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000204 seconds.
-  path: Assets/Cinemáticas/Trompi cayendo del cielo.playable
-  artifactKey: Guid(800943a939753fd4c95a8a1d28e319fc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Cinemáticas/Trompi cayendo del cielo.playable using Guid(800943a939753fd4c95a8a1d28e319fc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7f31e1231a73eec86f5de08216c8b981') in 0.007870 seconds
-  Import took 0.015663 seconds .
+  Time since last request: 0.000218 seconds.
+  path: Assets/Modelos/Soja Exiles/SE Basic Assets/Materials/Texture-map-SE.mat
+  artifactKey: Guid(9fdfa6a0558621048a6fd66286dceca2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modelos/Soja Exiles/SE Basic Assets/Materials/Texture-map-SE.mat using Guid(9fdfa6a0558621048a6fd66286dceca2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '16afd8f7d802e7887496b5459444819a') in 0.061645 seconds
+  Import took 0.072414 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 357.529302 seconds.
-  path: Assets/Cinemáticas/Cinemática.cs
-  artifactKey: Guid(802f95678e0b6e449966346f53070bee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Cinemáticas/Cinemática.cs using Guid(802f95678e0b6e449966346f53070bee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9ee7a562cedbb647b9a160240d7e64b3') in 0.048978 seconds
-  Import took 0.083050 seconds .
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.012736 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.10 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.749 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 1.00 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3312 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 161.4 MB.
-System memory in use after: 161.6 MB.
-
-Unloading 16 unused Assets to reduce memory usage. Loaded Objects now: 3957.
-Total: 4.664700 ms (FindLiveObjects: 0.394400 ms CreateObjectMapping: 0.251200 ms MarkObjects: 3.984700 ms  DeleteObjects: 0.032000 ms)
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.010528 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.19 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  2.093 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 3.03 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3311 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 161.3 MB.
-System memory in use after: 161.6 MB.
-
-Unloading 17 unused Assets to reduce memory usage. Loaded Objects now: 3959.
-Total: 4.527100 ms (FindLiveObjects: 0.393100 ms CreateObjectMapping: 0.223100 ms MarkObjects: 3.880200 ms  DeleteObjects: 0.029200 ms)
+  Time since last request: 0.000251 seconds.
+  path: Assets/Modelos/Soja Exiles/SE Basic Assets/Materials/Gold.mat
+  artifactKey: Guid(e767d86cbf3099a478162f1692b1edf3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modelos/Soja Exiles/SE Basic Assets/Materials/Gold.mat using Guid(e767d86cbf3099a478162f1692b1edf3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0b004cf67798a3ede129875a903014e5') in 0.042468 seconds
+  Import took 0.056953 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 36.712854 seconds.
-  path: Assets/Cinemáticas/Cinematica.cs
-  artifactKey: Guid(5be83e938856d3f4384aa44030191a6b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Cinemáticas/Cinematica.cs using Guid(5be83e938856d3f4384aa44030191a6b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1aa4a9ee4e80fccf4b4fb1d93a4d0a35') in 0.034843 seconds
-  Import took 0.052903 seconds .
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.014694 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.89 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.690 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 1.20 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3312 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 161.5 MB.
-System memory in use after: 161.7 MB.
-
-Unloading 16 unused Assets to reduce memory usage. Loaded Objects now: 3963.
-Total: 11.367300 ms (FindLiveObjects: 1.635200 ms CreateObjectMapping: 0.495600 ms MarkObjects: 9.195900 ms  DeleteObjects: 0.038000 ms)
+  Time since last request: 0.000410 seconds.
+  path: Assets/Modelos/Soja Exiles/SE Basic Assets/Materials/Brick 02.mat
+  artifactKey: Guid(3d1a06be464c4f34a858b507405a7bb5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modelos/Soja Exiles/SE Basic Assets/Materials/Brick 02.mat using Guid(3d1a06be464c4f34a858b507405a7bb5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3156d6305fdf44aa0ff5f931af763acf') in 0.715664 seconds
+  Import took 0.727001 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 548.199138 seconds.
-  path: Assets/Cinemáticas/Cinematica.cs
-  artifactKey: Guid(5be83e938856d3f4384aa44030191a6b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Cinemáticas/Cinematica.cs using Guid(5be83e938856d3f4384aa44030191a6b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cb1d68ff75f6220a4df3b0513d077b63') in 0.022389 seconds
-  Import took 0.039250 seconds .
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.011218 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.92 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  2.086 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 0.85 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3312 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 161.5 MB.
-System memory in use after: 161.7 MB.
-
-Unloading 16 unused Assets to reduce memory usage. Loaded Objects now: 3966.
-Total: 3.692300 ms (FindLiveObjects: 0.354700 ms CreateObjectMapping: 0.210100 ms MarkObjects: 3.099500 ms  DeleteObjects: 0.026600 ms)
+  Time since last request: 0.000278 seconds.
+  path: Assets/Modelos/Soja Exiles/SE Basic Assets/Materials/Glow.mat
+  artifactKey: Guid(823f8d5383d173a4fb4153a73427684f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modelos/Soja Exiles/SE Basic Assets/Materials/Glow.mat using Guid(823f8d5383d173a4fb4153a73427684f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '34b477ed79b193e1d0a4f09bc7fa49dc') in 0.050614 seconds
+  Import took 0.063012 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 24.783283 seconds.
-  path: Assets/Cinemáticas/Cinematica.cs
-  artifactKey: Guid(5be83e938856d3f4384aa44030191a6b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Cinemáticas/Cinematica.cs using Guid(5be83e938856d3f4384aa44030191a6b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0a8702ad8abaec702981d5eae64f8a44') in 0.008091 seconds
-  Import took 0.015564 seconds .
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.008177 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.34 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.835 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 0.87 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3312 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 161.5 MB.
-System memory in use after: 161.7 MB.
-
-Unloading 16 unused Assets to reduce memory usage. Loaded Objects now: 3969.
-Total: 3.430100 ms (FindLiveObjects: 0.431600 ms CreateObjectMapping: 0.249300 ms MarkObjects: 2.720900 ms  DeleteObjects: 0.027200 ms)
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.008798 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.13 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.944 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 1.12 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3312 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 161.5 MB.
-System memory in use after: 161.7 MB.
-
-Unloading 16 unused Assets to reduce memory usage. Loaded Objects now: 3972.
-Total: 4.135800 ms (FindLiveObjects: 0.486300 ms CreateObjectMapping: 0.428300 ms MarkObjects: 3.190600 ms  DeleteObjects: 0.029200 ms)
+  Time since last request: 0.000231 seconds.
+  path: Assets/Modelos/Soja Exiles/SE Basic Assets/Materials/Texture-Map SE.mat
+  artifactKey: Guid(5f01895f1ecb58445b3aa62be24d6bca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modelos/Soja Exiles/SE Basic Assets/Materials/Texture-Map SE.mat using Guid(5f01895f1ecb58445b3aa62be24d6bca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e40262d92d1e03d20c4044a2abf0f930') in 0.056782 seconds
+  Import took 0.069371 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 198.790901 seconds.
-  path: Assets/Scripts/Player
-  artifactKey: Guid(5d3d64dc34c3e024bb9100cef8a482d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/Player using Guid(5d3d64dc34c3e024bb9100cef8a482d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1b942a5e3ad96ff6bfebd81dd133ce6b') in 0.024249 seconds
-  Import took 0.034487 seconds .
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.010907 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.86 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  2.284 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 0.89 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3312 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 161.5 MB.
-System memory in use after: 161.7 MB.
-
-Unloading 16 unused Assets to reduce memory usage. Loaded Objects now: 3975.
-Total: 5.691800 ms (FindLiveObjects: 0.581000 ms CreateObjectMapping: 0.239600 ms MarkObjects: 4.811200 ms  DeleteObjects: 0.057500 ms)
+  Time since last request: 0.000260 seconds.
+  path: Assets/Modelos/Soja Exiles/SE Basic Assets/Materials/Brick mute 02.mat
+  artifactKey: Guid(099e69089d2c47044b06273bff53533d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modelos/Soja Exiles/SE Basic Assets/Materials/Brick mute 02.mat using Guid(099e69089d2c47044b06273bff53533d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'da68f218c7066d2d02121c970e725093') in 0.060838 seconds
+  Import took 0.075092 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 105.512783 seconds.
-  path: Assets/Escenas/Sala.unity
-  artifactKey: Guid(3655b9e6f30b13d4e8ccd86522b59afd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Escenas/Sala.unity using Guid(3655b9e6f30b13d4e8ccd86522b59afd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3f6ce7df4b46438ffd5d9e0dda47f8f5') in 0.051761 seconds
-  Import took 0.062823 seconds .
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.016812 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.87 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.850 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 2.79 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3312 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 161.5 MB.
-System memory in use after: 161.8 MB.
-
-Unloading 16 unused Assets to reduce memory usage. Loaded Objects now: 3978.
-Total: 6.257900 ms (FindLiveObjects: 1.429900 ms CreateObjectMapping: 0.390400 ms MarkObjects: 4.368500 ms  DeleteObjects: 0.066600 ms)
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.009648 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.53 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  2.172 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 0.94 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3312 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 161.5 MB.
-System memory in use after: 161.8 MB.
-
-Unloading 16 unused Assets to reduce memory usage. Loaded Objects now: 3981.
-Total: 5.092300 ms (FindLiveObjects: 0.503800 ms CreateObjectMapping: 0.247000 ms MarkObjects: 4.312300 ms  DeleteObjects: 0.027300 ms)
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.009053 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.61 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.801 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 1.39 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3312 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 161.5 MB.
-System memory in use after: 161.8 MB.
-
-Unloading 16 unused Assets to reduce memory usage. Loaded Objects now: 3984.
-Total: 3.777000 ms (FindLiveObjects: 0.407100 ms CreateObjectMapping: 0.232200 ms MarkObjects: 3.103600 ms  DeleteObjects: 0.032500 ms)
+  Time since last request: 0.000262 seconds.
+  path: Assets/Modelos/Soja Exiles/SE Basic Assets/Materials/Marble 01.mat
+  artifactKey: Guid(cb77271ecd71cbd4599aa533ebf5cc1e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modelos/Soja Exiles/SE Basic Assets/Materials/Marble 01.mat using Guid(cb77271ecd71cbd4599aa533ebf5cc1e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '16882ae6f29f79677f94ec62e4c9573c') in 0.056114 seconds
+  Import took 0.068613 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 261.576164 seconds.
-  path: Assets/Escenas/Sala.unity
-  artifactKey: Guid(3655b9e6f30b13d4e8ccd86522b59afd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Escenas/Sala.unity using Guid(3655b9e6f30b13d4e8ccd86522b59afd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '37866c51683a0a7a69cebaa9d4c9e734') in 0.043867 seconds
-  Import took 0.052084 seconds .
+  Time since last request: 0.000513 seconds.
+  path: Assets/Modelos/Soja Exiles/SE Basic Assets/Materials/Building Floor Tile.mat
+  artifactKey: Guid(b65d6f1427086d84f91a3153f6f82ffc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modelos/Soja Exiles/SE Basic Assets/Materials/Building Floor Tile.mat using Guid(b65d6f1427086d84f91a3153f6f82ffc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5666367a3ea3b08489dbbc60505a449e') in 0.482356 seconds
+  Import took 0.495928 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000255 seconds.
+  path: Assets/Modelos/Soja Exiles/SE Basic Assets/Materials/Light Wall 01.mat
+  artifactKey: Guid(70139dc62be58be4a91d1831e1f21e95) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modelos/Soja Exiles/SE Basic Assets/Materials/Light Wall 01.mat using Guid(70139dc62be58be4a91d1831e1f21e95) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e914a4b0acdcfbaaa452e741575c9f9a') in 0.051423 seconds
+  Import took 0.066249 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000225 seconds.
+  path: Assets/Modelos/Soja Exiles/SE Basic Assets/Materials/Plastic Thick.mat
+  artifactKey: Guid(65d72af2f614466478d9d8d8d7593b95) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modelos/Soja Exiles/SE Basic Assets/Materials/Plastic Thick.mat using Guid(65d72af2f614466478d9d8d8d7593b95) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a608e439e9fe373531adf97a47e23601') in 0.053689 seconds
+  Import took 0.067261 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001106 seconds.
+  path: Assets/Modelos/Soja Exiles/SE Basic Assets/Materials/wood 03.mat
+  artifactKey: Guid(a64c40f22fb83f041b7c584055b61c8f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modelos/Soja Exiles/SE Basic Assets/Materials/wood 03.mat using Guid(a64c40f22fb83f041b7c584055b61c8f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ac2487ec24b3883d48d78bae029103aa') in 0.047824 seconds
+  Import took 0.064081 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000325 seconds.
+  path: Assets/Modelos/Soja Exiles/SE Basic Assets/Materials/Black.mat
+  artifactKey: Guid(4cd790ac0d37bdc46970f6688c6b5070) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modelos/Soja Exiles/SE Basic Assets/Materials/Black.mat using Guid(4cd790ac0d37bdc46970f6688c6b5070) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1080c6a08838a1c76ebb7e85c5731eb3') in 0.029806 seconds
+  Import took 0.042060 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000263 seconds.
+  path: Assets/Modelos/Soja Exiles/SE Basic Assets/Materials/Concrete.mat
+  artifactKey: Guid(1e98ebe0ed4d9894d9610d836de5f478) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modelos/Soja Exiles/SE Basic Assets/Materials/Concrete.mat using Guid(1e98ebe0ed4d9894d9610d836de5f478) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f6a47cd1c2500a2f92032bd2f8bbb22c') in 0.090117 seconds
+  Import took 0.101977 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.002732 seconds.
+  path: Assets/Modelos/Soja Exiles/SE Basic Assets/Materials/Concrete.mat
+  artifactKey: Guid(1e98ebe0ed4d9894d9610d836de5f478) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modelos/Soja Exiles/SE Basic Assets/Materials/Concrete.mat using Guid(1e98ebe0ed4d9894d9610d836de5f478) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f6a47cd1c2500a2f92032bd2f8bbb22c') in 0.064245 seconds
+  Import took 0.074679 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 268.720120 seconds.
+  path: Assets/reloj2.fbx
+  artifactKey: Guid(8953ba7aa16349a4b8a3801b4486ac52) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/reloj2.fbx using Guid(8953ba7aa16349a4b8a3801b4486ac52) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9a0081eb90021c93542dee62674e4dbe') in 0.233973 seconds
+  Import took 0.258804 seconds .
 
 AssetImportWorkerClient::OnTransportError - code=2 error=End of file
