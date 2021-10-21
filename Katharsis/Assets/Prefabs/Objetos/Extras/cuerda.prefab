@@ -59,7 +59,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 4d8f4f60c45fde547903222b405f170e, type: 2}
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -104,7 +104,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4239466808150257708}
-  m_LocalRotation: {x: 0.5, y: 0.49999997, z: 0.5, w: -0.5}
+  m_LocalRotation: {x: -0.5, y: -0.49999997, z: -0.5, w: 0.5}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 0.5933893, y: 0.5933893, z: 0.5933893}
   m_Children: []
@@ -201,10 +201,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5130609568849010435}
-  - component: {fileID: 848489879783315544}
+  - component: {fileID: 2393251454048011256}
   m_Layer: 0
   m_Name: cuerda
-  m_TagString: Escalable
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -216,8 +216,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5510231749227398585}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 148.939, y: 41.349, z: 107.277626}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 55.04754, y: -12.3112755, z: -28.020004}
   m_LocalScale: {x: 6, y: 4.4, z: 5}
   m_Children:
   - {fileID: 7422631735152998192}
@@ -226,8 +226,8 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &848489879783315544
-BoxCollider:
+--- !u!136 &2393251454048011256
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -236,6 +236,7 @@ BoxCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.055137634, y: 1.4907515, z: 0.077539064}
-  m_Center: {x: -0.053574882, y: 0.78517866, z: -0.00615387}
+  m_Radius: 0.01
+  m_Height: 1.6359926
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.7838999, z: 0}
