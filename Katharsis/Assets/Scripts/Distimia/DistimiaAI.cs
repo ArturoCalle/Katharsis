@@ -63,7 +63,7 @@ namespace UnityStandardAssets.Assets.ThirdPerson
                 inicioRuta = 3;
             }else if (SceneController.instance.getCurrentSceneName() == "Comedor")
             {
-                inicioRuta = 1;
+                inicioRuta = 5;
             }
         }
         //Cambia de estados segun las variables de cambio de estado y la escena en la que se encuentre
