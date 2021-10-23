@@ -21,7 +21,7 @@ namespace UnityStandardAssets.Assets.ThirdPerson
         //Persecución Trompi
         private float chaseSpeed = 0f;
         private float radioGolpe = 20f;
-        public float alturagolpe = 20f;
+        public float alturagolpe = 47f;
         //Distimia se destruye cuando estas estan en true y termina la ruta
         private bool SalirSala;
         private bool SalirComedor;
@@ -30,7 +30,7 @@ namespace UnityStandardAssets.Assets.ThirdPerson
         private float anguloDeBusqueda = 120; //angulo de rango de busqueda trompi. Este angulo debe ser el doble al radio de efecto de HeadAim (de -60 a 60, osea 120 para esta funcionalidad)
         private GameObject Jugador;
         //Cambios de estado
-        private float radioBusqueda = 30f;
+        private float radioBusqueda = 40f;
         //LayerMasks
         public LayerMask targetMask;
         public LayerMask obstructionMask;
@@ -39,7 +39,8 @@ namespace UnityStandardAssets.Assets.ThirdPerson
         {
             Tranquilo,
             Enfadado,
-            Ansioso
+            Ansioso,
+            Catarsis
         }
         //Control estado
         private State state;
@@ -76,16 +77,24 @@ namespace UnityStandardAssets.Assets.ThirdPerson
                 {
                     SalirSala = true;
                 }
+            }else if (SceneController.instance.getCurrentSceneName() == "Comedor")
+            {
+                if (SceneTriggerController.instance.findTriggerByName("megafono").recolectado)
+                {
+                    SalirComedor = true;
+                }
             }
             if (!puedeVerTrompi)
             {
                 if(LastState == State.Enfadado)
                 {
                     state = State.Ansioso;
+                    LastState = State.Ansioso;
                 }
-                else
+                else if(LastState == State.Catarsis)
                 {
                     state = State.Tranquilo;
+                    LastState = State.Tranquilo;
                 }
             }
         }
@@ -111,7 +120,7 @@ namespace UnityStandardAssets.Assets.ThirdPerson
             }
         }
 
-        void Pasear(bool ansioso)//Move(Vector3 move, bool enojado, bool golpearArriba, bool golpearAbajo)
+        void Pasear(bool ansioso)//Move(Vector3 move, bool enojado, bool ansioso, bool golpearArriba, bool golpearAbajo)
         {   
             if(RigController.instance != null)
             {
@@ -119,12 +128,12 @@ namespace UnityStandardAssets.Assets.ThirdPerson
             }
             agent.SetDestination( SceneIAController.instance.targets[targetIndex].transform.position );
             agent.speed = velocidadDePaseo;
-            velocidadDePaseo = character.Move(agent.desiredVelocity, false, false, false);
+            velocidadDePaseo = character.Move(agent.desiredVelocity, false, ansioso, false, false);
             //Ruta con NavMesh
             if (Vector3.Distance(transform.position, SceneIAController.instance.targets[targetIndex].transform.position) > 2)
             {
                 agent.SetDestination(SceneIAController.instance.targets[targetIndex].transform.position);
-                velocidadDePaseo = character.Move(agent.desiredVelocity, false, false, false);
+                velocidadDePaseo = character.Move(agent.desiredVelocity, false, ansioso, false, false);
             }else if (Vector3.Distance(transform.position, SceneIAController.instance.targets[targetIndex].transform.position) <= 2)
             { 
                 targetIndex += 1;
@@ -146,25 +155,32 @@ namespace UnityStandardAssets.Assets.ThirdPerson
             }
         }
       
-        void PerseguirTrompi()//Move(Vector3 move, bool enojado, bool golpearArriba, bool golpearAbajo)
+        void PerseguirTrompi()//Move(Vector3 move, bool enojado, bool ansioso, bool golpearArriba, bool golpearAbajo)
         {
             agent.speed = chaseSpeed;
-            chaseSpeed = character.Move(agent.desiredVelocity, true, false, false);
+            chaseSpeed = character.Move(agent.desiredVelocity, true, false, false, false);
             agent.SetDestination(Jugador.transform.position);
             RigController.instance.Mirar(Jugador.transform);
             if (Vector3.Distance(Hombro.transform.position, Jugador.transform.position) <= radioGolpe)
             {
-                if (Vector3.Distance(transform.position, Jugador.transform.position) >= alturagolpe)
+                if (Jugador.transform.position.y >= alturagolpe)
                 {
-                    character.Move(agent.desiredVelocity, true, true, false);
+                    character.Move(agent.desiredVelocity, true, false, true, false) ;
                 }
                 else
                 {
-                    character.Move(agent.desiredVelocity, true, false, true);
+                    character.Move(agent.desiredVelocity, true, false, false, true);
                 }
+                LastState = State.Catarsis;
             }
         }
 
+        /*
+         * Si esta traquilo y ve a trompi pasa a estado enfadado. 
+         * Si trompi escapa (raycast pega en un objeto "obstructionMask") pasa a estar en estado ansioso (Validacion en update)
+         * Si por otro lado, Distimia lanza un golpe a trompi, así no le dé, dejará en la variable LastState el estado Catarsis
+         * El estado catarsis permite que si trompi escapa esta vez Distimia volverá a estar en estado Tranquilo, repitiendo asi el ciclo.
+         * */
         private void FieldOfViewCheck()
         {
             Collider[] rangeChecks = Physics.OverlapSphere(cabeza.transform.position, radioBusqueda, targetMask);
@@ -182,8 +198,18 @@ namespace UnityStandardAssets.Assets.ThirdPerson
                         puedeVerTrompi = true;
                         if(SceneController.instance.getCurrentSceneName() != "Sala")
                         {
-                            state = State.Enfadado;
-                            LastState = State.Enfadado;
+                            if (LastState == State.Tranquilo)
+                            {
+                                state = State.Enfadado;
+                                LastState = State.Enfadado;
+                                anguloDeBusqueda = 360f;
+                            }
+                            else if(LastState == State.Ansioso)
+                            {
+                                state = State.Enfadado;
+                                LastState = State.Enfadado;
+                                anguloDeBusqueda = 120f;
+                            }
                         }
                     }
                     else

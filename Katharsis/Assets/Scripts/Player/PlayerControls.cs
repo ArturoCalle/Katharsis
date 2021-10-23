@@ -113,8 +113,6 @@ public class PlayerControls : MonoBehaviour
     }
     private void Climb()
     {
-        Debug.Log("io" + transform.position);
-        Debug.Log(esc.getTarget().transform.position);
         if (corner)
         {
             if (inputs.z == 1)

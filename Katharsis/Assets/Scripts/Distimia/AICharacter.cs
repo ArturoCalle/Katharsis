@@ -2,7 +2,6 @@ using UnityEngine;
 
 namespace UnityStandardAssets.Assets.ThirdPerson
 {
-	[RequireComponent(typeof(Rigidbody))]
 	[RequireComponent(typeof(Animator))]
 	public class AICharacter : MonoBehaviour
 	{
@@ -13,31 +12,21 @@ namespace UnityStandardAssets.Assets.ThirdPerson
 		[SerializeField] float m_MoveSpeedMultiplier = 1f;
 		[SerializeField] float m_GroundCheckDistance = 0.1f;
 
-		Rigidbody m_Rigidbody;
 		Animator m_Animator;
 		bool m_IsGrounded;
-		float m_OrigGroundCheckDistance;
-		const float k_Half = 0.5f;
 		float m_TurnAmount;
 		float m_ForwardAmount;
 		Vector3 m_GroundNormal;
-		float m_CapsuleHeight;
-		Vector3 m_CapsuleCenter;
-		CapsuleCollider m_Capsule;
 		public bool IsAlive = true;
 
 
 		void Start()
 		{
 			m_Animator = GetComponent<Animator>();
-			m_Rigidbody = GetComponent<Rigidbody>();
-
-			m_Rigidbody.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezeRotationZ;
-			m_OrigGroundCheckDistance = m_GroundCheckDistance;
 		}
 
 
-		public float Move(Vector3 move, bool enojado, bool golpearArriba, bool golpearAbajo)
+		public float Move(Vector3 move, bool enojado, bool ansioso, bool golpearArriba, bool golpearAbajo)
 		{
 			if(golpearArriba)
             {
@@ -55,7 +44,7 @@ namespace UnityStandardAssets.Assets.ThirdPerson
 			{
 				m_Animator.SetBool("Enojado", true);
 				Desplazar(move);
-				return 8f;
+				return 10f;
 			}else
             {
 				m_Animator.SetBool("Enojado", false);
@@ -64,8 +53,22 @@ namespace UnityStandardAssets.Assets.ThirdPerson
 					Desplazar(move);
 					return 5f;
 				}
-				return 0f;
 			}
+			if (ansioso)
+			{
+				m_Animator.speed = 2;
+				Desplazar(move);
+				return 8f;
+            }
+            else
+            {
+				if (m_Animator.GetCurrentAnimatorStateInfo(0).IsTag("Caminar"))
+				{
+					Desplazar(move);
+					return 5f;
+				}
+			}
+			return 0f;
 		}
 
         public void PlayAnsiedad()
@@ -95,10 +98,6 @@ namespace UnityStandardAssets.Assets.ThirdPerson
         void CheckGroundStatus()
 		{
 			RaycastHit hitInfo;
-#if UNITY_EDITOR
-			// helper to visualise the ground check ray in the scene view
-			Debug.DrawLine(transform.position + (Vector3.up * 0.1f), transform.position + (Vector3.up * 0.1f) + (Vector3.down * m_GroundCheckDistance));
-#endif
 			// 0.1f is a small offset to start the ray from inside the character
 			// it is also good to note that the transform position in the sample assets is at the base of the character
 			if (Physics.Raycast(transform.position + (Vector3.up * 0.1f), Vector3.down, out hitInfo, m_GroundCheckDistance))
