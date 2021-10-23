@@ -9,7 +9,10 @@ namespace UnityStandardAssets.Assets.ThirdPerson
         //NavMesh
         private NavMeshAgent agent;
         private AICharacter character;
+        //RayCast
         public GameObject cabeza;
+        public GameObject Hombro;
+        private float distanciaHombro = 10f;
         //Ruta
         private int targetIndex = 0;
         private int inicioRuta;
@@ -17,19 +20,17 @@ namespace UnityStandardAssets.Assets.ThirdPerson
         private float velocidadDePaseo = 0f;
         //Persecución Trompi
         private float chaseSpeed = 0f;
+        private float radioGolpe = 20f;
+        public float alturagolpe = 20f;
         //Distimia se destruye cuando estas estan en true y termina la ruta
         private bool SalirSala;
         private bool SalirComedor;
         //Variables utiles
-        private bool mirarTrompi;
         private bool puedeVerTrompi;
         private float anguloDeBusqueda = 120; //angulo de rango de busqueda trompi. Este angulo debe ser el doble al radio de efecto de HeadAim (de -60 a 60, osea 120 para esta funcionalidad)
         private GameObject Jugador;
-        //Variables de configuración puño y patada
-        public float LimiteGolpeAltoyBajo;
         //Cambios de estado
-        private float radioBusqueda = 20f;
-        private float radioGolpe = 10f;
+        private float radioBusqueda = 30f;
         //LayerMasks
         public LayerMask targetMask;
         public LayerMask obstructionMask;
@@ -151,15 +152,15 @@ namespace UnityStandardAssets.Assets.ThirdPerson
             chaseSpeed = character.Move(agent.desiredVelocity, true, false, false);
             agent.SetDestination(Jugador.transform.position);
             RigController.instance.Mirar(Jugador.transform);
-            if(Vector3.Distance(transform.position, Jugador.transform.position) <= radioGolpe)
+            if (Vector3.Distance(Hombro.transform.position, Jugador.transform.position) <= radioGolpe)
             {
-                if (Jugador.transform.position.y > LimiteGolpeAltoyBajo)
+                if (Vector3.Distance(transform.position, Jugador.transform.position) >= alturagolpe)
                 {
-                    chaseSpeed = character.Move(agent.desiredVelocity, true, true, false);
+                    character.Move(agent.desiredVelocity, true, true, false);
                 }
                 else
                 {
-                    chaseSpeed = character.Move(agent.desiredVelocity, true, false, true);
+                    character.Move(agent.desiredVelocity, true, false, true);
                 }
             }
         }

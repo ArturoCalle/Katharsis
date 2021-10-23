@@ -4,10 +4,7 @@ public class RigController : MonoBehaviour
 {
     public Rig rigMirada;
     public Rig rigPuño;
-    public Rig rigPatada;
-    private float lookSpeed = 1f;
-    private float punchSpeed = 1f;
-    private float kickSpeed = 1f;
+    private float speed = 1f;
     public static RigController instance;
 
     private void Start()
@@ -18,28 +15,19 @@ public class RigController : MonoBehaviour
     public void Mirar(Transform trompi)
     {
         gameObject.transform.GetChild(0).transform.position = trompi.position;
-        rigMirada.weight = Mathf.MoveTowards(rigMirada.weight, 1, lookSpeed * Time.deltaTime);
+        rigMirada.weight = Mathf.MoveTowards(rigMirada.weight, 1, speed * Time.deltaTime);
     }
     public void DejarDeMirar()
     {
-        rigMirada.weight = Mathf.MoveTowards(rigMirada.weight, 0, lookSpeed * Time.deltaTime);
-    }
-    public void Patear(Transform trompi)
-    {
-        gameObject.transform.GetChild(0).transform.position = trompi.position;
-        rigMirada.weight = Mathf.MoveTowards(rigMirada.weight, 1, kickSpeed * Time.deltaTime);
-    }
-    public void DejarDePatear()
-    {
-        rigMirada.weight = Mathf.MoveTowards(rigMirada.weight, 0, kickSpeed * Time.deltaTime);
+        rigMirada.weight = Mathf.MoveTowards(rigMirada.weight, 0, speed * Time.deltaTime);
     }
     public void PegarPuño(Transform trompi)
     {
         gameObject.transform.GetChild(0).transform.position = trompi.position;
-        rigMirada.weight = Mathf.MoveTowards(rigMirada.weight, 1, punchSpeed * Time.deltaTime);
+        rigMirada.weight = Mathf.MoveTowards(rigMirada.weight, 1, speed * Time.deltaTime);
     }
     public void DejarDePegarPuñor()
     {
-        rigMirada.weight = Mathf.MoveTowards(rigMirada.weight, 0, punchSpeed * Time.deltaTime);
+        rigMirada.weight = Mathf.MoveTowards(rigMirada.weight, 0, speed * Time.deltaTime);
     }
 }

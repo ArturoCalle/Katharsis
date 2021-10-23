@@ -64,7 +64,7 @@ namespace UnityStandardAssets.Assets.ThirdPerson
 					Desplazar(move);
 					return 5f;
 				}
-				return 0;
+				return 0f;
 			}
 		}
 
