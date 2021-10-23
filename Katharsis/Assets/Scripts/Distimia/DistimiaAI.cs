@@ -21,7 +21,7 @@ namespace UnityStandardAssets.Assets.ThirdPerson
         //Persecución Trompi
         private float chaseSpeed = 0f;
         private float radioGolpe = 20f;
-        public float alturagolpe = 47f;
+        private float alturagolpe = 5f;
         //Distimia se destruye cuando estas estan en true y termina la ruta
         private bool SalirSala;
         private bool SalirComedor;
@@ -34,7 +34,6 @@ namespace UnityStandardAssets.Assets.ThirdPerson
         //LayerMasks
         public LayerMask targetMask;
         public LayerMask obstructionMask;
-
         public enum State
         {
             Tranquilo,
@@ -45,7 +44,6 @@ namespace UnityStandardAssets.Assets.ThirdPerson
         //Control estado
         private State state;
         private State LastState;
-
         // Start is called before the first frame update
         void Start()
         {
@@ -56,19 +54,22 @@ namespace UnityStandardAssets.Assets.ThirdPerson
             Jugador = SceneController.instance.jugador;
             state = State.Tranquilo;
             LastState = State.Tranquilo;
-            cabeza = transform.GetChild(0).GetChild(4).GetChild(0).GetChild(0).GetChild(0).gameObject;
             StartCoroutine("FSM");
             SalirSala = false;
             SalirComedor = false;
+
             if (SceneController.instance.getCurrentSceneName() == "Sala")
             {
                 inicioRuta = 3;
             }else if (SceneController.instance.getCurrentSceneName() == "Comedor")
             {
                 inicioRuta = 5;
+            }else if (SceneController.instance.getCurrentSceneName() == "Cocina")
+            {
+                inicioRuta = 0;
             }
         }
-        //Cambia de estados segun las variables de cambio de estado y la escena en la que se encuentre
+        //Cambia de estados según las variables de cambio de estado y la escena en la que se encuentre
         private void Update()
         {
             if (SceneController.instance.getCurrentSceneName() == "Sala")
@@ -77,7 +78,8 @@ namespace UnityStandardAssets.Assets.ThirdPerson
                 {
                     SalirSala = true;
                 }
-            }else if (SceneController.instance.getCurrentSceneName() == "Comedor")
+            }
+            else if (SceneController.instance.getCurrentSceneName() == "Comedor")
             {
                 if (SceneTriggerController.instance.findTriggerByName("megafono").recolectado)
                 {
@@ -132,7 +134,7 @@ namespace UnityStandardAssets.Assets.ThirdPerson
             //Ruta con NavMesh
             if (Vector3.Distance(transform.position, SceneIAController.instance.targets[targetIndex].transform.position) > 2)
             {
-                agent.SetDestination(SceneIAController.instance.targets[targetIndex].transform.position);
+                agent.SetDestination( SceneIAController.instance.targets[targetIndex].transform.position );
                 velocidadDePaseo = character.Move(agent.desiredVelocity, false, ansioso, false, false);
             }else if (Vector3.Distance(transform.position, SceneIAController.instance.targets[targetIndex].transform.position) <= 2)
             { 
@@ -163,7 +165,7 @@ namespace UnityStandardAssets.Assets.ThirdPerson
             RigController.instance.Mirar(Jugador.transform);
             if (Vector3.Distance(Hombro.transform.position, Jugador.transform.position) <= radioGolpe)
             {
-                if (Jugador.transform.position.y >= alturagolpe)
+                if ((Jugador.transform.position.y - transform.position.y)  >= alturagolpe)
                 {
                     character.Move(agent.desiredVelocity, true, false, true, false) ;
                 }
@@ -180,7 +182,7 @@ namespace UnityStandardAssets.Assets.ThirdPerson
          * Si trompi escapa (raycast pega en un objeto "obstructionMask") pasa a estar en estado ansioso (Validacion en update)
          * Si por otro lado, Distimia lanza un golpe a trompi, así no le dé, dejará en la variable LastState el estado Catarsis
          * El estado catarsis permite que si trompi escapa esta vez Distimia volverá a estar en estado Tranquilo, repitiendo asi el ciclo.
-         * */
+         */
         private void FieldOfViewCheck()
         {
             Collider[] rangeChecks = Physics.OverlapSphere(cabeza.transform.position, radioBusqueda, targetMask);

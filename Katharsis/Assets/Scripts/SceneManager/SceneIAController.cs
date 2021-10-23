@@ -30,7 +30,7 @@ public class SceneIAController : MonoBehaviour
                     instanciarDistimia(startPos.transform);
                 }
             }
-            else if (SceneController.instance.getCurrentSceneName() == "Comedor")
+            else if (SceneController.instance.getCurrentSceneName() == "Comedor" || SceneController.instance.getCurrentSceneName() == "Cocina")
             {
                 instanciarDistimia(startPos.transform);
             }

@@ -132,7 +132,6 @@ public class PlayerControls : MonoBehaviour
             {
                 transform.RotateAround(esc.getTarget().transform.position, Vector3.up, -2000 * Time.deltaTime);
             }
-            //transform.Translate(moveDir * rotateSpeed * Time.deltaTime * Time.timeScale);
             RotateTowardsXZ(esc.getTarget().transform);
         }
         else
@@ -165,7 +164,7 @@ public class PlayerControls : MonoBehaviour
     public void playArepa()
     {
         AnimatorController.instance.playArepa();
-        this.enabled = false;
+        enabled = false;
     }
     private void StopYvelocity()
     {
