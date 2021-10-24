@@ -49,7 +49,6 @@ public class SceneTriggerController : MonoBehaviour
             {
                 if (r.getEscena() == SceneController.instance.getCurrentSceneName() && r.getRecolectado())
                 {
-                    Debug.Log(triggers.Count);
                     for (int i = 0; i < triggers.Count; i++)
                     {
                         if (triggers[i].numero == r.getNumNota())
