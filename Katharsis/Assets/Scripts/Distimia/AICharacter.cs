@@ -72,7 +72,6 @@ namespace UnityStandardAssets.Assets.ThirdPerson
 					return 0;
                 }
 			}
-			return 0f;
 		}
 
         public void PlayAnsiedad()
