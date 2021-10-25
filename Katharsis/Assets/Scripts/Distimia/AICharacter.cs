@@ -66,7 +66,11 @@ namespace UnityStandardAssets.Assets.ThirdPerson
 				{
 					Desplazar(move);
 					return 5f;
-				}
+                }
+                else
+                {
+					return 0;
+                }
 			}
 			return 0f;
 		}
@@ -88,7 +92,7 @@ namespace UnityStandardAssets.Assets.ThirdPerson
 			ApplyExtraTurnRotation();
 		}
 
-		void ApplyExtraTurnRotation()
+		public void ApplyExtraTurnRotation()
 		{
 			// help the character turn faster (this is in addition to root rotation in the animation)
 			float turnSpeed = Mathf.Lerp(m_StationaryTurnSpeed, m_MovingTurnSpeed, m_ForwardAmount);
