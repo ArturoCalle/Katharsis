@@ -13433,6 +13433,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4638220265617034204}
     m_Modifications:
+    - target: {fileID: 974177957, guid: 1ecd245678500fc4ba0d354bb4fa59f7, type: 3}
+      propertyPath: tipo
+      value: 77
+      objectReference: {fileID: 0}
+    - target: {fileID: 974177957, guid: 1ecd245678500fc4ba0d354bb4fa59f7, type: 3}
+      propertyPath: escena
+      value: Comedor
+      objectReference: {fileID: 0}
+    - target: {fileID: 974177957, guid: 1ecd245678500fc4ba0d354bb4fa59f7, type: 3}
+      propertyPath: nombre
+      value: Privacidad y espacio
+      objectReference: {fileID: 0}
+    - target: {fileID: 974177957, guid: 1ecd245678500fc4ba0d354bb4fa59f7, type: 3}
+      propertyPath: numNota
+      value: 17
+      objectReference: {fileID: 0}
     - target: {fileID: 2007779952465330493, guid: 1ecd245678500fc4ba0d354bb4fa59f7, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -13479,10 +13495,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2007779952465330495, guid: 1ecd245678500fc4ba0d354bb4fa59f7, type: 3}
       propertyPath: m_Name
-      value: Recolectable
+      value: Privacidad y espacio
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1ecd245678500fc4ba0d354bb4fa59f7, type: 3}
+--- !u!1 &1771618284 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2007779952465330495, guid: 1ecd245678500fc4ba0d354bb4fa59f7, type: 3}
+  m_PrefabInstance: {fileID: 1771618283}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1774623973
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15629,7 +15650,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3441940406830483963, guid: 59cf6268e65325147863c234d546485a, type: 3}
       propertyPath: notas.Array.size
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3441940406830483963, guid: 59cf6268e65325147863c234d546485a, type: 3}
       propertyPath: notas.Array.data[0]
@@ -15659,6 +15680,10 @@ PrefabInstance:
       propertyPath: notas.Array.data[6]
       value: 
       objectReference: {fileID: 157157180}
+    - target: {fileID: 3441940406830483963, guid: 59cf6268e65325147863c234d546485a, type: 3}
+      propertyPath: notas.Array.data[7]
+      value: 
+      objectReference: {fileID: 1771618284}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 59cf6268e65325147863c234d546485a, type: 3}
 --- !u!1001 &568209370352640943
