@@ -9,6 +9,7 @@ public class Cinematica : MonoBehaviour
     public PlayableDirector Timeline;
     public GameObject cutscenecam;
     public bool reproducido = true;
+    public float duracion;
     void Start()
     {
         Debug.Log(Timeline.duration.ToString());
@@ -18,7 +19,16 @@ public class Cinematica : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(Timeline.time.ToString());
+        duracion -= Time.deltaTime;
+        if (duracion <= 0)
+        {
+            Timeline.Stop();
+            cutscenecam.SetActive(false);
+            PlayerControls.instance.enabled = true;
+            gameObject.SetActive(false);
+
+
+        }        
         if(Timeline.state.ToString() != "Played")
         {
             reproducido = false;
@@ -30,5 +40,6 @@ public class Cinematica : MonoBehaviour
     {
         cutscenecam.SetActive(true);
         Timeline.Play();
+        PlayerControls.instance.enabled = false;
     }
 }

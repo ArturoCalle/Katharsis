@@ -7,7 +7,7 @@ public class CheckpointPuerta : MonoBehaviour
     public string escenaDestino;
     void Update()
     {
-        this.gameObject.transform.Rotate(0, 10, 0 * Time.deltaTime);
+        this.gameObject.transform.Rotate(0, 100* Time.deltaTime, 0);
     }
     private void OnTriggerEnter(Collider other)
     {
