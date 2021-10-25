@@ -1,0 +1,349 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!200 &20000000
+ShaderVariantCollection:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: ajustes graficos
+  m_Shaders:
+  - first: {fileID: 10770, guid: 0000000000000000f000000000000000, type: 0}
+    second:
+      variants:
+      - keywords: 
+        passType: 0
+      - keywords: BILLBOARD_FACE_CAMERA_POS FOG_EXP2
+        passType: 0
+      - keywords: UNITY_UI_ALPHACLIP
+        passType: 0
+      - keywords: BILLBOARD_FACE_CAMERA_POS FOG_EXP2 UNITY_UI_ALPHACLIP
+        passType: 0
+  - first: {fileID: 66, guid: 0000000000000000f000000000000000, type: 0}
+    second:
+      variants:
+      - keywords: 
+        passType: 0
+  - first: {fileID: 45, guid: 0000000000000000f000000000000000, type: 0}
+    second:
+      variants:
+      - keywords: DIRECTIONAL FOG_EXP2 LIGHTPROBE_SH
+        passType: 4
+      - keywords: BILLBOARD_FACE_CAMERA_POS FOG_EXP2 LIGHTPROBE_SH
+        passType: 4
+      - keywords: BILLBOARD_FACE_CAMERA_POS FOG_EXP2 SPOT
+        passType: 5
+      - keywords: 
+        passType: 8
+      - keywords: SHADOWS_DEPTH
+        passType: 8
+  - first: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
+    second:
+      variants:
+      - keywords: DIRECTIONAL DIRLIGHTMAP_COMBINED FOG_EXP2 LIGHTMAP_ON
+        passType: 4
+      - keywords: DIRECTIONAL FOG_EXP2 LIGHTPROBE_SH
+        passType: 4
+      - keywords: DIRECTIONAL DIRLIGHTMAP_COMBINED FOG_EXP2 LIGHTMAP_ON _EMISSION
+        passType: 4
+      - keywords: DIRECTIONAL FOG_EXP2 LIGHTPROBE_SH _EMISSION
+        passType: 4
+      - keywords: BILLBOARD_FACE_CAMERA_POS DIRLIGHTMAP_COMBINED FOG_EXP2 LIGHTMAP_ON
+        passType: 4
+      - keywords: BILLBOARD_FACE_CAMERA_POS FOG_EXP2 LIGHTPROBE_SH
+        passType: 4
+      - keywords: BILLBOARD_FACE_CAMERA_POS DIRLIGHTMAP_COMBINED FOG_EXP2 LIGHTMAP_ON
+          _EMISSION
+        passType: 4
+      - keywords: BILLBOARD_FACE_CAMERA_POS FOG_EXP2 LIGHTPROBE_SH _EMISSION
+        passType: 4
+      - keywords: BILLBOARD_FACE_CAMERA_POS FOG_EXP2 LIGHTPROBE_SH VERTEXLIGHT_ON
+        passType: 4
+      - keywords: BILLBOARD_FACE_CAMERA_POS DIRLIGHTMAP_COMBINED FOG_EXP2 LIGHTMAP_ON
+          _GLOSSINESS_FROM_BASE_ALPHA _SPECULAR_COLOR
+        passType: 4
+      - keywords: BILLBOARD_FACE_CAMERA_POS FOG_EXP2 LIGHTPROBE_SH _GLOSSINESS_FROM_BASE_ALPHA
+          _SPECULAR_COLOR
+        passType: 4
+      - keywords: DIRECTIONAL LIGHTPROBE_SH _NORMALMAP
+        passType: 4
+      - keywords: DIRECTIONAL DIRLIGHTMAP_COMBINED FOG_EXP2 LIGHTMAP_ON _NORMALMAP
+        passType: 4
+      - keywords: DIRECTIONAL FOG_EXP2 LIGHTPROBE_SH _NORMALMAP
+        passType: 4
+      - keywords: BILLBOARD_FACE_CAMERA_POS DIRLIGHTMAP_COMBINED FOG_EXP2 LIGHTMAP_ON
+          _NORMALMAP
+        passType: 4
+      - keywords: BILLBOARD_FACE_CAMERA_POS FOG_EXP2 LIGHTPROBE_SH _NORMALMAP
+        passType: 4
+      - keywords: BILLBOARD_FACE_CAMERA_POS DIRECTIONAL LIGHTPROBE_SH UNITY_HDR_ON
+          _NORMALMAP
+        passType: 4
+      - keywords: DIRECTIONAL DIRLIGHTMAP_COMBINED FOG_EXP2 LIGHTMAP_ON _ALPHATEST_ON
+        passType: 4
+      - keywords: DIRECTIONAL FOG_EXP2 LIGHTPROBE_SH _ALPHATEST_ON
+        passType: 4
+      - keywords: DIRECTIONAL FOG_EXP2 LIGHTPROBE_SH _ALPHATEST_ON _EMISSION
+        passType: 4
+      - keywords: BILLBOARD_FACE_CAMERA_POS DIRLIGHTMAP_COMBINED FOG_EXP2 LIGHTMAP_ON
+          POINT _ALPHATEST_ON
+        passType: 4
+      - keywords: BILLBOARD_FACE_CAMERA_POS FOG_EXP2 LIGHTPROBE_SH SPOT _ALPHATEST_ON
+        passType: 4
+      - keywords: BILLBOARD_FACE_CAMERA_POS FOG_EXP2 LIGHTPROBE_SH POINT _ALPHATEST_ON
+        passType: 4
+      - keywords: BILLBOARD_FACE_CAMERA_POS FOG_EXP2 LIGHTPROBE_SH SPOT _ALPHATEST_ON
+          _EMISSION
+        passType: 4
+      - keywords: BILLBOARD_FACE_CAMERA_POS FOG_EXP2 LIGHTPROBE_SH POINT _ALPHATEST_ON
+          _EMISSION
+        passType: 4
+      - keywords: DIRECTIONAL FOG_EXP2 LIGHTPROBE_SH _ALPHABLEND_ON
+        passType: 4
+      - keywords: BILLBOARD_FACE_CAMERA_POS DIRLIGHTMAP_COMBINED FOG_EXP2 LIGHTMAP_ON
+          _ALPHABLEND_ON
+        passType: 4
+      - keywords: BILLBOARD_FACE_CAMERA_POS FOG_EXP2 LIGHTPROBE_SH _ALPHABLEND_ON
+        passType: 4
+      - keywords: BILLBOARD_FACE_CAMERA_POS FOG_EXP2 LIGHTPROBE_SH SPOT _ALPHABLEND_ON
+        passType: 4
+      - keywords: DIRECTIONAL DIRLIGHTMAP_COMBINED FOG_EXP2 LIGHTMAP_ON _ALPHAPREMULTIPLY_ON
+        passType: 4
+      - keywords: DIRECTIONAL FOG_EXP2 LIGHTPROBE_SH _ALPHAPREMULTIPLY_ON
+        passType: 4
+      - keywords: DIRECTIONAL DIRLIGHTMAP_COMBINED FOG_EXP2 LIGHTMAP_ON _ALPHAPREMULTIPLY_ON
+          _EMISSION
+        passType: 4
+      - keywords: DIRECTIONAL FOG_EXP2 LIGHTPROBE_SH _ALPHAPREMULTIPLY_ON _EMISSION
+        passType: 4
+      - keywords: BILLBOARD_FACE_CAMERA_POS DIRLIGHTMAP_COMBINED FOG_EXP2 LIGHTMAP_ON
+          _ALPHAPREMULTIPLY_ON
+        passType: 4
+      - keywords: BILLBOARD_FACE_CAMERA_POS FOG_EXP2 LIGHTPROBE_SH _ALPHAPREMULTIPLY_ON
+        passType: 4
+      - keywords: BILLBOARD_FACE_CAMERA_POS FOG_EXP2 LIGHTPROBE_SH SPOT _ALPHAPREMULTIPLY_ON
+        passType: 4
+      - keywords: BILLBOARD_FACE_CAMERA_POS DIRLIGHTMAP_COMBINED FOG_EXP2 LIGHTMAP_ON
+          _ALPHAPREMULTIPLY_ON _EMISSION
+        passType: 4
+      - keywords: BILLBOARD_FACE_CAMERA_POS FOG_EXP2 LIGHTPROBE_SH _ALPHAPREMULTIPLY_ON
+          _EMISSION
+        passType: 4
+      - keywords: DIRECTIONAL FOG_EXP2 LIGHTPROBE_SH _METALLICGLOSSMAP
+        passType: 4
+      - keywords: BILLBOARD_FACE_CAMERA_POS FOG_EXP2 LIGHTPROBE_SH _METALLICGLOSSMAP
+          _SPECGLOSSMAP
+        passType: 4
+      - keywords: BILLBOARD_FACE_CAMERA_POS DIRECTIONAL LIGHTPROBE_SH UNITY_HDR_ON
+          _METALLICGLOSSMAP _SPECGLOSSMAP
+        passType: 4
+      - keywords: DIRECTIONAL FOG_EXP2 LIGHTPROBE_SH _METALLICGLOSSMAP _NORMALMAP
+        passType: 4
+      - keywords: BILLBOARD_FACE_CAMERA_POS FOG_EXP2 LIGHTPROBE_SH _METALLICGLOSSMAP
+          _NORMALMAP
+        passType: 4
+      - keywords: DIRECTIONAL DIRLIGHTMAP_COMBINED FOG_EXP2 LIGHTMAP_ON _NORMALMAP
+          _SMOOTHNESS_TEXTURE_ALBEDO_CHANNEL_A
+        passType: 4
+      - keywords: DIRECTIONAL FOG_EXP2 LIGHTPROBE_SH _NORMALMAP _SMOOTHNESS_TEXTURE_ALBEDO_CHANNEL_A
+        passType: 4
+      - keywords: BILLBOARD_FACE_CAMERA_POS DIRLIGHTMAP_COMBINED FOG_EXP2 LIGHTMAP_ON
+          _NORMALMAP _SMOOTHNESS_TEXTURE_ALBEDO_CHANNEL_A
+        passType: 4
+      - keywords: DIRECTIONAL FOG_EXP2 LIGHTPROBE_SH _ALPHAPREMULTIPLY_ON _SMOOTHNESS_TEXTURE_ALBEDO_CHANNEL_A
+        passType: 4
+      - keywords: BILLBOARD_FACE_CAMERA_POS FOG_EXP2 LIGHTPROBE_SH _ALPHAPREMULTIPLY_ON
+          _SMOOTHNESS_TEXTURE_ALBEDO_CHANNEL_A
+        passType: 4
+      - keywords: BILLBOARD_FACE_CAMERA_POS FOG_EXP2 LIGHTPROBE_SH SPOT _ALPHAPREMULTIPLY_ON
+          _SMOOTHNESS_TEXTURE_ALBEDO_CHANNEL_A
+        passType: 4
+      - keywords: DIRECTIONAL DIRLIGHTMAP_COMBINED FOG_EXP2 LIGHTMAP_ON _GLOSSYREFLECTIONS_OFF
+        passType: 4
+      - keywords: BILLBOARD_FACE_CAMERA_POS DIRLIGHTMAP_COMBINED FOG_EXP2 LIGHTMAP_ON
+          _GLOSSYREFLECTIONS_OFF
+        passType: 4
+      - keywords: BILLBOARD_FACE_CAMERA_POS FOG_EXP2 LIGHTPROBE_SH _GLOSSYREFLECTIONS_OFF
+        passType: 4
+      - keywords: FOG_EXP2 POINT
+        passType: 5
+      - keywords: BILLBOARD_FACE_CAMERA_POS FOG_EXP2 SPOT
+        passType: 5
+      - keywords: BILLBOARD_FACE_CAMERA_POS FOG_EXP2 POINT
+        passType: 5
+      - keywords: BILLBOARD_FACE_CAMERA_POS FOG_EXP2 SPOT _EMISSION
+        passType: 5
+      - keywords: BILLBOARD_FACE_CAMERA_POS FOG_EXP2 SPOT _GLOSSINESS_FROM_BASE_ALPHA
+          _SPECULAR_COLOR
+        passType: 5
+      - keywords: BILLBOARD_FACE_CAMERA_POS FOG_EXP2 POINT _GLOSSINESS_FROM_BASE_ALPHA
+          _SPECULAR_COLOR
+        passType: 5
+      - keywords: DIRECTIONAL _NORMALMAP
+        passType: 5
+      - keywords: FOG_EXP2 POINT _NORMALMAP
+        passType: 5
+      - keywords: BILLBOARD_FACE_CAMERA_POS FOG_EXP2 SPOT _NORMALMAP
+        passType: 5
+      - keywords: BILLBOARD_FACE_CAMERA_POS FOG_EXP2 POINT _NORMALMAP
+        passType: 5
+      - keywords: BILLBOARD_FACE_CAMERA_POS DIRECTIONAL UNITY_HDR_ON _NORMALMAP
+        passType: 5
+      - keywords: BILLBOARD_FACE_CAMERA_POS FOG_EXP2 SPOT _ALPHATEST_ON
+        passType: 5
+      - keywords: BILLBOARD_FACE_CAMERA_POS FOG_EXP2 SPOT _ALPHATEST_ON _EMISSION
+        passType: 5
+      - keywords: BILLBOARD_FACE_CAMERA_POS FOG_EXP2 SPOT _ALPHABLEND_ON
+        passType: 5
+      - keywords: FOG_EXP2 SPOT _ALPHAPREMULTIPLY_ON
+        passType: 5
+      - keywords: BILLBOARD_FACE_CAMERA_POS FOG_EXP2 SPOT _ALPHAPREMULTIPLY_ON _EMISSION
+        passType: 5
+      - keywords: BILLBOARD_FACE_CAMERA_POS FOG_EXP2 SPOT _METALLICGLOSSMAP _SPECGLOSSMAP
+        passType: 5
+      - keywords: BILLBOARD_FACE_CAMERA_POS DIRECTIONAL UNITY_HDR_ON _METALLICGLOSSMAP
+          _SPECGLOSSMAP
+        passType: 5
+      - keywords: BILLBOARD_FACE_CAMERA_POS FOG_EXP2 SPOT _METALLICGLOSSMAP _NORMALMAP
+        passType: 5
+      - keywords: BILLBOARD_FACE_CAMERA_POS FOG_EXP2 SPOT _NORMALMAP _SMOOTHNESS_TEXTURE_ALBEDO_CHANNEL_A
+        passType: 5
+      - keywords: BILLBOARD_FACE_CAMERA_POS FOG_EXP2 SPOT _GLOSSYREFLECTIONS_OFF
+        passType: 5
+      - keywords: 
+        passType: 8
+      - keywords: SHADOWS_DEPTH
+        passType: 8
+      - keywords: _EMISSION
+        passType: 8
+      - keywords: BILLBOARD_FACE_CAMERA_POS SHADOWS_CUBE SHADOWS_SOFT
+        passType: 8
+      - keywords: _GLOSSINESS_FROM_BASE_ALPHA _SPECULAR_COLOR
+        passType: 8
+      - keywords: _NORMALMAP
+        passType: 8
+      - keywords: _ALPHATEST_ON
+        passType: 8
+      - keywords: SHADOWS_DEPTH _ALPHATEST_ON
+        passType: 8
+      - keywords: _ALPHATEST_ON _EMISSION
+        passType: 8
+      - keywords: _ALPHABLEND_ON
+        passType: 8
+      - keywords: SHADOWS_DEPTH _ALPHABLEND_ON
+        passType: 8
+      - keywords: _ALPHAPREMULTIPLY_ON
+        passType: 8
+      - keywords: SHADOWS_DEPTH _ALPHAPREMULTIPLY_ON
+        passType: 8
+      - keywords: _ALPHAPREMULTIPLY_ON _EMISSION
+        passType: 8
+      - keywords: SHADOWS_DEPTH _METALLICGLOSSMAP
+        passType: 8
+      - keywords: _METALLICGLOSSMAP _SPECGLOSSMAP
+        passType: 8
+      - keywords: _METALLICGLOSSMAP _NORMALMAP
+        passType: 8
+      - keywords: SHADOWS_DEPTH _SMOOTHNESS_TEXTURE_ALBEDO_CHANNEL_A
+        passType: 8
+      - keywords: _NORMALMAP _SMOOTHNESS_TEXTURE_ALBEDO_CHANNEL_A
+        passType: 8
+      - keywords: _ALPHAPREMULTIPLY_ON _SMOOTHNESS_TEXTURE_ALBEDO_CHANNEL_A
+        passType: 8
+      - keywords: SHADOWS_DEPTH _ALPHAPREMULTIPLY_ON _SMOOTHNESS_TEXTURE_ALBEDO_CHANNEL_A
+        passType: 8
+      - keywords: _GLOSSYREFLECTIONS_OFF
+        passType: 8
+      - keywords: 
+        passType: 11
+      - keywords: _EMISSION
+        passType: 11
+      - keywords: BILLBOARD_FACE_CAMERA_POS FOG_EXP2
+        passType: 11
+      - keywords: BILLBOARD_FACE_CAMERA_POS FOG_EXP2 _EMISSION
+        passType: 11
+      - keywords: BILLBOARD_FACE_CAMERA_POS FOG_EXP2 _GLOSSINESS_FROM_BASE_ALPHA
+          _SPECULAR_COLOR
+        passType: 11
+      - keywords: BILLBOARD_FACE_CAMERA_POS FOG_EXP2 _ALPHATEST_ON
+        passType: 11
+      - keywords: BILLBOARD_FACE_CAMERA_POS FOG_EXP2 _ALPHAPREMULTIPLY_ON _EMISSION
+        passType: 11
+      - keywords: _SMOOTHNESS_TEXTURE_ALBEDO_CHANNEL_A
+        passType: 11
+      - keywords: BILLBOARD_FACE_CAMERA_POS FOG_EXP2 _NORMALMAP _SMOOTHNESS_TEXTURE_ALBEDO_CHANNEL_A
+        passType: 11
+  - first: {fileID: 9000, guid: 0000000000000000f000000000000000, type: 0}
+    second:
+      variants:
+      - keywords: 
+        passType: 0
+  - first: {fileID: 9001, guid: 0000000000000000f000000000000000, type: 0}
+    second:
+      variants:
+      - keywords: 
+        passType: 0
+  - first: {fileID: 9002, guid: 0000000000000000f000000000000000, type: 0}
+    second:
+      variants:
+      - keywords: 
+        passType: 0
+  - first: {fileID: 9003, guid: 0000000000000000f000000000000000, type: 0}
+    second:
+      variants:
+      - keywords: 
+        passType: 0
+  - first: {fileID: 9004, guid: 0000000000000000f000000000000000, type: 0}
+    second:
+      variants:
+      - keywords: 
+        passType: 0
+  - first: {fileID: 9007, guid: 0000000000000000f000000000000000, type: 0}
+    second:
+      variants:
+      - keywords: 
+        passType: 0
+  - first: {fileID: 9101, guid: 0000000000000000f000000000000000, type: 0}
+    second:
+      variants:
+      - keywords: 
+        passType: 0
+  - first: {fileID: 9103, guid: 0000000000000000f000000000000000, type: 0}
+    second:
+      variants:
+      - keywords: 
+        passType: 0
+      - keywords: FOG_EXP2
+        passType: 0
+      - keywords: BILLBOARD_FACE_CAMERA_POS FOG_EXP2
+        passType: 0
+      - keywords: BILLBOARD_FACE_CAMERA_POS FOG_EXP2 UNITY_HDR_ON
+        passType: 0
+  - first: {fileID: 15100, guid: 0000000000000000f000000000000000, type: 0}
+    second:
+      variants:
+      - keywords: 
+        passType: 0
+      - keywords: BILLBOARD_FACE_CAMERA_POS FOG_EXP2
+        passType: 0
+      - keywords: BILLBOARD_FACE_CAMERA_POS FOG_EXP2 UNITY_HDR_ON
+        passType: 0
+  - first: {fileID: 15102, guid: 0000000000000000f000000000000000, type: 0}
+    second:
+      variants:
+      - keywords: 
+        passType: 0
+      - keywords: BILLBOARD_FACE_CAMERA_POS FOG_EXP2
+        passType: 0
+      - keywords: BILLBOARD_FACE_CAMERA_POS FOG_EXP2 UNITY_HDR_ON
+        passType: 0
+  - first: {fileID: 4800000, guid: e6e9a19c3678ded42a3bc431ebef7dbd, type: 3}
+    second:
+      variants:
+      - keywords: 
+        passType: 0
+  - first: {fileID: 4800000, guid: 5ef7bdb14a8f23043805e41692d10787, type: 3}
+    second:
+      variants:
+      - keywords: 
+        passType: 8

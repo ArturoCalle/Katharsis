@@ -12,19 +12,18 @@ namespace UnityStandardAssets.Assets.ThirdPerson
         //RayCast
         public GameObject cabeza;
         public GameObject Hombro;
-        private float distanciaHombro = 10f;
         //Ruta
         private int targetIndex = 0;
         private int inicioRuta;
-        private int finRuta;
         private float velocidadDePaseo = 0f;
         //Persecución Trompi
         private float chaseSpeed = 0f;
-        private float radioGolpe = 20f;
+        private float radioGolpe = 17f;
         private float alturagolpe = 5f;
         //Distimia se destruye cuando estas estan en true y termina la ruta
         private bool SalirSala;
         private bool SalirComedor;
+        private bool SalirCocina;
         //Variables utiles
         private bool puedeVerTrompi;
         private float anguloDeBusqueda = 120; //angulo de rango de busqueda trompi. Este angulo debe ser el doble al radio de efecto de HeadAim (de -60 a 60, osea 120 para esta funcionalidad)
@@ -57,6 +56,7 @@ namespace UnityStandardAssets.Assets.ThirdPerson
             StartCoroutine("FSM");
             SalirSala = false;
             SalirComedor = false;
+            SalirCocina = false;
 
             if (SceneController.instance.getCurrentSceneName() == "Sala")
             {
@@ -84,6 +84,13 @@ namespace UnityStandardAssets.Assets.ThirdPerson
                 if (SceneTriggerController.instance.findTriggerByName("megafono").recolectado)
                 {
                     SalirComedor = true;
+                }
+            }
+            else if (SceneController.instance.getCurrentSceneName() == "Cocina")
+            {
+                if (SceneTriggerController.instance.findTriggerByName("megafono").recolectado)
+                {
+                    SalirCocina = true;
                 }
             }
             if (!puedeVerTrompi)
@@ -145,11 +152,10 @@ namespace UnityStandardAssets.Assets.ThirdPerson
                 }
                 if (targetIndex == SceneIAController.instance.targets.Length)
                 {
-                    if (SalirSala)
+                    if (SalirSala || SalirComedor || SalirCocina)
                     {
                         SceneIAController.instance.destroyDistimia();
-                    }
-                    else
+                    }else
                     {
                         targetIndex = inicioRuta;
                     }
@@ -167,7 +173,7 @@ namespace UnityStandardAssets.Assets.ThirdPerson
             {
                 if ((Jugador.transform.position.y - transform.position.y)  >= alturagolpe)
                 {
-                    character.Move(agent.desiredVelocity, true, false, true, false) ;
+                    character.Move(agent.desiredVelocity, true, false, true, false);
                 }
                 else
                 {

@@ -16,6 +16,7 @@ public class UIController : MonoBehaviour
     public GameObject panelNotas;
     public GameObject panelMuerte;
     public GameObject NotaUI;
+    public GameObject panelControles;
 
     Nota nota;
 
@@ -90,6 +91,11 @@ public class UIController : MonoBehaviour
                     mp.setLock(true);
                     mp.seleccionar();
                 }
+                else if (panelControles.activeInHierarchy)
+                {
+                    panelControles.SetActive(false);
+                    po.setLock(false);
+                }
                 else if (!po.isLocked())
                 {
                     po.setLock(true);
@@ -105,9 +111,18 @@ public class UIController : MonoBehaviour
             {
                 if (panelOpciones.activeInHierarchy)
                 {
-                    po.setLock(true);
-                    panelOpciones.SetActive(false);
-                    mp.setLock(false);
+                    if (panelControles.activeInHierarchy)
+                    {
+                        panelControles.SetActive(false);
+                        po.setLock(false);
+                    }
+                    else
+                    {
+
+                        po.setLock(true);
+                        panelOpciones.SetActive(false);
+                        mp.setLock(false);
+                    }
                 }
                 else if (panelNotas.activeInHierarchy)
                 {
