@@ -104,7 +104,7 @@ public class PanelOpciones : MonoBehaviour
                 break;
             case 2:
                 setLock(true);
-                mp.setLock(false);
+                UIController.instance.panelControles.SetActive(true);
                 //TO DO controles 
                 break;
             case 3:

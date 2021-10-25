@@ -3,7 +3,8 @@ using UnityEngine.Animations.Rigging;
 public class RigController : MonoBehaviour
 {
     public Rig rigMirada;
-    public Rig rigPuño;
+    public Rig rigLH;
+    public Rig rigRH;
     private float speed = 1f;
     public static RigController instance;
 
@@ -11,23 +12,19 @@ public class RigController : MonoBehaviour
     {
         instance = this;
     }
-
     public void Mirar(Transform trompi)
     {
-        gameObject.transform.GetChild(0).transform.position = trompi.position;
+        rigMirada.gameObject.transform.GetChild(0).transform.position = trompi.position;
         rigMirada.weight = Mathf.MoveTowards(rigMirada.weight, 1, speed * Time.deltaTime);
+        SetTarget(trompi);
     }
     public void DejarDeMirar()
     {
         rigMirada.weight = Mathf.MoveTowards(rigMirada.weight, 0, speed * Time.deltaTime);
     }
-    public void PegarPuño(Transform trompi)
+    private void SetTarget(Transform trompi)
     {
-        gameObject.transform.GetChild(0).transform.position = trompi.position;
-        rigMirada.weight = Mathf.MoveTowards(rigMirada.weight, 1, speed * Time.deltaTime);
-    }
-    public void DejarDePegarPuñor()
-    {
-        rigMirada.weight = Mathf.MoveTowards(rigMirada.weight, 0, speed * Time.deltaTime);
+        rigLH.gameObject.transform.GetChild(0).transform.GetChild(0).transform.position = trompi.position;
+        rigRH.gameObject.transform.GetChild(0).transform.GetChild(0).transform.position = trompi.position;
     }
 }
