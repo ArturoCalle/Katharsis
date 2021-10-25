@@ -80,9 +80,13 @@ public class SceneTrigger : MonoBehaviour
     }
     public void recolectar(bool recolectar)
     {
-        foreach (GameObject go in objetosBloqueados)
+        if(automatico)
         {
-            go.SetActive(true);
+
+            foreach (GameObject go in objetosBloqueados)
+            {
+                go.SetActive(true);
+            }
         }
         aviso.enabled = false;
         recolectado = recolectar;
