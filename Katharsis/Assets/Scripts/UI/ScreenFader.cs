@@ -7,7 +7,7 @@ public class ScreenFader : MonoBehaviour
 {
     Color objectColor;
     public Image blackScreen;
-    public bool fadeOut()
+    public void fadeOut()
     {
         float fadeSpeed = 087.45E-2f;
 
@@ -16,7 +16,17 @@ public class ScreenFader : MonoBehaviour
         fadeAmount = objectColor.a + (fadeSpeed * Time.deltaTime);
         objectColor = new Color(objectColor.r, objectColor.g, objectColor.b, fadeAmount);
         blackScreen.GetComponent<Image>().color = objectColor;
-        return true;
+    }
+    public string fadeOutCorutine()
+    {
+        float fadeSpeed = 087.45E-2f;
+
+        objectColor = blackScreen.GetComponent<Image>().color;
+        float fadeAmount;
+        fadeAmount = objectColor.a + (fadeSpeed * Time.deltaTime);
+        objectColor = new Color(objectColor.r, objectColor.g, objectColor.b, fadeAmount);
+        blackScreen.GetComponent<Image>().color = objectColor;
+        return null;
     }
     public bool fadeIn()
     {
