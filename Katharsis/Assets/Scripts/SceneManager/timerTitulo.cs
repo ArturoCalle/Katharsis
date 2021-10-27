@@ -7,64 +7,48 @@ using UnityEngine.UI;
 public class timerTitulo : MonoBehaviour
 {
     public float tiempo;
-    Color objectColor;
-    public Image blackScreen;
+    public GameObject titulo;
+    public GameObject advertencia;
+    public ScreenFader fader;
     bool fadedIn;
     // Start is called before the first frame update
     void Start()
     {
+        tiempo = 1;
         fadedIn = false;
+        titulo.SetActive(true);
+        advertencia.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
-        
-        if(!fadedIn)
+
+        if (!fadedIn)
         {
-            fadedIn=fadeIn();   
+            fadedIn = fader.fadeIn();
         }
         else
         {
             tiempo -= Time.deltaTime;
             if (tiempo <= 0)
             {
-                fadeOut();
-                if(blackScreen.GetComponent<Image>().color.a >= 1)
+                fader.fadeOut();
+                if (fader.getTransparency() >= 1)
                 {
-                    SceneManager.LoadScene("Pantalla Principal");
+                    if (titulo.activeInHierarchy)
+                    {
+                        tiempo = 13.0f;
+                        titulo.SetActive(false);
+                        fadedIn = false;
+                        advertencia.SetActive(true);
+                    }
+                    else if (advertencia.activeInHierarchy)
+                    {
+                        SceneManager.LoadScene("Pantalla Principal");
+                    }
                 }
             }
         }
-        
-    }
-    private void fadeOut()
-    {
-        float fadeSpeed = 087.45E-2f;
-    
-        objectColor = blackScreen.GetComponent<Image>().color;
-        float fadeAmount;
-        fadeAmount = objectColor.a + (fadeSpeed * Time.deltaTime);
-        objectColor = new Color(objectColor.r, objectColor.g, objectColor.b, fadeAmount);
-        blackScreen.GetComponent<Image>().color = objectColor;
-    }
-    private bool fadeIn()
-    {
-        float fadeSpeed = 087.45E-2f;
-
-        objectColor = blackScreen.GetComponent<Image>().color;
-        float fadeAmount;
-        fadeAmount = objectColor.a - (fadeSpeed * Time.deltaTime);
-        objectColor = new Color(objectColor.r, objectColor.g, objectColor.b, fadeAmount);
-        blackScreen.GetComponent<Image>().color = objectColor;
-        if (blackScreen.GetComponent<Image>().color.a > 0)
-        {
-            
-            return false;
-        }
-        else
-        {
-            return true;
-        }
-    }
+    } 
 }

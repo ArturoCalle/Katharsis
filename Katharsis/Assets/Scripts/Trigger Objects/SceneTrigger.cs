@@ -80,7 +80,7 @@ public class SceneTrigger : MonoBehaviour
     }
     public void recolectar(bool recolectar)
     {
-        if(automatico)
+        if(!automatico)
         {
 
             foreach (GameObject go in objetosBloqueados)
