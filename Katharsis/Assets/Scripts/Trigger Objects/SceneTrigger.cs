@@ -85,7 +85,10 @@ public class SceneTrigger : MonoBehaviour
 
             foreach (GameObject go in objetosBloqueados)
             {
-                go.SetActive(true);
+                if(go.GetComponent<Cinematica>() == null)
+                {
+                    go.SetActive(true);
+                }
             }
         }
         aviso.enabled = false;

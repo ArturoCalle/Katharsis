@@ -136,13 +136,19 @@ public class SceneController : MonoBehaviour
     }
     public void CargarPartida()
     {
-        
-        Partida partida = Persistencia.CargarPartida("partida unica");
-        CheckpointPuerta = partida.CheckpointPuerta;
-        InventarioController.instance.cargarInventario(partida);
-        //AICharacterControl.instance.cargarLastTarget(partida.targetAI);
+        try
+        {
+            Partida partida = Persistencia.CargarPartida("partida unica");
+            CheckpointPuerta = partida.CheckpointPuerta;
+            InventarioController.instance.cargarInventario(partida);
+            SceneManager.LoadScene(partida.escena);
+        }
+        catch(System.Exception e)
+        {
+            Debug.Log("error, la partida no existe");
+            Debug.Log(e.Message);
+        }
                
-        SceneManager.LoadScene(partida.escena);
     }
     public void cargarInventario()
     {
