@@ -112,16 +112,13 @@ public class PantallaPrincipal : MonoBehaviour
         {
             case 0:
                 SceneController.instance.nuevaPartida();
-                StartCoroutine(fader.fadeOutCorutine());
                 break;
             case 1:
                 SceneController.instance.CargarPartida();
-                StartCoroutine(fader.fadeOutCorutine());
 
                 break;
             case 2:
                 SceneController.instance.cambiarEscena("Creditos");
-                StartCoroutine(fader.fadeOutCorutine());
                 break;
             case 3:
                 Application.Quit();

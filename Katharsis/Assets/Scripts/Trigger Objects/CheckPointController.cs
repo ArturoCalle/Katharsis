@@ -8,11 +8,17 @@ public class CheckPointController : MonoBehaviour
     public static CheckPointController instance;
     public CheckpointPuerta checkPuerta;
     bool cargar = false;
+    public string ultimoCheckpoint;
 
     // Start is called before the first frame update
     void Start()
     {
         instance = this;
+        if (SceneController.instance.getCurrentSceneName() != "Pantalla Principal")
+        {
+            //TO DO Cargar un checkpoitn a la partyida
+            //ultimoCheckpoint = SceneController.instance.cargarUltimoCheckpoint();
+        }
     }
 
     // Update is called once per frame
@@ -34,12 +40,17 @@ public class CheckPointController : MonoBehaviour
                     SceneController.instance.respawn();
                 }
             }
+            else
+            {
+                SceneController.instance.ultimoCheckPoint = getCheckpoint(ultimoCheckpoint);
+            }
+            
         }
     }
 
     public void PlayerThroughCheckpoint(CheckpointSingle checkpointSingle)
-    { 
-        SceneController.instance.ultimoCheckPoint = checkpointSingle;   
+    {
+        SceneController.instance.ultimoCheckPoint = checkpointSingle;
     }
 
     public void PlayerThroughCheckpoint(CheckpointPuerta checkpointPuerta)

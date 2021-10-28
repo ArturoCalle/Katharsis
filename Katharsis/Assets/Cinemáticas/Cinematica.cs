@@ -12,7 +12,7 @@ public class Cinematica : MonoBehaviour
     public float duracion;
     void Start()
     {
-        Debug.Log(Timeline.duration.ToString());
+        
         
     }
 

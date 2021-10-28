@@ -18,20 +18,17 @@ public class SceneTrigger : MonoBehaviour
     private Recolectable recolectable;
     public void OnTriggerStay(Collider col)
     {
-        Recolectable r = InventarioController.instance.getRecolectable(recolectableBloqueante);
-        if(r.getRecolectado() && !recolectado)
-        {
-            if (col.tag == "Player")
-            {
-                if(!automatico)
-                {
 
-                    aviso.enabled = true;
-                }
-                else
-                {
-                    recolectar();
-                }
+       Recolectable r = InventarioController.instance.getRecolectable(recolectableBloqueante);
+       if (col.tag == "Player")
+       {
+            if(automatico && !recolectado)
+            {
+                recolectar();
+            }
+            else if(r.getRecolectado() && !recolectado)
+            {
+                 aviso.enabled = true;
             }
         }            
     }
@@ -58,7 +55,7 @@ public class SceneTrigger : MonoBehaviour
         recolectable.setRecolectado(recolectado);
         if(aviso.enabled && !recolectado)
         {
-            if(Input.GetKeyDown(KeyCode.F))
+            if(Input.GetKeyDown(KeyCode.F)|| Input.GetKeyDown(KeyCode.E))
             {
                 recolectar();
                 gameObject.SetActive(false);

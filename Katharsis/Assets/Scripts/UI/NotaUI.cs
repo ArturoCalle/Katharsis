@@ -49,7 +49,7 @@ public class NotaUI : MonoBehaviour
         
         if (aviso.activeInHierarchy && nota.activeInHierarchy)
         {
-            if (Input.GetKeyDown(KeyCode.Z))
+            if (Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.Return))
             {
                 aviso.SetActive(false);
                 nota.SetActive(false);

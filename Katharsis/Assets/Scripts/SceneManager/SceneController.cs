@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Playables;
+using System;
 
 public class SceneController : MonoBehaviour
 {
@@ -18,6 +19,7 @@ public class SceneController : MonoBehaviour
     public PlayableDirector timeline1;
     public GameObject cutsceneCam1;
 
+   
     public bool pausa;
     bool cargar = false;
     
@@ -50,7 +52,7 @@ public class SceneController : MonoBehaviour
                 cutsceneCam1.SetActive(false);
                 PlayerControls.instance.enabled = true;
             }
-            else
+            else if(!InventarioController.instance.getRecolectable(0).getRecolectado())
             {
                 PlayerControls.instance.playArepa();
             }
@@ -141,6 +143,9 @@ public class SceneController : MonoBehaviour
             Partida partida = Persistencia.CargarPartida("partida unica");
             CheckpointPuerta = partida.CheckpointPuerta;
             InventarioController.instance.cargarInventario(partida);
+            ultimoCheckPoint.transform.position = new Vector3(partida.LastcheckpointPos[0], partida.LastcheckpointPos[1], partida.LastcheckpointPos[2]);
+            Debug.Log(ultimoCheckPoint.name);
+            Debug.Log(ultimoCheckPoint.transform.position);
             SceneManager.LoadScene(partida.escena);
         }
         catch(System.Exception e)
@@ -154,8 +159,14 @@ public class SceneController : MonoBehaviour
     {
         Partida partida = Persistencia.CargarPartida("partida unica");
         InventarioController.instance.cargarInventario(partida);
-    }   
- 
+    }
+    internal string cargarUltimoCheckpoint()
+    {
+        Partida partida = Persistencia.CargarPartida("partida unica");
+        return partida.LastCheckpoint;
+    }
+
+
     public void nuevaPartida()
     {
         InventarioController.instance.vaciarInventario();
@@ -189,4 +200,5 @@ public class SceneController : MonoBehaviour
             cargar = true;
         }
     }
+
 }

@@ -23,7 +23,10 @@ public class timerTitulo : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if(Input.anyKey)
+        {
+            SceneManager.LoadScene("Pantalla Principal");
+        }
         if (!fadedIn)
         {
             fadedIn = fader.fadeIn();
