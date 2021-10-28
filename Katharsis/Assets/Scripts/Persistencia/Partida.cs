@@ -22,7 +22,6 @@ public class Partida
 
     //TODO int [] bocinas; //Estos son los checkpont especiales entre puertas. Ej bocina
     public float [] LastcheckpointPos; // posicion del ultimo checkpoint
-    public string LastCheckpoint;
     public string CheckpointPuerta;
     public string escena; //tener cuidados de que la escena sea la misma del checkpoint
 
@@ -34,7 +33,7 @@ public class Partida
         sceneTriggerNombre = new string[t.Count];
 
         this.escena = escena;
-        //TODO cargar checkpoint
+        LastcheckpointPos = new float[3];
         this.CheckpointPuerta = CheckpointPuerta;
         notasRecogidas = new bool[r.Count];
         nombreNotas = new string[r.Count];
@@ -59,7 +58,9 @@ public class Partida
             sceneTriggerNombre[j] = t[j].getNombre();
 
         }
-        //TODO guardar checkpoint
+        LastcheckpointPos[0] = lc.gameObject.transform.position.x;
+        LastcheckpointPos[1] = lc.gameObject.transform.position.y;
+        LastcheckpointPos[2] = lc.gameObject.transform.position.z;
         //personajes
         /*
         this.distimia = new float[3];
