@@ -72,7 +72,7 @@ public class CheckPointController : MonoBehaviour
         }
        foreach(CheckpointSingle cs in checkpoints)
         {
-            Debug.Log(cs.gameObject.name);
+            
             if(cs.gameObject.name == nombre)
             {
                 return cs;
