@@ -220,12 +220,4 @@ public class UIController : MonoBehaviour
             
         }
     }
-
-
 }
-/*blackScreen.color = new Color(blackScreen.color.r, blackScreen.color.g, blackScreen.color.b, Mathf.MoveTowards(blackScreen.color.a, 1f, fadeSpeed * Time.deltaTime));
-
-if (blackScreen.color.a == 0f)
-{
-    fadeFromBlack = false;
-}*/

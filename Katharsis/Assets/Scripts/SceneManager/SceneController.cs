@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Playables;
+using System;
 
 public class SceneController : MonoBehaviour
 {
@@ -11,12 +12,6 @@ public class SceneController : MonoBehaviour
     public CheckpointSingle ultimoCheckPoint;
     public GameObject jugador;
     public string CheckpointPuerta = "";
-
-    //cinematics
-    public PlayableDirector timeline2;
-    public GameObject cutsceneCam2;
-    public PlayableDirector timeline1;
-    public GameObject cutsceneCam1;
 
     public bool pausa;
     bool cargar = false;
@@ -34,6 +29,17 @@ public class SceneController : MonoBehaviour
         instance = this;
         pausa = false;        
     }
+
+    internal void bloquearPlayerControls(bool estado)
+    {
+        PlayerControls.instance.enabled = estado;
+    }
+
+    internal void playArepa()
+    {
+        PlayerControls.instance.playArepa();
+    }
+
     private void Update()
     {
         if(SceneManager.GetActiveScene().name != "Pantalla Principal")
@@ -41,27 +47,6 @@ public class SceneController : MonoBehaviour
             if(cargar == false)
             {
                 respawn();
-            }
-        }
-        if (SceneManager.GetActiveScene().name == "Sala" && jugador != null)
-        {
-            if (timeline1.state.ToString() == "Paused")
-            {
-                cutsceneCam1.SetActive(false);
-                PlayerControls.instance.enabled = true;
-            }
-            else
-            {
-                PlayerControls.instance.playArepa();
-            }
-            if (timeline2.state.ToString() == "Paused")
-            {
-                cutsceneCam2.SetActive(false);
-                PlayerControls.instance.enabled = true;
-            }
-            else
-            {
-                PlayerControls.instance.enabled = false;
             }
         }
     }
@@ -136,20 +121,35 @@ public class SceneController : MonoBehaviour
     }
     public void CargarPartida()
     {
-        
-        Partida partida = Persistencia.CargarPartida("partida unica");
-        CheckpointPuerta = partida.CheckpointPuerta;
-        InventarioController.instance.cargarInventario(partida);
-        //AICharacterControl.instance.cargarLastTarget(partida.targetAI);
+        try
+        {
+            Partida partida = Persistencia.CargarPartida("partida unica");
+            CheckpointPuerta = partida.CheckpointPuerta;
+            InventarioController.instance.cargarInventario(partida);
+            ultimoCheckPoint.transform.position = new Vector3(partida.LastcheckpointPos[0], partida.LastcheckpointPos[1], partida.LastcheckpointPos[2]);
+            Debug.Log(ultimoCheckPoint.name);
+            Debug.Log(ultimoCheckPoint.transform.position);
+            SceneManager.LoadScene(partida.escena);
+        }
+        catch(System.Exception e)
+        {
+            Debug.Log("error, la partida no existe");
+            Debug.Log(e.Message);
+        }
                
-        SceneManager.LoadScene(partida.escena);
     }
     public void cargarInventario()
     {
         Partida partida = Persistencia.CargarPartida("partida unica");
         InventarioController.instance.cargarInventario(partida);
-    }   
- 
+    }
+    internal string cargarUltimoCheckpoint()
+    {
+        Partida partida = Persistencia.CargarPartida("partida unica");
+        return partida.LastCheckpoint;
+    }
+
+
     public void nuevaPartida()
     {
         InventarioController.instance.vaciarInventario();
@@ -183,4 +183,5 @@ public class SceneController : MonoBehaviour
             cargar = true;
         }
     }
+
 }

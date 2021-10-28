@@ -20,7 +20,7 @@ public class SceneIAController : MonoBehaviour
 
     private void Update()
     {
-        if (InsDistimia && distimia == null)
+        if (InsDistimia && distimia == null && !SceneTriggerController.instance.findTriggerByName("megafono").recolectado)
         {
             if(SceneController.instance.getCurrentSceneName() == "Sala")
             {

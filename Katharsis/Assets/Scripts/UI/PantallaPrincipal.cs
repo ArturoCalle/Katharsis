@@ -9,6 +9,8 @@ public class PantallaPrincipal : MonoBehaviour
     public GameObject cargarJuego;
     public GameObject opciones;
     public GameObject salir;
+    public ScreenFader fader;
+    bool fadein;
 
     int seleccion;
     public bool locked;
@@ -16,11 +18,18 @@ public class PantallaPrincipal : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        fadein = false;
         instance = this;
         botones.Add(nuevoJuego.GetComponent<Boton>());
         botones.Add(cargarJuego.GetComponent<Boton>());
         botones.Add(opciones.GetComponent<Boton>());
         botones.Add(salir.GetComponent<Boton>());
+
+        nuevoJuego.GetComponent<Boton>().actualizarTexto("Nueva Partida");
+        cargarJuego.GetComponent<Boton>().actualizarTexto("Cargar Partida");
+        opciones.GetComponent<Boton>().actualizarTexto("Creditos");
+        salir.GetComponent<Boton>().actualizarTexto("Salir");
+
         seleccion = 0;
         locked = false;
 
@@ -30,13 +39,15 @@ public class PantallaPrincipal : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        nuevoJuego.GetComponent<Boton>().actualizarTexto("Nueva Partida");
-        cargarJuego.GetComponent<Boton>().actualizarTexto("Cargar Partida");
-        opciones.GetComponent<Boton>().actualizarTexto("Opciones");
-        salir.GetComponent<Boton>().actualizarTexto("Salir");
-
-        mostrarSeleccion();
-        getInput();
+        if(!fadein)
+        {
+            fadein = fader.fadeIn();
+        }
+        else
+        {
+            mostrarSeleccion();
+            getInput();
+        }
 
     }
 
@@ -96,18 +107,18 @@ public class PantallaPrincipal : MonoBehaviour
     }
     void seleccionar()
     {
-        switch(seleccion)
+        
+        switch (seleccion)
         {
             case 0:
                 SceneController.instance.nuevaPartida();
-                
                 break;
             case 1:
                 SceneController.instance.CargarPartida();
-                
+
                 break;
             case 2:
-                //TO DO crear opciones
+                SceneController.instance.cambiarEscena("Creditos");
                 break;
             case 3:
                 Application.Quit();

@@ -11,7 +11,7 @@ public class CheckpointSingle : MonoBehaviour
             if (other.tag == "Player")
             {   
                 CheckPointController.instance.PlayerThroughCheckpoint(this);
-                gameObject.SetActive(false);
+                SceneController.instance.GuardarPartida();
             }
         }
     }
