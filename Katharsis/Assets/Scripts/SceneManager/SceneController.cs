@@ -126,9 +126,6 @@ public class SceneController : MonoBehaviour
             Partida partida = Persistencia.CargarPartida("partida unica");
             CheckpointPuerta = partida.CheckpointPuerta;
             InventarioController.instance.cargarInventario(partida);
-            ultimoCheckPoint.transform.position = new Vector3(partida.LastcheckpointPos[0], partida.LastcheckpointPos[1], partida.LastcheckpointPos[2]);
-            Debug.Log(ultimoCheckPoint.name);
-            Debug.Log(ultimoCheckPoint.transform.position);
             SceneManager.LoadScene(partida.escena);
         }
         catch(System.Exception e)
@@ -142,11 +139,6 @@ public class SceneController : MonoBehaviour
     {
         Partida partida = Persistencia.CargarPartida("partida unica");
         InventarioController.instance.cargarInventario(partida);
-    }
-    internal string cargarUltimoCheckpoint()
-    {
-        Partida partida = Persistencia.CargarPartida("partida unica");
-        return partida.LastCheckpoint;
     }
 
 
