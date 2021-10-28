@@ -13,13 +13,6 @@ public class SceneController : MonoBehaviour
     public GameObject jugador;
     public string CheckpointPuerta = "";
 
-    //cinematics
-    public PlayableDirector timeline2;
-    public GameObject cutsceneCam2;
-    public PlayableDirector timeline1;
-    public GameObject cutsceneCam1;
-
-   
     public bool pausa;
     bool cargar = false;
     
@@ -36,6 +29,17 @@ public class SceneController : MonoBehaviour
         instance = this;
         pausa = false;        
     }
+
+    internal void bloquearPlayerControls(bool estado)
+    {
+        PlayerControls.instance.enabled = estado;
+    }
+
+    internal void playArepa()
+    {
+        PlayerControls.instance.playArepa();
+    }
+
     private void Update()
     {
         if(SceneManager.GetActiveScene().name != "Pantalla Principal")
@@ -43,27 +47,6 @@ public class SceneController : MonoBehaviour
             if(cargar == false)
             {
                 respawn();
-            }
-        }
-        if (SceneManager.GetActiveScene().name == "Sala" && jugador != null)
-        {
-            if (timeline1.state.ToString() == "Paused")
-            {
-                cutsceneCam1.SetActive(false);
-                PlayerControls.instance.enabled = true;
-            }
-            else if(!InventarioController.instance.getRecolectable(0).getRecolectado())
-            {
-                PlayerControls.instance.playArepa();
-            }
-            if (timeline2.state.ToString() == "Paused")
-            {
-                cutsceneCam2.SetActive(false);
-                PlayerControls.instance.enabled = true;
-            }
-            else
-            {
-                PlayerControls.instance.enabled = false;
             }
         }
     }

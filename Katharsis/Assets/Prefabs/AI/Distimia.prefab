@@ -139,7 +139,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 150531601175331403}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 144.17853, y: 48.132866, z: 75.51718}
+  m_LocalPosition: {x: -22.489998, y: -2.17, z: -50.01}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children:
   - {fileID: 8497674914837121135}
@@ -239,6 +239,9 @@ MonoBehaviour:
   obstructionMask:
     serializedVersion: 2
     m_Bits: 64
+  mortales:
+  - {fileID: 8810665550499403351}
+  - {fileID: 233627935677497314}
 --- !u!114 &4086003311026586189
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -342,7 +345,7 @@ GameObject:
   - component: {fileID: 3015013429249316170}
   - component: {fileID: 8749996474532608845}
   m_Layer: 0
-  m_Name: "Pu\xF1oCollider"
+  m_Name: "Pu\xF1oColliderR"
   m_TagString: Mortal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2902,7 +2905,7 @@ GameObject:
   - component: {fileID: 7759047531949733075}
   - component: {fileID: 8986938789317242164}
   m_Layer: 0
-  m_Name: "Pu\xF1oCollider"
+  m_Name: "Pu\xF1oColliderL"
   m_TagString: Mortal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

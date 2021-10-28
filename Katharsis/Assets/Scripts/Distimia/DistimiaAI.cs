@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -33,6 +34,9 @@ namespace UnityStandardAssets.Assets.ThirdPerson
         //LayerMasks
         public LayerMask targetMask;
         public LayerMask obstructionMask;
+        //Objetos Mortales
+        public List<GameObject> mortales;
+        
         public enum State
         {
             Tranquilo,
@@ -107,6 +111,20 @@ namespace UnityStandardAssets.Assets.ThirdPerson
                 }
             }
         }
+        private void Inofensivo()
+        {
+            foreach(GameObject go in mortales)
+            {
+                go.SetActive(false);
+            }
+        }
+        private void Mortal()
+        {
+            foreach (GameObject go in mortales)
+            {
+                go.SetActive(true);
+            }
+        }
         //corutina
         IEnumerator FSM()
         {
@@ -116,12 +134,15 @@ namespace UnityStandardAssets.Assets.ThirdPerson
                 switch (state)
                 {
                     case State.Tranquilo:
+                        Inofensivo();
                         Pasear(false);
                         break;
                     case State.Enfadado:
+                        Mortal();
                         PerseguirTrompi();
                         break;
                     case State.Ansioso:
+                        Inofensivo();
                         Pasear(true);
                         break;
                 }
@@ -154,7 +175,10 @@ namespace UnityStandardAssets.Assets.ThirdPerson
                 {
                     if (SalirSala || SalirComedor || SalirCocina)
                     {
+                        if(SceneController.instance.getCurrentSceneName() == "Sala") //TODO no mames arturo
+                            CheckPointController.instance.transform.GetChild(1).gameObject.GetComponent<BoxCollider>().enabled = true; //TODO no mames arturo
                         SceneIAController.instance.destroyDistimia();
+
                     }else
                     {
                         targetIndex = inicioRuta;
