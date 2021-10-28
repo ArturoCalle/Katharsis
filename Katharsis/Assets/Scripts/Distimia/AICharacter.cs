@@ -24,8 +24,6 @@ namespace UnityStandardAssets.Assets.ThirdPerson
 		{
 			m_Animator = GetComponent<Animator>();
 		}
-
-
 		public float Move(Vector3 move, bool enojado, bool ansioso, bool golpearArriba, bool golpearAbajo)
 		{
 			if(golpearArriba)
