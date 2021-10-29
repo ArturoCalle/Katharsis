@@ -27,7 +27,7 @@ public class PantallaPrincipal : MonoBehaviour
 
         nuevoJuego.GetComponent<Boton>().actualizarTexto("Nueva Partida");
         cargarJuego.GetComponent<Boton>().actualizarTexto("Cargar Partida");
-        opciones.GetComponent<Boton>().actualizarTexto("Creditos");
+        opciones.GetComponent<Boton>().actualizarTexto("Créditos");
         salir.GetComponent<Boton>().actualizarTexto("Salir");
 
         seleccion = 0;
@@ -111,11 +111,12 @@ public class PantallaPrincipal : MonoBehaviour
         switch (seleccion)
         {
             case 0:
+                StartCoroutine(fader.fadeOutCorutine());                
                 SceneController.instance.nuevaPartida();
                 break;
             case 1:
+                StartCoroutine(fader.fadeOutCorutine());
                 SceneController.instance.CargarPartida();
-
                 break;
             case 2:
                 SceneController.instance.cambiarEscena("Creditos");

@@ -18,16 +18,17 @@ public class CinematicasSala : MonoBehaviour
             if (timeline1.state.ToString() == "Paused")
             {
                 cutsceneCam1.SetActive(false);
-                SceneController.instance.bloquearPlayerControls(true);
+                
             }
             else if (!InventarioController.instance.getRecolectable(0).getRecolectado())
             {
                 SceneController.instance.playArepa();
+                SceneController.instance.bloquearPlayerControls(true);
             }
             if (timeline2.state.ToString() == "Paused")
             {
                 cutsceneCam2.SetActive(false);
-                SceneController.instance.bloquearPlayerControls(true);
+                
             }
             else
             {
