@@ -523,67 +523,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &738277342
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 1553768451513687096, guid: ffaf157030db38f419b55dd78172a398, type: 3}
-      propertyPath: m_RootOrder
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1553768451513687096, guid: ffaf157030db38f419b55dd78172a398, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.33367354
-      objectReference: {fileID: 0}
-    - target: {fileID: 1553768451513687096, guid: ffaf157030db38f419b55dd78172a398, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.6832802
-      objectReference: {fileID: 0}
-    - target: {fileID: 1553768451513687096, guid: ffaf157030db38f419b55dd78172a398, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -8.571632
-      objectReference: {fileID: 0}
-    - target: {fileID: 1553768451513687096, guid: ffaf157030db38f419b55dd78172a398, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1553768451513687096, guid: ffaf157030db38f419b55dd78172a398, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1553768451513687096, guid: ffaf157030db38f419b55dd78172a398, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1553768451513687096, guid: ffaf157030db38f419b55dd78172a398, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1553768451513687096, guid: ffaf157030db38f419b55dd78172a398, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1553768451513687096, guid: ffaf157030db38f419b55dd78172a398, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1553768451513687096, guid: ffaf157030db38f419b55dd78172a398, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1553768451513687099, guid: ffaf157030db38f419b55dd78172a398, type: 3}
-      propertyPath: m_Name
-      value: AudioIntro&Pausa
-      objectReference: {fileID: 0}
-    - target: {fileID: 1553768451513687099, guid: ffaf157030db38f419b55dd78172a398, type: 3}
-      propertyPath: m_TagString
-      value: MusicSource
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: ffaf157030db38f419b55dd78172a398, type: 3}
 --- !u!1 &1189774527
 GameObject:
   m_ObjectHideFlags: 0
@@ -820,7 +759,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 24, y: -95.003}
+  m_AnchoredPosition: {x: 48, y: -95.003}
   m_SizeDelta: {x: 590.66, y: -250.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1730330679
@@ -857,7 +796,7 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "Modelado 3D:\nIsabel Cabrales \nDaniela Panteghini\n\nGuion: \nAndr\xE9s
-    Rivera\n\nM\xFAsica:\nJ\xFCrgen Alonso\n\n\n\n"
+    C. Rivera\n\nM\xFAsica:\nJ\xFCrgen Alonso\n\n\n\n"
 --- !u!222 &1730330680
 CanvasRenderer:
   m_ObjectHideFlags: 0
