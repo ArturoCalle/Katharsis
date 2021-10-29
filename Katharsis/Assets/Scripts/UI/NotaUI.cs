@@ -14,6 +14,7 @@ public class NotaUI : MonoBehaviour
     public char tipo;
     public int numNota;
     public bool recolectado;
+    private bool cargado;
 
     public Sprite hoja_informativa;
     public Sprite hoja_tutorial;
@@ -35,17 +36,21 @@ public class NotaUI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        cargado = false;
         
-        nota.gameObject.transform.GetChild(1).GetComponent<Text>().text = nombre;
-        cambiarHoja(tipo);
-        textoNota.text = InventarioController.instance.getTextoNota(numNota);
         
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if(!cargado)
+        {
+            nota.gameObject.transform.GetChild(1).GetComponent<Text>().text = nombre;
+            cambiarHoja(tipo);
+            textoNota.text = InventarioController.instance.getTextoNota(numNota);
+            cargado = true;
+        }
         
         if (aviso.activeInHierarchy && nota.activeInHierarchy)
         {
