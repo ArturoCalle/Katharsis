@@ -12,7 +12,7 @@ public class InputController : MonoBehaviour
 
             UIController.instance.getInputsMenu();
         }
-        else if(SceneController.instance.pausa)
+        else
         {
             PlayerControls.instance.getInputs();
         }

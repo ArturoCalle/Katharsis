@@ -49,7 +49,6 @@ public class PlayerControls : MonoBehaviour
     {
         checkClimbStatus();
         checkMouse();
-        getInputs();
         AnimatorController.instance.move(inputs, velocity.y, isGrounded, jumping, escalando, DoingCorner);
     }
     private void FixedUpdate()
