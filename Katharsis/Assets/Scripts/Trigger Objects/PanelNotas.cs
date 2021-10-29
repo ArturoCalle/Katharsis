@@ -10,6 +10,7 @@ public class PanelNotas : MonoBehaviour
     public GameObject notaUiPrefab;
     public GameObject botonPrefab;
     public GameObject scroll;
+    private bool cargado;
 
     public static PanelNotas instance;
 
@@ -21,9 +22,7 @@ public class PanelNotas : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
-        crearInventario();
-
+        cargado = false;     
         mostrandoNota = false;
         seleccion = 0;
         locked = false;
@@ -34,7 +33,11 @@ public class PanelNotas : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (!cargado)
+        {
+            crearInventario();
+            cargado = true;
+        }
         for (int i = 0; i < inventario.Count; i++)
         {
             if (inventario[i].getRecolectado())
