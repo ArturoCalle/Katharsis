@@ -163,7 +163,7 @@ public class PlayerControls : MonoBehaviour
     public void playArepa()
     {
         AnimatorController.instance.playArepa();
-        enabled = false;
+        
     }
     private void StopYvelocity()
     {

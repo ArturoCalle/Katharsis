@@ -18,7 +18,7 @@ public class TextosNotas
             "No temas buscar ayuda de un experto en salud mental.",
             "En casos de depresión severa, hasta bañarse, vestirse o levantarse, pueden ser tareas problemáticas de realizar.",
             "Los comentarios sobre muerte y suicidio son señales de alarma y no deben ser pasados por alto.",
-            "Si desapareciera en este instante nadie notaria que no estoy, nunca les preocupa como me siento, siempre es todo como ellos quieren. ",
+            "Si desapareciera en este instante nadie notaría que no estoy, núnca les preocupa como me siento, siempre es todo como ellos quieren. ",
             "Descansar, comer, hablar y salir son acciones pequeñas pero pueden ayudarte mucho.",
             "Eres una persona valiosa, así tu mente diga que no lo eres. Recuerdalo.",
             "Evita el debate y la discusión cuando una persona esta en crisis, valora sus reacciones y palabras con respeto y comprensión.",

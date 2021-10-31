@@ -25,7 +25,7 @@ public class timerTitulo : MonoBehaviour
     {
         if(Input.anyKey)
         {
-            SceneManager.LoadScene("Pantalla Principal");
+            next();
         }
         if (!fadedIn)
         {
@@ -39,19 +39,29 @@ public class timerTitulo : MonoBehaviour
                 fader.fadeOut();
                 if (fader.getTransparency() >= 1)
                 {
-                    if (titulo.activeInHierarchy)
-                    {
-                        tiempo = 13.0f;
-                        titulo.SetActive(false);
-                        fadedIn = false;
-                        advertencia.SetActive(true);
-                    }
-                    else if (advertencia.activeInHierarchy)
-                    {
-                        SceneManager.LoadScene("Pantalla Principal");
-                    }
+                    next();
                 }
             }
         }
     } 
+    public void next()
+    {
+        if (titulo.activeInHierarchy)
+        {
+            tiempo = 13.0f;
+            titulo.SetActive(false);
+            fadedIn = false;
+            advertencia.SetActive(true);
+        }
+        else if (advertencia.activeInHierarchy)
+        {
+            SceneManager.LoadScene("Pantalla Principal");
+            /*
+            tiempo = 5.0f;
+            advertencia.SetActive(false);
+            fadedIn = false;
+            controles.SetActive(true);*/
+        }
+           
+    }
 }

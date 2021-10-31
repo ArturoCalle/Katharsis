@@ -34,6 +34,7 @@ public class AnimatorController : MonoBehaviour
     public void playArepa()
     {
         animator.Play("Arepa");
+        
     }
     public void move(Vector3 inputs, float velocityY, bool isGrounded, bool jump, bool escalando, bool corner)
     {
