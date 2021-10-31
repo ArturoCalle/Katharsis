@@ -4,14 +4,18 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
+/**
+ * Esta clase se utiliza en la pantalla del titulo, regula el fade in y el fadeout del titulo y la advertencia.
+ * Utiliza el componente de unity scenemanager para cambiar de escena
+ */
 public class timerTitulo : MonoBehaviour
 {
-    public float tiempo;
+    public float tiempo;// tiempo de espera para hacer el fadeout
     public GameObject titulo;
     public GameObject advertencia;
-    public ScreenFader fader;
+    public ScreenFader fader;// contiene una pantalla en negro y las funciones que regulan la opacidad.
     bool fadedIn;
-    // Start is called before the first frame update
+    
     void Start()
     {
         tiempo = 1;
@@ -20,7 +24,10 @@ public class timerTitulo : MonoBehaviour
         advertencia.SetActive(false);
     }
 
-    // Update is called once per frame
+    /**
+     * En el update se revisa el estado de los cmponentes activos y se capturan las entradas del usuario de manera que 
+     * cambie de pantalla si se presiona alguna tecla
+     */
     void Update()
     {
         if(Input.anyKey)
@@ -43,7 +50,10 @@ public class timerTitulo : MonoBehaviour
                 }
             }
         }
-    } 
+    }
+    /**
+     * Funcion que regulan los cambios en la sucesion de eventos segun se esten presentado en pantalla.
+     */
     public void next()
     {
         if (titulo.activeInHierarchy)
@@ -56,11 +66,6 @@ public class timerTitulo : MonoBehaviour
         else if (advertencia.activeInHierarchy)
         {
             SceneManager.LoadScene("Pantalla Principal");
-            /*
-            tiempo = 5.0f;
-            advertencia.SetActive(false);
-            fadedIn = false;
-            controles.SetActive(true);*/
         }
            
     }
