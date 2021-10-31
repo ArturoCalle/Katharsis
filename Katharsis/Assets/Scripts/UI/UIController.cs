@@ -17,6 +17,7 @@ public class UIController : MonoBehaviour
     public GameObject panelMuerte;
     public GameObject NotaUI;
     public GameObject panelControles;
+    public GameObject avisoEsc;
 
     Nota nota;
 
@@ -37,7 +38,14 @@ public class UIController : MonoBehaviour
         
         //oscurecerPantallaYCambiarEscena();
         
-
+        if(pauseScreen.activeInHierarchy)
+        {
+            avisoEsc.SetActive(false);
+        }
+        else
+        {
+            avisoEsc.SetActive(true);
+        }
     }
 
     public void getInputsMenu()
@@ -109,6 +117,7 @@ public class UIController : MonoBehaviour
             }
             if (Input.GetKeyDown(KeyCode.Escape)|| Input.GetKeyDown(KeyCode.X))
             {
+                
                 if (panelOpciones.activeInHierarchy)
                 {
                     if (panelControles.activeInHierarchy)
@@ -171,7 +180,16 @@ public class UIController : MonoBehaviour
         panelOpciones.GetComponent<PanelOpciones>().reiniciarBotones();
         instance.pauseScreen.SetActive(true);
     }
-
+    public void activarPanelControles()
+    {
+        menuPausa mp = pauseScreen.GetComponent<menuPausa>();
+        PanelOpciones po = panelOpciones.GetComponent<PanelOpciones>();
+        pausar();
+        mp.setLock(true);
+        panelOpciones.SetActive(true);
+        po.setLock(true);
+        panelControles.SetActive(true);
+    }
     
     public IEnumerator oscurecerPantallaYCambiarEscena(string escena)
     {
