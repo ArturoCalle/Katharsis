@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 
 /**
  * Esta clase se utiliza en la pantalla del titulo, regula el fade in y el fadeout del titulo y la advertencia.
