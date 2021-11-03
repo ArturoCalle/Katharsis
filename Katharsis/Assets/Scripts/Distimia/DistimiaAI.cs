@@ -15,7 +15,7 @@ namespace UnityStandardAssets.Assets.ThirdPerson
         public GameObject Hombro;
         //Ruta
         private int targetIndex = 0;
-        private int inicioRuta;
+        private int inicioRuta; //indice en el array de targets
         private float velocidadDePaseo = 0f;
         //Persecución Trompi
         private float chaseSpeed = 0f;
@@ -73,9 +73,10 @@ namespace UnityStandardAssets.Assets.ThirdPerson
                 inicioRuta = 0;
             }
         }
-        //Cambia de estados según las variables de cambio de estado y la escena en la que se encuentre
+        //Cambia de estados según las variables de cambio de estado y revisa las condiciones de salida
         private void Update()
         {
+            //Condiciones de salida para cada escena
             if (SceneController.instance.getCurrentSceneName() == "Sala")
             {
                 if (SceneTriggerController.instance.findTriggerByName("megafono").recolectado)
@@ -97,6 +98,7 @@ namespace UnityStandardAssets.Assets.ThirdPerson
                     SalirCocina = true;
                 }
             }
+            //cambio de estado
             if (!puedeVerTrompi)
             {
                 if(LastState == State.Enfadado)
@@ -111,6 +113,7 @@ namespace UnityStandardAssets.Assets.ThirdPerson
                 }
             }
         }
+        //Desactiva los objetos mortales
         private void Inofensivo()
         {
             foreach(GameObject go in mortales)
@@ -118,6 +121,7 @@ namespace UnityStandardAssets.Assets.ThirdPerson
                 go.SetActive(false);
             }
         }
+        //Activa los objetos mortales
         private void Mortal()
         {
             foreach (GameObject go in mortales)
@@ -149,7 +153,6 @@ namespace UnityStandardAssets.Assets.ThirdPerson
                 yield return null;
             }
         }
-
         void Pasear(bool ansioso)//Move(Vector3 move, bool enojado, bool ansioso, bool golpearArriba, bool golpearAbajo)
         {   
             if(RigController.instance != null)
@@ -207,7 +210,7 @@ namespace UnityStandardAssets.Assets.ThirdPerson
             }
         }
 
-        /*
+        /**
          * Si esta traquilo y ve a trompi pasa a estado enfadado. 
          * Si trompi escapa (raycast pega en un objeto "obstructionMask") pasa a estar en estado ansioso (Validacion en update)
          * Si por otro lado, Distimia lanza un golpe a trompi, así no le dé, dejará en la variable LastState el estado Catarsis

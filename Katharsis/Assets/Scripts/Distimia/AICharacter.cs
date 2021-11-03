@@ -24,6 +24,10 @@ namespace UnityStandardAssets.Assets.ThirdPerson
 		{
 			m_Animator = GetComponent<Animator>();
 		}
+		/**
+		 * Este metodo recibe las variables de control de DistimiaIA. Según los parametros, controla las animaciones que debe correr y
+		 * retorna la velocidad que será luego asignada al NavMesh Agent
+		 */
 		public float Move(Vector3 move, bool enojado, bool ansioso, bool golpearArriba, bool golpearAbajo)
 		{
 			if(golpearArriba)
@@ -91,16 +95,15 @@ namespace UnityStandardAssets.Assets.ThirdPerson
 
 		public void ApplyExtraTurnRotation()
 		{
-			// help the character turn faster (this is in addition to root rotation in the animation)
 			float turnSpeed = Mathf.Lerp(m_StationaryTurnSpeed, m_MovingTurnSpeed, m_ForwardAmount);
 			transform.Rotate(0, m_TurnAmount * turnSpeed * Time.deltaTime, 0);
 		}
-
+		/**
+		 * lanza un raycast en la base del 
+		 */
         void CheckGroundStatus()
 		{
 			RaycastHit hitInfo;
-			// 0.1f is a small offset to start the ray from inside the character
-			// it is also good to note that the transform position in the sample assets is at the base of the character
 			if (Physics.Raycast(transform.position + (Vector3.up * 0.1f), Vector3.down, out hitInfo, m_GroundCheckDistance))
 			{
 				m_GroundNormal = hitInfo.normal;

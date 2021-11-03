@@ -6,11 +6,11 @@ using UnityStandardAssets.Assets.ThirdPerson;
 public class SceneIAController : MonoBehaviour
 {
     public GameObject prefabDistimia;
-    private GameObject distimia = null;
+    private GameObject distimia = null; // controla si distimia ha sido instanciado
     public static SceneIAController instance;
     public GameObject[] targets;
     public GameObject startPos;
-    public bool InsDistimia;
+    public bool InsDistimia; // controla si distimia esta en la escena
 
     private void Start()
     {
@@ -18,6 +18,9 @@ public class SceneIAController : MonoBehaviour
         instance = this;
     }
 
+    /**
+     * Valida las condiciones de instanciacón de Distimia. Si el megafono ha sido recolectado activa la llave de salida de la escena
+     */
     private void Update()
     {
         if (InsDistimia && distimia == null && !SceneTriggerController.instance.findTriggerByName("megafono").recolectado)
@@ -41,12 +44,14 @@ public class SceneIAController : MonoBehaviour
         }
     }
 
+    //Cambia la posicion del prefabricado, lo instancia y guarda la instancia en la variable distimia
     public void instanciarDistimia(Transform posicion)
     {
         prefabDistimia.transform.position = posicion.position;
         distimia = Instantiate(prefabDistimia);
     }
 
+    //destruye el objeto
     public void destroyDistimia()
     {
         Destroy(distimia);
