@@ -61,11 +61,6 @@ public class SceneController : MonoBehaviour
 
     }
 
-    public Scene getCurrentScene()
-    {
-        return SceneManager.GetActiveScene();
-    }
-
     public void resume()
     {
         UIController.instance.desactivarPaneles();
@@ -153,16 +148,7 @@ public class SceneController : MonoBehaviour
     {
         return SceneManager.GetActiveScene().name;
     }
-    
-    public Scene getActiveScene()
-    {
-        return SceneManager.GetActiveScene();
-    }
-    public void nuevoCheckpointPuerta(string nuevo)
-    {
-        CheckpointPuerta = nuevo;
-
-    }
+ 
     public void respawn()
     {
         Destroy(jugador);
