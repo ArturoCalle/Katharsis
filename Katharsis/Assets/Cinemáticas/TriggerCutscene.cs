@@ -40,14 +40,6 @@ public class TriggerCutscene : MonoBehaviour
         cutsceneCam.SetActive(true);
         timeline.Play();
     }
-    /*
-    IEnumerator FinishCut()
-    {
-        yield return new WaitForSeconds(8);
-        SceneController.instance.prefabJugador.SetActive(true);
-        cutsceneCam.SetActive(false);
-        SceneController.instance.jugador.GetComponent<>
-    }*/
 }
 
 

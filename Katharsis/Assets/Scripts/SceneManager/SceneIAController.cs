@@ -35,6 +35,10 @@ public class SceneIAController : MonoBehaviour
                 instanciarDistimia(startPos.transform);
             }
         }
+        else if(SceneTriggerController.instance.findTriggerByName("megafono").recolectado)
+        {
+            CheckPointController.instance.transform.GetChild(1).gameObject.GetComponent<BoxCollider>().enabled = true;
+        }
     }
 
     public void instanciarDistimia(Transform posicion)

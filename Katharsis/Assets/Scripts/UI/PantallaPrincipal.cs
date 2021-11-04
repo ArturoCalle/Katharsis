@@ -11,6 +11,8 @@ public class PantallaPrincipal : MonoBehaviour
     public GameObject salir;
     public ScreenFader fader;
     bool fadein;
+    bool cambiarEscena;
+    bool fadeout;
 
     int seleccion;
     public bool locked;
@@ -19,6 +21,8 @@ public class PantallaPrincipal : MonoBehaviour
     void Start()
     {
         fadein = false;
+        cambiarEscena = false;
+        fadeout = false;
         instance = this;
         botones.Add(nuevoJuego.GetComponent<Boton>());
         botones.Add(cargarJuego.GetComponent<Boton>());
@@ -42,6 +46,14 @@ public class PantallaPrincipal : MonoBehaviour
         if(!fadein)
         {
             fadein = fader.fadeIn();
+        }
+        if(cambiarEscena)
+        {
+            fadeout = fader.fadeOut();
+            if(fadeout)
+            {
+                seleccionar();
+            }
         }
         else
         {
@@ -84,8 +96,8 @@ public class PantallaPrincipal : MonoBehaviour
             }
             if (Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.Return))
             {
-                seleccionar();
-
+                cambiarEscena = true;
+                
             }
         }
 
@@ -111,6 +123,7 @@ public class PantallaPrincipal : MonoBehaviour
         switch (seleccion)
         {
             case 0:
+
                 StartCoroutine(fader.fadeOutCorutine());                
                 SceneController.instance.nuevaPartida();
                 break;
