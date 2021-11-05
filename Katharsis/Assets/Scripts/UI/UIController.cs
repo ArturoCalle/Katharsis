@@ -10,11 +10,11 @@ public class UIController : MonoBehaviour
     public Image blackScreen;
     Color objectColor;
     //public float fadeSpeed;
-    public bool fadeToBlack, fadeFromBlack;
+    public bool fadeToBlack, fadeFromBlack; //oscureder la pantalla y aclarecer la pantalla
     public GameObject pauseScreen;
     public GameObject panelOpciones;
     public GameObject panelNotas;
-    public GameObject panelMuerte;
+    public GameObject panelMuerte; //Pantalla de muerte o Game Over
     public GameObject NotaUI;
     public GameObject panelControles;
     public GameObject avisoEsc;
@@ -150,6 +150,9 @@ public class UIController : MonoBehaviour
             }
         }
     }
+    /** 
+     * Esta función permite reanudar el juego y desactiva los paneles de pausa
+     */
     public void Reanudar()
     {
         desactivarPaneles();
@@ -190,6 +193,11 @@ public class UIController : MonoBehaviour
         panelControles.SetActive(true);
     }
     
+    /**
+     * Esta función permite oscurecer la pantalla antes de cambiar de escena para realizar una transición. Es llamada desde la
+     * función update como una corutina para que cada frame del juego, la pantalla se vaya volviendo gradualmente negra.
+     * Recibe el nombre de una escena como un string y utiliza la función de SceneController "cambiarEscena".
+     */
     public IEnumerator oscurecerPantallaYCambiarEscena(string escena)
     {
         float fadeSpeed = 087.45E-2f;
@@ -208,6 +216,10 @@ public class UIController : MonoBehaviour
             SceneController.instance.cambiarEscena(escena);
         }             
     }
+    /**
+     * Esta función oscurece la pantalla por medio de una corutina. Es llamada desde la función update como una corutina para que cada frame, la
+     * pantalla se vaya volviendo gradualmente negra.
+     */ 
     public IEnumerator oscurecerPantalla()
     {
         float fadeSpeed = 087.45E-2f;
@@ -222,7 +234,10 @@ public class UIController : MonoBehaviour
         }
 
     }
-    
+    /**
+     * Esta función aclarece la pantalla para terminar una transición. Es llamada desde la función update como una corutina
+     * para que cada frame la pantalla se vaya aclarando gradualmente hasta que el jugador recupere visibilidad.
+     */
     public IEnumerator aclararPantalla(float fadeSpeed = 087.45E-2f)
     {
         Debug.Log("aclarar");

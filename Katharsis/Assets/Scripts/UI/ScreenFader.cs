@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class ScreenFader : MonoBehaviour
 {
     Color objectColor;
-    public Image blackScreen;
+    public Image blackScreen; //Pantalla negra UI
     public bool fadeOut()
     {
         float fadeSpeed = 087.45E-2f;

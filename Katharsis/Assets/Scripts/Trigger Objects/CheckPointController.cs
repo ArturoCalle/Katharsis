@@ -2,9 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/**
+ * Esta clase permite controlar los checkpoints que están puestos en la escena, es por esto que tiene una lista de checkpoints la cual puede
+ * ser modificada desde el inspector en cada escena.
+ */
 public class CheckPointController : MonoBehaviour
 {
-    public List<CheckpointSingle> checkpoints;
+    public List<CheckpointSingle> checkpoints; //Lista de checkpoint singles
     public static CheckPointController instance;
     public CheckpointPuerta checkPuerta;
     bool cargar = false;
@@ -16,7 +20,11 @@ public class CheckPointController : MonoBehaviour
         
     }
 
-    // Update is called once per frame
+    
+    /**
+     * La función update se encarga de verificar si la escena fue cargada correctamente, en caso de que no, administra los checkpoints
+     * de las puertas y llama a la función "respawn" de la clase SceneController
+     */
     void Update()
     {
         
@@ -50,17 +58,11 @@ public class CheckPointController : MonoBehaviour
         SceneController.instance.CheckpointPuerta = checkpointPuerta.gameObject.name;
         
     }
-
-    public void cargarCheckpoints(int[] checkpoints) // megafonos
-    {
-        //TODO
-    }
+    /**
+     * Esta función encuentra un Checkpoint por nombre, recorre la lista de checkpoints y retorna el checkpoint deseado
+     */
     public CheckpointSingle getCheckpoint(string nombre)
     {
-        if(checkpoints.Count == 0)
-        {
-            
-        }
        foreach(CheckpointSingle cs in checkpoints)
         {
             
