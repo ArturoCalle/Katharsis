@@ -6,6 +6,9 @@ public class InventarioController : MonoBehaviour
 {
     public static InventarioController instance;
     private Inventario inventario;
+    /*
+     * Carga el inventario cuando entra a una escena jugable
+     */
     void Start()
     {
         instance = this;
@@ -15,11 +18,7 @@ public class InventarioController : MonoBehaviour
             SceneController.instance.cargarInventario();
         }
     }
-
-    void Update()
-    {
-
-    }
+    
     public void vaciarInventario()
     {
         inventario = new Inventario();
@@ -36,7 +35,9 @@ public class InventarioController : MonoBehaviour
         Recolectable nuevo = new Recolectable(nombre, escena, tipo, recolectado, numNota);
         inventario.agregarRecolectable(nuevo);
     }
-
+    /*
+     * Carga las notas recogidas y los triggers al inventario 
+     */
     public void cargarInventario(Partida p)
     {
         for (int i = 0; i < p.notasRecogidas.Length; i++)

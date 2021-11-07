@@ -17,8 +17,10 @@ public class SceneNotasController: MonoBehaviour
         cargar = false;
 
     }
-
-    // Update is called once per frame
+    /**
+     * Verifica las notas una vez, no se hace en el metodo start porque debe esperar a que la persistencia cargue la partida de ser necesario
+     * Quita las notas ya recolectadas de la escena
+     */
     void Update()
     {
        if(cargar == false)
@@ -32,17 +34,18 @@ public class SceneNotasController: MonoBehaviour
             recogerNota(nombre);
        }
     }
+    /*
+     * Revisa que el inventario ya haya sido llenado, de no ser asi, la variable cargar queda en false y debe volver a realizar el proceso
+     */
     public void verificarNotas()
     {
         if(InventarioController.instance.getRecolectables() != null)
         {
-
             List<Recolectable> r = InventarioController.instance.getRecolectables();
             for (int i = 0; i < r.Count; i++)
             {
                if(r[i].getRecolectado()&&(SceneController.instance.getCurrentSceneName() == r[i].getEscena()))
                {
-                
                     notasPorQuitar.Push(r[i].getNombre());
                }
             }
@@ -53,6 +56,9 @@ public class SceneNotasController: MonoBehaviour
         }
     }
   
+    /*
+     * recoge las notas de la escena que deba reocoger
+     */
     public void recogerNota(string nombre)
     {
         foreach (GameObject n in notas)
@@ -64,17 +70,13 @@ public class SceneNotasController: MonoBehaviour
                     n.GetComponent<NotaUI>().recolectado = true;
                     n.transform.GetChild(0).gameObject.SetActive(false);
                     cargar = false;
-
                 }
-                
             }
             else
             {
-                
                 notasPorQuitar.Push(nombre);
                 break;
             }
         }
     }
-
 }

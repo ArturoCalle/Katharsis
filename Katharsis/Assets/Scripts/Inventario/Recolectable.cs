@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 
-
+/**
+ * Entidad de datos de un objeto recolectable
+ */
 public class Recolectable
 {
     private string nombre;

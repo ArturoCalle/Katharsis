@@ -33,12 +33,10 @@ public class Nota : MonoBehaviour
 
     void Update()
     {
-        
         if(inCollectRange)
         {
             if(Input.GetKeyDown(KeyCode.F)|| Input.GetKeyDown(KeyCode.E))
             {
-                
                 notaUI.agregarNotaAInventario(plane);
                 notaUI.mostrarNota();
                 inCollectRange = false;

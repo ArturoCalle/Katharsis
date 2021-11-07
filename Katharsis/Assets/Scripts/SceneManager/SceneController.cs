@@ -16,7 +16,9 @@ public class SceneController : MonoBehaviour
     public bool pausa;
     bool cargar = false;
     
-
+    /**
+     * Instancia al jugar en la escena y carga la partida
+     */
     private void Awake()
     {
         if(SceneManager.GetActiveScene().name != "Pantalla Principal")
@@ -34,12 +36,16 @@ public class SceneController : MonoBehaviour
     {
         PlayerControls.instance.enabled = estado;
     }
-
+    /**
+     * Activa la animación al iniciar una nueva partida
+     */
     internal void playArepa()
     {
         PlayerControls.instance.playArepa();
     }
-
+    /*
+     * Si hay una partida guardada utliza respawn para destruir el objeto jugador y reinstanciarlo
+     */
     private void Update()
     {
         if(SceneManager.GetActiveScene().name != "Pantalla Principal")
@@ -109,11 +115,13 @@ public class SceneController : MonoBehaviour
         pause();
         UIController.instance.pauseScreen.SetActive(true);
     }
+    //Inicia el proceso de guardar partida
     public void GuardarPartida()
     {
         Debug.Log("guardando....");
         Persistencia.GuardarPartida("partida unica");
     }
+    //Si la partida existe, carga los datos del inventario y la ultima escena guardada
     public void CargarPartida()
     {
         try
@@ -127,16 +135,16 @@ public class SceneController : MonoBehaviour
         {
             Debug.Log("error, la partida no existe");
             Debug.Log(e.Message);
-        }
-               
+        }    
     }
+    //carga el inventario desde la persistencia
     public void cargarInventario()
     {
         Partida partida = Persistencia.CargarPartida("partida unica");
         InventarioController.instance.cargarInventario(partida);
     }
 
-
+    //reinicia el inventario y lo persiste
     public void nuevaPartida()
     {
         InventarioController.instance.vaciarInventario();
@@ -148,7 +156,7 @@ public class SceneController : MonoBehaviour
     {
         return SceneManager.GetActiveScene().name;
     }
- 
+    //destruye al jugador y si hay un checkpoint disponible lo instancia y guarda la partida
     public void respawn()
     {
         Destroy(jugador);
