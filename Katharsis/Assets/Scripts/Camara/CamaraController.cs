@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CamaraController : MonoBehaviour
 {
+    //variables de configuracion de la cámara
     public float altura = 1.75f;
     float MaxInclinacion = 90;
     [Range(0, 4)]

@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/**
+ * Esta es la clase que controla la unidad de datos inventario y utiliza el patrón singleton para ser accedido en todo el sistema
+ */
 public class InventarioController : MonoBehaviour
 {
     public static InventarioController instance;

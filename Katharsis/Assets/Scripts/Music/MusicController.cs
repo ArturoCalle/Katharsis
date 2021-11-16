@@ -21,7 +21,9 @@ public class MusicController : MonoBehaviour
         }
         DontDestroyOnLoad(this.gameObject);
    }
-    
+    /**
+     * Según la escena que esté activa, cambia la musica si es que la pista no está corriendo ya
+     */
     private void Update()
     {
         if(escena != SceneManager.GetActiveScene().name)
@@ -71,61 +73,6 @@ public class MusicController : MonoBehaviour
                     default:
                         break;
             }
-        }
-
-        /*
-        switch (escena)
-        {
-            case "Pantalla Principal":
-                if(!audiointro.isPlaying)
-                {
-                    audiointro.UnPause();
-                    audioAmbiente.Pause();
-                }
-                break;
-            case "Creditos":
-                if (!audiointro.isPlaying)
-                {
-                    audiointro.UnPause();
-                    audioAmbiente.Pause();
-                }
-                break;
-            case "Titulo":
-                if (!audiointro.isPlaying)
-                {
-
-                    audiointro.UnPause();
-                    audioAmbiente.Pause();
-                }
-                break;
-            case "Sala":
-                if (!audioAmbiente.isPlaying)
-                {
-                    audiointro.Pause();
-                    audioAmbiente.UnPause();
-
-                }
-
-                break;
-            case "Comedor":
-                if (!audioAmbiente.isPlaying)
-                {
-
-                    audiointro.Pause();
-                    audioAmbiente.UnPause();
-                }
-
-                break;
-            case "Cocina":
-                if (!audioAmbiente.isPlaying)
-                {
-
-                    audiointro.Pause();
-                    audioAmbiente.UnPause();
-                }
-                break;
-            default:
-                break;*/
-    
+        }    
     }
 }

@@ -2,6 +2,9 @@ using UnityEngine;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 
+/**
+ * Clase que recoge los datos y los serializa o deserializa de formato binario
+ */
 public static class Persistencia
 {
     public static void GuardarPartida(string name)

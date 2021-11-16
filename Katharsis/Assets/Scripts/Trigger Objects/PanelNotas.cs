@@ -64,6 +64,7 @@ public class PanelNotas : MonoBehaviour
             
         }
     }
+    //activa la nota seleccionada en el panel notas
     void mostrarSeleccion()
     {
         for (int i = 0; i < items.Count; i++)
@@ -79,6 +80,7 @@ public class PanelNotas : MonoBehaviour
             }
         }
     }
+  
     public void cambiarSeleccion(int s)
     {
         if (seleccion + s <= -1)

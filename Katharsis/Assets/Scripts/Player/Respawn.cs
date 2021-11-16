@@ -13,9 +13,6 @@ public class Respawn : MonoBehaviour
     {
         //jugador.transform.position = SceneController.instance.lastCheckpoint.transform.position;
     }
-    /**
-     * Si el jugador toca un collider de un objeto con el tag "Mortal", se llama a la función EndGame de la clase SceneController.
-     */
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Mortal")

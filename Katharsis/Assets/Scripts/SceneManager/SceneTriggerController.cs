@@ -22,7 +22,7 @@ public class SceneTriggerController : MonoBehaviour
             recogerTriggers();
         }
     }
-
+    
     public SceneTrigger findTriggerByName(string name)
     {
         foreach (SceneTrigger go in triggers)
@@ -39,7 +39,9 @@ public class SceneTriggerController : MonoBehaviour
     {
         return triggers;
     }
-
+    /**
+     * recolecta los triggers que ya hayan sido activados en la escena al momento de cargarla
+     */
     public void recogerTriggers()
     {
         if(InventarioController.instance.getTriggers() != null)

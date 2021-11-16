@@ -80,8 +80,10 @@ namespace UnityStandardAssets.Assets.ThirdPerson
         {
 			m_Animator.Play("Ansiedad");
         }
-
-        private void Desplazar(Vector3 move)
+		/**
+		 * metodo editado de  UnityStandardAssets.Assets.ThirdPerson
+		 */
+		private void Desplazar(Vector3 move)
         {
 			if (move.magnitude > 1f) move.Normalize();
 			move = transform.InverseTransformDirection(move);

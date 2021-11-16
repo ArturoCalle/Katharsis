@@ -6,6 +6,7 @@ public class MusicPlayer : MonoBehaviour
 {
     private string escena;
     private GameObject[] musicSource;
+    //patron singleton para el controlador de la musica
     private void Awake()
     {
         musicSource = GameObject.FindGameObjectsWithTag("MusicSource");

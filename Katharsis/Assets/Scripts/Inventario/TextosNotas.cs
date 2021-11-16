@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/**
+ * Los textos de cada nota segun su indice
+ */
 public class TextosNotas
 {
     public string[] textos;

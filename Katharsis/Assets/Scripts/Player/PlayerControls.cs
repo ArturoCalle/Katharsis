@@ -51,7 +51,7 @@ public class PlayerControls : MonoBehaviour
         checkMouse();
         AnimatorController.instance.move(inputs, velocity.y, isGrounded, jumping, escalando, DoingCorner);
     }
-    private void FixedUpdate()
+    private void FixedUpdate() //el movimiento debe hacerse en late update para mejorar la visualización de las animaciones
     {
         Locomotion();
     }
@@ -110,6 +110,10 @@ public class PlayerControls : MonoBehaviour
         movDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
         controller.Move(movDir.normalized * baseSpeed * Time.deltaTime * Time.timeScale);
     }
+    /**
+     * recibe los inputs para subir y bajar, tambien se encarga de rotar al jugador hacia el objeto escalable
+     * rotar al rededor de la cuerda está pendiente
+     */
     private void Climb()
     {
         if (corner)
@@ -122,18 +126,18 @@ public class PlayerControls : MonoBehaviour
             {
                 controller.Move(Vector3.down.normalized * climbSpeed * Time.deltaTime * Time.timeScale);
             }
-            
             if (inputs.x == 1)
             {
                 transform.RotateAround(esc.getTarget().transform.position, Vector3.up, 2000 * Time.deltaTime);
 
-            }else if (inputs.x == -1)
+            }
+            else if (inputs.x == -1)
             {
                 transform.RotateAround(esc.getTarget().transform.position, Vector3.up, -2000 * Time.deltaTime);
             }
             RotateTowardsXZ(esc.getTarget().transform);
         }
-        else
+        else // si esta escalando pero no tiene colision con el objeto corner, comienza a escalar la esquina
         {
             if (!DoingCorner)
             {
@@ -141,11 +145,14 @@ public class PlayerControls : MonoBehaviour
             }
         }
     }
+    /**
+     * se encarga de levantar a trompi hasta que el objeto checkgrounded colisione.
+     */
     private void DoCorner()
     {
         direction = Vector3.zero;
         if(pos == Vector3.zero)
-        {
+        {//Se mueve en dirección al objeto corner hasta llegar a su posición
             pos = this.gameObject.transform.GetChild(2).transform.GetChild(3).position - transform.position;
         }
         if (!isGrounded)
@@ -253,6 +260,9 @@ public class PlayerControls : MonoBehaviour
         colision = esc.isActive();
         corner = esc.isCorner();
     }
+    /**
+     * gira sobre el plano xz hacia el target recibido como parametro
+     */
     private void RotateTowardsXZ(Transform target)
     {
         Vector3 direction = target.position - transform.position;
