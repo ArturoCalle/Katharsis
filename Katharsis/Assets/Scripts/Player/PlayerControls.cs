@@ -247,7 +247,6 @@ public class PlayerControls : MonoBehaviour
                 pos = Vector3.zero;
             }
         }
-        
     }
     public void checkClimbStatus()
     {

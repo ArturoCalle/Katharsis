@@ -153,6 +153,10 @@ namespace UnityStandardAssets.Assets.ThirdPerson
                 yield return null;
             }
         }
+        /**
+         * Se utiliza el esquema de rutas NavMesh encontrado en la documentación y se agregan comportamientos, como lo es el 
+         * mirar, las condiciones de salida, la animacion de ansiedad y la velocidad de movimiento que es retornada por el animador.
+         */
         void Pasear(bool ansioso)//Move(Vector3 move, bool enojado, bool ansioso, bool golpearArriba, bool golpearAbajo)
         {   
             if(RigController.instance != null)
@@ -167,7 +171,8 @@ namespace UnityStandardAssets.Assets.ThirdPerson
             {
                 agent.SetDestination( SceneIAController.instance.targets[targetIndex].transform.position );
                 velocidadDePaseo = character.Move(agent.desiredVelocity, false, ansioso, false, false);
-            }else if (Vector3.Distance(transform.position, SceneIAController.instance.targets[targetIndex].transform.position) <= 2)
+            }
+            else if (Vector3.Distance(transform.position, SceneIAController.instance.targets[targetIndex].transform.position) <= 2)
             { 
                 targetIndex += 1;
                 if (ansioso)
@@ -178,8 +183,8 @@ namespace UnityStandardAssets.Assets.ThirdPerson
                 {
                     if (SalirSala || SalirComedor || SalirCocina)
                     {
-                        if(SceneController.instance.getCurrentSceneName() == "Sala") //TODO no mames arturo
-                            CheckPointController.instance.transform.GetChild(1).gameObject.GetComponent<BoxCollider>().enabled = true; //TODO no mames arturo
+                        if(SceneController.instance.getCurrentSceneName() == "Sala")
+                            CheckPointController.instance.transform.GetChild(1).gameObject.GetComponent<BoxCollider>().enabled = true;
                         SceneIAController.instance.destroyDistimia();
 
                     }else
@@ -189,7 +194,9 @@ namespace UnityStandardAssets.Assets.ThirdPerson
                 }
             }
         }
-      
+        /**
+         * Se utiliza el patron de busqueda de NavMesh, y asigna la velocidad de movimiento retornada por el animador
+         */
         void PerseguirTrompi()//Move(Vector3 move, bool enojado, bool ansioso, bool golpearArriba, bool golpearAbajo)
         {
             agent.speed = chaseSpeed;
@@ -215,6 +222,7 @@ namespace UnityStandardAssets.Assets.ThirdPerson
          * Si trompi escapa (raycast pega en un objeto "obstructionMask") pasa a estar en estado ansioso (Validacion en update)
          * Si por otro lado, Distimia lanza un golpe a trompi, así no le dé, dejará en la variable LastState el estado Catarsis
          * El estado catarsis permite que si trompi escapa esta vez Distimia volverá a estar en estado Tranquilo, repitiendo asi el ciclo.
+         * Esta función es inspirada de https://www.youtube.com/watch?v=j1-OyLo77ss&t=1238s 
          */
         private void FieldOfViewCheck()
         {
